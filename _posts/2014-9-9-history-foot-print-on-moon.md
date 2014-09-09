@@ -20,8 +20,8 @@ and the levels economical development often foster misunderstanding
 and distrust. We tend to focus on our differences with our "foes"
 rather than our similarities. More often than not we let our hatred
 get its way and overlook the fact that we are all humans and we want
-pretty much the same thing: happy and purposeful lives, good
-environment to prosper and even better one for our kids. Although
+pretty much the same thing: happy and purposeful lives, a good
+environment to prosper and an even better one for our kids. Although
 this picture is the by-product of an ideology struggle, it has the
 power to make people, disregard of their differences, be proud of
 their identity as human beings. Second, this picture underlines the
