@@ -20,15 +20,15 @@ and the levels economical development often foster misunderstanding
 and distrust. We tend to focus on our differences with our "foes"
 rather than our similarities. More often than not we let our hatred
 get its way and overlook the fact that we are all humans and we want
-pretty much the same thing: a happy and purposeful life, a good
-environment to prosper and an even better one for our kids. Although
+pretty much the same thing: happy and purposeful lives, good
+environment to prosper and even better one for our kids. Although
 this picture is the by-product of an ideology struggle, it has the
 power to make people, disregard of their differences, be proud of
 their identity as human beings. Second, this picture underlines the
 importance of science and technology as the fundamental force behind our
 history. It made Great Britain an empire without sunset in 19th
-century and it made USA the best country on earth right now. Finally,
-this picture was taken by the wonderful
+century and USA the best country on earth right now. Finally,
+this picture was taken by the brilliant
 [Hasselblad](http://www.hasselblad.com/) camera, which is proudly made
 in Gothenburg, the city where I live at the moment.
 
