@@ -1,5 +1,6 @@
 ---
 layout: post
+category: History
 title: Footprint on the moon
 ---
 

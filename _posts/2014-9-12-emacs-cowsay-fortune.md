@@ -1,5 +1,6 @@
 ---
 layout: post
+category: Emacs
 title: Little fun with emacs start buffer
 ---
 
