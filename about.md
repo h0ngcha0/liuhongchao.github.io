@@ -35,4 +35,4 @@ himself. Because if an "average Joe" can do it, most people can do it
 as well.
 
 As to myself, I am just hoping to get stuck in the phase of denial a
-little longer. I am still learning and will continue to taking notes.
+little longer. I am still learning and will continue to take notes.
