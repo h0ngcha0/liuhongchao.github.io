@@ -5,11 +5,11 @@ permalink: /about/
 
 ## Hej!
 
-I am a typical "average Joe". Just like many "average Joe" I dreamed
-of achieving something more than average since I was very little. Now
-that I reached a point in my life where many at my age have accepted
-the fact that nothing extraordinary is ever gonna happen in their
-lives, I am still stuck in the phase of denial.
+I am a typical "average Joe". Just like many other "average Joes" I
+dreamed of achieving something more than average since I was very
+little. Now that I reached a point in my life where many at my age
+have accepted the fact that nothing extraordinary is ever gonna happen
+in their lives, I am still stuck in the phase of denial.
 
 If you ain't an "average Joe", you won't understand what it feels like
 to be one. You have neither super attractive appearance nor outstanding
@@ -28,9 +28,9 @@ things in a smarter way.
 
 Don't get me wrong, there is nothing wrong to be an "average Joe". In
 fact I am not an unhappy person as one of them. However, I am a little
-curious as to how much a fellow "average Joe" can push
-himself. Because if an "average Joe" can do it, most people can do
-it as well.
+curious about how much a fellow "average Joe" can push
+himself. Because if an "average Joe" can do it, most people can do it
+as well.
 
 As to myself, I am just hoping to get stuck in the phase of denial a
 little longer.
