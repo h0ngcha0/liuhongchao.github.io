@@ -35,8 +35,4 @@ himself. Because if an "average Joe" can do it, most people can do it
 as well.
 
 As to myself, I am just hoping to get stuck in the phase of denial a
-little longer.
-
-### Contact me
-
-[lbs.lhc@gmail.com](mailto:lbs.lhc@gmail.com)
+little longer. I am still learning and I am still taking notes.
