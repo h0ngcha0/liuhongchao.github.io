@@ -11,6 +11,8 @@ little. Now that I reached a point in my life where many at my age
 have accepted the fact that nothing extraordinary is ever gonna happen
 in their lives, I am still stuck in the phase of denial.
 
+<img style="float: right" src="{{site.baseurl}}/images/average_joe.jpg">
+
 If you ain't an "average Joe", you won't understand what it feels like
 to be one. You have neither super attractive appearance nor outstanding
 intelligence. Your habit of procrastination sometimes makes you hate
