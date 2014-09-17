@@ -4,6 +4,8 @@ category: Programming
 title: Typed actors are discouraged in Akka?
 ---
 
+![Akka mountain]({{ site.baseurl }}/images/gen_server.jpg)
+
 Coming from an Erlang background, I tend to use the gen_server
 approach (known as [active object
 patten](http://en.wikipedia.org/wiki/Active_object)) when it comes to
@@ -13,8 +15,8 @@ the API interfaces can be well defined, which enables type checking,
 more maintainable code and better IDE support.
 
 There seem to be something similiar to gen_server in Akka known as [typed
-actors](http://doc.akka.io/docs/akka/snapshot/scala/typed-actors.html). Shwon
-below is a very simple example:
+actors](http://doc.akka.io/docs/akka/snapshot/scala/typed-actors.html). Here
+is a very simple example:
 
 {% highlight scala %}
 trait Api {
@@ -50,3 +52,4 @@ documentation. I am aware of the fact that typed actor is unable to
 perform become/unbecome operation but I am still not convinced that
 the cons of using it outweighs the pros.
 
+I think typed actor should be used more, am I wrong?
