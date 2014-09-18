@@ -11,7 +11,7 @@ module](http://docs.ansible.com/docker_module.html) to manage docker
 containers, docker images themselves can be built using ansbile as
 well. We just need a base images that's ansible enabled to start with:
 
-{% highlight dockerfile %}
+{% highlight dockerfile linenos=table %}
 FROM phusion/baseimage:0.9.11
 MAINTAINER HC
 

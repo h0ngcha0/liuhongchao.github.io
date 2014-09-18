@@ -18,7 +18,7 @@ There seem to be something similiar to gen_server in Akka known as [typed
 actors](http://doc.akka.io/docs/akka/snapshot/scala/typed-actors.html). Here
 is a very simple example:
 
-{% highlight scala %}
+{% highlight scala linenos=table %}
 trait Api {
   def doSomething(): Unit //fire-forget
 }
