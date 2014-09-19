@@ -16,7 +16,7 @@ as the extension of a tiny little core.
 How easy is it to enjoy a little wisdom from a naughty cow when you
 open up your favorite editor?
 
-{% highlight elisp %}
+{% highlight elisp linenos=table %}
 (defun cowsay-fortune-fun ()
   "customzied scratch buffer"
   (let ((my-buffer (get-buffer "*scratch*")))

@@ -49,7 +49,9 @@ abstraction. There is also a
 on stackoverflow where people seem to suggest that the way to fix the
 problem that plain Akka actor lacks well defined API is to make better
 documentation. I am aware of the fact that typed actor is unable to
-perform become/unbecome operation but I am still not convinced that
-the cons of using it outweighs the pros.
+perform become/unbecome operations and is less explicit of the fact
+that it's an actor (which is the case for gen_server as well, but
+doesn't seem to be a problem for developers). I am still not convinced
+that the cons of using typed actors outweighs the pros.
 
 I think typed actor should be used more, am I wrong?
