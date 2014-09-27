@@ -1,5 +1,6 @@
 ---
 layout: post
+tags: Ansible
 category: Software
 title: Provision docker using ansible
 ---
