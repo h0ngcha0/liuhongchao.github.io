@@ -17,7 +17,7 @@ virtualbox inside my Macbook managed by
 [Vagrant](https://www.vagrantup.com/) and provisioned by
 [Ansible](http://www.ansible.com/). In general it has been a very
 pleasant experience. [Here](https://github.com/liuhongchao/ansible-dev-vm) is
-the code I use set it up.
+the code I wrote to set it up.
 
 And the following is screenshot of this very post being written under
 my virtualized development environment.
