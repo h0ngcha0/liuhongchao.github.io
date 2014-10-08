@@ -28,6 +28,3 @@ open up your favorite editor?
 That's it! Just remember to have
 [cowsay](http://en.wikipedia.org/wiki/Cowsay) and
 [fortune](http://en.wikipedia.org/wiki/Fortune_(Unix)) installed :stuck_out_tongue:
-
-
-
