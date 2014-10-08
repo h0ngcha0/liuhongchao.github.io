@@ -10,9 +10,8 @@ the branch name with story id as well, even though git branch is more
 short lived than commit messages.
 
 However, forcing developers manually prepending the story id to
-commit messages every time they make a commit is not guaranteed to
-work. Automating it would take one more thing out of their minds so
-that they can focus on the problems they care.
+commit messages is not guaranteed to work. As always, automation is
+the way to go.
 
 It turns out that it is pretty easy to write a git commit-msg hook to
 prepend the story id automatically if it is already present in the
@@ -59,7 +58,7 @@ test "" != "$(grep '^[[:space:]]*SEAL-[[:digit:]][[:digit:]]*:' "$1")" || {
 }
 {% endhighlight %}
 
-Now we just need to remember to always name our branch correctly
+Great! Now we just need to remember to always name our branch correctly
 :stuck_out_tongue: If you really wanna have a bit of assurance about that
 , we can have a simple git extension to verify the format of the
 branch name before it is created. Let's say we want our branch name to
@@ -106,6 +105,6 @@ else
 fi
 {% endhighlight %}
 
-For more info take a look at the code on
+For more info please take a look at the code on
 [Github](https://github.com/liuhongchao/git-branch-name-checker).
 
