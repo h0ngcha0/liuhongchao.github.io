@@ -22,8 +22,8 @@ E-commerce is the manifestation of internet as a democratizing
 force. It empowers people who could have been put off by the daunting
 task of setting up a business to pursuit their dreams because it's so
 much easier to build a storefront and sell to the rest of the world
-online. It enables fairer and easier access of information to the
-consumer so that overall they could enjoy better products with lower
+online. It enables fairer and easier access of information for
+consumers so that overall they could enjoy better products with lower
 price, even in places where the growth rate of physical shops can't
 keep up with people's purchasing power. It bridges buyers and sellers 
 who otherwise would never have their roads crossed. It promotes finer
@@ -39,22 +39,13 @@ they are really good at: making products and sell them. Sites like
 enabling merchants to sell their designs (using Tshirt as medium) more
 efficiently and at larger scale, it removes the burden of
 manufacturing from them as well. When ideas are the only
-differentiator, it encourages more innovative design and smarter
-marketing. As the result of that, manufacturing could be made more
-efficient as well.
+differentiator for a product, it encourages more innovative in the
+area of design and marketing. As the result of that, manufacturing
+could be made more efficient as well.
 
-Not all products fall into the category where its manufacturing can be
-completely outsourced. However sites like
-[Teespring](http://www.teespring.com/) point out a possible
-direction for the future of E-commerce: if we abstract away more pain
-points for both merchants and consumers, good things will happen.
-
-
-
-
-
-
-
-
-
-
+I call this Manufacturing as a Service (MaaS) and believe that it has a
+bright future. Not all products fall into the category where its
+manufacturing can be completely outsourced. However sites like
+[Teespring](http://www.teespring.com/) point out a possible direction
+for the future of E-commerce: if we abstract away more pain points for
+both the merchants and consumers, good things will happen.
