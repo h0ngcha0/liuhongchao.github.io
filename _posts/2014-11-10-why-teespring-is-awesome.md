@@ -39,7 +39,7 @@ they are really good at: making products and sell them. Sites like
 enabling merchants to sell their designs (using Tshirt as medium) more
 efficiently and at larger scale, it removes the burden of
 manufacturing from them as well. When ideas are the only
-differentiator for a product, it encourages more innovative in the
+differentiator for a product, it encourages more innovation in the
 area of design and marketing. As the result of that, manufacturing
 could be made more efficient as well.
 
