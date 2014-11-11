@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Startups
-title: Hard to have Chinese version of Klarna?
+title: Chinese version of Klarna?
 ---
 
 About 3.5 years ago when I just started at [Klarna](http://www.klarna.com), I
