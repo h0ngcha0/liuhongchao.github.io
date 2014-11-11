@@ -49,13 +49,13 @@ mobile phone, paying real-estate mortgages, flight/movie tickets, even
 lottery and traffic fines. It functions more like a real bank. (a
 snapshot). 
 
-Tenpay has around 21% of market share in the online payment industry
-in China, making it the 2nd largest player. It's owned by Tencent, the
-biggiest internet company in China. The services from Tenpay are
-pretty much the same as Alipay. It supports "Escrow" service for
-e-stores and money transfer between Tencent account holders as
-well. In some cities, people can also use it as personal financial hub
-to pay basically all their bills.
+[Tenpay](http://global.tenpay.com/) has around 21% of market share in
+the online payment industry in China, making it the 2nd largest
+player. It's owned by Tencent, the biggiest internet company in
+China. The services from Tenpay are pretty much the same as Alipay. It
+supports "Escrow" service for e-stores and money transfer between
+Tencent account holders as well. In some cities, people can also use
+it as personal financial hub to pay basically all their bills.
 
 Alipay and Tenpay also seem to put in a lot of effort into their
 "Enterprise" edition, (maybe like Klarna's company purchase in Sweden)
@@ -67,7 +67,8 @@ support Group Buy. [7] [8]
 Both of them even get physical by having their own card (partner with
 the real bank).
 
-Other player includes China Unionpay's online business, 99bill, etc. 
+Other player includes China [Unionpay](http://en.unionpay.com/)'s
+online business, [99bill](https://www.99bill.com/), etc. 
 
 AFAIK, there's no company that provides the similar service as
 Klarna. Invoice based/Part-payment solution is almost non-existent (i
