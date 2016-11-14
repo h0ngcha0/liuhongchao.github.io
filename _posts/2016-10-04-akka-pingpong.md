@@ -4,12 +4,17 @@ category: Software, functional programming, Akka, Scala
 title: A Game of Ping Pong with Akka
 ---
 
-Being an Erlang developer for few years, Akka gives me very homey feelings. It
-takes direct inspiration from the Erlang/OTP and [Riak Core](https://github.com/basho/riak_core),
-and grows into a great library for building concurrent, distrbuted and fault tolerant applications.
-On top of its core, modules such as akka streams are developed to serve as a better abstraction for a
-class of problems than raw actors. Akka also includes many useful utitilies like Akka HTTP
-and Akka Persistence, which can be used to write Rest Api and CQRS systems, respectively.
+Being an Erlang developer for few years, [Akka](http://akka.io) gives me very homey feelings. It
+takes direct inspiration from the [Erlang/OTP](http://www.erlang.org/) and
+[Riak Core](https://github.com/basho/riak_core), and grows into a great library for
+building concurrent, distrbuted and fault tolerant applications. On top of its core,
+modules such as [Akka streams](http://doc.akka.io/docs/akka/current/scala/stream/index.html) are
+developed to serve as a better abstraction for a class of problems than raw actors.
+Akka also includes many useful utitilies like
+[Akka HTTP](http://doc.akka.io/docs/akka-http/current/scala.html) and
+[Akka Persistence](http://doc.akka.io/docs/akka/current/scala/persistence.html), which can be
+used to write Rest Api and [CQRS](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation)
+systems, respectively.
 
 Few days ago I gave a talk at the [Scala Meetup](http://www.meetup.com/Scala-Geats/)
 in Gothenburg introducing Akka along with my colleague Ola and Tobias. My talk was structured as
