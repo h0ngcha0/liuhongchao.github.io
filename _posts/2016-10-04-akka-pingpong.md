@@ -10,7 +10,8 @@ takes direct inspiration from the [Erlang/OTP](http://www.erlang.org/) and
 building concurrent, distrbuted and fault tolerant applications. On top of its core,
 modules such as [Akka streams](http://doc.akka.io/docs/akka/current/scala/stream/index.html) is
 developed to serve as a better abstraction for a class of problems over raw actors;
-[Akka HTTP](http://doc.akka.io/docs/akka-http/current/scala.html) is written to help build Rest APIs, [Akka Persistence](http://doc.akka.io/docs/akka/current/scala/persistence.html) is added to facilitate
+[Akka HTTP](http://doc.akka.io/docs/akka-http/current/scala.html) is written to help build Rest APIs,
+[Akka Persistence](http://doc.akka.io/docs/akka/current/scala/persistence.html) is added to facilitate
 writing [CQRS](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation) systems, among other things.
 
 Few days ago I gave a talk at the [Scala Meetup](http://www.meetup.com/Scala-Geats/)
