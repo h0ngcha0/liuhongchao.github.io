@@ -33,7 +33,7 @@ enormously from the globalisation, not just from the standpoint of the open mark
 from the global talent pool as well, the idea of social diversity, immigration and welfare is much more
 entrenched then anywhere else.
 
-One might start to wonder, is this left-wing politics just the consequence a successful economy? I'd like to argue 
+One might start to wonder, is this left-wing politics just the consequence of a successful economy? I'd like to argue 
 that it works in both ways. Paul Graham made an interesting point in his [Hackers and Painters](http://shop.oreilly.com/product/9780596006624.do)
 book that empathsizes the importance of *empathy* to a hacker. He said: *And so hackers, like painters, must have empathy to do really great work.*
 I think that is true for all types of builders and product oriented companies. If they can't put themselves in
