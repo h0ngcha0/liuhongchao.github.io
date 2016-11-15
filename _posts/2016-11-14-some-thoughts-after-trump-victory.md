@@ -17,11 +17,11 @@ articulated by someone else. If not, it's most likely due to its absurdity. Neve
 just gonna put it out there.
 
 First, we need to ask ourselves what makes a productive, efficient and most importantly, innovative
-economy. The answer from most would be how to balance the roles that the goverment and market should play.
+economy. I suppose most answers would be about how to balance the roles of the goverment and market.
 I don't pretend to know the anwser for that, but here is what I observe: The most advanced and innovative
 economies in USA and Europe are California and Nordics, respectively. California is a deep blue state and
-Nordics prides itself with its socicial democracy. This seems to contradict with most people's perception
-that left-wing ideologies tend to result in Soviet style disaster, after all, there are so many cases
+Nordics prides itself with its socicial democracy. This seems to contradict with many people's perception
+that left-wing ideologies tend to result in Soviet style disaster, after all there are so many cases
 in history that proved that point. However, there must be something important and intriguing missing from
 that picture.
 
@@ -38,9 +38,9 @@ that it works in both ways. Paul Graham made an interesting point in his [Hacker
 book that empathsizes the importance of *empathy* to a hacker. He said: *And so hackers, like painters, must have empathy to do really great work.*
 I think that is true for all types of builders and product oriented companies. If they can't put themselves in
 other's shoes, the chance of building a great product is 0. In the context of globalisation, that means
-understanding people with different backgrounds at a global scale, and the most effective way to achieve that is to have
-a diverse society where people respect and take care of each other. A pure capitalist state can not provide fertile
-enough soil to nurture generations of builders.
+understanding people with different backgrounds at a global scale, and the most effective way to achieve that for
+a society is to have a culture where people respect diversity and really take care of each other. A pure
+capitalist state can not provide fertile enough soil to nurture generations of builders.
 
 Of course left-wing ideology garantees nothing, neither does any ideologies. Globalisation is by no means
 the music in everyone's ears. It makes competition more fierce by inviting everybody into the game.
@@ -55,5 +55,5 @@ political entity is enlarged in the face or the competition, the division seems 
 Brexit and Trump victory.
 
 Unfortunately, this doesn't seem to be a problem with easy fixes. At a time when everyone seems to resort
-to xenophobia and protectionism, we really need to see a smart and inspirational solution.
+to xenophobia and protectionism, we really need to see a smarter and more inspirational solution.
 
