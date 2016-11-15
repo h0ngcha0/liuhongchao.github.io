@@ -51,7 +51,7 @@ borders, there is always a tension between them and the countries that they belo
 the western countries as a whole is the builder and net exporter to the rest of the world, somewhat similiar
 to what California and Sweden is now. Back then, the interest of the international capital and the
 western society are more or less in line with each other. But now when the gap between different parts of a
-political entity is enlarged in the face or the competition, the division seems to be inevitable, hence the
+political entity is enlarged in the face of the global competition, the division seems to be inevitable, hence the
 Brexit and Trump victory.
 
 Unfortunately, this doesn't seem to be a problem with easy fixes. At a time when everyone seems to resort
