@@ -17,7 +17,7 @@ writing [CQRS](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation) s
 Few days ago I gave a talk at the [Scala Meetup](http://www.meetup.com/Scala-Geats/)
 in Gothenburg introducing Akka along with my colleague Ola and Tobias. My talk was structured as
 a code demo that shows how to start from a simple akka actor based rest api which takes a *ping* message
-and respond with a *pong* message, and gradually adding fault tolerance, clustering, CQRS, etc to it.
+and respond with a *pong* message, and gradually build up with fault tolerance, clustering, CQRS, etc.
 
 The source code of the demo session can be found [here](https://github.com/liuhongchao/pingpong-with-akka).
 It is devided up into the following 5 steps (branches) to facilitate diffing :)
