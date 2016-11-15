@@ -12,9 +12,9 @@ belief, sexuality, economic status and so on. Worse still, there doesn't seem to
 immediate, practical solution for that.
 
 Since then, numerous articles have been written to reflect how we ended up here and speculate what
-it means to our future. The point that I am try to make in this blog post is probably already
+it means to our future. The point that I am trying to make in this blog post is probably already
 articulated by someone else. If not, it's most likely due to its absurdity. Nevertheless, I am
-just gonna put it out there.
+just gonna throw it out there.
 
 First, we need to ask ourselves what makes a productive, efficient and most importantly, innovative
 economy. I suppose most answers would be about how to balance the roles of the goverment and market.
