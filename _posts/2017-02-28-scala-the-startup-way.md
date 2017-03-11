@@ -13,5 +13,5 @@ discussions with all the Scalaentusiaster.
 
 The slides of the presentation can be found here:
 
-{{ oembed https://www.slideshare.net/marcuslonnberg/scala-the-startup-way }}
+[https://www.slideshare.net/marcuslonnberg/scala-the-startup-way](https://www.slideshare.net/marcuslonnberg/scala-the-startup-way)
 
