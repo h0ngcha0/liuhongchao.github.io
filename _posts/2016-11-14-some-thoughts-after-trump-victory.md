@@ -8,13 +8,10 @@ As many people out there, I have strong and bitter feelings towards Brexit and t
 Trump victory. I thought it represents a major setback from the globalisation which
 have brought so much cultual and economical prosperity into this world. It points to
 a gloomy future where people are futhur devided by their race, nationality, religious
-belief, sexuality, economic status and so on. Worse still, there doesn't seem to be any
-immediate, practical solution for that.
+belief, sexuality, economic status... and there doesn't seem to be any immediate solution for it.
 
-Since then, numerous articles have been written to reflect how we ended up here and speculate what
-it means to our future. The point that I am trying to make in this blog post is probably already
-articulated by someone else. If not, it's most likely due to its absurdity. Nevertheless, I am
-just gonna throw it out there.
+Numerous articles were written to reflect how we ended up here and speculate what
+it means to our future. Here is my 2 cents.
 
 First, we need to ask ourselves what makes a productive, efficient and most importantly, innovative
 economy. I suppose most answers would be about how to balance the roles of the goverment and market.
