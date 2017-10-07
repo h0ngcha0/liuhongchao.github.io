@@ -11,7 +11,5 @@ to reason about making technical decisions such as asynchrous programming models
 CRUD vs Event sourcing, kubectl vs our in house testing environment tools, etc. It was an inspiring night with a lot
 of insightful discussions with all the Scalaentusiaster.
 
-The slides of the presentation can be found here:
-
-[https://www.slideshare.net/marcuslonnberg/scala-the-startup-way](https://www.slideshare.net/marcuslonnberg/scala-the-startup-way)
+The slides of the presentation can be found [here](https://www.slideshare.net/marcuslonnberg/scala-the-startup-way).
 
