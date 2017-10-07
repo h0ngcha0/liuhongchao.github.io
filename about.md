@@ -14,8 +14,8 @@ happen in their lives, I am still stuck in the phase of denial.
 <img style="float: right" src="{{site.baseurl}}/images/average_joe.jpg">
 
 If you ain't an "average Joe", you won't understand what it feels like
-to be one. You have neither super attractive appearance nor outstanding
-intelligence. Your habit of procrastination sometimes makes you hate
+to be one. You are neither physically attractive nor intellectually superior.
+Your habit of procrastination sometimes makes you hate
 yourself with a passion. Your perseverance fluctuates at the mediocre
 level and you have rarely achieved anything that makes you feel truly
 proud of yourself.
