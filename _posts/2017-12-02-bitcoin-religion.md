@@ -4,8 +4,6 @@ category: Fintec, Blockchain
 title: 比特币和宗教
 ---
 
-[Reference](https://twitter.com/FEhrsam/status/933520783581646848)
-
 中本聪： 因为消失，无可质询，似乎坐实了他不受挑战的教主地位。
 
 信仰：去中心化。
@@ -23,3 +21,5 @@ title: 比特币和宗教
 白皮书有着和让算命先生的预言貌似神准和大众音乐歌词火速流行一样的秘方。框架多到足以传达一个有力的思想。细节少到每个人都可以发挥想象力填满剩余的空白。
 
 。。。。
+
+[Reference](https://twitter.com/FEhrsam/status/933520783581646848)
