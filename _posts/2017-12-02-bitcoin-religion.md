@@ -1,6 +1,6 @@
 ---
 layout: post
-category: Fintec, Blockchain
+category: Fintech, Blockchain
 title: 比特币和宗教
 ---
 
