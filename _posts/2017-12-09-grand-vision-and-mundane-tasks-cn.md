@@ -3,7 +3,7 @@ layout: post
 category: Fintech, Blockchain
 title: 宏大愿景与世俗琐事
 ---
-![长城]({{ site.url }}/assets/great-wall.gif)
+![长城]({{ site.url }}/images/great-wall.gif)
 
 当毛主席领导人民翻身闹革命时，起决定作用的农民兄弟对土地改革的兴趣远大于缥缈的意识形态。
 
