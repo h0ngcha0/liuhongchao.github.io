@@ -8,8 +8,8 @@ When Mao lead the revolution, the majority of the peasants who played the decisi
 
 When genes were passed on from one generation to the next, most of the individuals involved were not driven conciously by continuing the species but their sex desires.
 
-When distributed consensus were made possible for the first time ever in human history in Bitcoin, it is merely the by product of all the participants acting for their own benefits.
+When distributed consensus were made possible for the first time ever in human history in Bitcoin, it was merely the by product of all the participants acting for their own benefits.
 
 When Bitcoin finally becomes a household brand, it is not because everybody starts to grasp the intrinsic value of a cryptocurrecy and the profound consequence it may bring about, it is the fear of missing out.
 
-Somebody needs to come up with the grand vision but it can only be carried out by mundane tasks.
+Somebody needs to come up with the grand vision but mundane tasks by the masses is the only way to achieve it. What connects the two is probably the most interesting thing in the world.
