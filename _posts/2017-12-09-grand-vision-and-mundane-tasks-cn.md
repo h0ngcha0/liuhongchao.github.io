@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Fintech, Blockchain
-title: 宏大愿景与世俗琐事
+title: 愿景和琐事的媒婆
 ---
 ![长城]({{ site.baseurl }}/images/great-wall.gif)
 
