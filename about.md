@@ -36,3 +36,5 @@ as well.
 
 As to myself, I am just hoping to get stuck in the phase of denial a
 little longer. I am still learning and will continue to take notes.
+
+2014-09-08 @ Stockholm
