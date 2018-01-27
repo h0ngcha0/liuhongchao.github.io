@@ -3,7 +3,7 @@ layout: post
 category: Fintech, Blockchain
 title: 愿景和琐事的媒婆
 ---
-![长城]({{ site.baseurl }}/images/great-wall.gif)
+![panda]({{ site.baseurl }}/images/panda.jpg)
 
 当毛主席领导人民翻身闹革命时，起决定作用的农民兄弟对土地改革的兴趣远大于缥缈的意识形态。
 
