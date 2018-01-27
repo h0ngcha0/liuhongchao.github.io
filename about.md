@@ -3,8 +3,6 @@ layout: page
 permalink: /about/
 ---
 
-## Hej!
-
 I am a typical "average Joe". Just like many other "average Joes" I
 dreamed of achieving something more than average since I was very
 little. Now that I reached a point in my life where many at my age
