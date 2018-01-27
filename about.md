@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /about/
+title: Hej!
 ---
 
 I am a typical "average Joe". Just like many other "average Joes" I
