@@ -31,7 +31,7 @@ As an elite scientist, Ralph Merkle obviously doesn't believe in one person one 
 The legendary strategist Lee Kuan Yew had expressed similiar opinions. But instead of going down the
 path of assigning weights to each vote  that more informed people would make bigger impact in the
 election, Merkle's design does that implicitly by reducing the complexity of individual voting to something
-that everybody is qualified to answer, but the collectivly outcome of the voting could be used to answer very
+that everybody is qualified to answer, but the collective outcome of the voting could be used to answer very
 sophiscated questions. Couple that with an incentive structure to encourage bright people to make the best
 prediction, as well as a DAO to enforce transparency of the entire process, it seems like a reasonable
 replacement to the current form of democracy, at least on paper.
@@ -40,7 +40,7 @@ There seems to be something very special about limiting the role of individuals 
 collectively achieving meaningful goals. Proof of work in Bitcoin is a typical example: each mining machine
 just computes pointless hash values but as a whole it secures the entire network and gives its open
 permissionless nature. One could make the same argument to animal reproduction mechanisms. Perhaps the reason
-that many things work brilliantly at the macro is because they are stupidly simple at the micro level. It
+that many things work brilliantly at the macro level is because they are stupidly simple at the micro level. It
 does feel like this pattern captures something fundamental, but I have yet to find a way to articulate it.
 For me, this is the most interesting point in Merkle's paper.
 
