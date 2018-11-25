@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Bitcoin, Cryptocurrency, Scala
-title: A bitcoin library
+title: A Bitcoin library
 ---
 
 One of the nice things about living in Sweden is the "pappaledighet" (parental leave). In the last two months I took that and had a lot of fun spending time with my lovely son Filip. But when he is asleep, I worked on a small Bitcoin library to help myself understanding the intricacies of this amazing technology. After diving deeper into the blockchain space since March this year, I recognized more and more of its potential to advance our societies by disrupting many of its existing areas simply because it offers something that was never possible before: *dicentralised trust*.
