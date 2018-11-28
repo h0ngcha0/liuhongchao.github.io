@@ -69,12 +69,9 @@ p {
 }
 
 a {
-  color: $blue;
+  color: rgb(219, 56, 111);
   text-decoration: none;
-	cursor: pointer;
-  &:hover, &:active {
-    color: $blue;
-  }
+  border-bottom: rgb(219, 56, 111) dashed 1px;
 }
 
 ul, ol {
