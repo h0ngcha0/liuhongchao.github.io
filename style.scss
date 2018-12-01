@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background: $white;
+	background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
 }
@@ -151,8 +151,6 @@ img {
 //
 
 .wrapper-masthead {
-  color: $white;
-  background: $black;
   margin-bottom: 50px;
 }
 
@@ -226,9 +224,16 @@ nav {
   }
 
   a {
-    color: rgb(219, 56, 111);
-    text-decoration: none;
-    border-bottom: rgb(219, 56, 111) dashed 1px;
+    margin-left: 20px;
+    color: $darkGray;
+    text-align: right;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+    @include mobile {
+      margin: 0 10px;
+      color: $blue;
+    }
   }
 }
 
