@@ -151,6 +151,8 @@ img {
 //
 
 .wrapper-masthead {
+  color: white;
+  background: black;
   margin-bottom: 50px;
 }
 
@@ -224,16 +226,9 @@ nav {
   }
 
   a {
-    margin-left: 20px;
-    color: $darkGray;
-    text-align: right;
-    font-weight: 300;
-    letter-spacing: 1px;
-
-    @include mobile {
-      margin: 0 10px;
-      color: $blue;
-    }
+    color: rgb(219, 56, 111);
+    text-decoration: none;
+    border-bottom: rgb(219, 56, 111) dashed 1px;
   }
 }
 
