@@ -156,7 +156,7 @@ img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 2px outset $darkGray;
+  border-bottom: 2px dashed $black;
 
   @include mobile {
     text-align: center;
@@ -241,7 +241,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 3px dashed $lightGray;
 }
 
 .posts > .post:last-child {
