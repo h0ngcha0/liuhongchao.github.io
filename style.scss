@@ -18,7 +18,7 @@ html {
 }
 
 body {
-	background: $white;
+  background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
 }
@@ -151,8 +151,8 @@ img {
 //
 
 .wrapper-masthead {
-  color: white;
-  background: black;
+  color: $white;
+  background: $black;
   margin-bottom: 50px;
 }
 
