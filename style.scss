@@ -71,9 +71,9 @@ p {
 
 .post {
   a {
-    color: rgb(219, 56, 111);
+    color: $black;
     text-decoration: none;
-    border-bottom: rgb(219, 56, 111) dashed 1px;
+    border-bottom: $black solid 1px;
   }
 }
 
@@ -226,7 +226,7 @@ nav {
   a {
     color: rgb(219, 56, 111);
     text-decoration: none;
-    border-bottom: rgb(219, 56, 111) dashed 1px;
+    border-bottom: rgb(219, 56, 111) solid 1px;
 
     @include mobile {
       margin: 0 10px;
