@@ -77,6 +77,12 @@ p {
   }
 }
 
+.readmore, a {
+  color: rgb(219, 56, 111);
+  text-decoration: none;
+  border-bottom: rgb(219, 56, 111) dashed 1px;
+}
+
 ul, ol {
   margin: 15px 0;
   padding-left: 30px;
