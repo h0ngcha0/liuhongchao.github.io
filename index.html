@@ -5,11 +5,6 @@ layout: default
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
-      <div class="post-divider">
-        <img src="{{ site.baseurl }}/images/arrows.png">
-        <img src="{{ site.baseurl }}/images/arrows.png">
-        <img src="{{ site.baseurl }}/images/arrows.png">
-      </div>
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> </h1>
       <span class="date"> {{ post.date | date: "%B %e, %Y" }} </span>
 
