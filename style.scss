@@ -232,6 +232,7 @@ nav {
     color: rgb(219, 56, 111);
     text-decoration: none;
     border-bottom: rgb(219, 56, 111) solid 1px;
+    margin-left: 20px;
 
     @include mobile {
       margin: 0 10px;
