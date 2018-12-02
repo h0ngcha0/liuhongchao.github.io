@@ -229,14 +229,14 @@ nav {
   }
 
   a {
-    color: rgb(219, 56, 111);
+    color: $stovaBlue;
     text-decoration: none;
-    border-bottom: rgb(219, 56, 111) solid 1px;
+    border-bottom: $stovaBlue solid 1px;
     margin-left: 20px;
 
     @include mobile {
       margin: 0 10px;
-      color: rgb(219, 56, 111);
+      color: $stovaBlue;
     }
   }
 }
