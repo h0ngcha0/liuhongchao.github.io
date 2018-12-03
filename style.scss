@@ -203,6 +203,14 @@ img {
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
+
+  .notes {
+      font-weight: bold;
+      background: $stovaBlue;
+      color: $white;
+      padding-left: 5px;
+      padding-right: 5px;
+  }
 }
 
 .site-description {
