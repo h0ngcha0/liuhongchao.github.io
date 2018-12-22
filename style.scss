@@ -212,6 +212,9 @@ img {
       padding-right: 3px;
       border: 1px solid;
       box-shadow: 0 1px 5px 0 $black;
+      @-moz-document url-prefix() {
+        padding-top: 4px;
+      }
   }
 }
 
@@ -227,6 +230,17 @@ img {
   }
 }
 
+.fingerprint {
+  margin: 3px 0;
+  color: $gray;
+  font-size: 10px;
+
+  @include mobile {
+    margin: 3px 0;
+    padding-bottom: 5px;
+  }
+}
+
 .hongchao {
   background: $stovaBlue;
   color: $white;
@@ -235,6 +249,9 @@ img {
   padding-top: 1px;
   padding-bottom: 1px;
   box-shadow: 0 2px 5px 0 $black;
+  @-moz-document url-prefix() {
+    padding-top: 5px;
+  }
 }
 
 nav {
