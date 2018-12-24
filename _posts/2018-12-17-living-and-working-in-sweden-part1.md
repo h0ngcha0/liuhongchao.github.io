@@ -1,12 +1,12 @@
 ---
 layout: post
 category: Sweden, Work
-title: Living and working in Sweden (part 1)
+title: Living and working in Sweden (I)
 ---
 
 **TL;DL**, Even though wages have risen a lot for engineers in developing countries like China,
-depending on who you are, Sweden might still be a very attractive place to work and settle since
-the overall life quality is very likely to be higher. I will write two blog posts about this
+depending on who you are, Sweden might still be a very attractive place to work and settle. The
+overall life quality could be higher. I will write two blog posts about this
 topic. This one focuses on **living** and the next on **working**.
 
 
@@ -96,8 +96,11 @@ Free day care (almost) is another thing designed to give couples financial incen
 Also, taxation is not calculated at the family level but at the individual level, which financially discourges
 single income families. Good to keep that in mind.
 
-One of the things that I really appreciate Sweden is that it is a very structured country, you don't have to maintain
-the right connections ([guanxi](https://en.wikipedia.org/wiki/Guanxi)) everywhere to get the basic stuff done. Most of the
-things can be solved by just following the clearly defined rules. In my mind, maintaining excessive connections
-is a form of social cost and the society would be better off without it. Things like the punctual and pervasive
-public transportation is just another manifestation of a well functioning society.
+One thing that I really appreciate Sweden is that it is a well functioninng and structured country, you don't
+have to maintain extensive connections (or [guanxi](https://en.wikipedia.org/wiki/Guanxi) in Chinese) to get the
+basic stuff done. Most of the things can be solved by following the rules which are usually well defined. In
+my mind, needing to maintain unneccessary connections is a form of social cost and the society would
+be better off without it. If you think you'd rather spend your time on stuff that matters to you, you'd
+appreciate that as much as I do. Things like the punctual and pervasive public transportation is another
+manifestation of that.
+
