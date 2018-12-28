@@ -1,14 +1,16 @@
 ---
 layout: post
 category: Sweden, Work
-title: Living and working in Sweden (I)
+title: Worth moving to Sweden as engineers?
 ---
 
-**TL;DL**, Even though wages have risen a lot for engineers in developing countries like China,
-depending on who you are, Sweden might still be a very attractive place to work and settle. The
-overall life quality could be higher. I will write two blog posts about this
-topic. This one focuses on **living** and the next on **working**.
+**TL;DL**, Even though wages have risen a lot for engineers in fast growing economies like China
+or India, depending on who you are, Sweden might still be a very attractive place to work and settle
+because of the following reasons:
 
+* High life quality
+* Rewarding working life with flat hierachy
+* Equal and efficient society with [Nordic model](https://en.wikipedia.org/wiki/Nordic_model) welfare system
 
 ----
 <br/>
@@ -104,3 +106,38 @@ be better off without it. If you think you'd rather spend your time on stuff tha
 appreciate that as much as I do. Things like the punctual and pervasive public transportation is another
 manifestation of that.
 
+One caveat is that in countries like China, due to the much weaker social safety net, people take more responsibility
+of their financial future, usually through the means of saving. In fact, in average Chinese saving rate is about
+[three times](https://data.oecd.org/natincome/saving-rate.htm) more than that of Sweden and is among the highest in the world.
+Usually a big part of saving is allocated for Children's education, marriage or when serious sickness strikes themselves
+or their parents, most of which is not an issue in Sweden. However if you do have siblings you need to support or 
+aging parents whose health insurance isn't that great in your home country, Sweden might not be the best option for you.
+
+### Work
+
+Sweden is the home of builders and is one of the
+[most innovative](https://www.bloomberg.com/news/articles/2018-01-22/south-korea-tops-global-innovation-ranking-again-as-u-s-falls)
+economies in the world. [Established companies and brands](http://brandirectory.com/league_tables/table/sweden-2016) aside, Sweden produced
+[4 Unicorns](https://en.wikipedia.org/wiki/List_of_unicorn_startup_companies#Unicorns_list) in the past 15 years, which
+is perhaps the [highest per capita](http://knowledge.wharton.upenn.edu/article/how-stockholm-became-a-unicorn-factory/) among all countries.
+Due to the relatively small domestic market, even Startups are aiming internationally at very early stage. So engineers might have
+a bigger chance of joining a journey that makes a global impact than most of the countries.
+
+One of the manifestation of equality in Sweden is that most of the companies tend to be less layered and employs what's called
+[flat hierarchy](https://en.wikipedia.org/wiki/Flat_organization). Employees are trusted to be involved directly in the decision
+making process rather than being instructed by layers of supervisors. Of course as companies grow they can not be kept completely
+flat forever, but even in big companies hierachies are in many scenarios counter-productive. As someone from a very hierachical society
+like China, I really enjoy working in Swedish companies, partly because I am not that interested in climbing up the management ladder
+but more wanting to have a better technical career. In China, managers enjoy much higher social status than engineers because of
+the power that hierachical organization enabled. Many good engineers are "forced" to take on a management position even if it turns
+out to be a bad fit and waste of talent. In my opinion, one of the reasons that Sweden became one of the innovation center in the world
+is because engineers can just focus on their technical career without getting too much social pressure to become something else.
+
+Work life balance is great in Sweden. You are not expected to work over time in almost all of the companies in Sweden.
+In contract, working under high pressure is not uncommon in many Chinese tech companies. [Huawei](https://www.huawei.com/en/) is noterious
+for expecting employees to work overtime on a regular basis, an important part of its [wolf culture](https://huaweico.wordpress.com/our-culture/),
+[Xiaomi](https://www.mi.com/global/) even has something internally called the 699 rule (working 6 days a week, from 9am to 9pm) before they went public.
+If you are the type of people who enjoy and thrive in this type of environment, most of the Swedish companies are probably not for you (except
+for some early stage Startups, even that is voluntary). Personally, I believe a culture that encourages people to focus most of their concious time to work might
+be neccessary in some circumstances and could give companies a competitive edge. But at a macro level, good work life balance makes happier employees
+and citizens, reduces social frictions, and ultimately benefits the entire society in a sustainable way. 
