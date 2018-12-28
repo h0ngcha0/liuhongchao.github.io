@@ -36,33 +36,34 @@ especially those of us coming from developing countries with rapid growth rate.
 
 ### Live
 
-Top Chinese internet companies now offer higher salary compared to their Swedish counterparts. But comparing 
-incomes between Sweden and China or USA is pretty much like comparing apple to oranges without also taking
-into account the expenditures.
+Top tier Chinese internet companies now offer higher salary compared to their Swedish counterparts. But comparing 
+income between Sweden and China or USA is pretty much like comparing apple to oranges without also taking
+big personal expenditures and social cost into account, since essentially a sigfinicant part of your income
+is invested as savings in the Swedish social welfare system.
 
-Comparitively speaking, swedish salary is discounted for the following reasons:
+Comparitively speaking, Swedish salary is discounted for the following reasons:
 
 1. Employee, together with the employer, have already paid for many high quality services provided by 
-the Swedish welfare system such as one of the most generous parental leave schemes in the world and all
-levels of free education for the next generation, etc. Swedes don't need to save up a lot like their
+the Swedish welfare system such as univeral healthcare, one of the most generous parental leave schemes in the world and all
+levels of free education for the next generation (from day care to college), etc. Swedes don't need to save up a lot like their
 peers in China or USA for those purposes.
 2. More [income equality](https://www.cia.gov/library/publications/the-world-factbook/rankorder/2172rank.html)
 through tax, e.g. engineer is not paid 10 times more than the cashiers like in China.
 This is not everybody's cup of tea, but its benefit especially when it comes to social stability and harmony
 is often times under appreciated. In my opinion, equality is one of the most important reasons that makes
 living here a pleasant experience for expats.
-3. Employees enjoy minimal of 25 days of paid [annual vacation](https://www.unionen.se/in-english/annual-vacation). 
+3. Employees are legally entitled for minimal of 25 days of paid [annual vacation](https://www.unionen.se/in-english/annual-vacation). 
 In many cases it could be more depending on circumstances, e.g. my wife has 38 days of paid annual vacation.
 
 One of the biggest living cost in Sweden is housing, so does in China. As a matter of fact, if you are looking to
-buy, the real estate price in some of the bigger Chinese cities has already become higher than Sweden so it is
+buy, the real estate price in some of the bigger Chinese cities where most of the tech giants are located has already become higher than Sweden, so it is
 not too much of an issue. The subsidized housing loan (right now it stands at [around 1.x%](http://www.nasdaqomxnordic.com/bonds/sweden/mortgagerates))
-also makes things a lot easier. It is a bit trickier though for rentals since it is not always easy
+in Sweden also makes things a lot easier. It is a bit trickier though for rentals since it is not always easy
 to find one and the [price-to-rent ratio](https://www.investopedia.com/terms/p/price-to-rent-ratio.asp)
 is much higher in Sweden than China, so expect to pay a bigger portion of your salary on that.
 
 Other living costs such as food and transportation is expensive too, but with a reasonable salary you could live
-comfortably well. In general, swedish population enjoy [very high](https://www.usnews.com/news/best-countries/quality-of-life-rankings#) standard of living.
+comfortably well. In general, Swedish population enjoy [very high](https://www.usnews.com/news/best-countries/quality-of-life-rankings#) standard of living.
 
 Most of the Swedes are ok with paying a lot of taxes. Ideology aside, people do get a lot of value out of it. Social security
 is pretty robust and provides a solid safety net in case of unemployment, sickness/disability or hard economic situation in
