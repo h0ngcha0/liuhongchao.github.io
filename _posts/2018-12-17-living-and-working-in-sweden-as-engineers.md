@@ -5,18 +5,15 @@ title: Worth moving to Sweden as engineers?
 ---
 
 **TL;DL**, Even though wages have risen a lot for engineers in fast growing economies like China
-or India, depending on who you are, Sweden might still be a very attractive place to work and settle
-because of the following reasons:
+or India. From my perspective as a Chinese guy working here for a long time, Sweden might still be
+a very attractive place to work and settle depending on who you are for the following reasons:
 
-* High life quality
-* Rewarding working life with flat hierachy
+* Very high quality of life
+* Work in one of the most innovative economies with flat hierachy
 * Equal and efficient society with [Nordic model](https://en.wikipedia.org/wiki/Nordic_model) welfare system
 
 ----
 <br/>
-Is it a good idea to work in Sweden as software engineers? As a Chinese guy who worked here for
-a long time, here is some of my (unstructured) thoughts.
-
 It was certainly a much easier choice when I decided to stay and work in Sweden 10
 years ago, back then [Ericsson](https://www.ericsson.com/en) had a much stronger employer brand than
 [Huawei](https://www.huawei.com/en/) even within China. Swedish entry level salary for a software
@@ -27,14 +24,15 @@ Things has changed quite a bit in the past 10 years. China more than
 [trippled](https://en.wikipedia.org/wiki/Historical_GDP_of_China)
 its GDP. Tech giants such as [Huawei](https://www.huawei.com/en/), [Baidu](http://www.baidu.com),
 [Alibaba](https://www.alibaba.com), [Tecent](https://www.tencent.com/en-us/), etc had transformed
-themselves into world class companies and become very attractive employers. Startups are booming as well,
-roughly half of the world's [Unicorns](https://en.wikipedia.org/wiki/Unicorn_(finance)) emerged in the past
-decade are [from China](https://en.wikipedia.org/wiki/List_of_unicorn_startup_companies).
+themselves into world class companies and become attractive employers which offer very competitive
+compensation. Startups are booming as well, roughly half of the
+world's [Unicorns](https://en.wikipedia.org/wiki/Unicorn_(finance)) in the past decade are
+[from China](https://en.wikipedia.org/wiki/List_of_unicorn_startup_companies).
 
 Having witnessed all these, I would be lying if I said I never questioned my decision 10 years ago.
-From the bottom of my heart, I still do think I made the right decision, but with the realization
-that Sweden is perhaps not the best fit for everyone who considers to work abroad, especially for
-those of us coming from developing countries with rapid growth rate.
+However, from the bottom of my heart, I still feel furtunate that I made that decision, but with
+the realization that Sweden is perhaps not the best fit for everyone who considers to work abroad, 
+especially those of us coming from developing countries with rapid growth rate.
 
 ### Live
 
