@@ -8,9 +8,9 @@ title: Worth moving to Sweden as engineers?
 or India. From my perspective as a Chinese guy working here for a long time, Sweden might still be
 a very attractive place to work and settle depending on who you are for the following reasons:
 
-* Very high quality of life
-* Work in one of the most innovative economies with flat hierachy
-* Equal and efficient society with [Nordic model](https://en.wikipedia.org/wiki/Nordic_model) welfare system
+* Very [high quality](https://www.usnews.com/news/best-countries/quality-of-life-rankings#) of life
+* Work in one of the [most innovative](https://www.bloomberg.com/news/articles/2018-01-22/south-korea-tops-global-innovation-ranking-again-as-u-s-falls) economies with flat hierachy
+* Equal, fair and efficient society with [Nordic model](https://en.wikipedia.org/wiki/Nordic_model) welfare system
 
 ----
 <br/>
