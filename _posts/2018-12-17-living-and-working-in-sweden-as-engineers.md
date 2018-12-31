@@ -4,7 +4,7 @@ category: Sweden, Work
 title: Worth moving to Sweden as engineers?
 ---
 
-**TL;DL**, Even though wages have risen a lot for engineers in fast growing economies like China
+**TL;DR**, Even though wages have risen a lot for engineers in fast growing economies like China
 or India. From my perspective as a Chinese who's been working here for many years, Sweden might still be
 a very attractive place to work and settle depending on who you are, primarily for the following reasons:
 
