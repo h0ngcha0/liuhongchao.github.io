@@ -211,7 +211,7 @@ img {
       padding-left: 3px;
       padding-right: 3px;
       border: 1px solid;
-      box-shadow: 0 1px 5px 0 $black;
+      box-shadow: 0 1px 5px 0 $darkGray;
       @-moz-document url-prefix() {
         padding-top: 4px;
       }
@@ -254,7 +254,7 @@ img {
   padding-right: 5px;
   padding-top: 1px;
   padding-bottom: 1px;
-  box-shadow: 0 2px 5px 0 $black;
+  box-shadow: 0 2px 5px 0 $darkGray;
   @-moz-document url-prefix() {
     padding-top: 5px;
   }

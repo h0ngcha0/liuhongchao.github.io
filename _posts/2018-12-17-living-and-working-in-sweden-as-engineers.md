@@ -33,7 +33,7 @@ world's [Unicorns](https://en.wikipedia.org/wiki/Unicorn_(finance)) in the past 
 [from China](https://en.wikipedia.org/wiki/List_of_unicorn_startup_companies).
 
 Having witnessed all these, I would be lying if I said I never questioned my decision 10 years ago.
-However, from the bottom of my heart, I still feel furtunate that I made that decision, but with
+However, from the bottom of my heart, I still feel fortunate that I made that decision, but with
 the realization that Sweden is perhaps not the best fit for everyone who considers to work abroad, 
 especially those of us coming from a developing but fast growing economy.
 
@@ -56,8 +56,7 @@ This is not everybody's cup of tea, but its benefit especially when it comes to 
 is often times under appreciated. In my opinion, equality is one of the most important reasons that makes
 living here a pleasant experience for expats.
 3. Employees are legally entitled for minimal of 25 days of [paid annual vacation](https://www.unionen.se/in-english/annual-vacation). 
-In many cases it could be more depending on circumstances, e.g. my wife has 38 days of paid annual vacation. Those vacation
-are not just on paper but are actually encouraged.
+In many cases it could be much more depending on circumstances. Those vacation are not just on paper but are actually encouraged.
 
 One of the biggest living cost in Sweden is housing, so does in China. As a matter of fact, if you are looking to
 buy, the real estate price in some of the bigger Chinese cities where most of the tech giants are located has already exceeded Sweden, so it is
@@ -86,12 +85,12 @@ to the final delivery at hospital, the entire process was carefully planned and 
 of uncertainties and alleviated much of our worries as first time parents. On top of that, we don't need to even
 think about the bills. Before Filip turned 15 months, we took turns to take paid parental leave to stay home with him.
 Even though I work at an early stage startup, people understood and respected the situation. After he turned
-15 months, we sent him to day care which costs around 1200 SEK per month including breakfast and lunch. Considering
-the fact that we also received about 1000 SEK child allowance every month, it is basically free. 
+15 months, we sent him to day care which costs around 1380 SEK per month including breakfast and lunch. Considering
+the fact that we also received about 1200 SEK child allowance every month, it is basically free. 
 
 Raising kids could have been so much harder had we stayed in China. We might have to take on much heavier financial burden with services
 of lesser quality. Grandparents are supposed to be the "free" day care by social contract and if that for some reasons doesn't
-pan out well, it would quickly become problematic. Good quality educational resources per capita is just much more scarse in China which
+work out well, it would quickly become problematic. Good quality educational resources per capita is just much more scarse in China which
 entails fierce competition. It seems to be an endless battle for both parents and kids to get a spot in a decent school every step
 of the way, both in terms of fees and energy. Things are just so much eaiser in Sweden.
 
@@ -102,7 +101,7 @@ Also, taxation is not calculated per family like in some other European countrie
 which financially discourges single income families. Good to keep that in mind.
 
 One thing that I really appreciate Sweden is that it is a well functioning and structured country, you don't
-have to maintain extensive connections (or [guanxi](https://en.wikipedia.org/wiki/Guanxi) in Chinese) to get the
+have to maintain extensive connections (or [Guanxi](https://en.wikipedia.org/wiki/Guanxi) in Chinese) to get the
 basic stuff done. Most of the things can be solved by following the rules which are usually well defined. In
 my mind, needing to maintain unneccessary connections is a form of social cost and the society would
 be better off without it. If you think you'd rather spend your time on stuff that matters to you, you'd
@@ -161,5 +160,5 @@ growing fast economically it would just be so much easier to stay there if your 
 
 <br/>
 
-Again, I feel very happy that I made the decision to stay in Sweden 10 years ago. For me it is very special to be able to understand and feel connected to two
+To summarize, I feel very happy that I made the decision to stay in Sweden 10 years ago. For me it is very special to be able to understand and feel connected to two
 people and countries that can't be more different in many regards. Hope this post is useful for you, but just like anything else, [DYOR](https://www.urbandictionary.com/define.php?term=DYOR)! :)
