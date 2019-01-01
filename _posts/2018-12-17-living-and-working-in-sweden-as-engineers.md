@@ -41,7 +41,7 @@ especially those of us coming from a developing but fast growing economy.
 
 Top tier Chinese internet companies now offer higher salary compared to their Swedish counterparts. But comparing 
 income between Sweden and China or USA is pretty much like comparing apple to oranges without also taking
-big personal expenditures and social cost into account. In Sweden, a sigfinicant part of your income
+big personal expenditures and social cost into account. In Sweden, a significant part of your income
 is essentially invested as savings in its social welfare system.
 
 Comparitively speaking, Swedish salary is discounted for the following reasons:
@@ -92,7 +92,7 @@ Raising kids could have been so much harder had we stayed in China. We might hav
 of lesser quality. Grandparents are supposed to be the "free" day care by social contract and if that for some reasons doesn't
 work out well, it would quickly become problematic. Good quality educational resources per capita is just much more scarse in China which
 entails fierce competition. It seems to be an endless battle for both parents and kids to get a spot in a decent school every step
-of the way, both in terms of fees and energy. Things are just so much eaiser in Sweden.
+of the way, both in terms of fees and energy. Things are just so much easier in Sweden.
 
 Couples are encouraged to both work full time in Sweden since it not only promotes gender equality but also brings more
 social prosperity. So when you move to Sweden with work permit, your spouse can easily obtain a work permit as well.
@@ -144,7 +144,7 @@ out to be a bad fit and waste of talent. In my opinion, one of the reasons that 
 is because engineers can just focus on their technical career without getting too much social pressure to become something else.
 
 Work life balance is great in Sweden. You are not expected to work over time in most of the companies in Sweden.
-In contract, working under high pressure is not uncommon in many Chinese tech companies. [Huawei](https://www.huawei.com/en/) is noterious
+In contrast, working under high pressure is not uncommon in many Chinese tech companies. [Huawei](https://www.huawei.com/en/) is noterious
 for expecting employees to work overtime on a regular basis, an important part of its [wolf culture](https://huaweico.wordpress.com/our-culture/),
 [Xiaomi](https://www.mi.com/global/) and other Startups even has something internally called the [996 rule](https://www.quora.com/What-does-9-9-6-refer-to-in-Chinas-startup-scene)
 (working 6 days a week, from 9am to 9pm) before they went public. If you are the type of people who enjoy and thrive in this type of environment and

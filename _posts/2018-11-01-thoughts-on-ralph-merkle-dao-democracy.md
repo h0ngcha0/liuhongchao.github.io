@@ -11,8 +11,8 @@ re-posted this summer when all the Epicenter hosts were travelling at the same t
 I listened to this episode three times and really enjoyed it.
 
 In light of the Trump election and Brexit at the time, the core of Ralph Merkle's thesis
-was that democracy in the current shape and form is flawed because people are either not
-qualified or not incentivised to make quality assessment of the situation. One better way is to
+was that democracy in the current shape and form is flawed because people are neither
+qualified nor incentivised to make quality assessment of the situation. One better way is to
 harness the intellectual ability of the bright people without letting them take over too much
 power. His proposed solution is to leverage [prediction market](https://en.wikipedia.org/wiki/Prediction_market).
 
