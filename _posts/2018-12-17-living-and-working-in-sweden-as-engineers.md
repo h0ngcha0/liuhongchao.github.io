@@ -162,3 +162,10 @@ growing fast economically it would just be so much easier to stay there if your 
 
 To summarize, I feel very happy that I made the decision to stay in Sweden 10 years ago. For me it is very special to be able to understand and feel connected to two
 people and countries that can't be more different in many regards. Hope this post is useful for you, but just like anything else, [DYOR](https://www.urbandictionary.com/define.php?term=DYOR)! :)
+
+----
+
+Edit:
+
+Hacker news discussion:
+https://news.ycombinator.com/item?id=18799643
