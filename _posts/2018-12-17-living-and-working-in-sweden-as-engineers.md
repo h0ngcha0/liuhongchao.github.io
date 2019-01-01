@@ -168,4 +168,4 @@ people and countries that can't be more different in many regards. Hope this pos
 Edit:
 
 Hacker news discussion:
-https://news.ycombinator.com/item?id=18799643
+[https://news.ycombinator.com/item?id=18799643](https://news.ycombinator.com/item?id=18799643)
