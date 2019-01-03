@@ -54,4 +54,4 @@ Last but not least, prediction market has the problems of perverting the origina
 an idealogical process, with financial implications, one might vote for someone purely out of finacial interests
 rather really believing in the candindate.
 
-Still, very interesting topic, tought provoking discussion, highly recommend to listen to the entire episode.
+Still, very interesting topic, thought provoking discussion, highly recommend to listen to the entire episode.

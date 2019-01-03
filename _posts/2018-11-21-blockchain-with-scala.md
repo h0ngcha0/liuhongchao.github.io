@@ -4,8 +4,8 @@ category: Fintech, Blockchain, Philosophy, Scala
 title: Blockchain with Scala
 ---
 
-Yesterday I gave a talk in the local scala meetup titled [Blockchain with Scala](https://www.meetup.com/Scala-Geats/events/255967746/).
-A few things were covered and I really enjoyed the discussion.
+Yesterday I gave a talk in the Gothenburg Scala meetup titled [Blockchain with Scala](https://www.meetup.com/Scala-Geats/events/255967746/).
+A few things were covered in the presentation and I really enjoyed the discussion.
 
 * The significance of Bitcoin and Blockchain technology in general
 * Dive into how Bitcoin works, the foundation of all blockchains.
