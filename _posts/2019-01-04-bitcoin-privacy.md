@@ -69,17 +69,33 @@ This is very useful when transaction history need to be inspected by third parti
 
 ### Sender
 
-To obfuscate the sender of a transaction, the general idea is to hide it among other senders or potential senders and make it hard for the attacker to
-figure out which sender sends the fund to your receiver.
+To obfuscate the sender of a transaction, the general idea is to hide it among other senders or decoys and make it hard for the attacker to
+figure out which one actually sends the fund to your receiver.
 
 <img src="{{ site.baseurl }}/images/crowd-of-people-images-crowd.jpg" alt="crowd-anonymous" style="width: 500px;"/>
 
-#### Centralized Mixer
-One way of doing this 
+#### Centralized Mixer (aka Tumbler)
 
+One approach is to utilize the [centralized mixing services](https://en.bitcoin.it/wiki/Mixing_service). Essentially funds are sent to a mixer which
+then gets mixed with other users' funds and/or mixer's own funds. If the mixer is well-intentioned, hopefully equal amount of funds (minus service fee) will be sent
+back to the users at new addresses. This idea is pretty straight forward, but there are a lot of pitfalls when it comes to the actual implementations. One example
+is that if the amount of all the [TXO](https://en.bitcoin.it/wiki/Transaction#Output)s to be mixed are different, it will serve as an extra piece of information to reveal
+who the sender is. Therefore it is advised to mix transactions with standard chunk sizes. Section **6.3 Mixing** of the execellent book
+[Bitcoin and Blockchain Technologies](https://d28rh4a8wq0iu5.cloudfront.net/bitcointech/readings/princeton_bitcoin_book.pdf) discusses some of the potential
+implementation issues with centralized mixers at length, including a set of guidelines for them to provider better quality services for their users.
+
+However, the fact that it is centralized means that it suffers the
+same set of problems as banks or centralized exchanges. Mixers could potentially steal users' funds. It might retain the ability to trace
+back where certain fund is originated. Mixing large amount of funds [may be illegal](https://en.wikipedia.org/wiki/Cryptocurrency_tumbler#Background)
+in some jurisdictions, having a liable central entity might pose a larger regulatory risk. Also, mixing large amount of funds might take
+a long time, which hurts usability.
+
+Still, centralized mixers such as [bestmixer.io](https://bestmixer.io/en) might be useful for people with certain threat models and risk profiles. 
 
 #### Coinjoin
-#### Tumbler
+
+
+#### Tumblebit
 #### ZeroLink
 #### Ring signatures
 #### Ring CT
