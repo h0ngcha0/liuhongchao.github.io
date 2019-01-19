@@ -35,14 +35,16 @@ No matter how perfect a privacy technology is on paper, it doesn't generate any 
 
 ### Receiver
 
+#### New address for new payment
 Assuming Alice uses an unique Bitcoin address all the time and this address somehow gets tied back to her real world identity,
 Alice's entire transaction history on Bitcoin network will become public. One way to mitigate this problem is to
 generate a fresh receiving address for each incoming transactions, which is a pretty safe and easy operation if Alice uses
 one of those [HD](https://en.bitcoin.it/wiki/Deterministic_wallet) wallets. This way, to piece together Alice's transaction history,
 attackers need to tie all of those addresses together to Alice's identity, which is
-[not impossible](https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf) but significantly harder. In fact, this
-is [a best practice](https://bitcoin.org/en/protect-your-privacy#receive) when using bitcoin.
+[not impossible](https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf) but significantly harder. In fact, use new address to receive
+this payment is [a best practice](https://bitcoin.org/en/protect-your-privacy#receive) when using bitcoin.
 
+#### Stealth address
 In scenarios such as TV or billboard ads, where generating a fresh receiving address is not an option, stealth address might offer a solution.
 The idea is that after Alice publishes her public key, whoever wants to pay her needs to take that information, generate and
 "pay" to a new public key whose corresponding private key can only be derived by Alice. One way to achieve this is by leveraging the
@@ -62,15 +64,25 @@ implements a [more interesting version of stealth address](https://src.getmonero
 and spend key by utilizing the [Dual-Key Stealth Address Protocol](https://medium.com/tokenpay/tokenpay-utilizes-dual-key-stealth-addresses-for-complete-anonymity-c5ae682ce879).
 This is very useful when transaction history need to be inspected by third parties without giving them the ability to spend the fund.
 
+#### Resusable payment code
 (BIP 47? Resusable payment code)
 
 ### Sender
 
+To obfuscate the sender of a transaction, the general idea is to hide it among other senders or potential senders and make it hard for the attacker to
+figure out which sender sends the fund to your receiver.
+
+<img src="{{ site.baseurl }}/images/crowd-of-people-images-crowd.jpg" alt="crowd-anonymous" style="width: 500px;"/>
+
 #### Centralized Mixer
+One way of doing this 
+
+
 #### Coinjoin
 #### Tumbler
 #### ZeroLink
-
+#### Ring signatures
+#### Ring CT
 
 ### Amount
 
