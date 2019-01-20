@@ -4,6 +4,8 @@ category: Fintech, Blockchain, Philosophy, Privacy
 title: Privacy of Bitcoin
 ---
 
+<img src="{{ site.baseurl }}/images/anonymity.png" alt="anonymity" style="width: 250px;"/>
+
 Bitcoin whitepaper has a [section dedicated to privacy](https://nakamotoinstitute.org/bitcoin/#privacy), in which it states:
 
 > The traditional banking model achieves a level of privacy by limiting access to information to the
@@ -79,21 +81,47 @@ figure out which one actually sends the fund to your receiver.
 One approach is to utilize the [centralized mixing services](https://en.bitcoin.it/wiki/Mixing_service). Essentially funds are sent to a mixer which
 then gets mixed with other users' funds and/or mixer's own funds. If the mixer is well-intentioned, hopefully equal amount of funds (minus service fee) will be sent
 back to the users at new addresses. This idea is pretty straight forward, but there are a lot of pitfalls when it comes to the actual implementations. One example
-is that if the amount of all the [TXO](https://en.bitcoin.it/wiki/Transaction#Output)s to be mixed are different, it will serve as an extra piece of information to reveal
+is that if the amount of all the [TXO](https://en.bitcoin.it/wiki/Transaction#Output)s to be mixed are not the same, it will leave as an extra piece of information to reveal
 who the sender is. Therefore it is advised to mix transactions with standard chunk sizes. Section **6.3 Mixing** of the execellent book
 [Bitcoin and Blockchain Technologies](https://d28rh4a8wq0iu5.cloudfront.net/bitcointech/readings/princeton_bitcoin_book.pdf) discusses some of the potential
-implementation issues with centralized mixers at length, including a set of guidelines for them to provider better quality services for their users.
+implementation issues with centralized mixers at length, including a set of guidelines for them to provider better quality services for their users, such as mutiple
+rounds of mixing.
 
-However, the fact that it is centralized means that it suffers the
-same set of problems as banks or centralized exchanges. Mixers could potentially steal users' funds. It might retain the ability to trace
-back where certain fund is originated. Mixing large amount of funds [may be illegal](https://en.wikipedia.org/wiki/Cryptocurrency_tumbler#Background)
-in some jurisdictions, having a liable central entity might pose a larger regulatory risk. Also, mixing large amount of funds might take
-a long time, which hurts usability.
+However, the fact that it is centralized means that it suffers the same set of problems as banks or centralized exchanges. Mixers could potentially
+steal users' funds. It might retain the ability to trace back where certain fund is originated. Mixing large amount of funds
+[may be illegal](https://en.wikipedia.org/wiki/Cryptocurrency_tumbler#Background) in some jurisdictions, having a liable central entity might pose
+a larger regulatory risk. Also, mixing large amount of funds might take a long time, which hurts usability.
 
-Still, centralized mixers such as [bestmixer.io](https://bestmixer.io/en) might be useful for people with certain threat models and risk profiles. 
+Still, centralized mixers such as [bestmixer.io](https://bestmixer.io/en) might be useful for people with certain threat models and risk profiles. But as of now there
+doesn't seem to be a functional mix ecosystem, resulting in low volumes and smaller anomymity set.
 
-#### Coinjoin
+#### CoinJoin
 
+[CoinJoin](https://bitcointalk.org/index.php?topic=279249.0) was proposed by Bitcoin developer [Gregory Maxwell](https://github.com/gmaxwell) in 2013. The key observation
+is that there could be multiple inputs and outputs in a bitcoin transaction, but there is no information to indicate which inputs goes to which outputs. Therefore if mutiple users
+construct one single transaction with their respective inputs and outputs, their funds are effectively mixed.
+
+<img src="{{ site.baseurl }}/images/coinjoin.png" alt="coinjoin" style="width: 550px;"/><br/>
+<span class="image-label">Image from Greg Maxwell</span>
+
+In the image above, it is hard to know whether the first output of transaction 2 is paid by its second input or the combination of its first and third inputs.
+
+To construct a CoinJoin transaction, a group of users need to somehow find each other, perhap through a centralized service which is technically uncapable of stealing coins or
+compromising users' anonymity. Users then start to exchange their inputs and outputs to each other. Once all the inputs and outputs are collected, any user could
+use them to construct an unsigned version of a transaction and pass them around for everyone to sign. After everyone verified the correctness of the transaction and signed it off,
+any user could broadcast the transaction to the network.
+
+CoinJoin doesn't require protocol level change in Bitcoin, which is a big plus. But just like centralized mixing, it is important to make sure that at least all output amounts
+are the same to avoid potential linkage between inputs and outputs. One of the downside is that CoinJoin requires fair amount of user interactions, which not only hurts usability but
+also reveals an extra attack surface due to the permissionless nature of the protocol. For example, attackers can join the group and try to learn the mappings between inputs
+and outputs for other users. Even if the exchange of inputs and outputs can be carried out on top of anonymous communication protocols such as [Tor](https://www.torproject.org),
+attackers can still reduce the size of the anonymity sets if they insert enough "users" controlled by them into the group. [DOS](https://en.wikipedia.org/wiki/DOS) attack is also possible if
+users controlled by the attacker double spends the inputs in the CoinJoin transaction or refuse to sign at the last stage. The first scenarios requires retry after removing the bad parties
+and the second scenario could perhaps be addressed by a [PoW like solution](https://en.bitcoin.it/wiki/CoinJoin#What_about_DOS_attacks.3F_Can.27t_someone_refuse_to_sign_even_if_the_transaction_is_valid.3F).
+
+Probably due to all these issues, CoinJoin isn't wildly used in the Bitcoin ecosystem yet.
+Bitcoin developer [Jimmy Song](https://twitter.com/jimmysong?lang=en) recorded a video calling for [Easy to use CoinJoin](https://www.youtube.com/watch?v=-G3b3NPGWRE) recently.
+Maybe a break through on the usability side is key.
 
 #### Tumblebit
 #### ZeroLink
