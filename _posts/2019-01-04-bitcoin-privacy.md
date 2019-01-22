@@ -44,7 +44,7 @@ generate a fresh receiving address for each incoming transactions, which is a pr
 one of those [HD](https://en.bitcoin.it/wiki/Deterministic_wallet) wallets. This way, to piece together Alice's transaction history,
 attackers need to tie all of those addresses together to Alice's identity, which is
 [not impossible](https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf) but significantly harder. In fact, use new address to receive
-this payment is [a best practice](https://bitcoin.org/en/protect-your-privacy#receive) when using bitcoin.
+this payment is [a best practice](https://bitcoin.org/en/protect-your-privacy#receive) when using bitcoin, including change addresses.
 
 #### Stealth address
 In scenarios such as TV or billboard ads, where generating a fresh receiving address is not an option, stealth address might offer a solution.
@@ -98,7 +98,7 @@ doesn't seem to be a functional mix ecosystem, resulting in low volumes and smal
 #### CoinJoin
 
 [CoinJoin](https://bitcointalk.org/index.php?topic=279249.0) was proposed by Bitcoin developer [Gregory Maxwell](https://github.com/gmaxwell) in 2013. The key observation
-is that there could be multiple inputs and outputs in a bitcoin transaction, but there is no information to indicate which inputs goes to which outputs. Therefore if mutiple users
+is that inputs and outputs in a bitcoin transaction are independent of each other, there is no information to indicate which inputs goes to which outputs. Therefore if mutiple users
 construct one single transaction with their respective inputs and outputs, their funds are effectively mixed.
 
 <img src="{{ site.baseurl }}/images/coinjoin.png" alt="coinjoin" style="width: 550px;"/><br/>
@@ -120,15 +120,52 @@ users controlled by the attacker double spends the inputs in the CoinJoin transa
 and the second scenario could perhaps be addressed by a [PoW like solution](https://en.bitcoin.it/wiki/CoinJoin#What_about_DOS_attacks.3F_Can.27t_someone_refuse_to_sign_even_if_the_transaction_is_valid.3F).
 
 Probably due to all these issues, CoinJoin isn't wildly used in the Bitcoin ecosystem yet.
-Bitcoin developer [Jimmy Song](https://twitter.com/jimmysong?lang=en) recorded a video calling for [Easy to use CoinJoin](https://www.youtube.com/watch?v=-G3b3NPGWRE) recently.
-Maybe a break through on the usability side is key.
+Bitcoin developer [Jimmy Song](https://twitter.com/jimmysong?lang=en) recorded a video calling for [easy to use CoinJoin](https://www.youtube.com/watch?v=-G3b3NPGWRE) recently, perhaps
+a break through on the usability side is the key to wider adoption. Several projects are moving towards that direction, such as [Wasabi Wallet](https://wasabiwallet.io).
 
 #### Tumblebit
+
+The excellent blog posts by [Understanding tumblebit](https://hackernoon.com/understanding-tumblebit-part-1-making-the-case-823d786113f3)
+
+Chaumian Blind signature.
+
+Downside TumbleBit server needs to have a lot of liquidity
+
+zero link, tumblebit and wasabiwallet seems to be the same person
+
+need to watch the build on bitcoin talk
+
+
+
 #### ZeroLink
 #### Ring signatures
-#### Ring CT
+
+[Ring Signature](https://en.wikipedia.org/wiki/Ring_signature) is worth a mentioning here even though it's not strictly related to Bitcoin. It is an interesting digital
+signature scheme that could be used to effectively implement a decentralized mixing service that requires no user interaction.
+
+Assuming there is a group of potential signers, ring signature can be created by any member in the group but it is computationally infeasible to determine which one signed it.
+[CryptoNotes](https://cryptonote.org/coins) based cryptocurrencies such as [Monero](https://ww.getmonero.org) takes advantage of these properties to hide the actual sender
+of the transaction. When creating a transaction, Monero ["randomly selects"](https://www.youtube.com/watch?v=Sn44ahKxC1E) 10 spent outputs from the blockchain as decoys along
+side with the actual output to be spent. It will then
+
+* derive a [key image](https://monero.stackexchange.com/questions/2883/what-is-a-key-image) out of the real output
+* generate a ring signature from this group of outputs.
+
+[Key image](https://monero.stackexchange.com/questions/2883/what-is-a-key-image) will be the same even if the same output is mixed with different set of decoys.
+Monero blockchain keeps track of all the key images that were spent before to avoid double spends.
+Ring signature makes sure that one of the outputs in the group is authorized to be spent, without revealing which one.
+
+Sender protection is considered to be the weakest part of Monero's privacy scheme since there are a few known issues with ring signature such as
+[0 decoy and chain reaction](https://www.youtube.com/watch?v=1CfXHC2IFx4), easy information leaks during [hard fork](https://www.youtube.com/watch?v=6CVcirD90pg), etc.
+When it comes to [decoys selection](https://www.youtube.com/watch?v=Sn44ahKxC1E&t=1s) it is usually a cats and mouse game because it is very hard to predict all the heuristics.
+Nonetheless, it is still considered to be the technology that offers the strongest sender protection.
 
 ### Amount
+#### Confidential transactions (+ range proof?)
+#### Mimblewimble
+#### Ring CT
+#### Merge avoidance?
+#### Zero knowledge proof
 
 ### Spending conditions (smart contract)
 
@@ -195,3 +232,5 @@ how those technologies affect other stuff such as scalability, etc
 privacy easily used.
 bulletproof for monaro
 sapling for zcash
+
+lightening network
