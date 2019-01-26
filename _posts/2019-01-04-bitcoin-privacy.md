@@ -1,10 +1,10 @@
 ---
 layout: post
 category: Fintech, Blockchain, Philosophy, Privacy
-title: Privacy of Bitcoin
+title: A Survey of Bitcoin Privacy Technologies
 ---
 
-<img src="{{ site.baseurl }}/images/anonymity.png" alt="anonymity" style="width: 250px;"/>
+<img src="{{ site.baseurl }}/images/crowd-of-people-images-crowd.jpg" alt="crowd-anonymous" style="width: 500px;"/>
 
 Bitcoin whitepaper has a [section dedicated to privacy](https://nakamotoinstitute.org/bitcoin/#privacy), in which it states:
 
@@ -13,11 +13,11 @@ Bitcoin whitepaper has a [section dedicated to privacy](https://nakamotoinstitut
 > precludes this method, but privacy can still be maintained by breaking the flow of information in
 > another place: by keeping public keys anonymous.
 
-Conceptually, a bitcoin transaction consists of 4 pieces of sensitive information: sender, reciever, amount and the
-logic with which the old [TXO](https://en.bitcoin.it/wiki/Transaction#Output) was spent and the new [TXO](https://en.bitcoin.it/wiki/Transaction#Output)
-is intended to be spent. When transactions are broadcasted to the Bitcoin network, all of those information is
+A bitcoin transaction consists of 4 pieces of sensitive information: sender, reciever, amount and the
+logic of how the old [TXO](https://en.bitcoin.it/wiki/Transaction#Output) was spent and the new [TXO](https://en.bitcoin.it/wiki/Transaction#Output)
+is supposed to be spent. When transactions are broadcasted to the Bitcoin network, all of those information is
 unprotected because [the only way to confirm the absence of a transaction is to be aware of all transactions](https://twitter.com/francispouliot_/status/1075414899235409920).
-One can question if making all aspects of a transaction transparent to the public is the only way (or even the best way)
+It is debatable if recording all aspects of a transaction publicly forever is the only way (or even the best way)
 to "be aware" of it, but the fact that all transactions are transparent in the Bitcoin blockchain means that if Alice's
 real life identity is somehow tied a Bitcoin address, she will lose the privacy of all her past and future transactions
 associated with that address.
@@ -66,6 +66,8 @@ implements a [more interesting version of stealth address](https://src.getmonero
 and spend key by utilizing the [Dual-Key Stealth Address Protocol](https://medium.com/tokenpay/tokenpay-utilizes-dual-key-stealth-addresses-for-complete-anonymity-c5ae682ce879).
 This is very useful when transaction history need to be inspected by third parties without giving them the ability to spend the fund.
 
+#### Coin Control
+
 #### Resusable payment code
 (BIP 47? Resusable payment code)
 
@@ -74,56 +76,76 @@ This is very useful when transaction history need to be inspected by third parti
 To obfuscate the sender of a transaction, the general idea is to hide it among other senders or decoys and make it hard for the attacker to
 figure out which one actually sends the fund to your receiver.
 
-<img src="{{ site.baseurl }}/images/crowd-of-people-images-crowd.jpg" alt="crowd-anonymous" style="width: 500px;"/>
+The key observation in Bitcoin is that inputs and outputs in a transaction are independent of each other and there is no indication as to the linkage between inputs and outputs.
+Therefore if mutiple users construct one single transaction with their respective inputs and outputs, their funds are effectively mixed.
+
+<img src="{{ site.baseurl }}/images/coinjoin.png" alt="coinjoin" style="width: 550px;"/><br/>
+<span class="image-label">Image from [https://bitcointalk.org/index.php?topic=279249.0](https://bitcointalk.org/index.php?topic=279249.0)</span>
+
+As illustrated above, it is hard to know whether the first output of transaction 2 is paid by its second input or the combination of its first and third inputs.
 
 #### Centralized Mixer (aka Tumbler)
 
-One approach is to utilize the [centralized mixing services](https://en.bitcoin.it/wiki/Mixing_service). Essentially funds are sent to a mixer which
-then gets mixed with other users' funds and/or mixer's own funds. If the mixer is well-intentioned, hopefully equal amount of funds (minus service fee) will be sent
-back to the users at new addresses. This idea is pretty straight forward, but there are a lot of pitfalls when it comes to the actual implementations. One example
-is that if the amount of all the [TXO](https://en.bitcoin.it/wiki/Transaction#Output)s to be mixed are not the same, it will leave as an extra piece of information to reveal
-who the sender is. Therefore it is advised to mix transactions with standard chunk sizes. Section **6.3 Mixing** of the execellent book
-[Bitcoin and Blockchain Technologies](https://d28rh4a8wq0iu5.cloudfront.net/bitcointech/readings/princeton_bitcoin_book.pdf) discusses some of the potential
-implementation issues with centralized mixers at length, including a set of guidelines for them to provider better quality services for their users, such as mutiple
+One approach is to have [centralized mixing services](https://en.bitcoin.it/wiki/Mixing_service) taking funds from users and then mix them
+with other users' funds and/or mixer's own funds. If the mixer is well-intentioned, hopefully equal amount of funds (minus service fee) will be sent
+back to the users at new addresses. This idea is pretty straight forward, but its centralized nature means that it suffers the same set of problems as banks or centralized exchanges. Mixers could potentially
+steal users' funds. It might also retain the ability to trace back where certain fund is originated. Mixing large amount of funds
+[may be illegal](https://en.wikipedia.org/wiki/Cryptocurrency_tumbler#Background) in some jurisdictions, having a liable central entity might pose
+a larger regulatory risk.
+
+There are also a lot of pitfalls even if the mixers are assumably trustworthy. One example
+is that if the amount of all the [TXO](https://en.bitcoin.it/wiki/Transaction#Output)s to be mixed are not the same, it becomes an extra piece of information to reveal
+who the sender is. Therefore it is advised to mix transactions with standard chunk sizes, which means that large amount of funds might require many rounds of
+mixing, creating bad user experience (to be fair, this is not unique to centralized mixers, without something like [Confidential Transactions](https://people.xiph.org/~greg/confidential_values.txt)
+which hides the transaction amount, decentralized mixers suffer the same problem). Section **6.3 Mixing** of the execellent book
+[Bitcoin and Blockchain Technologies](https://d28rh4a8wq0iu5.cloudfront.net/bitcointech/readings/princeton_bitcoin_book.pdf) discussed some other potential
+implementation issues with centralized mixers at length, including a set of guidelines for them to provider better quality services for their users, such as multiple
 rounds of mixing.
 
-However, the fact that it is centralized means that it suffers the same set of problems as banks or centralized exchanges. Mixers could potentially
-steal users' funds. It might retain the ability to trace back where certain fund is originated. Mixing large amount of funds
-[may be illegal](https://en.wikipedia.org/wiki/Cryptocurrency_tumbler#Background) in some jurisdictions, having a liable central entity might pose
-a larger regulatory risk. Also, mixing large amount of funds might take a long time, which hurts usability.
-
-Still, centralized mixers such as [bestmixer.io](https://bestmixer.io/en) might be useful for people with certain threat models and risk profiles. But as of now there
-doesn't seem to be a functional mix ecosystem, resulting in low volumes and smaller anomymity set.
+Nonetheless, centralized mixers such as [bestmixer.io](https://bestmixer.io/en) might still be useful for people with certain threat models and risk profiles. 
+[Most users](https://medium.com/@nopara73/traditional-bitcoin-mixers-6a092e59d8c2) who decide to mix their coins still choose centralized mixing services.
 
 #### CoinJoin
 
-[CoinJoin](https://bitcointalk.org/index.php?topic=279249.0) was proposed by Bitcoin developer [Gregory Maxwell](https://github.com/gmaxwell) in 2013. The key observation
-is that inputs and outputs in a bitcoin transaction are independent of each other, there is no information to indicate which inputs goes to which outputs. Therefore if mutiple users
-construct one single transaction with their respective inputs and outputs, their funds are effectively mixed.
+[CoinJoin](https://bitcointalk.org/index.php?topic=279249.0) was proposed by Bitcoin developer [Gregory Maxwell](https://github.com/gmaxwell) in 2013, which removes the risk
+of theft by a third party.
 
-<img src="{{ site.baseurl }}/images/coinjoin.png" alt="coinjoin" style="width: 550px;"/><br/>
-<span class="image-label">Image from Greg Maxwell</span>
-
-In the image above, it is hard to know whether the first output of transaction 2 is paid by its second input or the combination of its first and third inputs.
-
-To construct a CoinJoin transaction, a group of users need to somehow find each other, perhap through a centralized service which is technically uncapable of stealing coins or
-compromising users' anonymity. Users then start to exchange their inputs and outputs to each other. Once all the inputs and outputs are collected, any user could
+To construct a CoinJoin transaction, a group of users need to somehow find each other, perhap through a centralized discovery service.
+Users then start to exchange their inputs and outputs to each other. Once all the inputs and outputs are collected, any user could
 use them to construct an unsigned version of a transaction and pass them around for everyone to sign. After everyone verified the correctness of the transaction and signed it off,
-any user could broadcast the transaction to the network.
+the transaction could be broadcasted to the network.
 
-CoinJoin doesn't require protocol level change in Bitcoin, which is a big plus. But just like centralized mixing, it is important to make sure that at least all output amounts
-are the same to avoid potential linkage between inputs and outputs. One of the downside is that CoinJoin requires fair amount of user interactions, which not only hurts usability but
-also reveals an extra attack surface due to the permissionless nature of the protocol. For example, attackers can join the group and try to learn the mappings between inputs
-and outputs for other users. Even if the exchange of inputs and outputs can be carried out on top of anonymous communication protocols such as [Tor](https://www.torproject.org),
-attackers can still reduce the size of the anonymity sets if they insert enough "users" controlled by them into the group. [DOS](https://en.wikipedia.org/wiki/DOS) attack is also possible if
-users controlled by the attacker double spends the inputs in the CoinJoin transaction or refuse to sign at the last stage. The first scenarios requires retry after removing the bad parties
-and the second scenario could perhaps be addressed by a [PoW like solution](https://en.bitcoin.it/wiki/CoinJoin#What_about_DOS_attacks.3F_Can.27t_someone_refuse_to_sign_even_if_the_transaction_is_valid.3F).
+Like centralized mixing, it is still important to make sure that all outputs has the same demomination. One of CoinJoin's downsides is that it requires fair amount of user interactions, which not only hurts usability but
+also make it susceptible for [sybil attacks](https://en.wikipedia.org/wiki/Sybil_attack). For example, attackers can join the group and try to learn the linkage between inputs
+and outputs. Even if inputs and outputs are exchanged on top of the anonymous communication protocols such as [Tor](https://www.torproject.org),
+attackers can still reduce the size of the anonymity set if there are "users" controlled by them inside the group. [DOS](https://en.wikipedia.org/wiki/DOS) attack is also possible if
+attacker double spends any inputs in the CoinJoin transaction (which requires retry after removing the bad parties) or refuse to sign at the last stage (which could perhaps be addressed
+by a [PoW like solution](https://en.bitcoin.it/wiki/CoinJoin#What_about_DOS_attacks.3F_Can.27t_someone_refuse_to_sign_even_if_the_transaction_is_valid.3F)).
 
-Probably due to all these issues, CoinJoin isn't wildly used in the Bitcoin ecosystem yet.
-Bitcoin developer [Jimmy Song](https://twitter.com/jimmysong?lang=en) recorded a video calling for [easy to use CoinJoin](https://www.youtube.com/watch?v=-G3b3NPGWRE) recently, perhaps
-a break through on the usability side is the key to wider adoption. Several projects are moving towards that direction, such as [Wasabi Wallet](https://wasabiwallet.io).
+A variation of CoinJoin called [Chaumian CoinJoin](https://github.com/nopara73/ZeroLink/#ii-chaumian-coinjoin) improves upon the original CoinJoin by leveraging
+[blind signatures](https://en.wikipedia.org/wiki/Blind_signature) to ensure that even if there is a centralized service (like the [coordinator](https://www.reddit.com/r/Bitcoin/comments/afjf9u/wasabi_wallet_what_is_the_coordinator/)
+in [Wasabi Wallet](https://wasabiwallet.io)), it is still not in a position to learn the linkage between inputs and outputs.
+
+[CoinShuffle](https://bitcointalk.org/index.php?topic=567625.0) attempts to address CoinJoin's anomymity issue by running a clever [decentralized protocols](http://crypsys.mmci.uni-saarland.de/projects/CoinShuffle/coinshuffle.pdf)
+among participants. Assuming that Alice, Bob and Charlie are going to perform a CoinJoin and their freshly generated keys pairs are PubA/PrivA, PubB/PrivB and PubC/PrivC respectively. Following
+is how the CoinShuffle could be carried out.
+* Alice is randomly selected to know PubA, PubB and PubC. Bob is randomly selected to know PubB and PubC. Charlie is randomly only knows PubB.
+* Alice uses PubC to encrypt her output address and PubB to encrypt the encrypted message again. Alice sends the double encryted message to Bob.
+* Bob recieves the double encrypted message from Alice, decrypt it using PrivB. Encrypt his own output address using PubC. Send both encrypted messages to Charlie.
+* Charlie receives both encrypted messages, decrypts them using PrivC, revealing both Alice and Bob's output addresses. He then uses them to construct the CoinJoin transaction together with his
+own output address
+
+This onion structure similiar to [Tor](https://www.torproject.org) ensures that no parties involved knows the ownship
+of the outputs. [Shufflepuff](https://github.com/DanielKrawisz/Shufflepuff) is an attempt to implement CoinShuffle in the [Mycelium](https://wallet.mycelium.com) wallet, but the project
+doesn't seem to be actively maintained any more.
+
+In general, CoinJoin isn't wildly used in the Bitcoin ecosystem yet. [JoinMarket](https://github.com/JoinMarket-Org/joinmarket-clientserver) tries to tackle that problem by bringing
+economical incentives into the equation, but it hasn't seen much adoption either. Bitcoin developer [Jimmy Song](https://twitter.com/jimmysong?lang=en) recently recorded a video calling for
+[easy to use CoinJoin](https://www.youtube.com/watch?v=-G3b3NPGWRE), perhaps a breakthrough on the usability side is the key.
 
 #### Tumblebit
+
+Tumblebit 
 
 The excellent blog posts by [Understanding tumblebit](https://hackernoon.com/understanding-tumblebit-part-1-making-the-case-823d786113f3)
 
@@ -136,31 +158,31 @@ zero link, tumblebit and wasabiwallet seems to be the same person
 need to watch the build on bitcoin talk
 
 
-
-#### ZeroLink
 #### Ring signatures
 
-[Ring Signature](https://en.wikipedia.org/wiki/Ring_signature) is worth a mentioning here even though it's not strictly related to Bitcoin. It is an interesting digital
+[Ring Signature](https://en.wikipedia.org/wiki/Ring_signature) is worth a mentioning here even though then chance of applying that to Bitcoin is close to zero. It is an interesting digital
 signature scheme that could be used to effectively implement a decentralized mixing service that requires no user interaction.
 
 Assuming there is a group of potential signers, ring signature can be created by any member in the group but it is computationally infeasible to determine which one signed it.
-[CryptoNotes](https://cryptonote.org/coins) based cryptocurrencies such as [Monero](https://ww.getmonero.org) takes advantage of these properties to hide the actual sender
-of the transaction. When creating a transaction, Monero ["randomly selects"](https://www.youtube.com/watch?v=Sn44ahKxC1E) 10 spent outputs from the blockchain as decoys along
-side with the actual output to be spent. It will then
+[CryptoNotes](https://cryptonote.org/coins) based cryptocurrencies such as [Monero](https://ww.getmonero.org) takes advantage of this property to hide the actual sender
+of a transaction. When creating a transaction, [10](https://github.com/wownero/meta/issues/11) spent outputs are ["randomly selected"](https://www.youtube.com/watch?v=Sn44ahKxC1E) by Monero 
+from the blockchain as decoys along side with the real output to be spent. It will then
 
-* derive a [key image](https://monero.stackexchange.com/questions/2883/what-is-a-key-image) out of the real output
-* generate a ring signature from this group of outputs.
+* Derive a [key image](https://monerodocs.org/cryptography/asymmetric/key-image/) from the real output
+* Generate a ring signature from this group of outputs.
 
-[Key image](https://monero.stackexchange.com/questions/2883/what-is-a-key-image) will be the same even if the same output is mixed with different set of decoys.
-Monero blockchain keeps track of all the key images that were spent before to avoid double spends.
+[Key image](https://monerodocs.org/cryptography/asymmetric/key-image/) is unique for the same output even if it is mixed with different set of decoys.
+Monero blockchain keeps track of all the key images of the spent outputs to avoid double spends.
 Ring signature makes sure that one of the outputs in the group is authorized to be spent, without revealing which one.
 
 Sender protection is considered to be the weakest part of Monero's privacy scheme since there are a few known issues with ring signature such as
-[0 decoy and chain reaction](https://www.youtube.com/watch?v=1CfXHC2IFx4), easy information leaks during [hard fork](https://www.youtube.com/watch?v=6CVcirD90pg), etc.
+[0 decoy and chain reaction](https://www.youtube.com/watch?v=1CfXHC2IFx4), potential privacy breach during [hard fork](https://www.youtube.com/watch?v=6CVcirD90pg), etc.
 When it comes to [decoys selection](https://www.youtube.com/watch?v=Sn44ahKxC1E&t=1s) it is usually a cats and mouse game because it is very hard to predict all the heuristics.
-Nonetheless, it is still considered to be the technology that offers the strongest sender protection.
+Nonetheless, it is still considered to be a technology that offers one of the strongest sender protection.
 
 ### Amount
+#### Rounds based mixer, 8.6 coins take 8 times to mix
+#### Unequal Input Mixing 
 #### Confidential transactions (+ range proof?)
 #### Mimblewimble
 #### Ring CT
