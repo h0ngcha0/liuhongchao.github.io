@@ -66,10 +66,16 @@ implements a [more interesting version of stealth address](https://src.getmonero
 and spend key by utilizing the [Dual-Key Stealth Address Protocol](https://medium.com/tokenpay/tokenpay-utilizes-dual-key-stealth-addresses-for-complete-anonymity-c5ae682ce879).
 This is very useful when transaction history need to be inspected by third parties without giving them the ability to spend the fund.
 
-#### Coin Control
-
 #### Resusable payment code
 (BIP 47? Resusable payment code)
+
+#### Coin Control
+
+If two outputs are spent by the same transaction, they usually belong to the same owner (except for e.g. [CoinJoin](https://bitcointalk.org/index.php?topic=279249.0) transactions).
+If one of them happens to be tainted, the other one will be considered tainted as well. [Coin Control](https://bitcoin.stackexchange.com/questions/37486/what-does-bitcoin-cores-coin-control-features-do-and-how-do-i-use-it)
+gives users the option to pick which combinations of outputs to use when constructing a transaction, which could reduce the chance of accidentally tainting outputs.
+
+Many wallets supports the coin control feature, including the [Bitcoin Core wallet](https://github.com/bitcoin/bitcoin/tree/master/src/wallet).
 
 ### Sender
 
@@ -143,37 +149,34 @@ In general, CoinJoin isn't wildly used in the Bitcoin ecosystem yet. [JoinMarket
 economical incentives into the equation, but it hasn't seen much adoption either. Bitcoin developer [Jimmy Song](https://twitter.com/jimmysong?lang=en) recently recorded a video calling for
 [easy to use CoinJoin](https://www.youtube.com/watch?v=-G3b3NPGWRE), perhaps a breakthrough on the usability side is the key.
 
-#### Tumblebit
+#### TumbleBit
 
-Tumblebit 
+Compared to CoinJoin, where funds are mixed in a single transaction. [TumbleBit](http://cs-people.bu.edu/heilman/tumblebit/) creates a linked
+[payment channels](https://en.bitcoin.it/wiki/Payment_channels) between payer and payee through a centralized payment hub. The payment channels
+can be linked by leveraging [Hashed Timelock Contract](https://en.bitcoin.it/wiki/Hashed_Timelock_Contracts), which guarantees that the payment
+hub is unable to steal funds.
 
-The excellent blog posts by [Understanding tumblebit](https://hackernoon.com/understanding-tumblebit-part-1-making-the-case-823d786113f3)
+A [blinded puzzle technique](https://hackernoon.com/understanding-tumblebit-part-3-not-even-the-tumbler-can-breach-your-privacy-how-8d49d89e3a0d) inspired
+by [blind signatures](https://en.wikipedia.org/wiki/Blind_signature) is used to ensure that the payment hub can not establish the connection between payer and payee. 
 
-Chaumian Blind signature.
-
-Downside TumbleBit server needs to have a lot of liquidity
-
-zero link, tumblebit and wasabiwallet seems to be the same person
-
-need to watch the build on bitcoin talk
-
+TumbleBit is currently integrated into the [Breeze wallet](https://github.com/stratisproject/Breeze) from [Stratis](https://stratisplatform.com).
 
 #### Ring signatures
 
-[Ring Signature](https://en.wikipedia.org/wiki/Ring_signature) is worth a mentioning here even though then chance of applying that to Bitcoin is close to zero. It is an interesting digital
-signature scheme that could be used to effectively implement a decentralized mixing service that requires no user interaction.
+It is worth mentioning [ring signature](https://en.wikipedia.org/wiki/Ring_signature) here even though then chance of applying it to Bitcoin is almost zero. It is an interesting digital
+signature scheme that can be used to implement a decentralized mixing service that requires no user interactions.
 
-Assuming there is a group of potential signers, ring signature can be created by any member in the group but it is computationally infeasible to determine which one signed it.
-[CryptoNotes](https://cryptonote.org/coins) based cryptocurrencies such as [Monero](https://ww.getmonero.org) takes advantage of this property to hide the actual sender
-of a transaction. When creating a transaction, [10](https://github.com/wownero/meta/issues/11) spent outputs are ["randomly selected"](https://www.youtube.com/watch?v=Sn44ahKxC1E) by Monero 
-from the blockchain as decoys along side with the real output to be spent. It will then
+It is easy to verify that a ring signature is created by one of the members in a group but computationally infeasible to determine which one exactly. [CryptoNotes](https://cryptonote.org/coins)
+based cryptocurrencies such as [Monero](https://ww.getmonero.org) takes advantage of this property to hide the senders
+of transactions. When constructing a transaction, currently [10](https://github.com/wownero/meta/issues/11) spent outputs are ["randomly selected"](https://www.youtube.com/watch?v=Sn44ahKxC1E) by Monero 
+from the blockchain as decoys along side with the real output. It will then:
 
 * Derive a [key image](https://monerodocs.org/cryptography/asymmetric/key-image/) from the real output
 * Generate a ring signature from this group of outputs.
 
 [Key image](https://monerodocs.org/cryptography/asymmetric/key-image/) is unique for the same output even if it is mixed with different set of decoys.
 Monero blockchain keeps track of all the key images of the spent outputs to avoid double spends.
-Ring signature makes sure that one of the outputs in the group is authorized to be spent, without revealing which one.
+A valid ring signature means that one of the outputs in the group is authorized to be spent without revealing which one exactly.
 
 Sender protection is considered to be the weakest part of Monero's privacy scheme since there are a few known issues with ring signature such as
 [0 decoy and chain reaction](https://www.youtube.com/watch?v=1CfXHC2IFx4), potential privacy breach during [hard fork](https://www.youtube.com/watch?v=6CVcirD90pg), etc.
@@ -252,7 +255,7 @@ how those technologies affect other stuff such as scalability, etc
 
 
 privacy easily used.
-bulletproof for monaro
+bulletproof for mopnaro
 sapling for zcash
 
 lightening network
