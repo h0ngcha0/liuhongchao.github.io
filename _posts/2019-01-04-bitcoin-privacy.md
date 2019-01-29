@@ -13,40 +13,38 @@ Bitcoin whitepaper has a [section dedicated to privacy](https://nakamotoinstitut
 > precludes this method, but privacy can still be maintained by breaking the flow of information in
 > another place: by keeping public keys anonymous.
 
-A bitcoin transaction consists of 4 pieces of sensitive information: sender, reciever, amount and the
-logic of how the old [TXO](https://en.bitcoin.it/wiki/Transaction#Output) was spent and the new [TXO](https://en.bitcoin.it/wiki/Transaction#Output)
-is supposed to be spent. When transactions are broadcasted to the Bitcoin network, all of those information is
-unprotected because [the only way to confirm the absence of a transaction is to be aware of all transactions](https://twitter.com/francispouliot_/status/1075414899235409920).
+A bitcoin transaction consists of 4 pieces of sensitive information: sender, reciever, amount and transaction logic
+(written in [Bitcoin Script](https://en.bitcoin.it/wiki/Script)). When transactions are broadcasted to the Bitcoin network, all of those information is
+unprotected because Satoshi believes that [the only way to confirm the absence of a transaction is to be aware of all transactions](https://twitter.com/francispouliot_/status/1075414899235409920).
 It is debatable if recording all aspects of a transaction publicly forever is the only way (or even the best way)
 to "be aware" of it, but the fact that all transactions are transparent in the Bitcoin blockchain means that if Alice's
 real life identity is somehow tied a Bitcoin address, she will lose the privacy of all her past and future transactions
 associated with that address.
 
-Most of the privacy technologies in the space are designed to obfuscate one or more of transaction's sensitive information 
-from the blockchain. Before diving into details, a few things should perhaps also be taken into account when evaluating
-privacy technologies.
+Most of the privacy technologies are designed to obfuscate one or more of those 4 pieces of sensitive information 
+from the blockchain, each making different set of tradeoffs. A few things should perhaps be considered when evaluating them.
 
 * First, there seems to a tension between privacy and decentralization. Due to the public permissionless nature of the blockchain, traditional
-banks arguably maintain better privacy than Bitcoin for majority of their users as long as they are
-technically and ethnically trusted to be reliable custodians. Whether a privacy enhancing technology comes at a cost of centralization is worth considering.
-* Privacy and scalability don't always play well together. Many privacy enhancing technologies require heavier computation and
-more storage which gets magnified dramatically in the context of blockchain, affecting it's ability to scale.
-* Privacy technologies sometimes negatively impact user experience. Transaction signing and verification might take unreasonable amount of time
-and resources. Sometimes interaction with other users is required, which just adds an extra burden in terms of usibility.
+banks can arguably maintain better transaction privacy than Bitcoin as long as they are
+technically and ethnically trusted. It is important to evaluate if a privacy enhancing technology comes at the cost of centralization.
+* Privacy and scalability don't always play well together. Many privacy technologies require heavier computational resources which gets
+dramatically magnified in the context of blockchain, affecting it's ability to scale.
+* Privacy technologies sometimes damage user experience because computation and verification might take unreasonable amount of time
+and resources, complex interaction with other users and the system might be required.
 No matter how perfect a privacy technology is on paper, it doesn't generate any real world value if nobody uses it.
 
 ### Receiver
 
-#### New address for new payment
+#### Hierarchical Deterministic Wallets
 Assuming Alice uses an unique Bitcoin address all the time and this address somehow gets tied back to her real world identity,
 Alice's entire transaction history on Bitcoin network will become public. One way to mitigate this problem is to
 generate a fresh receiving address for each incoming transactions, which is a pretty safe and easy operation if Alice uses
-one of those [HD](https://en.bitcoin.it/wiki/Deterministic_wallet) wallets. This way, to piece together Alice's transaction history,
+one of those [HD Wallets](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki). This way, to piece together Alice's transaction history,
 attackers need to tie all of those addresses together to Alice's identity, which is
 [not impossible](https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf) but significantly harder. In fact, use new address to receive
 this payment is [a best practice](https://bitcoin.org/en/protect-your-privacy#receive) when using bitcoin, including change addresses.
 
-#### Stealth address
+#### Stealth Address
 In scenarios such as TV or billboard ads, where generating a fresh receiving address is not an option, stealth address might offer a solution.
 The idea is that after Alice publishes her public key, whoever wants to pay her needs to take that information, generate and
 "pay" to a new public key whose corresponding private key can only be derived by Alice. One way to achieve this is by leveraging the
@@ -61,13 +59,25 @@ In reality, as [described](https://lists.linuxfoundation.org/pipermail/bitcoin-d
 by Bitcoin developer Peter Todd, it requires Bob to make an extra transaction with **OP_RETURN** to essentially communicate the ephemeral
 public key *B* to Alice so that she can derive the shared secret. But [according to him](https://www.reddit.com/r/Bitcoin/comments/5xm9bt/what_happened_to_stealth_addresses/dejcjmw)
 later on, **OP_RETURN** was changed at last minute to only include 40 bytes of data, so the stealth address BIP (BIP 63) was never published. Overall, stealth address
-is not well adopted in the Bitcoin ecosystem. However, other cryptocurrencies such as [Monero](https://www.getmonero.org) and [TokenPay](https://www.tokenpay.com/)
-implements a [more interesting version of stealth address](https://src.getmonero.org/resources/moneropedia/stealthaddress.html) which enables the seperation of view key
+is not well adopted in the Bitcoin ecosystem, [DarkWallet](https://www.darkwallet.is) seems to [support it](https://github.com/darkwallet/darkwallet/blob/4c51dacacb8541305f1442ef7fa1628eb7c19a79/src/js/util/stealth.js)
+but the project is not actively maintained any more. [Monero](https://www.getmonero.org) and [TokenPay](https://www.tokenpay.com/)
+on the other hand introduced a [more interesting version of stealth address](https://src.getmonero.org/resources/moneropedia/stealthaddress.html) which enables the seperation of view key
 and spend key by utilizing the [Dual-Key Stealth Address Protocol](https://medium.com/tokenpay/tokenpay-utilizes-dual-key-stealth-addresses-for-complete-anonymity-c5ae682ce879).
 This is very useful when transaction history need to be inspected by third parties without giving them the ability to spend the fund.
 
-#### Resusable payment code
-(BIP 47? Resusable payment code)
+#### Resusable Payment Code
+[Resumable Payment Code](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) protocol tries to achieve the same result as Stealth Address using the combination of
+[ECDH](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman) protocol and [HD Wallets](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki).
+
+Assuming that Alice and Bob want to transact in a private manner without sending each other new addresses all the time, both of them can generate a
+resuable payment code which is essentially [extended public key](https://bitcoin.org/en/glossary/extended-key) in the context of [HD Wallets](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki).
+Alice communicates her payment code through a notification transaction to Bob first, and from that point on Alice and Bob shares a secret according to the same
+[ECDH](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman) protocol used in Stealth Address.
+
+With this shared secret and the resuable payment codes from each other, Alice and Bob could generate a new HD wallet respectively where they can only spend their own fund but both of them know how to derive
+new addresses for each other. This essentially builds up a secret payment tunnel between themselves.
+
+[Samourai](https://samouraiwallet.com) is one of the wallets that [support](https://samouraiwallet.com/bips) Reusable Payment Code.
 
 #### Coin Control
 
@@ -189,7 +199,6 @@ Nonetheless, it is still considered to be a technology that offers one of the st
 #### Confidential transactions (+ range proof?)
 #### Mimblewimble
 #### Ring CT
-#### Merge avoidance?
 #### Zero knowledge proof
 
 ### Spending conditions (smart contract)
@@ -259,3 +268,5 @@ bulletproof for mopnaro
 sapling for zcash
 
 lightening network
+
+[placeholder, say something about this article focus on layer 1, non networking related stuff, therefore lightening, nutrino, BIP encryption, dandalion is not included]
