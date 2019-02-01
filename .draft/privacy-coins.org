@@ -1,0 +1,116 @@
+* Privacy coins
+- privacy technologies
+
+in utxo coins, what to hide?
+input
+output
+amount
+
+what is the bitcoin privacy characteristics, and upcoming ones. maybe this is a good way
+going forward.
+
+what problem do RingCT or CoinJoin (ZeroLink) try to solve?
+what does the RingCT
+
+Break the transaction history, but transaction history has to do with amount as well :)
+
+What kind of problems do these technologies solve? Can they be categoried?
+
+- one address at a time? what's the tech name? hierachical addresses?
+  ofuscate reciever
+- Mixing
+- TumbleBit
+https://github.com/BUSEC/TumbleBit
+- RingCT
+- CoinJoin
+- Confidential Transaction (only hides amount, not the transaction graph, sender/receiver/etc)
+- MAST
+- Schnorr signatures
+- Taproot
+- Graftroot
+- Bulletproof <- decrease the size of the confidential transaction 
+- Dandalion
+
+
+
+- 2nd layer technologies, LN - add privacy
+
+- how do we add transparency on top of privacy (goverments and ngos)
+
+sources:
+- Andreas's Bitcoin Q&A: Schnorr signatures and the privacy roadmap
+- Peter wuille's presentation about Schnorr signatures in SF bitcoin meetup
+
+
+important point:
+scalability matters when it comes to privacy. since if you can't run a node on a commondity
+machine, people will have to trust third party, which could breathe privacy.
+
+privacy is very much tied to fungibility
+
+mixing service is to ofscate the transaction graph (history) so that it is hard to be very
+confident about the exact history of the coin before each mixing point.
+
+
+coinswap is used to establish a link between alice and bob through some intermediary in such
+a way that intermediary can not steal funds.
+
+** Bitcoin
+- not repeat addresses, generate one address at a time could hide transaction graph
+- stealth address
+  when generate one address at a time is not an option
+  hide inputs? or graph?
+
+** Monero
+** ZCash
+** Mimble Wimble (grin, tari, beam, etc)
+*** Amount
+- Greg Maxwell's Confidential transactions, influenced Mimble Wimble
+- The examplation in the mimble wimble document is good
+  https://github.com/liuhongchao/grin/blob/master/doc/intro.md#balance
+
+  is the pub/priv key in this section the same as the ownership pub/priv key or
+  they are seperate? do they need to be generated seperately?
+  
+  the answer is that it is a new private key, privay key ca be generated on demand.
+
+*** Ownership
+
+- A bit complicated. 
+
+I understand that in the following scenario:
+
+Y - Xi = (113*G + 3*H) - (28*G + 3*H) = 85*G + 0*H
+
+collectively both parties need to prove that they know 85, by signing a public key.
+
+aha, this is the interative part comes in!!
+
+*** Range proofs (also comes from confidential transactions, Greg Maxwell is pretty niux)
+
+- To check if a number falls within a given range without revealing the number
+  Could be used to check if any balance is negative?
+
+*** Putting it all together
+
+*** Cut through
+
+
+*** Peter Wuille's presetation
+
+- exectution vs verification
+i dont need the execution of things but verifying the result is correct.
+similiar to proof system.
+
+"decrete logorithm problem" public key
+
+sum of signatures is signature for sum of keys
+multi-sig will be so much eaiser
+
+seems that N of N multi-sig is easy
+but N of M multi-sig is a bit tricky, requires interactive setup
+
+could be used for coinjoin, which is kind of mixing
+
+
+schnorr and taproot can make every input and output look identical in the normal case.

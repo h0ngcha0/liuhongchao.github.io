@@ -1,0 +1,1 @@
+Payment code: The payment-identification feature is somewhat important as it opens the doors for pseudo-recurring payments.

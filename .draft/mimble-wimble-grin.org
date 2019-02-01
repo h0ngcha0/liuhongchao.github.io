@@ -1,0 +1,19 @@
+* General
+
+Question: why is it so scalable? why is the security characteristics?
+
+does it fundamentally change the Bitcoin way? or is it just an quantative improvement?
+
+
+using an asic-resistent mining algo?? contrary to what the guy said
+
+** Balance
+- Greg Maxwell's Confidential transactions, influenced Mimble Wimble
+- The examplation in the mimble wimble document is good
+  https://github.com/liuhongchao/grin/blob/master/doc/intro.md#balance
+
+  is the pub/priv key in this section the same as the ownership pub/priv key or
+  they are seperate? do they need to be generated seperately?
+
+- 
+  
