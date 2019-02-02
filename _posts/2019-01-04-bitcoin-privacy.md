@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Fintech, Blockchain, Philosophy, Privacy
-title: A Survey of Bitcoin Privacy Technologies
+title: A Survey of Bitcoin Privacy And Fungibility Technologies
 ---
 
 <img src="{{ site.baseurl }}/images/crowd-of-people-images-crowd.jpg" alt="crowd-anonymous" style="width: 500px;"/>
@@ -24,9 +24,11 @@ associated with that address.
 Most of the privacy technologies are designed to obfuscate one or more of those 4 pieces of sensitive information 
 from the blockchain, each making different set of tradeoffs. A few things should perhaps be considered when evaluating them.
 
-* First, there seems to a tension between privacy and decentralization. Due to the public permissionless nature of the blockchain, traditional
-banks can arguably maintain better transaction privacy than Bitcoin as long as they are
-technically and ethnically trusted. It is important to evaluate if a privacy enhancing technology comes at the cost of centralization.
+* First, there seems to a tension between privacy and decentralization since decentralization usually rely on public verification to maintain
+its security. Suprisingly, this conflict is not always true. It is important to evaluate if a privacy enhancing technology comes at the cost of centralization.
+To that end, traditional
+banks arguably maintain better transaction privacy than Bitcoin as long as they are
+technically and ethnically trusted. Suprisingly, this conflict does not always hold, 
 * Privacy and scalability don't always play well together. Many privacy technologies require heavier computational resources which gets
 dramatically magnified in the context of blockchain, affecting it's ability to scale.
 * Privacy technologies sometimes damage user experience because computation and verification might take unreasonable amount of time
@@ -36,6 +38,8 @@ No matter how perfect a privacy technology is on paper, it doesn't generate any 
 Network layer privacy technolgies such as [Dandelion](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015030.html) or
 [Peer to Peer Encryption](https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki) are not discussed. Neither is the privacy benefits of
 the [Layer 2](https://en.wikipedia.org/wiki/Bitcoin_scalability_problem#%22Layer_2%22_systems) systems.
+
+Fungibility and Free speech
 
 ### Receiver
 #### Hierarchical Deterministic Wallets
@@ -74,7 +78,7 @@ This is very useful when transaction history need to be inspected by third parti
 
 Assuming that Alice and Bob want to transact in a private manner without sending each other new addresses all the time, both of them can generate a
 resuable payment code which is essentially [extended public key](https://bitcoin.org/en/glossary/extended-key) in the context of [HD Wallets](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki).
-Alice communicates her payment code through a notification transaction to Bob first, and from that point on Alice and Bob shares a secret according to the same
+Alice communicates her payment code through a notification transaction to Bob first, and from that point on Alice and Bob shares a secret based on the same
 [ECDH](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman) protocol used in Stealth Address.
 
 With this shared secret and the resuable payment codes from each other, Alice and Bob could generate a new HD wallet respectively where they can only spend their own fund but both of them know how to derive
@@ -134,7 +138,7 @@ Users then start to exchange their inputs and outputs to each other. Once all th
 use them to construct an unsigned version of a transaction and pass them around for everyone to sign. After everyone verified the correctness of the transaction and signed it off,
 the transaction could be broadcasted to the network.
 
-Like centralized mixing, it is still important to make sure that all outputs has the same demomination. One of CoinJoin's downsides is that it requires fair amount of user interactions, which not only hurts usability but
+Like centralized mixing, it is still important to make sure that all outputs has the same denomination. One of CoinJoin's downsides is that it requires fair amount of user interactions, which not only hurts usability but
 also make it susceptible for [sybil attacks](https://en.wikipedia.org/wiki/Sybil_attack). For example, attackers can join the group and try to learn the linkage between inputs
 and outputs. Even if inputs and outputs are exchanged on top of the anonymous communication protocols such as [Tor](https://www.torproject.org),
 attackers can still reduce the size of the anonymity set if there are "users" controlled by them inside the group. [DOS](https://en.wikipedia.org/wiki/DOS) attack is also possible if
@@ -175,15 +179,39 @@ by [blind signatures](https://en.wikipedia.org/wiki/Blind_signature) is used to 
 TumbleBit is currently integrated into the [Breeze wallet](https://github.com/stratisproject/Breeze) from [Stratis](https://stratisplatform.com).
 
 ### Amount
-reveal how much money u have
-reveal hiwja
 
-#### Rounds based mixer, 8.6 coins take 8 times to mix
-#### Unequal Input Mixing 
-#### Confidential transactions (+ range proof?)
+Transaction amount is not only by itself a very sensitive piece of information, it can also affect the effectiveness of other transaction graph obfuscation mechanisms such
+as CoinJoin or centralized mixers, etc. In general, to hide the amount, either transaction has to be split up into several smaller ones with uniform denomination, or else the
+amount needs to be hidden cryptographically in such a way that it is only known to the sender and reciever but everybody else can verify that no unintended inflation is created
+during the transaction.
+
+#### Rounds Based Fixed Demonimation Mixing
+
+By agreeing on a set of standardized chunk sizes, mixers would increase the size of anonymity set for incoming transactions. It is also easier to apply a series of mixers as
+long as they agree on the same chunk sizes. The downside of this approach is that mixing a large amount of bitcoin might take a long time. For example, assuming the chunk sizes
+of a mixer is 0.1, 0.5 and 1 BTC, mixing 8.6 BTC requires a minimum of 10 rounds. Also, it might be impossible to mix a coin that is too smaller without merging it with others
+coins first.
+
+#### Unequal Input Mixing
+
+What if input amounts are allowed to be unequal, can outputs be split in such a way that the [most optimal level](https://bitcoin.stackexchange.com/questions/73431/mixing-unequal-inputs)
+of anonymity is preserved? If such algorithm exists, coins with smaller amounts no longer need to be merged before meeting mixers's minimal chunk size. Coins with bigger amounts
+can also get matched together and enjoy much quicker mixing. [Unequal input mixing](https://github.com/nopara73/ZeroLink/issues/74) attempts to address this issue but it is requires
+[more research](https://gist.github.com/nothingmuch/544cdd47dd18ef8fe923b54e0d5ee141), though a basic form of it might be
+[making its way](https://medium.com/@nopara73/upcoming-wasabi-wallet-hard-fork-609f271d9c41) into [Wasabi Wallet](https://wasabiwallet.io) in the near future.
+
+#### Confidential transactions
+
+
 #### Mimblewimble
 #### Ring CT
 #### Zero knowledge proof
+
+forever growing accumulator is not good for scalability (like keyimages in monero)
+
+CT + Ring Signature is RingCT (not prunable)
+CT + CJ is Mimblewimble? (prunable)
+
 
 ### Spending conditions (smart contract)
 
