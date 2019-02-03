@@ -21,25 +21,20 @@ to "be aware" of it, but the fact that all transactions are transparent in the B
 real life identity is somehow tied a Bitcoin address, she will lose the privacy of all her past and future transactions
 associated with that address.
 
-Most of the privacy technologies are designed to obfuscate one or more of those 4 pieces of sensitive information 
+Most of the privacy technologies are designed to obfuscate one or multiple of those 4 pieces of sensitive information 
 from the blockchain, each making different set of tradeoffs. A few things should perhaps be considered when evaluating them.
 
-* First, there seems to a tension between privacy and decentralization since decentralization usually rely on public verification to maintain
-its security. Suprisingly, this conflict is not always true. It is important to evaluate if a privacy enhancing technology comes at the cost of centralization.
-To that end, traditional
-banks arguably maintain better transaction privacy than Bitcoin as long as they are
-technically and ethnically trusted. Suprisingly, this conflict does not always hold, 
+* First, decentralization relies on public verification to maintain its security, which seems to be at odds with privacy. Suprisingly, this conflict
+is not always true. However, it is important to evaluate if a privacy enhancing technology comes at the cost of centralization.
 * Privacy and scalability don't always play well together. Many privacy technologies require heavier computational resources which gets
-dramatically magnified in the context of blockchain, affecting it's ability to scale.
-* Privacy technologies sometimes damage user experience because computation and verification might take unreasonable amount of time
-and resources, complex interaction with other users and the system might be required.
-No matter how perfect a privacy technology is on paper, it doesn't generate any real world value if nobody uses it.
+dramatically magnified in the context of blockchain, affecting it's ability to scale. Others break [pruning](https://coinguides.org/bitcoin-blockchain-pruning/),
+resulting in ever growing database to verify new transactions.
+* Privacy technologies often times damage user experience because of heavier computation and longer verification time, as well as the need for complex
+interaction with other users. No matter how perfect a privacy technology is in theory, it doesn't generate any real world value if nobody uses it.
 
 Network layer privacy technolgies such as [Dandelion](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015030.html) or
 [Peer to Peer Encryption](https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki) are not discussed. Neither is the privacy benefits of
 the [Layer 2](https://en.wikipedia.org/wiki/Bitcoin_scalability_problem#%22Layer_2%22_systems) systems.
-
-Fungibility and Free speech
 
 ### Receiver
 #### Hierarchical Deterministic Wallets
@@ -130,7 +125,7 @@ Nonetheless, centralized mixers such as [bestmixer.io](https://bestmixer.io/en) 
 
 #### CoinJoin
 
-[CoinJoin](https://bitcointalk.org/index.php?topic=279249.0) was proposed by Bitcoin developer [Gregory Maxwell](https://github.com/gmaxwell) in 2013, which removes the risk
+[CoinJoin](https://bitcointalk.org/index.php?topic=279249.0) was proposed by Bitcoin developer [Greg Maxwell](https://github.com/gmaxwell) in 2013, which removes the risk
 of theft by a third party.
 
 To construct a CoinJoin transaction, a group of users need to somehow find each other, perhap through a centralized discovery service.
@@ -178,19 +173,44 @@ by [blind signatures](https://en.wikipedia.org/wiki/Blind_signature) is used to 
 
 TumbleBit is currently integrated into the [Breeze wallet](https://github.com/stratisproject/Breeze) from [Stratis](https://stratisplatform.com).
 
+#### Ring signatures
+
+[Ring signature](https://en.wikipedia.org/wiki/Ring_signature) is worth mentioning here even though then chance of applying it to Bitcoin is almost zero. It is an interesting digital
+signature scheme that can be used to implement a decentralized mixing service that requires no user interactions.
+
+It is easy to verify that a ring signature is created by one of the members in a group but computationally infeasible to determine which one exactly. [CryptoNotes](https://cryptonote.org/coins)
+based cryptocurrencies such as [Monero](https://ww.getmonero.org) takes advantage of this property to hide the senders
+of transactions. When constructing a transaction, currently [10](https://github.com/wownero/meta/issues/11) spent outputs are ["randomly selected"](https://www.youtube.com/watch?v=Sn44ahKxC1E) by Monero 
+from the blockchain as decoys along side with the real output. It will then:
+
+* Derive a [key image](https://monerodocs.org/cryptography/asymmetric/key-image/) from the real output
+* Generate a ring signature from this group of outputs.
+
+[Key image](https://monerodocs.org/cryptography/asymmetric/key-image/) is unique for the same output even if it is mixed with different set of decoys.
+Monero blockchain keeps track of all the key images of the spent outputs to avoid double spends, thus breaking [pruning](https://coinguides.org/bitcoin-blockchain-pruning/).
+A valid ring signature means that one of the outputs in the group is authorized to be spent without revealing which one exactly.
+
+Sender protection is considered to be the weakest part of Monero's privacy scheme since there are a few known issues with ring signature such as
+[0 decoy and chain reaction](https://www.youtube.com/watch?v=1CfXHC2IFx4), potential privacy breach during [hard fork](https://www.youtube.com/watch?v=6CVcirD90pg), etc.
+When it comes to [decoys selection](https://www.youtube.com/watch?v=Sn44ahKxC1E&t=1s) it is usually a cats and mouse game because it is very hard to predict all the heuristics.
+Nonetheless, it is still considered to be a technology that offers one of the strongest sender protection.
+
 ### Amount
 
 Transaction amount is not only by itself a very sensitive piece of information, it can also affect the effectiveness of other transaction graph obfuscation mechanisms such
 as CoinJoin or centralized mixers, etc. In general, to hide the amount, either transaction has to be split up into several smaller ones with uniform denomination, or else the
-amount needs to be hidden cryptographically in such a way that it is only known to the sender and reciever but everybody else can verify that no unintended inflation is created
-during the transaction.
+amount needs to be hidden cryptographically in such a way that it is only known to the participants but everybody else can verify that no inflation is created during the transaction.
 
 #### Rounds Based Fixed Demonimation Mixing
 
-By agreeing on a set of standardized chunk sizes, mixers would increase the size of anonymity set for incoming transactions. It is also easier to apply a series of mixers as
-long as they agree on the same chunk sizes. The downside of this approach is that mixing a large amount of bitcoin might take a long time. For example, assuming the chunk sizes
-of a mixer is 0.1, 0.5 and 1 BTC, mixing 8.6 BTC requires a minimum of 10 rounds. Also, it might be impossible to mix a coin that is too smaller without merging it with others
-coins first.
+By agreeing on a set of standardized chunk sizes, mixers would
+increase the size of anonymity set for incoming transactions. It is
+also easier to apply a series of mixers as long as they agree on the
+same chunk sizes. The downside of this approach is that mixing a large
+amount of bitcoin might take a long time. For example, assuming the
+chunk sizes of a mixer is 0.1, 0.5 and 1 BTC, mixing 8.6 BTC requires
+a minimum of 10 rounds. Also, it might be impossible to mix a coin
+that is too smaller without merging it with others coins first.
 
 #### Unequal Input Mixing
 
@@ -202,8 +222,59 @@ can also get matched together and enjoy much quicker mixing. [Unequal input mixi
 
 #### Confidential transactions
 
+[Conceived](https://bitcointalk.org/index.php?topic=305791.0) by [Adam Back](https://en.wikipedia.org/wiki/Adam_Back) and
+[improved](https://people.xiph.org/~greg/confidential_values.txt) by [Gregory Maxwell](https://github.com/gmaxwell),
+[Confidential Transactions](https://people.xiph.org/~greg/confidential_values.txt) offers a solution to hide transaction amount from the blockchain
+while keeping it publicly verifiable that all transactions are balanced and no coins were created out of thin air.
+
+To achieve this in a system like Bitcoin, it relies on a number of cryptographic constructs.
+
+First off, confidential transaction hides amount using [commitment scheme](https://en.wikipedia.org/wiki/Commitment_scheme), which is a cryptographic primitive
+that allows one to "commit to a chosen value while keeping it hidden to others, with the ability to reveal the committed value later". Specifically, confidential
+transaction uses a commitment scheme called [pederson commitment](https://link.springer.com/chapter/10.1007/3-540-46766-1_9), which also preserves something that's
+crucial for its application to ledger like systems: addition and commutative properties.
+
+Assuming that **G** and **H** are [generator points](https://bitcoin.stackexchange.com/questions/29904/what-exactly-is-generator-g-in-bitcoins-elliptical-curve-algorithm) of two
+[elliptic curves](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography), **v** is the transaction amount and **r** is a random number. Then
+
+`r*G + v*H`
+
+is a pederson commitment of the amount **v**. In Bitcoin, this commitment could be used to replace the amount in the transaction outputs. 
+
+relies on [perderson commitment](https://link.springer.com/chapter/10.1007/3-540-46766-1_9) to hide the transaction amount.
+A [Commitment Scheme](https://en.wikipedia.org/wiki/Commitment_scheme) In confidential transactions, 
+
+
+* [Perderson commitment](https://link.springer.com/chapter/10.1007/3-540-46766-1_9) is used to hide the transaction amount using a
+, which  
+* [Range Proof](xx)
+ffo
+* [ECDH](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman)
+niux
+
+First of all,
+[Perderson commitment](https://link.springer.com/chapter/10.1007/3-540-46766-1_9) is used to commit to an particular amount. 
+
+
+
+
+How confidential transaction could potentially work in the context of Bitcoin and how it works in Grin
+
+section 2.3 of https://github.com/AdamISZ/ConfidentialTransactionsDoc/blob/master/essayonCT.pdf
+requires ECDH again.....to exchange the key!
+
+
+Range proof is using ring signature.
+
+what is the life cycle of a grin transaction?
+
+
 
 #### Mimblewimble
+can cutthrough be thought of as coinjoin?
+
+went a bit further by using keys to show ownership....
+
 #### Ring CT
 #### Zero knowledge proof
 
@@ -211,6 +282,8 @@ forever growing accumulator is not good for scalability (like keyimages in moner
 
 CT + Ring Signature is RingCT (not prunable)
 CT + CJ is Mimblewimble? (prunable)
+
+Bulletproof make CT smaller
 
 
 ### Spending conditions (smart contract)
