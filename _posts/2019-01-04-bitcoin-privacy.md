@@ -225,66 +225,61 @@ can also get matched together and enjoy much quicker mixing. [Unequal input mixi
 [Conceived](https://bitcointalk.org/index.php?topic=305791.0) by [Adam Back](https://en.wikipedia.org/wiki/Adam_Back) and
 [improved](https://people.xiph.org/~greg/confidential_values.txt) by [Gregory Maxwell](https://github.com/gmaxwell),
 [Confidential Transactions](https://people.xiph.org/~greg/confidential_values.txt) offers a solution to hide transaction amount from the blockchain
-while keeping it publicly verifiable that all transactions are balanced and no coins were created out of thin air.
+while keeping it verifiable that all transactions are balanced and no deliberate inflation was created.
 
 To achieve this in a system like Bitcoin, it relies on a number of cryptographic constructs.
 
-First off, confidential transaction hides amount using [commitment scheme](https://en.wikipedia.org/wiki/Commitment_scheme), which is a cryptographic primitive
-that allows one to "commit to a chosen value while keeping it hidden to others, with the ability to reveal the committed value later". Specifically, confidential
-transaction uses a commitment scheme called [pederson commitment](https://link.springer.com/chapter/10.1007/3-540-46766-1_9), which also preserves something that's
-crucial for its application to ledger like systems: addition and commutative properties.
+First off, confidential transaction hides amount using a [commitment scheme](https://en.wikipedia.org/wiki/Commitment_scheme) called
+[pederson commitment](https://link.springer.com/chapter/10.1007/3-540-46766-1_9), which is a cryptographic primitive that not only
+allows one to *"commit to a chosen value while keeping it hidden to others, with the ability to reveal the committed value later"*, but also preserves
+the addition and commutative properties which is crucial for its application to ledger like systems:
 
 Assuming that **G** and **H** are [generator points](https://bitcoin.stackexchange.com/questions/29904/what-exactly-is-generator-g-in-bitcoins-elliptical-curve-algorithm) of two
 [elliptic curves](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography), **v** is the transaction amount and **r** is a random number. Then
 
 `r*G + v*H`
 
-is a pederson commitment of the amount **v**. In Bitcoin, this commitment could be used to replace the amount in the transaction outputs. 
+is a pederson commitment of the amount **v**. **r** is called a binding factor, which is essentially a big random number. if *v == v1 + v2* and the corresponding
+pederson commitment for **v1** and **v2** are
 
-relies on [perderson commitment](https://link.springer.com/chapter/10.1007/3-540-46766-1_9) to hide the transaction amount.
-A [Commitment Scheme](https://en.wikipedia.org/wiki/Commitment_scheme) In confidential transactions, 
+`r1*G + v1*H`
+
+`r2*G + v2*H`
+
+respectively, then as long as *r == r1 + r2*, the entire pederson commit can be substracted to 0.
+
+`(r*G + v*H) - (r1*G + v1*H + r2*G + v2*H) == 0`
+
+This means that from the arithmetic point of view, the pederson commitment of an amount could be used as a replacement for amount in Bitcoin like systems. In fact, this is
+exactly what [Element](https://elementsproject.org/features/confidential-transactions) project has done.
+
+This works except that if **v1** is a negative number, **v2** will be bigger than **v**, which means that coins are created out of thin air.
+Range proof solves this issue by proving that an amount is within a certain range, in the [original confidential transaction post](https://people.xiph.org/~greg/confidential_values.txt),
+range proof was designed to leverage [Borromean ring signature](https://bitcointalk.org/index.php?topic=1077994.0). Later [Bulletproofs](https://eprint.iacr.org/2017/1066.pdf) was proposed
+to perform range proof in a much more efficent way.
+
+One last piece of the puzzle is that if
+
+`r1*G + v1*H`
+
+is the amount of a transaction output, how would the recipient know the amount **v1** and the binding factor **r1**? In [Element](https://elementsproject.org/features/confidential-transactions),
+this is done through the classic [ECDH](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman) key exchange. The output amount of a transction in
+[Element](https://elementsproject.org/features/confidential-transactions) actually contains not only
+the pederson commitment, but also a range proof and an [ECDH](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman) ephemeral public key from the sender. With that,
+the receiver can derive the shared secret key with the sender, which can be used to unwind **v1** and **r1**. A more detailed explanation from [Pieter Wuille](https://twitter.com/pwuille?lang=en)
+can be found [here](https://bitcoin.stackexchange.com/questions/48064/sending-confidential-transaction-amount-to-the-receiver).
+
+[Mimblewimble](https://github.com/mimblewimble/docs/wiki/MimbleWimble-Origin) takes the idea of confidential transaction a bit further
+
+[Ring CT](https://src.getmonero.org/resources/moneropedia/ringCT.html)
 
 
-* [Perderson commitment](https://link.springer.com/chapter/10.1007/3-540-46766-1_9) is used to hide the transaction amount using a
-, which  
-* [Range Proof](xx)
-ffo
-* [ECDH](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman)
-niux
-
-First of all,
-[Perderson commitment](https://link.springer.com/chapter/10.1007/3-540-46766-1_9) is used to commit to an particular amount. 
-
-
-
-
-How confidential transaction could potentially work in the context of Bitcoin and how it works in Grin
-
-section 2.3 of https://github.com/AdamISZ/ConfidentialTransactionsDoc/blob/master/essayonCT.pdf
-requires ECDH again.....to exchange the key!
-
-
-Range proof is using ring signature.
-
-what is the life cycle of a grin transaction?
-
-
-
-#### Mimblewimble
-can cutthrough be thought of as coinjoin?
-
-went a bit further by using keys to show ownership....
-
-#### Ring CT
 #### Zero knowledge proof
 
 forever growing accumulator is not good for scalability (like keyimages in monero)
 
 CT + Ring Signature is RingCT (not prunable)
 CT + CJ is Mimblewimble? (prunable)
-
-Bulletproof make CT smaller
-
 
 ### Spending conditions (smart contract)
 
