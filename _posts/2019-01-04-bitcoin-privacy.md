@@ -237,18 +237,23 @@ the addition and commutative properties which is crucial for its application to 
 Assuming that **G** and **H** are [generator points](https://bitcoin.stackexchange.com/questions/29904/what-exactly-is-generator-g-in-bitcoins-elliptical-curve-algorithm) of two
 [elliptic curves](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography), **v** is the transaction amount and **r** is a random number. Then
 
+{% highlight Erlang %}
 `r*G + v*H`
+{% endhighlight %}
 
 is a pederson commitment of the amount **v**. **r** is called a binding factor, which is essentially a big random number. if *v == v1 + v2* and the corresponding
 pederson commitment for **v1** and **v2** are
 
-`r1*G + v1*H`
-
-`r2*G + v2*H`
+{% highlight Erlang %}
+r1*G + v1*H
+r2*G + v2*H
+{% endhighlight %}
 
 respectively, then as long as *r == r1 + r2*, the entire pederson commit can be substracted to 0.
 
-`(r*G + v*H) - (r1*G + v1*H + r2*G + v2*H) == 0`
+{% highlight Erlang %}
+(r*G + v*H) - (r1*G + v1*H + r2*G + v2*H) == 0
+{% endhighlight %}
 
 This means that from the arithmetic point of view, the pederson commitment of an amount could be used as a replacement for amount in Bitcoin like systems. In fact, this is
 exactly what [Element](https://elementsproject.org/features/confidential-transactions) project has done.
@@ -260,7 +265,9 @@ to perform range proof in a much more efficent way.
 
 One last piece of the puzzle is that if
 
-`r1*G + v1*H`
+{% highlight Erlang %}
+r1*G + v1*H
+{% endhighlight %}
 
 is the amount of a transaction output, how would the recipient know the amount **v1** and the binding factor **r1**? In [Element](https://elementsproject.org/features/confidential-transactions),
 this is done through the classic [ECDH](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman) key exchange. The output amount of a transction in
@@ -273,17 +280,23 @@ Since January 2017, [Ring Confidential Transaction](https://src.getmonero.org/re
 outputs with the same denomination are allowed to be members of the same ring. With confidential transaction, not only the amount is hidden, the number of potential outputs that could
 be used as decoys becomes much larger as well.
 
-[Mimblewimble](https://github.com/mimblewimble/docs/wiki/MimbleWimble-Origin) takes the idea of confidential transaction a bit further
+#### Mimblewimble
 
-[Ring CT](https://src.getmonero.org/resources/moneropedia/ringCT.html)
+[Mimblewimble](https://github.com/mimblewimble/docs/wiki/MimbleWimble-Origin) also [uses confidential transaction](https://src.getmonero.org/resources/moneropedia/ringCT.html)
+to prove that transations are balanced without revealing the actual amounts. However, compared to Bitcoin like systems where a signature signed directly by a seperate private key
+is needed to prove the ownership of the output, it goes a bit further by [leveraging the blinding factor instead](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#ownership).
 
+Assuming that
 
-#### Zero knowledge proof
+{% highlight Erlang %}
+ri*G + vi*H
+ro*G + vo*H
+{% endhighlight %}
 
-forever growing accumulator is not good for scalability (like keyimages in monero)
-
-CT + Ring Signature is RingCT (not prunable)
-CT + CJ is Mimblewimble? (prunable)
+are the pederson commitment of the input amount **v1** and output amount **v2**. If *v1 == v2*, the substraction of the two commitment becomes *(ro-ri)\*G*, which should be a valid
+public key. As long as the sender and receiver joinly produce a signature to prove that they know *(ro-ri)*, the transaction is considered to be valid and the ownership of the coin
+is transfered. The ability to prove ownership like this enables [cut-through](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#cut-through), which turns out to be a further
+boost to MimbleWimble's privacy and scalability.
 
 ### Spending conditions (smart contract)
 
