@@ -4,7 +4,7 @@ category: Fintech, Blockchain, Philosophy, Privacy
 title: A Survey of Bitcoin's Privacy Technologies
 ---
 
-<img src="{{ site.baseurl }}/images/crowd-of-people-images-crowd.jpg" alt="crowd-anonymous" style="width: 500px;"/>
+<img src="{{ site.baseurl }}/images/crowd-of-people-images-crowd.jpg" alt="crowd-anonymous" style="width: 580px;"/>
 
 Bitcoin whitepaper has a [section dedicated to privacy](https://nakamotoinstitute.org/bitcoin/#privacy), in which it states:
 
@@ -319,7 +319,37 @@ a branch of logic is already decided at spending time, there is more room to man
 
 #### Shnorr Signatures
 
-#### MAST
+#### Merkle Branches (MAST)
+
+One observation is that most of the transaction logic is just some disjunction of possibilities. Even though a coin can only be spent with one of the possible paths,
+the entire script with all possibilities needs to be revealed in the spending transaction input.
+
+[Merkle Branches](https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg05991.html) (MAST) structures those possibilities as
+[Merkle Tree](https://en.wikipedia.org/wiki/Merkle_tree). Assuming that Alice has a coin which she is allowed to spend at any time, but if the coin is not spent by her for 3 months,
+Bob and Charlie will be able to spend it together if they both agree. This could be expressed as following in Bitcoin Script:
+
+{% highlight Erlang %}
+OP_If
+   <alice's pubkey> OP_CheckSig
+OP_Else
+   "3 months" OP_CSV OP_Drop
+   2 <bob's pubkey> <charlie's pubkey> 2 OP_CheckMultiSig
+OP_EndIf
+{% endhighlight %}
+
+<span class="image-label">(Credit: script and related images are from [David A Harding](https://twitter.com/hrdng?lang=en)'s execellent [post](https://bitcointechtalk.com/what-is-a-bitcoin-merklized-abstract-syntax-tree-mast-33fdf2da5e2f) about MAST)</span>
+
+With MAST, the above script could be structured as the following tree, with every square node containing a hash of the labels of its child nodes.
+
+<img src="{{ site.baseurl }}/images/merkle-tree-full.png" alt="merkle-tree-full"/><br/>
+
+When Alice tries to spend the coin, only the left branch and the hash of the right branch need to be revealed. After three months, if Bob and Charlie decide to jointly spend the coin,
+they only need to reveal the right branch and the hash of the left branch. 
+
+<img src="{{ site.baseurl }}/images/merkle-tree.png" alt="merkle-tree" style="width: 600px;"/>
+
+From this example, the benefit of MAST when it comes to privacy and reducing transaction size is pretty obvious. David Harding's [post](https://bitcointechtalk.com/what-is-a-bitcoin-merklized-abstract-syntax-tree-mast-33fdf2da5e2f)
+offers more in depth discussion.
 
 #### Taproot
 
