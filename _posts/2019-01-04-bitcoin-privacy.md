@@ -269,6 +269,10 @@ the pederson commitment, but also a range proof and an [ECDH](https://en.wikiped
 the receiver can derive the shared secret key with the sender, which can be used to unwind **v1** and **r1**. A more detailed explanation from [Pieter Wuille](https://twitter.com/pwuille?lang=en)
 can be found [here](https://bitcoin.stackexchange.com/questions/48064/sending-confidential-transaction-amount-to-the-receiver).
 
+Since January 2017, [Ring Confidential Transaction](https://src.getmonero.org/resources/moneropedia/ringCT.html) (RingCT) was implemented in Monero. Prio to that only
+outputs with the same denomination are allowed to be members of the same ring. With confidential transaction, not only the amount is hidden, the number of potential outputs that could
+be used as decoys becomes much larger as well.
+
 [Mimblewimble](https://github.com/mimblewimble/docs/wiki/MimbleWimble-Origin) takes the idea of confidential transaction a bit further
 
 [Ring CT](https://src.getmonero.org/resources/moneropedia/ringCT.html)
