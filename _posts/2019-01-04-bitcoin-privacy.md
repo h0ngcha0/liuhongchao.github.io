@@ -10,14 +10,18 @@ others were either implemented in altcoins or get abandoned altogether. In this 
 the information they are trying to hide.
 
 
-* **Reciever:** HD Wallet, Stealth Address, Resusable Payment Code, Coin Control, etc
-* **Sender:** Centralized Mixer, CoinJoin and its variants, CoinShuffle, TumbleBit, Ring Signatures, etc
-* **Amount:** Rounds Based Fixed Demonimation Mixing, Unequal Input Mixing, Confidential Transactions, Mimblewimble, etc
-* **Transasction Logic:** P2SH, Merkle Branches (MAST), Taproot, Graftroot, etc
+* **Reciever:** [HD Wallet](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)), [Stealth Address](https://github.com/genjix/bips/blob/master/bip-stealth.mediawiki),
+[Resusable Payment Code](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki), [Coin Control](https://bitcoin.stackexchange.com/questions/37486/what-does-bitcoin-cores-coin-control-features-do-and-how-do-i-use-it), etc
+* **Sender:** [Centralized Mixer](https://en.bitcoin.it/wiki/Mixing_service), [CoinJoin](https://bitcointalk.org/index.php?topic=279249.0) and its variants,
+[CoinShuffle](https://bitcointalk.org/index.php?topic=567625.0), [TumbleBit](http://cs-people.bu.edu/heilman/tumblebit/), [Ring Signatures](https://en.wikipedia.org/wiki/Ring_signature), etc
+* **Amount:** Rounds Based Fixed Demonimation Mixing, [Unequal Input Mixing](https://github.com/nopara73/ZeroLink/issues/74), [Confidential Transactions](https://people.xiph.org/~greg/confidential_values.txt),
+[Mimblewimble](https://github.com/mimblewimble/docs/wiki/MimbleWimble-Origin), etc
+* **Transasction Logic:** [P2SH](https://en.bitcoin.it/wiki/Pay_to_script_hash), [Merkle Branches](https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg05991.html) (MAST),
+[Taproot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html), [Graftroot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html), etc
 
 Network layer privacy technologies such as [Dandelion](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016071.html) or
 [Peer to Peer Encryption](https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki) are not discussed. Neither is the privacy benefits of the
-[Layer 2](https://en.wikipedia.org/wiki/Bitcoin_scalability_problem#"Layer_2"_systems) systems to the base layer. Zero knowlege proofs related technologies are also
+[Layer 2](https://en.wikipedia.org/wiki/Bitcoin_scalability_problem#"Layer_2"_systems) systems to the base layer. Technologies related to [ZCash](https://z.cash) are also
 intentionally left out.
 
 <img src="{{ site.baseurl }}/images/crowd-of-people-images-crowd.jpg" alt="crowd-anonymous" style="width: 580px;"/>
@@ -62,8 +66,8 @@ attackers need to tie all of those addresses together to Alice's identity, which
 this payment is [a best practice](https://bitcoin.org/en/protect-your-privacy#receive) when using bitcoin, including change addresses.
 
 #### Stealth Address
-In scenarios such as TV or billboard ads, where generating a fresh receiving address is not an option, stealth address might offer a solution.
-The idea is that after Alice publishes her public key, whoever wants to pay her needs to take that information, generate and
+In scenarios such as TV or billboard ads, where generating a fresh receiving address is not an option, [stealth address](https://github.com/genjix/bips/blob/master/bip-stealth.mediawiki)
+might offer a solution. The idea is that after Alice publishes her public key, whoever wants to pay her needs to take that information, generate and
 "pay" to a new public key whose corresponding private key can only be derived by Alice. One way to achieve this is by leveraging the
 [ECDH](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman) protocol.
 
