@@ -13,28 +13,27 @@ Bitcoin whitepaper has a [section dedicated to privacy](https://nakamotoinstitut
 > precludes this method, but privacy can still be maintained by breaking the flow of information in
 > another place: by keeping public keys anonymous.
 
-A bitcoin transaction consists of 4 pieces of sensitive information: sender, reciever, amount and transaction logic
-(written in [Bitcoin Script](https://en.bitcoin.it/wiki/Script)). When transactions are broadcasted to the Bitcoin network, all of those information is
-unprotected because Satoshi believes that [the only way to confirm the absence of a transaction is to be aware of all transactions](https://twitter.com/francispouliot_/status/1075414899235409920).
-It is debatable if recording all aspects of a transaction publicly forever is the only way (or even the best way)
+It becomes clear over the years that Bitcoin has never achieved the level of privacy that people had hoped for.
+A Bitcoin transaction consists of 4 pieces of sensitive information: sender, reciever, amount and transaction logic
+(written in [Bitcoin Script](https://en.bitcoin.it/wiki/Script)), all of which are broadcasted to the Bitcoin network
+and stored in the blockchain forever because [the only way to confirm the absence of a transaction is to be aware of all transactions](https://twitter.com/francispouliot_/status/1075414899235409920).
+It is debatable if recording all aspects of a transaction without much protection is the only way (or even the best way)
 to "be aware" of it, but the fact that all transactions are transparent in the Bitcoin blockchain means that if Alice's
 real life identity is somehow tied a Bitcoin address, she will lose the privacy of all her past and future transactions
 associated with that address.
 
-Most of the privacy technologies are designed to obfuscate one or multiple of those 4 pieces of sensitive information 
-from the blockchain, each making different set of tradeoffs. A few things should perhaps be considered when evaluating them.
+Most of the privacy technologies in Bitcoin are designed to obfuscate one or more of the sensitive transaction information 
+from the blockchain, each making different set of tradeoffs. A few things should perhaps be taken into account when evaluating them.
 
-* First, decentralization relies on public verification to maintain its security, which seems to be at odds with privacy. Suprisingly, this conflict
-is not always true. However, it is important to evaluate if a privacy enhancing technology comes at the cost of centralization.
-* Privacy and scalability don't always play well together. Many privacy technologies require heavier computational resources which gets
+* Decentralization means security is the result of public verification, which is often at odds with privacy. Fortunately, this apparent conflict
+is not always true, but it is still important to evaluate if a privacy enhancing technology comes at the cost of centralization.
+* Privacy and scalability don't always play well together. Many privacy technologies require much more computational resources which gets
 dramatically magnified in the context of blockchain, affecting it's ability to scale. Others break [pruning](https://coinguides.org/bitcoin-blockchain-pruning/),
-resulting in ever growing database to verify new transactions.
-* Privacy technologies often times damage user experience because of heavier computation and longer verification time, as well as the need for complex
-interaction with other users. No matter how perfect a privacy technology is in theory, it doesn't generate any real world value if nobody uses it.
+resulting in ever growing database to verify new transactions. Luckily, this is not always true either. 
+* Privacy technologies could damage user experience due to heavier computation and longer verification time or complex
+interaction with other users. No matter how perfect a privacy technology is in theory, it doesn't generate any real world value if nobody uses it due to bad UX.
 
-Network layer privacy technolgies such as [Dandelion](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015030.html) or
-[Peer to Peer Encryption](https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki) are not discussed. Neither is the privacy benefits of
-the [Layer 2](https://en.wikipedia.org/wiki/Bitcoin_scalability_problem#%22Layer_2%22_systems) systems.
+The rest of the post is divided up into 4 sections: **Receiver**, **Sender**, **Amount** and **Transaction Logic**, in which the relevant privacy technolgies are discussed.
 
 ### Receiver
 #### Hierarchical Deterministic Wallets
