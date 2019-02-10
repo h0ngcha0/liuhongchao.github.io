@@ -391,5 +391,15 @@ with complex part of the transaction logic rarely revealed.
 
 #### Graftroot
 
+One of the limitations that Taproot suffers is that it only natively provides for one alternative. [Graftroot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html)
+was invented by [Greg Maxwell](https://github.com/gmaxwell) to fix this limitation by using the delegation model.
 
+<img src="{{ site.baseurl }}/images/graftroot.png" alt="graftroot" style="width: 600px;"/>
 
+In the above example, **K** is the aggregated public key of the unanimity branch. **S1**, **S2** and **S3** are three alternative execution paths.
+There are two ways the transaction can be resolved:
+
+* A signature signed by **K**'s corresponding private key **k** on the transaction.
+* A signature signed by **K**'s corresponding private key **k** on either **S1**, **S2** or **S3**, and the signed script needs to be successfully executed.
+
+The second approach can be thought of as everybody involved decides to delegate the ownership to a script. In this way, any number of alternatives can be supported.
