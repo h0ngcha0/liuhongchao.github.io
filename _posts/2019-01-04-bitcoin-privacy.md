@@ -175,7 +175,7 @@ TumbleBit is currently integrated into the [Breeze wallet](https://github.com/st
 
 #### Ring signatures
 
-[Ring signature](https://en.wikipedia.org/wiki/Ring_signature) is worth mentioning here even though then chance of applying it to Bitcoin is almost zero. It is an interesting digital
+[Ring signature](https://en.wikipedia.org/wiki/Ring_signature) is worth mentioning here even though it would never be adopted by something like Bitcoin. It is an interesting digital
 signature scheme that can be used to implement a decentralized mixing service that requires no user interactions.
 
 It is easy to verify that a ring signature is created by one of the members in a group but computationally infeasible to determine which one exactly. [CryptoNotes](https://cryptonote.org/coins)
