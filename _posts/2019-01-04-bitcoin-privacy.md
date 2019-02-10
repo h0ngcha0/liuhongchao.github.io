@@ -145,12 +145,12 @@ A variation of CoinJoin called [Chaumian CoinJoin](https://github.com/nopara73/Z
 in [Wasabi Wallet](https://wasabiwallet.io)), it is still not in a position to learn the linkage between inputs and outputs.
 
 [CoinShuffle](https://bitcointalk.org/index.php?topic=567625.0) attempts to address CoinJoin's anomymity issue by running a clever [decentralized protocols](http://crypsys.mmci.uni-saarland.de/projects/CoinShuffle/coinshuffle.pdf)
-among participants. Assuming that Alice, Bob and Charlie are going to perform a CoinJoin and their freshly generated keys pairs are PubA/PrivA, PubB/PrivB and PubC/PrivC respectively. Following
+among participants. Assuming that Alice, Bob and Charlie are going to perform a CoinJoin and their freshly generated keys pairs are **PubA**/**PrivA**, **PubB**/**PrivB** and **PubC**/**PrivC** respectively. Following
 is how the CoinShuffle could be carried out.
-* Alice is randomly selected to know PubA, PubB and PubC. Bob is randomly selected to know PubB and PubC. Charlie is randomly only knows PubB.
-* Alice uses PubC to encrypt her output address and PubB to encrypt the encrypted message again. Alice sends the double encryted message to Bob.
-* Bob recieves the double encrypted message from Alice, decrypt it using PrivB. Encrypt his own output address using PubC. Send both encrypted messages to Charlie.
-* Charlie receives both encrypted messages, decrypts them using PrivC, revealing both Alice and Bob's output addresses. He then uses them to construct the CoinJoin transaction together with his
+* Alice is randomly selected to know **PubA**, **PubB** and **PubC**. Bob is randomly selected to know **PubB** and **PubC**. Charlie is randomly only knows **PubB**.
+* Alice uses **PubC** to encrypt her output address and **PubB** to encrypt the encrypted message again. Alice sends the double encryted message to Bob.
+* Bob recieves the double encrypted message from Alice, decrypt it using **PrivB**. Encrypt his own output address using **PubC**. Send both encrypted messages to Charlie.
+* Charlie receives both encrypted messages, decrypts them using **PrivC**, revealing both Alice and Bob's output addresses. He then uses them to construct the CoinJoin transaction together with his
 own output address
 
 This onion structure similiar to [Tor](https://www.torproject.org) ensures that no parties involved knows the ownship
@@ -364,6 +364,29 @@ resulting much smaller transaction could also serve as an extra economic incenti
 Other features that could be implemented include batch verification, block level signature aggregation, etc. More information can be found [here](https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki).
 
 #### Taproot
+
+Even though transaction logic might be composed of disjunction of posibilities, a key observation is that there usually can be a "unanimity branch"
+where the coin can be spent if every participant agrees. This is analogous to the court model in real life where even though it could enforce complex contract
+between different parties, in most of the scenarios it is just served as a deterrent. Normally transactions are resolved by mutual consensus off court.
+
+<img src="{{ site.baseurl }}/images/unanimous-branch.png" alt="unamimous-branch" style="width: 600px;"/>
+
+One approach to implement "unanimity branch" on top of MAST is to represent it as an extra branch alongside the original MAST tree, as shown in the green node above, and the red node
+would become the new merkle root. With schnorr signature, the red node could be reduced to just one signature. This could work, but every time when a transaction is settled with
+unanimity branch (which should be the most common scenario), the value of it still needs to be revealed, taking up the precious blockchain space.
+
+[Taproot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html) is designed to represent the unanimity branch in a more efficient way. It is inspired by
+the idea of [Pay-to-Contract](https://arxiv.org/abs/1212.3257) by [Timo Hanke](https://twitter.com/timothanke). Assuming that the merkle root of a MAST script is **C**, and the aggregated
+public key of the unanimity branch is **K**, then the Taproot version of the script above would look like the following:
+
+<img src="{{ site.baseurl }}/images/taproot.png" alt="taproot" style="width: 600px;"/>
+
+The Taproot node contains the value of `K + H(K||C)*G`, which can be spent in two ways:
+
+* If unanimity branch is chosen, a signature signed by `k + H(K||C)` would be enough where **k** is the private key of **K**
+* If no consensus is reached, **C** needs to be revealed and executed.
+
+Since most transactions resolve with the unanimity branch, the complex logic of a Taproot transaction is rarely revealed.
 
 #### Graftroot
 
