@@ -386,7 +386,8 @@ The Taproot node contains the value of `K + H(K||C)*G`, which can be spent in tw
 * If unanimity branch is chosen, a signature signed by `k + H(K||C)` would be enough where **k** is the private key of **K**
 * If no consensus is reached, **C** needs to be revealed and executed.
 
-Since most transactions resolve with the unanimity branch, the complex logic of a Taproot transaction is rarely revealed.
+Since most transactions resolve with the unanimity branch, most Taproot transactions look just like a normal [P2PKH](https://en.bitcoinwiki.org/wiki/Pay-to-Pubkey_Hash) transactions,
+with complex part of the transaction logic rarely revealed.
 
 #### Graftroot
 
