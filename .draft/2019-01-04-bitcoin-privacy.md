@@ -317,8 +317,6 @@ With [P2SH](https://en.bitcoin.it/wiki/Pay_to_script_hash) an output can be sent
 from the senders to the recipients. P2SH in itself is not a privacy enhancing technology since the same logic still needs to be provided by the recipient. But since usually 
 a branch of logic is already decided at spending time, there is more room to maneuver when it comes to hiding information.
 
-#### Shnorr Signatures
-
 #### Merkle Branches (MAST)
 
 One observation is that most of the transaction logic is just some disjunction of possibilities. Even though a coin can only be spent with one of the possible paths,
@@ -350,6 +348,20 @@ they only need to reveal the right branch and the hash of the left branch.
 
 From this example, the benefit of MAST when it comes to privacy and reducing transaction size is pretty obvious. David Harding's [post](https://bitcointechtalk.com/what-is-a-bitcoin-merklized-abstract-syntax-tree-mast-33fdf2da5e2f)
 offers more in depth discussion.
+
+#### Schnorr Signatures
+
+[Schnorr Signatures](https://en.wikipedia.org/wiki/Schnorr_signature) relies on the same security assumptions as
+[ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) that it is hard to solve [discret log problem](https://en.wikipedia.org/wiki/Discrete_logarithm).
+Compared to ECDSA which Bitcoin currently uses, the biggest advantage is that multiple schnorr signatures signed by different private keys for the same message can be verified by the sum of all the corresponding
+public keys. This is a very interesting property that has the following benefits.
+
+* Protocols can be [devised](https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki#multisignatures-and-threshold-signatures) to require only one aggregated signature to
+verify N-of-M [MultiSig](https://bitcoin.org/en/glossary/multisig) smart contract, which is a great win for privacy and scalability
+* It offers better privacy for [CoinJoin](https://bitcointalk.org/index.php?topic=279249.0) transaction since now all the participants only need to provide one joint signature. The 
+resulting much smaller transaction could also be an extra economic incentives to perform CoinJoin.
+
+* 
 
 #### Taproot
 
