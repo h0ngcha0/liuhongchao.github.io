@@ -1,8 +1,24 @@
 ---
 layout: post
 category: Fintech, Blockchain, Philosophy, Privacy
-title: A Survey of Bitcoin's Privacy Technologies
+title: An Incomplete Survey of Bitcoin's Privacy Technologies
 ---
+
+**TL;DR**, Bitcoin has never been anonymous since its inception. Making it more private becomes one of the most vibrant
+research area in the space. While some proposals have made (or are making) their way into the Bitcoin's [reference implementation](https://github.com/bitcoin/bitcoin), 
+others were either implemented in altcoins or get abandoned altogether. In this post, the following privacy enhancing technologies are categorized and surveyed based on
+the information they are trying to hide.
+
+
+* **Reciever:** HD Wallet, Stealth Address, Resusable Payment Code, Coin Control, etc
+* **Sender:** Centralized Mixer, CoinJoin and its variants, CoinShuffle, TumbleBit, Ring Signatures, etc
+* **Amount:** Rounds Based Fixed Demonimation Mixing, Unequal Input Mixing, Confidential Transactions, Mimblewimble, etc
+* **Transasction Logic:** P2SH, Merkle Branches (MAST), Taproot, Graftroot, etc
+
+Network layer privacy technologies such as [Dandelion](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016071.html) or
+[Peer to Peer Encryption](https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki) are not discussed. Neither is the privacy benefits of the
+[Layer 2](https://en.wikipedia.org/wiki/Bitcoin_scalability_problem#"Layer_2"_systems) systems to the base layer. Zero knowlege proofs related technologies are also
+intentionally left out.
 
 <img src="{{ site.baseurl }}/images/crowd-of-people-images-crowd.jpg" alt="crowd-anonymous" style="width: 580px;"/>
 
@@ -402,3 +418,8 @@ There are two ways the transaction can be resolved:
 * A signature signed by **K**'s corresponding private key **k** on either **S1**, **S2** or **S3**, and the signed script needs to be successfully executed.
 
 The second approach can be thought of as everybody involved decides to delegate the ownership to a script. In this way, any number of alternatives can be supported.
+
+<br/>
+
+Many facinating privacy enhancing technologies for Bitcoin are being proposed and implemented. Hope this post helps you to understand this area a little bit better. Personally, I am looking forward
+to seeing Schnorr signatures and Taproot get implemented in Bitcoin soon. Perhaps confidential transaction too, but maybe that is too much of a wish :)
