@@ -353,15 +353,15 @@ offers more in depth discussion.
 
 [Schnorr Signatures](https://en.wikipedia.org/wiki/Schnorr_signature) relies on the same security assumptions as
 [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) that it is hard to solve [discret log problem](https://en.wikipedia.org/wiki/Discrete_logarithm).
-Compared to ECDSA which Bitcoin currently uses, the biggest advantage is that multiple schnorr signatures signed by different private keys for the same message can be verified by the sum of all the corresponding
-public keys. This is a very interesting property that has the following benefits.
+Compared to ECDSA which Bitcoin currently relies upon, the biggest advantage is that multiple schnorr signatures signed by different private keys for the same message can be verified by the sum of all the corresponding
+public keys. This is a significant property that could be leveraged to implement many interesting features, for example:
 
 * Protocols can be [devised](https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki#multisignatures-and-threshold-signatures) to require only one aggregated signature to
 verify N-of-M [MultiSig](https://bitcoin.org/en/glossary/multisig) smart contract, which is a great win for privacy and scalability
 * It offers better privacy for [CoinJoin](https://bitcointalk.org/index.php?topic=279249.0) transaction since now all the participants only need to provide one joint signature. The 
-resulting much smaller transaction could also be an extra economic incentives to perform CoinJoin.
+resulting much smaller transaction could also serve as an extra economic incentives to perform CoinJoin.
 
-* 
+Other features that could be implemented include batch verification, block level signature aggregation, etc. More information can be found [here](https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki).
 
 #### Taproot
 
