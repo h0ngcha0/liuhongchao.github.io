@@ -10,7 +10,7 @@ others were either implemented in altcoins or get abandoned altogether. In this 
 the information they are trying to hide.
 
 
-* **Reciever:** [HD Wallet](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)), [Stealth Address](https://github.com/genjix/bips/blob/master/bip-stealth.mediawiki),
+* **Reciever:** [HD Wallet](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki), [Stealth Address](https://github.com/genjix/bips/blob/master/bip-stealth.mediawiki),
 [Resusable Payment Code](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki), [Coin Control](https://bitcoin.stackexchange.com/questions/37486/what-does-bitcoin-cores-coin-control-features-do-and-how-do-i-use-it), etc
 * **Sender:** [Centralized Mixer](https://en.bitcoin.it/wiki/Mixing_service), [CoinJoin](https://bitcointalk.org/index.php?topic=279249.0) and its variants,
 [CoinShuffle](https://bitcointalk.org/index.php?topic=567625.0), [TumbleBit](http://cs-people.bu.edu/heilman/tumblebit/), [Ring Signatures](https://en.wikipedia.org/wiki/Ring_signature), etc
