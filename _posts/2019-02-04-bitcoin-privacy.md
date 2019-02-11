@@ -5,7 +5,7 @@ title: An Incomplete Survey of Bitcoin's Privacy Technologies
 ---
 
 **TL;DR**, Bitcoin has never been anonymous since its inception. Making it more private becomes one of the most vibrant
-research area in the space. While some proposals have made (or are making) their way into the Bitcoin's [reference implementation](https://github.com/bitcoin/bitcoin), 
+research areas in the space. While some proposals have made (or are making) their way into the Bitcoin's [reference implementation](https://github.com/bitcoin/bitcoin), 
 others were either implemented in altcoins or get abandoned altogether. In this post, the following privacy enhancing technologies are categorized and surveyed based on
 the information they are trying to hide.
 
@@ -17,7 +17,7 @@ the information they are trying to hide.
 * **Amount:** Rounds Based Fixed Demonimation Mixing, [Unequal Input Mixing](https://github.com/nopara73/ZeroLink/issues/74), [Confidential Transactions](https://people.xiph.org/~greg/confidential_values.txt),
 [Mimblewimble](https://github.com/mimblewimble/docs/wiki/MimbleWimble-Origin), etc
 * **Transasction Logic:** [P2SH](https://en.bitcoin.it/wiki/Pay_to_script_hash), [Merkle Branches](https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg05991.html) (MAST),
-[Taproot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html), [Graftroot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html), etc
+[Schnorr Signatures](https://en.wikipedia.org/wiki/Schnorr_signature), [Taproot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html), [Graftroot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html), etc
 
 Network layer privacy technologies such as [Dandelion](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016071.html) or
 [Peer to Peer Encryption](https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki) are not discussed. Neither is the privacy benefits of the
