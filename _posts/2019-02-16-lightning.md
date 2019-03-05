@@ -4,18 +4,12 @@ category: Bitcoin, Cryptocurrency, Layer 2, Lightning network
 title: Lightning Network Channel Establishment
 ---
 
-Let's say Alice, Bob and Chris
-
-
-
-Anchor transaction of Alice and Bob output
-
 
 {% highlight org %}
 
-+------------+
+|------------+
 | funding tx |
-+------------+
+|------------+
       |
       |        +-------------+
       \--------| commit tx B |
@@ -51,6 +45,13 @@ Anchor transaction of Alice and Bob output
                                            \
                                             `- to A (& revocation key)
 {% endhighlight %}
+
+
+Let's say Alice, Bob and Chris
+
+
+
+Anchor transaction of Alice and Bob output
 
 {% highlight Erlang %}
 OP_HASH <SECRET-A-HASH> OP_EQUAL
@@ -233,10 +234,12 @@ https://rusty.ozlabs.org/?p=477
 
 follow: https://medium.com/@rusty_lightning
 
-3. this is very useful discussion
-https://github.com/lightningnetwork/lightning-rfc/issues/553
+3. 
 
 
+today's agenda,
+basically figure out the flow of lightning channel establishment.
 
-why a seperate HTLC transaction? (2-stage)
-If someone want to publish an old commitment transaction with the HTLC success case, using the pre-image, 
+- couple of scenarios?
+- what message was exchanged?
+- down to the script level
