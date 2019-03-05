@@ -14,7 +14,7 @@ called a [funding transaction](https://github.com/lightningnetwork/lightning-rfc
 <img src="{{ site.baseurl }}/images/lightning/funding-transaction.png" alt="finding transaction"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/funding-transaction.png">original image</a>
 
-As illustrated above, normally inputs of the funding transaction are contributed by Alice or Bob. There might be changes going back to the addresses
+As illustrated above, normally inputs of the funding transaction are contributed by Alice and/or Bob. There might be changes going back to the addresses
 that Alice or Bob controls, such as output **0** and **1**. Output **2** is the multi-sig output which locks up the total amount of fund for this
 lightning channel.
 
@@ -27,7 +27,18 @@ One obvious risk is that if either party disappears, the other party will not be
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png" alt="commitment transaction overview"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png">original image</a>
 
-After the funding transaction is confirmed on the blockchain, 
+After the funding transaction is confirmed on the blockchain, Alice and Bob can update the balance between them offchain using
+[commitment transactions](https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#commitment-transaction).
+The design goal of the commitment transaction is that it would
+
+* Either party are guaranteed to be refunded after a certain period of time if the counterparty disappears.
+* The only valid state is the latest one which is mutually agreed upon, all previous states become undesirable to be spent by both parties (essentially revoked).
+* Funds can be sent in both ways. It is indistinguishable if the sender and receiver are the actual originator and final destination of
+the transaction or they are just relaying this transaction for others.
+
+Commitment transactions could potentially contain 4 outputs.
+
+
 
 ```
 To allow an opportunity for penalty transactions, in case of a revoked commitment transaction, all outputs that return funds to the owner of the commitment transaction (a.k.a. the "local node") must be delayed for to_self_delay blocks. This delay is done in a second-stage HTLC transaction (HTLC-success for HTLCs accepted by the local node, HTLC-timeout for HTLCs offered by the local node).
