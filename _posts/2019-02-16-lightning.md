@@ -10,6 +10,48 @@ Let's say Alice, Bob and Chris
 
 Anchor transaction of Alice and Bob output
 
+
+{% highlight org %}
+
++------------+
+| funding tx |
++------------+
+      |
+      |        +-------------+
+      \--------| commit tx B |
+               +-------------+
+                  |  |  |  |  
+                  |  |  |  | A's main output
+                  |  |  |  \------------------ to A
+                  |  |  |
+                  |  |  |
+                  |  |  |                  ,-- to B (& delay)
+                  |  |  | B's main output /
+                  |  |  \----------------<
+                  |  |                    \ 
+                  |  |                     `-- to A (& revocation key)
+                  |  |
+                  |  |                                                ,-- to B (& delay)
+                  |  |                        +-----------------+    /
+                  |  |                     ,--| HTLC-timeout tx |---<
+                  |  | HTLC offered by B  /   +-----------------+    \
+                  |  \-------------------<     (after timeout)        `-- to A (& revocation key)
+                  |                       \
+                  |                        `-- to A (& payment preimage)
+                  |                        \
+                  |                         `- to A (& revocation key)
+                  |                   
+                  |                                                   ,-- to B (& delay)
+                  |                           +-----------------+    /
+                  |                        ,--| HTLC-success tx |---<
+                  | HTLC received by B    /   +-----------------+    \
+                  \----------------------<     (w/ payment preimage)  `-- to A (& revocation key)
+                                          \
+                                           `-- to A (after timeout)
+                                           \
+                                            `- to A (& revocation key)
+{% endhighlight %}
+
 {% highlight Erlang %}
 OP_HASH <SECRET-A-HASH> OP_EQUAL
 OP_IF
@@ -191,4 +233,10 @@ https://rusty.ozlabs.org/?p=477
 
 follow: https://medium.com/@rusty_lightning
 
-3. 
+3. this is very useful discussion
+https://github.com/lightningnetwork/lightning-rfc/issues/553
+
+
+
+why a seperate HTLC transaction? (2-stage)
+If someone want to publish an old commitment transaction with the HTLC success case, using the pre-image, 
