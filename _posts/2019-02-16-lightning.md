@@ -24,19 +24,23 @@ One obvious risk is that if either party disappears, the other party will not be
 
 #### Overview
 
+After the funding transaction is confirmed on the blockchain, Alice and Bob can update the balance between them offchain using
+[commitment transactions](https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#commitment-transaction).
+The design goal of the commitment transaction is:
+
+* Both party are guaranteed to be refunded after a certain period of time if the counterparty disappears.
+* The only valid state is the latest one which is mutually agreed upon, all previous states are undesirable to be spent by both parties (essentially revoked).
+* Funds can be sent in both ways. It is indistinguishable if the sender and receiver are the actual originator and final destination of
+the payment or it is just being relayed.
+
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png" alt="commitment transaction overview"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png">original image</a>
 
-After the funding transaction is confirmed on the blockchain, Alice and Bob can update the balance between them offchain using
-[commitment transactions](https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#commitment-transaction).
-The design goal of the commitment transaction is that it would
+It is important to realize that each commitment transaction has a asyncmetric version. (**how to justify**)
 
-* Either party are guaranteed to be refunded after a certain period of time if the counterparty disappears.
-* The only valid state is the latest one which is mutually agreed upon, all previous states become undesirable to be spent by both parties (essentially revoked).
-* Funds can be sent in both ways. It is indistinguishable if the sender and receiver are the actual originator and final destination of
-the transaction or they are just relaying this transaction for others.
-
-Commitment transactions could potentially contain 4 outputs.
+The input of the commitment transaction is always the 2-of-2 multisig output of the funding transaction which, in the picture above, requires signature from both Alice and
+Bob to unlock.  The commitment transaction could potentially have 4 outputs.
+**to_local** which pays
 
 
 
