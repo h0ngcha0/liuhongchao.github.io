@@ -4,47 +4,59 @@ category: Bitcoin, Cryptocurrency, Layer 2, Lightning network
 title: Lightning Network Channel Establishment
 ---
 
+### Funding Transaction
 
-{% highlight org %}
+Assuming that Alice and Bob want to establish a lightning channel between themselves,
+a 2-of-2 [multisig](https://en.bitcoin.it/wiki/Multisignature) transaction that
+requires both of their signatures to spend needs to be committed to the blockchain. This is
+called a [funding transaction](https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#funding-transaction-output).
 
-|------------+
-| funding tx |
-|------------+
-      |
-      |        +-------------+
-      \--------| commit tx B |
-               +-------------+
-                  |  |  |  |  
-                  |  |  |  | A's main output
-                  |  |  |  \------------------ to A
-                  |  |  |
-                  |  |  |
-                  |  |  |                  ,-- to B (& delay)
-                  |  |  | B's main output /
-                  |  |  \----------------<
-                  |  |                    \ 
-                  |  |                     `-- to A (& revocation key)
-                  |  |
-                  |  |                                                ,-- to B (& delay)
-                  |  |                        +-----------------+    /
-                  |  |                     ,--| HTLC-timeout tx |---<
-                  |  | HTLC offered by B  /   +-----------------+    \
-                  |  \-------------------<     (after timeout)        `-- to A (& revocation key)
-                  |                       \
-                  |                        `-- to A (& payment preimage)
-                  |                        \
-                  |                         `- to A (& revocation key)
-                  |                   
-                  |                                                   ,-- to B (& delay)
-                  |                           +-----------------+    /
-                  |                        ,--| HTLC-success tx |---<
-                  | HTLC received by B    /   +-----------------+    \
-                  \----------------------<     (w/ payment preimage)  `-- to A (& revocation key)
-                                          \
-                                           `-- to A (after timeout)
-                                           \
-                                            `- to A (& revocation key)
-{% endhighlight %}
+<img src="{{ site.baseurl }}/images/lightning/funding-transaction.png" alt="finding transaction"/>
+<a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/funding-transaction.png">original image</a>
+
+As illustrated above, normally inputs of the funding transaction are contributed by Alice or Bob. There might be changes going back to the addresses
+that Alice or Bob controls, such as output **0** and **1**. Output **2** is the multi-sig output which locks up the total amount of fund for this
+lightning channel.
+
+One obvious risk is that if either party disappears, the other party will not be able to get the money back. [**how to do write this?? combine with channel messages**]
+
+### Commitment Transaction
+
+#### Overview
+
+<img src="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png" alt="commitment transaction overview"/>
+<a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png">original image</a>
+
+After the funding transaction is confirmed on the blockchain, 
+
+```
+To allow an opportunity for penalty transactions, in case of a revoked commitment transaction, all outputs that return funds to the owner of the commitment transaction (a.k.a. the "local node") must be delayed for to_self_delay blocks. This delay is done in a second-stage HTLC transaction (HTLC-success for HTLCs accepted by the local node, HTLC-timeout for HTLCs offered by the local node).
+
+The reason for the separate transaction stage for HTLC outputs is so that HTLCs can timeout or be fulfilled even though they are within the to_self_delay delay. Otherwise, the required minimum timeout on HTLCs is lengthened by this delay, causing longer timeouts for HTLCs traversing the network.
+```
+there is no reason to mix the to self delay whose purpose is to allow penalty if cheating and htlc timeout delay, whose purpose is to set a upper limit time box for answering the secret.
+
+#### to_local
+
+<img src="{{ site.baseurl }}/images/lightning/commitment-transaction-to-local.png" alt="commitment transaction to_local"/>
+<a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-to-local.png">original image</a>
+
+#### to_remote
+
+<img src="{{ site.baseurl }}/images/lightning/commitment-transaction-to-remote.png" alt="commitment transaction to_remote"/>
+<a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-to-remote.png">original image</a>
+
+#### offered HTLC
+
+<img src="{{ site.baseurl }}/images/lightning/commitment-transaction-offered-htlc.png" alt="commitment transaction to_remote"/>
+<a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-offered-htlc.png">original image</a>
+
+#### received HTLC
+
+<img src="{{ site.baseurl }}/images/lightning/commitment-transaction-received-htlc.png" alt="commitment transaction to_remote"/>
+<a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-received-htlc.png">original image</a>
+
+### Settlement Transaction
 
 
 Let's say Alice, Bob and Chris
