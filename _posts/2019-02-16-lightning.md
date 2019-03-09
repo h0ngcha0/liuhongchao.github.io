@@ -7,39 +7,52 @@ title: Lightning Network Channel Establishment
 ### Funding Transaction
 
 Assuming that Alice and Bob want to establish a lightning channel between themselves,
-a 2-of-2 [multisig](https://en.bitcoin.it/wiki/Multisignature) transaction that
-requires both of their signatures to spend needs to be committed to the blockchain. This is
+a transaction that contains a 2-of-2 [multisig](https://en.bitcoin.it/wiki/Multisignature) output that
+requires both of their signatures to unlock needs to be committed to the blockchain. This is
 called a [funding transaction](https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#funding-transaction-output).
 
 <img src="{{ site.baseurl }}/images/lightning/funding-transaction.png" alt="finding transaction"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/funding-transaction.png">original image</a>
 
-As illustrated above, normally inputs of the funding transaction are contributed by Alice and/or Bob. There might be changes going back to the addresses
-that Alice or Bob controls, such as output **0** and **1**. Output **2** is the multi-sig output which locks up the total amount of fund for this
-lightning channel.
+As illustrated above, inputs of the funding transaction are normally (but not neccessarily) contributed by Alice and/or Bob.
+Changes might go back to the addresses that Alice or Bob controls, such as output **0** and **1**. What's important
+is output **2** which contains a [P2WSH](https://github.com/libbitcoin/libbitcoin-system/wiki/P2WSH-Transactions) multisig locking script
+that locks up the total fund for the channel between Alice and Bob.
 
-One obvious risk is that if either party disappears, the other party will not be able to get the money back. [**how to do write this?? combine with channel messages**]
+One obvious risk is that if either party disappears, the other party will not be able to get their share of the money back. This is one of the issues
+that commitment transaction is set out to address.
+
+
+
+[**how to do write this?? combine with channel messages**]
 
 ### Commitment Transaction
 
-#### Overview
+After funding transaction is confirmed onchain, Alice and Bob can update the balance between themselves offchain using
+[commitment transactions](https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#commitment-transaction). Each commitment
+transaction can be thought of as a legal contract between Alice and Bob which details how the balance should look like in different
+scenarios. Since clauses in the contract are expressed in Bitcoin script, they could be enforced at any time if either party choose to unilaterally
+broadcast it to the Bitcoin network. With that knowledge in mind, Alice and Bob can confidently conduct unlimited number of commitment transactions knowing
+that no one can be cheated during the process. This essentially turns the channel a cache where all the intermidiate balance updates get resolved, which makes Bitcoin
+network much more scalable since it only needs to step in for disputed cases or the final settlement.
 
-After the funding transaction is confirmed on the blockchain, Alice and Bob can update the balance between them offchain using
-[commitment transactions](https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#commitment-transaction).
-The design goal of the commitment transaction is:
+Major design goals of the commitment transaction are:
 
-* Both party are guaranteed to be refunded after a certain period of time if the counterparty disappears.
-* The only valid state is the latest one which is mutually agreed upon, all previous states are undesirable to be spent by both parties (essentially revoked).
-* Funds can be sent in both ways. It is indistinguishable if the sender and receiver are the actual originator and final destination of
-the payment or it is just being relayed.
+* Payment can be made in both ways.
+* Participants are guaranteed to be refunded after a certain period of time if the counterparty disappears.
+* Only the latest mutually agreed upon state is valid.
+* Whether the participants are the originator or final recepient of the payment or if the payment is just being relayed by them
+should be indistinguishable.
+
+[It is important to realize that each commitment transaction has a asyncmetric version. (**how to justify**)]
 
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png" alt="commitment transaction overview"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png">original image</a>
 
-It is important to realize that each commitment transaction has a asyncmetric version. (**how to justify**)
 
-The input of the commitment transaction is always the 2-of-2 multisig output of the funding transaction which, in the picture above, requires signature from both Alice and
-Bob to unlock.  The commitment transaction could potentially have 4 outputs.
+
+The input of the commitment transaction always unlocks the 2-of-2 multisig output of the funding transaction which, as illustrated by the picture above, requires both Alice
+and Bob's signature.  The commitment transaction could potentially have 4 outputs.
 **to_local** which pays
 
 
