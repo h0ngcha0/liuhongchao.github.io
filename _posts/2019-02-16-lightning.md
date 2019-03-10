@@ -93,11 +93,11 @@ the "breach remedy" clause if Alice happens to break the agreement by spending t
 
 When the commitment transaction is just created, only Alice knows **revocation_pubkey_alice**'s corresponding private key **revocation_secretkey_alice**.
 Assuming that Alice and Bob decide to create a new commitment transaction, Alice needs to share with Bob her **revocation_secretkey_alice** so that if Alice publishes the old
-commitment transaction to the Bitcoin network, Bob and use **revocation_secretkey_alice** to claim the fund in **to_local** output within a certain period of time.
+commitment transaction to the Bitcoin network, Bob can use it to compute **revocation_signature_alice** and potentially claim the fund in **to_local** output ahead of Alice (because of the delay).
 
-Bitcoin doesn't natively support the concept of revocation, the RSMC construct essentially offers such functionality by ensuring an older output undesirable to spend by both parties.
+Bitcoin doesn't natively support the concept of revocation, the RSMC construct essentially offers such functionality by making an older output undesirable to spend by both parties.
 
-Note that this requires Bob to be online and constantly monitor the network, something that is not always possible. That is where [WatchTower](https://github.com/mit-dci/lit/tree/master/watchtower)
+Note that this requires Bob to be online and constantly monitor the network, something that is not always possible, that is where [WatchTower](https://github.com/mit-dci/lit/tree/master/watchtower)
 comes into the picture.
 
 #### to_remote
@@ -105,7 +105,8 @@ comes into the picture.
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-to-remote.png" alt="commitment transaction to_remote"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-to-remote.png">original image</a>
 
-
+**to_remote** represents the current balance of holder's counterparty in the channel, in our case Bob. Since Bob is unable to broadcast Alice's version of commitment transaction, no "breach remedy"
+is needed here. The output can be spent immediately by Bob if **signature_bob** is provided.
 
 #### offered HTLC
 
