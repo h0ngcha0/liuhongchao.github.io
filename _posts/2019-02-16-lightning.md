@@ -70,11 +70,11 @@ In the following sections, each type of outputs is discussed in greater details.
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-to-local.png" alt="commitment transaction to_local"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-to-local.png">original image</a>
 
-**to_local** output represents the current balance of the commitment transaction holder, in our case Alice, through a
-[Revocable Sequence Maturity Contracts (RSMC)](https://en.wikiversity.org/wiki/Revocable_Sequence_Maturity_Contracts). The purpose of the RSMC is to ensure that all
-previous payments can be revoked when an agreement for a more update to date payment is reached between Alice and Bob.
+**to_local** output represents the current balance of the holder in the channel, in our case Alice, through a
+[Revocable Sequence Maturity Contracts (RSMC)](https://en.wikiversity.org/wiki/Revocable_Sequence_Maturity_Contracts). The purpose of RSMC is to ensure that all
+previous balances can be revoked when an agreement for a more up to date balance is reached between Alice and Bob.
 
-As illustrated above, RSMC in the **to_local** output of Alice's commitment transaction can be encoded in the following [scriptSig](https://bitcoin.org/en/glossary/signature-script):
+In Alice's example, RSMC in the **to_local** output can be encoded in the following [scriptSig](https://bitcoin.org/en/glossary/signature-script):
 
 {% highlight Erlang %}
 OP_IF
@@ -88,15 +88,24 @@ OP_ENDIF
 OP_CHECKSIG
 {% endhighlight %}
 
-When the commitment transaction is just created, only Alice knows **revocation_pubkey_alice**'s corresponding private key **revocation_secretkey_alice**.
-Assuming that Alice and Bob decide to create a newer commitment transaction, Alice needs to Bob her **revocation_secretkey_alice** so that if Alice publishes the old
-commitment transaction to the Bitcoin network, Bob and use **revocation_secretkey_alice** to claim the fund in **to_local** output.
+If Alice "follows the agreement", she will be able to spend this output after some delay with **delayed_signature_alice**. The delay is delibrately put in place to give Bob some time to exercise
+the "breach remedy" clause if Alice happens to break the agreement by spending this output after it becomes outdated.
 
+When the commitment transaction is just created, only Alice knows **revocation_pubkey_alice**'s corresponding private key **revocation_secretkey_alice**.
+Assuming that Alice and Bob decide to create a new commitment transaction, Alice needs to share with Bob her **revocation_secretkey_alice** so that if Alice publishes the old
+commitment transaction to the Bitcoin network, Bob and use **revocation_secretkey_alice** to claim the fund in **to_local** output within a certain period of time.
+
+Bitcoin doesn't natively support the concept of revocation, the RSMC construct essentially offers such functionality by ensuring an older output undesirable to spend by both parties.
+
+Note that this requires Bob to be online and constantly monitor the network, something that is not always possible. That is where [WatchTower](https://github.com/mit-dci/lit/tree/master/watchtower)
+comes into the picture.
 
 #### to_remote
 
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-to-remote.png" alt="commitment transaction to_remote"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-to-remote.png">original image</a>
+
+
 
 #### offered HTLC
 
