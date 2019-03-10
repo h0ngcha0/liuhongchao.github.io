@@ -44,30 +44,54 @@ Major design goals of the commitment transaction are:
 * Whether the participants are the originator or final recepient of the payment or if the payment is just being relayed by them
 should be indistinguishable.
 
-[It is important to realize that each commitment transaction has a asyncmetric version. (**how to justify**)]
-
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png" alt="commitment transaction overview"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png">original image</a>
 
 
+The input of the commitment transaction always unlocks the 2-of-2 multisig output of the funding transaction which, as illustrated above, requires both Alice
+and Bob's signatures.  It is important to realize that each commitment transaction is held by one party and the counterparty holds an asymmetric version which
+is functionally similiar but with built-in mechanisms to punish the owner if they try to cheat. Both version can be submitted independently if needed, only one
+of them will succeed since they spend the same output.
 
-The input of the commitment transaction always unlocks the 2-of-2 multisig output of the funding transaction which, as illustrated by the picture above, requires both Alice
-and Bob's signature.  The commitment transaction could potentially have 4 outputs.
-**to_local** which pays
+Commitment transaction could potentially have 4 outputs. Use Alice's commitment transaction as example, they are:
 
+* **to_local** Represents Alice's current balance.
+* **to_remote**  Represents Bob's current balance.
+* **Offered HTCL** Represents payment that flows from Alice to Bob.
+* **Received HTLC** Represents Payment that flows from Bob to Alice.
 
+Note that these outputs do not neccessarily exist in all commitment transactions. For example, if there is no payment flowing from Alice to Bob, Alice's commitment transaction
+will not contain an **Offered HTCL** output.
 
-```
-To allow an opportunity for penalty transactions, in case of a revoked commitment transaction, all outputs that return funds to the owner of the commitment transaction (a.k.a. the "local node") must be delayed for to_self_delay blocks. This delay is done in a second-stage HTLC transaction (HTLC-success for HTLCs accepted by the local node, HTLC-timeout for HTLCs offered by the local node).
-
-The reason for the separate transaction stage for HTLC outputs is so that HTLCs can timeout or be fulfilled even though they are within the to_self_delay delay. Otherwise, the required minimum timeout on HTLCs is lengthened by this delay, causing longer timeouts for HTLCs traversing the network.
-```
-there is no reason to mix the to self delay whose purpose is to allow penalty if cheating and htlc timeout delay, whose purpose is to set a upper limit time box for answering the secret.
+In the following sections, each type of outputs is discussed in greater details.
 
 #### to_local
 
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-to-local.png" alt="commitment transaction to_local"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-to-local.png">original image</a>
+
+**to_local** output represents the current balance of the commitment transaction holder, in our case Alice, through a
+[Revocable Sequence Maturity Contracts (RSMC)](https://en.wikiversity.org/wiki/Revocable_Sequence_Maturity_Contracts). The purpose of the RSMC is to ensure that all
+previous payments can be revoked when an agreement for a more update to date payment is reached between Alice and Bob.
+
+As illustrated above, RSMC in the **to_local** output of Alice's commitment transaction can be encoded in the following [scriptSig](https://bitcoin.org/en/glossary/signature-script):
+
+{% highlight Erlang %}
+OP_IF
+    <revocation_pubkey_alice>
+OP_ELSE
+    `to_self_delay`
+    OP_CSV
+    OP_DROP
+    <delayed_pubkey_alice>
+OP_ENDIF
+OP_CHECKSIG
+{% endhighlight %}
+
+When the commitment transaction is just created, only Alice knows **revocation_pubkey_alice**'s corresponding private key **revocation_secretkey_alice**.
+Assuming that Alice and Bob decide to create a newer commitment transaction, Alice needs to Bob her **revocation_secretkey_alice** so that if Alice publishes the old
+commitment transaction to the Bitcoin network, Bob and use **revocation_secretkey_alice** to claim the fund in **to_local** output.
+
 
 #### to_remote
 
@@ -283,3 +307,14 @@ basically figure out the flow of lightning channel establishment.
 - couple of scenarios?
 - what message was exchanged?
 - down to the script level
+
+
+
+
+```
+To allow an opportunity for penalty transactions, in case of a revoked commitment transaction, all outputs that return funds to the owner of the commitment transaction (a.k.a. the "local node") must be delayed for to_self_delay blocks. This delay is done in a second-stage HTLC transaction (HTLC-success for HTLCs accepted by the local node, HTLC-timeout for HTLCs offered by the local node).
+
+The reason for the separate transaction stage for HTLC outputs is so that HTLCs can timeout or be fulfilled even though they are within the to_self_delay delay. Otherwise, the required minimum timeout on HTLCs is lengthened by this delay, causing longer timeouts for HTLCs traversing the network.
+```
+there is no reason to mix the to self delay whose purpose is to allow penalty if cheating and htlc timeout delay, whose purpose is to set a upper limit time box for answering the secret.
+
