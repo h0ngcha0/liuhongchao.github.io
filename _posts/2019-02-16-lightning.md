@@ -74,7 +74,7 @@ In the following sections, each type of outputs is discussed in greater details.
 [Revocable Sequence Maturity Contracts (RSMC)](https://en.wikiversity.org/wiki/Revocable_Sequence_Maturity_Contracts). The purpose of RSMC is to ensure that all
 previous balances can be revoked when the agreement for a new balance is reached between Alice and Bob.
 
-In Alice's example, RSMC in the **to_local** output can be encoded in the following [scriptSig](https://bitcoin.org/en/glossary/signature-script):
+In Alice's commitment transaction, RSMC in the **to_local** output can be encoded in the following [scriptSig](https://bitcoin.org/en/glossary/signature-script):
 
 {% highlight Erlang %}
 OP_IF
@@ -118,7 +118,7 @@ clause is needed here. The output can be spent immediately by Bob if **signature
 stands for Hash Time Locked Contracts, which essentially says "I will pay you this amount if you show me the answer to this quiz within a certain period of time, otherwise the fund returns back to me". 
 Like the **to_local** output, **Offered HTLC** also contains a *breach remedy* clause in case Alice violates the agreement by publishing an outdated version of the commitment transaction.
 
-In Alice's example, **Offered HTLC** can be encoded in the following scriptSig:
+In Alice's commitment transaction, **Offered HTLC** can be expressed in the following scriptSig:
 
 {% highlight Erlang %}
 % To Bob with Alice’s revocation key
@@ -138,20 +138,32 @@ OP_ELSE
 OP_ENDIF
 {% endhighlight %}
 
-Bob can spend the output immediately by providing **hltc_signature_bob** and **payment_preimage** within a certain period of time. **payment_preimage** is the answer to the quiz that Alice requires Bob to
+Bob can spend the output immediately by providing **hltc_signature_bob** and **payment_preimage** within a certain period of time. **payment_preimage** is the answer to the quiz (preimage of a hash) that Alice requires Bob to
 come up with to be able to claim the fund. No *breach remedy* clause is needed here.
 
-Alice can spend the output after a delay by providing **htlc_signature_bob** and **htlc_sigature_alice** via a seperate **HTLC timeout** transaction.
-The reason for the separate **HTLC timeout** transaction is that it can timeout even though they are within the `to_self_delay` delay. Otherwise, the required minimum timeout on HTLCs is lengthened
-by this delay, causing longer timeouts for HTLCs traversing the network.
-**htlc_signature_bob** is shared by Bob to Alice during
-the construction of this commitment transaction. As illustracted by the image above, **HLCT timeout** transaction locks up the fund in a RSMC contract, which pays Alice after a delay and can be claimed
-by Bob if Alice violates the agreement.
+Alice can spend the output after a delay by providing **htlc_signature_bob** and **htlc_sigature_alice** via a seperate **HTLC timeout** transaction, which in turn locks up the fund in
+a RSMC contract. **htlc_signature_bob** is shared by Bob to Alice during the construction of this commitment transaction. As we can recall, RSMC contract contains a *to_self_delay* value which
+specifies the time limit within which the counterparty can exercise the breach remedy clause. The *nLockTime* for the **HTLC timeout** transaction is set to *cltv_expiry*, which represents
+the delay after which the HTLC times out. The reason for needing a seperate **HTLC timeout** transaction is that it allows HTLC to timeout before breach remedy can be exercised. Otherwise,
+the required minimum timeout on HTLCs is lengthened by the delay for breach remedy, causing longer timeouts for HTLCs traversing the network.
 
+The locking script for Alice's **HTLC timeout** transaction can be encoded in the following scriptSig:
 
-The first possible way to spend this output is by providing **revocation_signature_alice** and **revocation_pubkey_alice**, which leverages the same RSMC mechanism to allow Bob claiming this output if
-Alice violates the agreement. Bob gets **revocation_secretkey_alice** from Alice when a new commitment transaction is agreed upon, and the delay 
+{% highlight Erlang %}
+OP_IF
+    % Penalty transaction
+    <revocation_pubkey_alice>
+OP_ELSE
+    `to_self_delay`
+    OP_CSV
+    OP_DROP
+    <delayed_pubkey_alice>
+OP_ENDIF
+OP_CHECKSIG
+{% endhighlight %}
 
+It can either be spent by Alice using **delayed_signature_alice** after the delay for breach remedy, or by Bob using **revocation_signature_alice** if Alice publishes the
+outdated version of the transaction.
 
 #### Received HTLC
 
@@ -362,9 +374,22 @@ basically figure out the flow of lightning channel establishment.
 
 
 ```
-To allow an opportunity for penalty transactions, in case of a revoked commitment transaction, all outputs that return funds to the owner of the commitment transaction (a.k.a. the "local node") must be delayed for to_self_delay blocks. This delay is done in a second-stage HTLC transaction (HTLC-success for HTLCs accepted by the local node, HTLC-timeout for HTLCs offered by the local node).
+To allow an opportunity for penalty transactions,
+in case of a revoked commitment transaction,
+all outputs that return funds to the owner of the
+commitment transaction (a.k.a. the "local node")
+must be delayed for to_self_delay blocks.
 
-The reason for the separate transaction stage for HTLC outputs is so that HTLCs can timeout or be fulfilled even though they are within the to_self_delay delay. Otherwise, the required minimum timeout on HTLCs is lengthened by this delay, causing longer timeouts for HTLCs traversing the network.
+This delay is done in a second-stage HTLC transaction
+(HTLC-success for HTLCs accepted by the local node,
+HTLC-timeout for HTLCs offered by the local node).
+
+The reason for the separate transaction stage for HTLC
+outputs is so that HTLCs can timeout or be fulfilled
+even though they are within the to_self_delay delay.
+Otherwise, the required minimum timeout on HTLCs is
+lengthened by this delay, causing longer timeouts for
+HTLCs traversing the network.
 ```
 there is no reason to mix the to self delay whose purpose is to allow penalty if cheating and htlc timeout delay, whose purpose is to set a upper limit time box for answering the secret.
 
