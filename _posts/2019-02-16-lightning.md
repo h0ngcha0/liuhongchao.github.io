@@ -72,7 +72,7 @@ In the following sections, each type of outputs is discussed in greater details.
 
 **to_local** output represents the current balance of the holder in the channel, in our case Alice, through a
 [Revocable Sequence Maturity Contracts (RSMC)](https://en.wikiversity.org/wiki/Revocable_Sequence_Maturity_Contracts). The purpose of RSMC is to ensure that all
-previous balances can be revoked when an agreement for a more up to date balance is reached between Alice and Bob.
+previous balances can be revoked when the agreement for a new balance is reached between Alice and Bob.
 
 In Alice's example, RSMC in the **to_local** output can be encoded in the following [scriptSig](https://bitcoin.org/en/glossary/signature-script):
 
@@ -88,16 +88,17 @@ OP_ENDIF
 OP_CHECKSIG
 {% endhighlight %}
 
-If Alice "follows the agreement", she will be able to spend this output after some delay with **delayed_signature_alice**. The delay is delibrately put in place to give Bob some time to exercise
-the "breach remedy" clause if Alice happens to break the agreement by spending this output after it becomes outdated.
+If the commitment transaction is the latest one agreed between both parties, Alice will be able to spend this output after some delay with **delayed_signature_alice**. The delay is delibrately put in place to give Bob some time to exercise
+the *breach remedy* clause if Alice happens to break the agreement by spending this output after it becomes outdated. In fact, all outputs that return funds to the holder of
+the commitment transaction must be delayed for `to_self_delay` blocks.
 
-When the commitment transaction is just created, only Alice knows **revocation_pubkey_alice**'s corresponding private key **revocation_secretkey_alice**.
-Assuming that Alice and Bob decide to create a new commitment transaction, Alice needs to share with Bob her **revocation_secretkey_alice** so that if Alice publishes the old
+When the commitment transaction was just created, only Alice knew **revocation_pubkey_alice**'s corresponding private key **revocation_secretkey_alice**.
+Assuming that Alice and Bob decide to create a new commitment transaction, Alice needs to share her **revocation_secretkey_alice** with Bob so that if Alice publishes the old
 commitment transaction to the Bitcoin network, Bob can use it to compute **revocation_signature_alice** and potentially claim the fund in **to_local** output ahead of Alice (because of the delay).
 
-Bitcoin doesn't natively support the concept of revocation, the RSMC construct essentially offers such functionality by making an older output undesirable to spend by both parties.
+Bitcoin doesn't natively support the concept of transaction revocation, RSMC essentially offers such a functionality by making an older output undesirable to spend by both parties.
 
-Note that this requires Bob to be online and constantly monitor the network, something that is not always possible, that is where [WatchTower](https://github.com/mit-dci/lit/tree/master/watchtower)
+However, this requires Bob to be online often and constantly monitor the network, something that is not always possible, that is where [WatchTower](https://github.com/mit-dci/lit/tree/master/watchtower)
 comes into the picture.
 
 #### to_remote
@@ -106,14 +107,53 @@ comes into the picture.
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-to-remote.png">original image</a>
 
 **to_remote** represents the current balance of holder's counterparty in the channel, in our case Bob. Since Bob is unable to broadcast Alice's version of commitment transaction, no "breach remedy"
-is needed here. The output can be spent immediately by Bob if **signature_bob** is provided.
+clause is needed here. The output can be spent immediately by Bob if **signature_bob** is provided.
 
-#### offered HTLC
+#### Offered HTLC
 
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-offered-htlc.png" alt="commitment transaction to_remote"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-offered-htlc.png">original image</a>
 
-#### received HTLC
+**Offered HTLC** represents the payment flowing from the holder of the commitment transaction to his/her counterparty, in our case, from Alice to Bob. [HTLC](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts)
+stands for Hash Time Locked Contracts, which essentially says "I will pay you this amount if you show me the answer to this quiz within a certain period of time, otherwise the fund returns back to me". 
+Like the **to_local** output, **Offered HTLC** also contains a *breach remedy* clause in case Alice violates the agreement by publishing an outdated version of the commitment transaction.
+
+In Alice's example, **Offered HTLC** can be encoded in the following scriptSig:
+
+{% highlight Erlang %}
+% To Bob with Alice’s revocation key
+OP_DUP OP_HASH160 <RIPEMD160(SHA256(revocation_pubkey_alice))> OP_EQUAL
+OP_IF
+    OP_CHECKSIG
+OP_ELSE
+    <htlc_pubkey_bob> OP_SWAP OP_SIZE 32 OP_EQUAL
+    OP_NOTIF
+        % To Alice via HTLC-timeout transaction (timelocked).
+        OP_DROP 2 OP_SWAP <htlc_pubkey_alice> 2 OP_CHECKMULTISIG
+    OP_ELSE
+        % To Bob with preimage.
+        OP_HASH160 <RIPEMD160(payment_hash)> OP_EQUALVERIFY
+        OP_CHECKSIG
+    OP_ENDIF
+OP_ENDIF
+{% endhighlight %}
+
+Bob can spend the output immediately by providing **hltc_signature_bob** and **payment_preimage** within a certain period of time. **payment_preimage** is the answer to the quiz that Alice requires Bob to
+come up with to be able to claim the fund. No *breach remedy* clause is needed here.
+
+Alice can spend the output after a delay by providing **htlc_signature_bob** and **htlc_sigature_alice** via a seperate **HTLC timeout** transaction.
+The reason for the separate **HTLC timeout** transaction is that it can timeout even though they are within the `to_self_delay` delay. Otherwise, the required minimum timeout on HTLCs is lengthened
+by this delay, causing longer timeouts for HTLCs traversing the network.
+**htlc_signature_bob** is shared by Bob to Alice during
+the construction of this commitment transaction. As illustracted by the image above, **HLCT timeout** transaction locks up the fund in a RSMC contract, which pays Alice after a delay and can be claimed
+by Bob if Alice violates the agreement.
+
+
+The first possible way to spend this output is by providing **revocation_signature_alice** and **revocation_pubkey_alice**, which leverages the same RSMC mechanism to allow Bob claiming this output if
+Alice violates the agreement. Bob gets **revocation_secretkey_alice** from Alice when a new commitment transaction is agreed upon, and the delay 
+
+
+#### Received HTLC
 
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-received-htlc.png" alt="commitment transaction to_remote"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-received-htlc.png">original image</a>
