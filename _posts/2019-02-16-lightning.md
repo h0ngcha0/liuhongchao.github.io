@@ -170,6 +170,27 @@ outdated version of the transaction.
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-received-htlc.png" alt="commitment transaction to_remote"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-received-htlc.png">original image</a>
 
+**Received HTLC** represents the payment flowing to the holder of the commitment transaction from his/her counterparty, in our case, from Bob to Alice.
+
+{% highlight Erlang %}
+% To Bob with Alice’s revocation key
+OP_DUP OP_HASH160 <RIPEMD160(SHA256(revocation_pubkey_alice))> OP_EQUAL
+OP_IF
+    OP_CHECKSIG
+OP_ELSE
+    <htlc_pubkey_bob> OP_SWAP OP_SIZE 32 OP_EQUAL
+    OP_IF
+        % To Alice via HTLC-success transaction.
+        OP_HASH160 <RIPEMD160(payment_hash)> OP_EQUALVERIFY
+        2 OP_SWAP <htlc_pubkey_alice> 2 OP_CHECKMULTISIG
+    OP_ELSE
+        % To Bob after timeout.
+        OP_DROP <cltv_expiry> OP_CHECKLOCKTIMEVERIFY OP_DROP
+        OP_CHECKSIG
+    OP_ENDIF
+OP_ENDIF
+{% endhighlight %}
+
 ### Settlement Transaction
 
 
