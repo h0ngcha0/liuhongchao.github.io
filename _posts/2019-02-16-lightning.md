@@ -14,26 +14,28 @@ potential behaviors under different scenarios.
 ### Funding Transaction
 
 Assuming that Alice and Bob want to establish a lightning channel between themselves,
-a transaction that contains a 2-of-2 [multisig](https://en.bitcoin.it/wiki/Multisignature) output that
+a transaction with a 2-of-2 [multisig](https://en.bitcoin.it/wiki/Multisignature) output that
 requires both of their signatures to unlock needs to be committed to the blockchain. This is
 called a [funding transaction](https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#funding-transaction-output).
 
 <img src="{{ site.baseurl }}/images/lightning/funding-transaction.png" alt="finding transaction"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/funding-transaction.png">original image</a>
 
-As illustrated above, inputs of the funding transaction are normally (but not neccessarily) contributed by Alice and/or Bob.
-Changes might go back to the addresses that Alice or Bob controls, such as output **0** and **1**. What's important
-is output **2** which contains a [P2WSH](https://github.com/libbitcoin/libbitcoin-system/wiki/P2WSH-Transactions) multisig locking script
-that locks up the total fund for the channel between Alice and Bob.
+As illustrated above, inputs of the funding transaction are usually (but not neccessarily) contributed by Alice and/or Bob.
+Output **0** and **1** represents the potential [changes](https://en.bitcoin.it/wiki/Change) going back to the addresses that Alice or Bob controls.
+What's important is output **2** which contains a [P2WSH](https://github.com/libbitcoin/libbitcoin-system/wiki/P2WSH-Transactions) multisig script
+that locks up the total fund for the lifetime of this payment channel between Alice and Bob.
 
-One obvious risk is that if either party disappears, the other party will not be able to get their share of the money back. This is one of the issues
-that commitment transaction is set out to address.
+One obvious risk is that if either party disappears, neither of them will be able to get their money back. This is one of the issues
+that [commitment transaction](https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#commitment-transaction) is designed to address.
+For now, what we need to know is that commitment transactions always spend the multisig output of the funding transaction. As long as Alice and Bob broadcast
+the funding transaction together with the first pair of commitment transactions, they will abtain the ability to get their funds back after a timeout.
 
 ### Commitment Transaction
 
 After funding transaction is confirmed onchain, Alice and Bob can update the balance between themselves offchain using
 [commitment transactions](https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#commitment-transaction). Each commitment
-transaction can be thought of as a legal contract between Alice and Bob which details how the balance should look like in different
+transaction can be thought of as a legal contract between Alice and Bob which dictates how the balance should look like in different
 scenarios. Since clauses in the contract are expressed in Bitcoin script, they could be enforced at any time if either party choose to unilaterally
 broadcast it to the Bitcoin network. With that knowledge in mind, Alice and Bob can confidently conduct unlimited number of commitment transactions knowing
 that no one can be cheated during the process. This essentially turns the channel a cache where all the intermidiate balance updates get resolved, which makes Bitcoin
