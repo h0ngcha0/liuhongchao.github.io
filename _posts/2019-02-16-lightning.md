@@ -33,13 +33,13 @@ the funding transaction together with the first pair of commitment transactions,
 
 ### Commitment Transaction
 
-After funding transaction is confirmed onchain, Alice and Bob can update the balance between themselves offchain using
+After funding transaction is confirmed onchain, Alice and Bob can start updating the balance between themselves offchain using
 [commitment transactions](https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#commitment-transaction). Each commitment
-transaction can be thought of as a legal contract between Alice and Bob which dictates how the balance should look like in different
-scenarios. Since clauses in the contract are expressed in Bitcoin script, they could be enforced at any time if either party choose to unilaterally
-broadcast it to the Bitcoin network. With that knowledge in mind, Alice and Bob can confidently conduct unlimited number of commitment transactions knowing
-that no one can be cheated during the process. This essentially turns the channel a cache where all the intermidiate balance updates get resolved, which makes Bitcoin
-network much more scalable since it only needs to step in for disputed cases or the final settlement.
+transaction can be thought of as a legal contract between Alice and Bob dictating how the balance should look like in different
+scenarios. Since the contracts are expressed in Bitcoin script, they could be enforced at any time if either party choose to unilaterally
+broadcast it to the Bitcoin network. With that in mind, Alice and Bob can confidently conduct unlimited number of commitment transactions knowing
+that no one can be cheated during the process. This essentially turns payment channel into a cache where most the intermidiate balance updates get
+resolved offchain, with onchain transaction only needed in case of disputes or final settlement, making Bitcoin network much more scalable.
 
 Major design goals of the commitment transaction are:
 
