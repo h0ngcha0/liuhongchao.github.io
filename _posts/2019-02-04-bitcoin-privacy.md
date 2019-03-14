@@ -257,7 +257,7 @@ Assuming that **G** and **H** are [generator points](https://bitcoin.stackexchan
 [elliptic curves](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography), **v** is the transaction amount and **r** is a random number. Then
 
 {% highlight Erlang %}
-`r*G + v*H`
+r*G + v*H
 {% endhighlight %}
 
 is a pederson commitment of the amount **v**. **r** is called a binding factor, which is essentially a big random number. if *v == v1 + v2* and the corresponding
