@@ -45,17 +45,16 @@ Major design goals of the commitment transaction are:
 
 * Payment can be made in both ways.
 * Participants are guaranteed to be refunded after a certain period of time if the counterparty disappears.
-* Only the latest mutually agreed upon state is valid.
-* Whether the participants are the originator or final recepient of the payment or if the payment is just being relayed by them
-should be indistinguishable.
+* Only the latest mutually agreed upon transaction is valid.
+* It should be indistinguishable whether participants are the originator or final recepient of the payment or if the payment is just being relayed by them.
 
 <img src="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png" alt="commitment transaction overview"/>
 <a target="_blank" rel="noopener noreferrer" class="image-label" href="{{ site.baseurl }}/images/lightning/commitment-transaction-overview.png">original image</a>
 
 
-The input of the commitment transaction always unlocks the 2-of-2 multisig output of the funding transaction which, as illustrated above, requires both Alice
-and Bob's signatures.  It is important to realize that each commitment transaction is held by one party and the counterparty holds an asymmetric version which
-is functionally similiar but with built-in mechanisms to punish the owner if they try to cheat. Both version can be submitted independently if needed, only one
+Commitment transactions always unlock the 2-of-2 multisig output of the funding transaction which, as illustrated above, requires both Alice
+and Bob's signatures.  It is important to realize that each commitment transaction has an asymmetric version and the pair are held seperately by each participant.
+This pair of commitment transactions are functionally similiar but with built-in mechanisms to penalize its holder if they try to cheat. Both version can be submitted independently if needed, only one
 of them will succeed since they spend the same output.
 
 Commitment transaction could potentially have 4 outputs. Use Alice's commitment transaction as example, they are:
@@ -66,7 +65,7 @@ Commitment transaction could potentially have 4 outputs. Use Alice's commitment 
 * **Received HTLC** Represents Payment that flows from Bob to Alice.
 
 Note that these outputs do not neccessarily exist in all commitment transactions. For example, if there is no payment flowing from Alice to Bob, Alice's commitment transaction
-will not contain an **Offered HTCL** output.
+will have no **Offered HTCL** output.
 
 In the following sections, each type of outputs is discussed in greater details.
 
