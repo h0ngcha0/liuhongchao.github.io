@@ -5,8 +5,10 @@ title: Payment Channels in Lightning Network
 ---
 
 One of the fundamental aspects of the [lighting network](https://en.wikipedia.org/wiki/Lightning_Network) protocol is how payment channels are established
-and utilized to transfer funds. In this post, different types of transactions used within the channel are discussed in details, with graphs illustrating how
-they could be updated in different scenarios using smart contracts.
+and utilized to transfer funds. Just like TCP connection, payment channel is virtual in the sense that it is achieved by carefully designed
+[smart contracts](https://en.wikipedia.org/wiki/Smart_contract) which gives user the illusion that there exists a channel. In this post, the smart contracts
+expressed in Bitcoin script in different types of transactions within the lightning payment channel are discussed in details, with graphs illustrating their
+potential behaviors under different scenarios.
 
 
 ### Funding Transaction
