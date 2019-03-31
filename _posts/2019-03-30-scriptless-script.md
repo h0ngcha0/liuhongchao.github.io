@@ -31,10 +31,10 @@ In systems like Bitcoin and Ethereum, signature construction and verification is
 which was designed as a variant to avoid Schnorr Signature's parent issue. Even though the patent expired in 2008, shortly before Bitcoin was invented, ECDSA was much more standardized
 at the time as the result of it. From the technical point of view, there ain't really any other reasons to choose ECDSA instead of Schnorr Signatures.
 
-One of the biggest advantages of Schnorr Signature over ECDSA is linearity, which basically means that multiple Schnorr Signatures signed by different private keys for the same message can be verified by
-the sum of all the corresponding public keys.
+One of the biggest advantages of Schnorr Signature over ECDSA is linearity, which basically means that multiple schnorr signatures signed by different private keys for the same message can be verified by
+the sum of all their corresponding public keys. To understand how it works, we need to understand how a digital signature is constructed and verified in both ECDSA and Schnorr Signatures.
 
-Suppose we have a keypair 
+Assuming we have a keypair `(x, P)` where `P = xG`.
 
 
 ====== draft ======
