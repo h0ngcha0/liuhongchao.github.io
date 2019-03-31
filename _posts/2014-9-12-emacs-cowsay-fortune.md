@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Emacs
-title: Little fun with emacs start buffer
+title: Little Fun with Emacs Start Buffer
 ---
 
 ![fortune in emacs]({{ site.baseurl }}/images/emacs-cowsay-fortune.png)

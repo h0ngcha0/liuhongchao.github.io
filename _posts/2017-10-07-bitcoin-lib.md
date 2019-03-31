@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Bitcoin, Cryptocurrency, Scala
-title: A Bitcoin library
+title: A Bitcoin Library
 ---
 
 One of the nice things about living in Sweden is the "pappaledighet" (parental leave). In the

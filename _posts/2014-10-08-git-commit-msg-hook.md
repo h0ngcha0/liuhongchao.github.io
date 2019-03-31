@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Software
-title: Prepending story id in git commit messages
+title: Prepending Story id in Git Commit Messages
 ---
 
 It is a good idea to prefix the git commit message with story id for

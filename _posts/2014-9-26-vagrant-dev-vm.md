@@ -2,7 +2,7 @@
 layout: post
 tags: Vagrant
 category: Software
-title: Virtualized development environment
+title: Virtualized Development Environment
 ---
 
 Yesterday, a burglar sneaked into our office and stole one of my

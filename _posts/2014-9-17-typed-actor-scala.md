@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Programming
-title: Typed actors are discouraged in Akka?
+title: Typed Actors are Discouraged in Akka?
 ---
 
 ![Akka mountain]({{ site.baseurl }}/images/gen_server.jpg)

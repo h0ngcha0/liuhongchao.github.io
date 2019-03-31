@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Software, functional programming, Scala, Startup
-title: Scala, the startup way
+title: Scala, the Startup Way
 ---
 
 My colleague Marcus Lönnberg and myself gave a talk at the [Scala Meetup](http://www.meetup.com/Scala-Geats/)
