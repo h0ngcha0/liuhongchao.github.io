@@ -4,26 +4,31 @@ category: Bitcoin, Cryptocurrency, Cryptography
 title: Scriptless Script
 ---
 
-[Mimblewimble](https://github.com/mimblewimble/grin/blob/master/doc/intro.md) brought a lot of excitement within the industry. It leverages
+[Mimblewimble](https://github.com/mimblewimble/grin/blob/master/doc/intro.md) brought a lot of excitement within the crypto industry. It leverages
 [confidential transaction](https://people.xiph.org/~greg/confidential_values.txt) which improves privacy and fungibility by hiding transaction amounts
 using [pedersen commitment](https://www.getmonero.org/resources/moneropedia/pedersen-commitment.html).
-A key observation is that the blinding factor contained in the pedersen commitment can also be used to represent ownership of the coin.
-This turns out to be great for scalability and a further boost to privacy since the blockchain can then be reduced into a very compact form via the mechanism of
-[cut-through](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#cut-through), which is the key differentiator between Mimblewimble based
+One key realization is that the blinding factor contained in the pedersen commitment can also be used to represent ownership of the coin.
+This turns out to be great for scalability and a further boost to privacy since the blockchain can then be reduced to a very compact form with much less
+information for third party analysis via a mechanism called [cut-through](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#cut-through), which is the key differentiator between Mimblewimble based
 coins and other privacy coins.
 
 Unlike many other cryptocurrencies where the ownership of the coin is determined by the successful execution of a
-[smart contract](https://en.wikipedia.org/wiki/Smart_contract), the claim for a Mimblewimble based coin is solely depenent on if a verifiable signature can be
+[smart contract](https://en.wikipedia.org/wiki/Smart_contract), the claim for a Mimblewimble based coin is solely dependent on if a verifiable signature can be
 provided for the [kernel execess](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#transaction-aggregation),
-which is the public key deduced from the blinding factors that represents the ownership of the coin, therefore Mimblewimble doesn't need to support any smart
-contract languages.
+which is the public key derived from the sum of outputs' blinding factors minus the sum of inputs' blinding factors (in practice, it is added as an extra zero-valued output
+in a Mimblewimble transaction to ensure that the sum of inputs and outputs's amounts commitment adds up to zero). Kernel excess is the only way to represent
+the ownership of the coin in Mimblewimble, therefore no smart contract languages are needed. More over, even if smart contracts exist in some of the transactions,
+it will be hard for public verifiers to verify them since the cut through mechanism would make many of them disappear.
 
-This does feel quite limiting since the ability to write smart contracts could significantly enhance the usefulness of the blockchain,
-[lightning network](https://en.wikipedia.org/wiki/Lightning_Network) is one great example of that. To solve this problem, [Andrew Poelstra](https://github.com/apoelstra) invented scriptless
-script which embeds smart contracts into digital signatures. As it turns out, this technology is not Mimblewimble specific and could be used to improve the privacy, efficieny
-and scalability of other blockchains as well.
+This does feel quite limiting since the ability to write smart contracts significantly increases the usefulness of the blockchain,
+[lightning network](https://en.wikipedia.org/wiki/Lightning_Network) is one great example of that. To solve this problem, [Andrew Poelstra](https://github.com/apoelstra)
+invented scriptless script which embeds smart contracts into digital signatures so that they could not only represent the authorization of simple coin movements but
+potentially also more complex logic such as multi-sig, atomic swap and even timelocks. As it turns out, this technology is not Mimblewimble
+specific and could be used to improve the privacy, efficieny and scalability of other blockchains as well, including Bitcoin.
 
-Before talking about scriptless script, let's talk a little bit about its prerequisite: [Schnorr Signatures](https://en.wikipedia.org/wiki/Schnorr_signature).
+Before diving into details, let's talk a little bit about [Schnorr Signatures](https://en.wikipedia.org/wiki/Schnorr_signature) since within this scheme scriptless script
+is much easier to reason about, even though it is also [possible](http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/scriptless-ecdsa/)
+to do it in ECDSA too.
 
 #### Schnorr Signatures
 
@@ -87,3 +92,28 @@ is the curve different between ecdsa and schnorr?
 
 can scriptless script be done on ECDSA?
 https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001297.html
+
+
+so in a way mimblewimble's kernel signature proves the ownership, what if the signature can contain other data?
+"scriptless script" is a way to use these kernels and kernel signatures to attach conditions to them without
+modifying the system so that the verifiers need to understand new rules
+
+so mimblewimble is a special case for scriptless script since it kind of represents a multi-sig.
+
+if a signature can faithfully record the outcome of executing a protocol, then it could be expressed using
+scriptless script.
+
+how the taproot story is reconciled with scriptless script.
+
+hard to do multi-party adaptive signature. signature aggregation breaks this.
+
+witness encryption??? moon math, allow doing timelock stuff, do not understand.
+
+discuss some contracts. e.g. timelock, atomic swap, multi-sig
+
+open problems
+"That's it, that's the end of my talk. Let's figure out timelocks, scriptless scsripts with BLS, and multiparty 3+ party scriptless scripts. And what about standards and interoperability."
+
+kernel is a zero valued output
+
+maybe say something about bitcoin might want this CT property since compared to pure math, elliptic curve algebra is still not as strong.
