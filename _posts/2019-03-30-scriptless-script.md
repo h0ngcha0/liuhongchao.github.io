@@ -30,7 +30,7 @@ Before diving more into details, let's talk a little bit about [Schnorr Signatur
 is much easier to reason about even though it is also [possible](http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/scriptless-ecdsa/)
 to do it in ECDSA too.
 
-#### Schnorr Signatures
+### Schnorr Signatures
 
 In systems like Bitcoin and Ethereum, signature construction and verification is currently done through [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm),
 which was designed as a variant of Schnorr Signature to avoid its parent issues. Even though the patent expired in 2008, shortly before Bitcoin was invented, ECDSA was much more standardized
@@ -119,12 +119,17 @@ The fact that we could express some kind of logic (multi-sig) in one single schn
 it indistinguishable from the rest of the world. In this sense, it should be considered as one form of scriptless script. To help express more complex logic using scriptless script, [Andrew Poelstra](https://github.com/apoelstra)
 invented a way to piggyback a piece of secret in a signature, called Adaptor Signatures.
 
-#### Adaptor Signatures
+### Adaptor Signatures
+
+Adaptor signatures is designed to communicate an extra piece of secret information in the multi-sig setup between two parties. When Alice and Bob perform a multi-sig, they need to exchange the public key part of the ephemeral keypair **Ra**
+and **Rb**. One or both of them could also generate another ephemeral keypair **(t, T)**
 
 Is schnorr multi-sig an special case for adaptor signature? no, perhpas not. Adatpor signature allows you to sell a piece of secret information while completing the transaction (signing a secret). this allows a bunch of
 use cases, such as atomic swaps
 
-#### Scriptless Script
+#### Zero knowledge contingent payment
+
+#### Atomic Swap
 
 ============ draft ================== draft ==================
 
@@ -213,3 +218,8 @@ the equation being linear in all signer variables: s = k + H(R,P,m)x
 (with k = nonce, x = private key). For ECDSA it is sk = m + rx. The
 multiplication s*k breaks linearity.
 https://bitcoin.stackexchange.com/questions/77234/schnorr-vs-ecdsa
+
+reference also, mimblewimble
+
+reference: https://github.com/apoelstra/scriptless-scripts/blob/master/md/atomic-swap.md
+look at: https://github.com/mimblewimble/grin/blob/master/doc/contracts.md
