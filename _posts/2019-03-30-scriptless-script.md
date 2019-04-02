@@ -121,13 +121,27 @@ invented a way to piggyback a piece of secret in a signature, called Adaptor Sig
 
 ### Adaptor Signatures
 
-Adaptor signatures is designed to communicate an extra piece of secret information in the multi-sig setup between two parties. When Alice and Bob perform a multi-sig, they need to exchange the public key part of the ephemeral keypair **Ra**
-and **Rb**. One or both of them could also generate another ephemeral keypair **(t, T)**
+Adaptor signatures is designed to communicate an extra piece of secret information between two parties by just using signatures. Remember when Alice and Bob create a multi-sig signature together, they need to exchange the public
+key part of the ephemeral keypair **Ra** and **Rb**. The idea is that an extra ephemeral keypair **(t, T)** can also be generated on top of that, then both of the following signature is valid:
 
-Is schnorr multi-sig an special case for adaptor signature? no, perhpas not. Adatpor signature allows you to sell a piece of secret information while completing the transaction (signing a secret). this allows a bunch of
-use cases, such as atomic swaps
+{% highlight Haskell %}
+originalSignature = (s, R)
+  where
+    s = k + ex
+    e = H(P||R||m)
+
+adaptorSignature = (s', R, T)
+  where
+    s  = k + t + ex
+    e  = H(P||R||m)
+{% endhighlight %}
+
+According to the above formula, it means that knowing secret value **t** and one of **adaptorSignature** and **originalSignature** is equivalent to knowing the other signature. Conversely, knowing both **adaptorSignature** and
+**originalSignature** is equivalent to knowing the secret value **t**. This could enable a bunch of interesting use cases:
 
 #### Zero knowledge contingent payment
+
+
 
 #### Atomic Swap
 
