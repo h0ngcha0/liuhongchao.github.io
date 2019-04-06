@@ -115,14 +115,18 @@ sR  = R'G + eP    -- all variables are public
 If Alice and Bob go through the same process described above to construct a multi-sig signature using ECDSA, the result can no longer be verified by the addition of their public keys. Linearity is broken by the
 multiplication **s*k**.
 
-The fact that we could express some kind of logic (multi-sig) in one single schnorr signature is interesting. It is in line with the goal of scriptless script: embed interesting logic in signatures and keep
-it indistinguishable from the rest of the world. In this sense, it should be considered as one form of scriptless script. To help express more complex logic using scriptless script, [Andrew Poelstra](https://github.com/apoelstra)
-invented a way to piggyback a piece of secret in a signature, called Adaptor Signatures.
+It is also worth noting that a proof exists that as long as the underlying [elliptic curve cryptography](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) works, Schnorr signatures
+are secure, but there wasn't a similiar mathematical proof for ECDSA yet.
+
+The fact that we could reduce some kind of logic (multi-sig) into one single schnorr signature is interesting. It could be considered as a type of scriptless script since it is in line with its design goal:
+*embed interesting logic in signatures and keep it indistinguishable from the rest of the world*. A simple multi-sig essentially utilized the ability to perform additions on Schnorr Signatures,
+[Andrew Poelstra](https://github.com/apoelstra) also realized that the subsctraction on it can be leveraged to piggyback a piece of secret information which could enable expressing more complex logic.
+That is the idea behind Adapter Signatures.
 
 ### Adaptor Signatures
 
-Adaptor signatures is designed to communicate an extra piece of secret information between two parties by just using signatures. Remember when Alice and Bob create a multi-sig signature together, they need to exchange the public
-key part of the ephemeral keypair **Ra** and **Rb**. The idea is that an extra ephemeral keypair **(t, T)** can also be generated on top of that, then both of the following signature is valid:
+Adaptor signatures is designed to communicate an extra piece of secret information between two parties through multi-sig. Remember before Alice and Bob create a multi-sig signature together, they need to exchange the public
+key part of the ephemeral keypair **Ra** and **Rb**. The idea is that an extra ephemeral keypair **(t, T)** can also be generated on top of that, then both of the following schnorr signatures are valid:
 
 {% highlight Haskell %}
 originalSignature = (s, R)
@@ -136,7 +140,7 @@ adaptorSignature = (s', R, T)
     e  = H(P||R||m)
 {% endhighlight %}
 
-According to the above formula, it means that knowing secret value **t** and one of **adaptorSignature** and **originalSignature** is equivalent to knowing the other signature. Conversely, knowing both **adaptorSignature** and
+The above formula basically tells us that knowing secret value **t** and one of **adaptorSignature** and **originalSignature** is equivalent to knowing the other signature. Conversely, knowing both **adaptorSignature** and
 **originalSignature** is equivalent to knowing the secret value **t**. This could enable a bunch of interesting use cases:
 
 #### Zero knowledge contingent payment
@@ -237,3 +241,5 @@ reference also, mimblewimble
 
 reference: https://github.com/apoelstra/scriptless-scripts/blob/master/md/atomic-swap.md
 look at: https://github.com/mimblewimble/grin/blob/master/doc/contracts.md
+
+reference: https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/
