@@ -207,95 +207,21 @@ providing much greater fungibility and privacy. It also offers a solution for sy
 
 ============ draft ================== draft ==================
 
-and means that Miḿbilewimble doesn't natively support any smart contract language, , there doesn't seem to be an obvious way to write smart contract since there doesn't even exist a smart contract language.
-
-One of the
-key characteristics of Mimblewimble is that it not only leverages 
-but also uses the blinding factor in CT's  to represent
-ownership of the coin. 
-
-
-The idea of scriptless script originated from trying to figure out how to write smart contract in Mimblewimble.
-
-
-How to build up this article
-
-Schnorr signatures
-
-how to generalize a common thing, what does it capture
-
-a few examples of how it is used.
-
-
-
-
-
-taproot sort of hides some kind of contract directly in any signature
-
-
-
-then what can we do with it?
-
-Schnorr signature is a very much anticipated feature within the Bitcoin community. 
-
-signature aggregation
-
-benefit (fungibility, scriptless script)
-
-downside
-
-discussion in the community
-
-reference: https://www.youtube.com/watch?v=PDzGP621pEs (from 33)
-
-rogue key attack, the last person controls the key
-https://bitcointechtalk.com/scaling-bitcoin-schnorr-signatures-abe3b5c275d1
-
-is the curve different between ecdsa and schnorr?
-
-can scriptless script be done on ECDSA?
-https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001297.html
-
+So mimblewimble is a special case for scriptless script since it kind of represents a multi-sig.
+If a signature can faithfully record the outcome of executing a protocol, then it could be expressed using
+scriptless script.
 
 so in a way mimblewimble's kernel signature proves the ownership, what if the signature can contain other data?
 "scriptless script" is a way to use these kernels and kernel signatures to attach conditions to them without
 modifying the system so that the verifiers need to understand new rules
 
-so mimblewimble is a special case for scriptless script since it kind of represents a multi-sig.
+Open problems
+"That's it, that's the end of my talk. Let's figure out timelocks, scriptless scripts with BLS, and multiparty 3+ party scriptless scripts. And what about standards and interoperability."
 
-if a signature can faithfully record the outcome of executing a protocol, then it could be expressed using
-scriptless script.
-
-how the taproot story is reconciled with scriptless script.
-
-hard to do multi-party adaptive signature. signature aggregation breaks this.
-
-witness encryption??? moon math, allow doing timelock stuff, do not understand.
-
-discuss some contracts. e.g. timelock, atomic swap, multi-sig
-
-open problems
-"That's it, that's the end of my talk. Let's figure out timelocks, scriptless scsripts with BLS, and multiparty 3+ party scriptless scripts. And what about standards and interoperability."
-
-kernel is a zero valued output
-
-maybe say something about bitcoin might want this CT property since compared to pure math, elliptic curve algebra is still not as strong.
-
-reference of schnorr signature math
-ECDSA is not linear. Schnorr is: the signature verification equation
-is sG = R + H(R,P,m)*P. Two people can come up with their own R1 and
-R2, and if they then produce signatures s1 and s2 that satisfy the
-equation s1G = R1 + H(R1+R2,P,m)*P1, and then add up s = s1 + s2, the
-result satisfies sG = R + H(R,P,M)(P1+P2); i.e. it's a valid signature
-for the sum of the keys. Such a construction is only possible due to
-the equation being linear in all signer variables: s = k + H(R,P,m)x
-(with k = nonce, x = private key). For ECDSA it is sk = m + rx. The
-multiplication s*k breaks linearity.
+Reference:
+https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/
+https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001297.html
+https://github.com/mimblewimble/grin/blob/master/doc/contracts.md
+https://github.com/apoelstra/scriptless-scripts/blob/master/md/atomic-swap.md
 https://bitcoin.stackexchange.com/questions/77234/schnorr-vs-ecdsa
-
-reference also, mimblewimble
-
-reference: https://github.com/apoelstra/scriptless-scripts/blob/master/md/atomic-swap.md
-look at: https://github.com/mimblewimble/grin/blob/master/doc/contracts.md
-
-reference: https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/
+https://www.youtube.com/watch?v=PDzGP621pEs
