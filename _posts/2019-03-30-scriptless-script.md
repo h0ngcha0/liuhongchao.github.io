@@ -67,14 +67,14 @@ signatures:
 {% highlight Haskell %}
 signatureAlice = (sa, Ra)
   where
-    sa = ka + ex
+    sa = ka + exa
     e  = H(P||R||m)
     P  = Pa + Pb
     R  = Ra + Rb
     
 signatureBob = (sb, Rb)
   where
-    sb = kb + ex
+    sb = kb + exb
     e  = H(P||R||m)
     P  = Pa + Pb
     R  = Ra + Rb
@@ -125,25 +125,83 @@ That is the idea behind Adapter Signatures.
 
 ### Adaptor Signatures
 
-Adaptor signatures is designed to communicate an extra piece of secret information between two parties through multi-sig. Remember before Alice and Bob create a multi-sig signature together, they need
-to exchange the public side of the ephemeral keypair **Ra** and **Rb**. The idea is that if Bob wants to communicate a piece of secret information ***tb*** to Alice, he can create an extra ephemeral keypair
-**(*tb*, Tb)** where **Tb=*tb*G** and communicate **Tb** to Alice along side **Rb** first. Following is a valid signature that includes **(*tb*, Tb)**:
+Adaptor signatures is designed to communicate an extra piece of secret information between two parties through multi-sig. Remember that Alice and Bob need to exchange the public side of the ephemeral
+keypair **Ra** and **Rb** before a joint aggregated multi-sig is created. If Bob also wants to sell a piece of secret information ***tb*** to Alice, the idea is that he can create
+an extra ephemeral keypair **(*tb*, Tb)** where **Tb=*tb*G** and communicate **Tb** to Alice alongside **Rb**. Right now, Bob is able to create a valid signature that includes
+**(*tb*, Tb)**:
 
 {% highlight Haskell %}
-bobSignature = (sb, Rb, Tb)
+bobSignature = (sb, R, Tb)
   where
     sb = kb + tb + ex
-    e = H(P||Rb+Tb||m)
+    e  = H(P||R+Tb||m)
+    R  = Ra + Rb
 {% endhighlight %}
 
-But instead of sending **bobSignature** right away to Alice, Bob sends an "adaptor signature" **bobAdaptorSignature**, 
+***tb*** is called an adaptor and it offsets the value ***kb*** a little bit. If we substract ***tb*** from ***sb***, what we get is called an adaptor signature:
 
-The above formula basically tells us that knowing secret value **t** and one of **adaptorSignature** and **originalSignature** is equivalent to knowing the other signature. Conversely, knowing both **adaptorSignature** and
-**originalSignature** is equivalent to knowing the secret value **t**. This could enable a bunch of interesting use cases:
+{% highlight Haskell %}
+sb' = kb + ex
+    = sb - tb
+  where
+    e = H(P||R+Tb||m)
+    R = Ra + Rb
+{% endhighlight %}
 
-#### Zero knowledge contingent payment
+If Bob sends **sb'** to Alice, Alice can verify three things:
 
+{% highlight Haskell %}
 
+-- 1) sb' is not a valid signature, since Tb is added to R
+sb' = kb + ex
+  where
+    e = H(P||R+Tb||m)
+    R = Ra + Rb
+
+-- 2) if e is replaced with e', then sb' is a valid signature
+sb' = kb + e'x
+  where
+    e' = H(P||R||m)
+    R = Ra + Rb
+
+-- 3) Tb's secret key tb is needed for a valid signature sb
+sb = sb' + tb = kb + tb + ex
+  where
+    e = H(P||R+Tb||m)
+    R = Ra + Rb
+
+{% endhighlight %}
+
+Number 3) gives Alice the confidence that if she somehow learns **sb**, she will learn **Tb**'s secret key ***tb*** by substracting **sb'** from **sb**. She then feels
+comfortable to send her coin to a multi-sig address, which encodes the information of **Pa**, **Pb**, **Ra**, **Rb** and **Tb**, along with her signature (in reality, Bob
+might disappear, so it's important for Alice to have recourse to that, but that is not interesting for this discussion):
+
+{% highlight Haskell %}
+
+signatureAlice = (sa, R, Tb)
+  where
+    sa = ka + exa
+    e  = H(P||R+Tb||m)
+    R  = Ra + Rb
+
+-- created by Bob to take the coin from the multi-sig address
+signatureJointMultiSig = (s, R, Tb)
+  where
+    s = sa + sb
+      = sa + sb' + tb
+    e = H(P||Rb+Tb||m)
+
+{% endhighlight %}
+
+Using **signatureAlice**, Bob can create **signatureJointMultiSig** and use it to take the coin that Alice just paid. As soon as **signatureJointMultiSig** hits the blockchain,
+secret ***tb*** is automatically revealed to Alice with the simple formula of **tb = s - sa - sb'**. The entire process is trustless and atomic.
+
+One might wonder how useful is it to buy a secret in this way. It turns out that if we can prove this secret is the solution to
+an interesting problem without revealing the secret beforehand (using [zero knowledge proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof)), it might open
+up a lot of applications. This protocol is called [zero knowledge contigent payment](https://en.bitcoin.it/wiki/Zero_Knowledge_Contingent_Payment) and is commonly expressed
+in Bitcoin as hash-locked transactions. However, using adaptor signatures, the resulting transaction is completely indistinguishable from any other transactions,
+providing much greater fungibility and privacy. It also offers a solution for systems like Mimblewimble to achieve the same functionality without requring a
+[Script](https://en.bitcoin.it/wiki/Script) like language.
 
 #### Atomic Swap
 
