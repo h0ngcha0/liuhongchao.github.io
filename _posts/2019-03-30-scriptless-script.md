@@ -39,8 +39,8 @@ at the time as the result of it. From the technical point of view, it doesn't se
 One of the biggest advantages of Schnorr Signature over ECDSA is linearity, which basically means that multiple schnorr signatures signed by different private keys for the same message can be verified by
 the sum of all their corresponding public keys. To understand how it works, we need to understand how a digital signature is constructed and verified with both ECDSA and Schnorr Signatures.
 
-Let's say we have a keypair **(x, P)** where **P = xG** (**G** represents the [generetor](https://bitcoin.stackexchange.com/questions/29904/what-exactly-is-generator-g-in-bitcoins-elliptical-curve-algorithm)). To
-sign a message, first of all an ephemeral keypair **(k, R)** where **R = kG** needs to be generated. Assuming that the message to be signed is **m**, in case of Schnorr, the signature would look something
+Let's say we have a keypair **(*x*, P)** where **P = *x*G** (**G** represents the [generetor](https://bitcoin.stackexchange.com/questions/29904/what-exactly-is-generator-g-in-bitcoins-elliptical-curve-algorithm)). To
+sign a message, first of all an ephemeral keypair **(*k*, R)** where **R = *k*G** needs to be generated. Assuming that the message to be signed is **m**, in case of Schnorr, the signature would look something
 like this:
 
 {% highlight Haskell %}
@@ -50,7 +50,7 @@ signature = (s, R)
     e = H(P||R||m)
 {% endhighlight %}
 
-**e** is the hash commitment to the concatenation of **P**, **R** and **m**, all of which are public information. To check this signature, mutliple **G** on both sides of **s = k + ex** and verify that
+**e** is the hash commitment to the concatenation of **P**, **R** and **m**, all of which are public information. To check this signature, mutliple **G** on both sides of **s = *k* + e*x*** and verify that
 the equation holds.
 
 {% highlight Haskell %}
@@ -60,8 +60,8 @@ sG = kG + exG   -- k and x are private variables
      e = H(P||R||m)
 {% endhighlight %}
 
-Assuming that two parties (Alice and Bob) want to sign the same message together (multi-sig), and their keypairs are **(xa, Pa)** and **(xb, Pb)** respectively. Alice needs to generate an ephemeral
-keypair **(ka, Ra)** and Bob needs to generate his **(kb, Rb)** as well. Before signing, they exchange the public key part of their ephemeral keypair **Ra** and **Rb** to each other and construct individual
+Assuming that two parties (Alice and Bob) want to sign the same message together (multi-sig), and their keypairs are **(*xa*, Pa)** and **(*xb*, Pb)** respectively. Alice needs to generate an ephemeral
+keypair **(*ka*, Ra)** and Bob needs to generate his **(*kb*, Rb)** as well. Before signing, they exchange the public key part of their ephemeral keypair **Ra** and **Rb** to each other and construct individual
 signatures:
 
 {% highlight Haskell %}
@@ -80,7 +80,7 @@ signatureBob = (sb, Rb)
     R  = Ra + Rb
 {% endhighlight %}
 
-The multi-sig signature **(s, R)** would just be the addition of signatureAlice and signatureBob: **(sa+sb, Ra+Rb)** and it will verify correctly with the addition of the public key **P (P=Pa+Pb)** as shown
+The multi-sig signature **(*s*, R)** would just be the addition of signatureAlice and signatureBob: **(*sa*+*sb*, Ra+Rb)** and it will verify correctly with the addition of the public key **P (P=Pa+Pb)** as shown
 below:
 
 {% highlight Haskell %}
@@ -125,20 +125,18 @@ That is the idea behind Adapter Signatures.
 
 ### Adaptor Signatures
 
-Adaptor signatures is designed to communicate an extra piece of secret information between two parties through multi-sig. Remember before Alice and Bob create a multi-sig signature together, they need to exchange the public
-key part of the ephemeral keypair **Ra** and **Rb**. The idea is that an extra ephemeral keypair **(t, T)** can also be generated on top of that, then both of the following schnorr signatures are valid:
+Adaptor signatures is designed to communicate an extra piece of secret information between two parties through multi-sig. Remember before Alice and Bob create a multi-sig signature together, they need
+to exchange the public side of the ephemeral keypair **Ra** and **Rb**. The idea is that if Bob wants to communicate a piece of secret information ***tb*** to Alice, he can create an extra ephemeral keypair
+**(*tb*, Tb)** where **Tb=*tb*G** and communicate **Tb** to Alice along side **Rb** first. Following is a valid signature that includes **(*tb*, Tb)**:
 
 {% highlight Haskell %}
-originalSignature = (s, R)
+bobSignature = (sb, Rb, Tb)
   where
-    s = k + ex
-    e = H(P||R||m)
-
-adaptorSignature = (s', R, T)
-  where
-    s  = k + t + ex
-    e  = H(P||R||m)
+    sb = kb + tb + ex
+    e = H(P||Rb+Tb||m)
 {% endhighlight %}
+
+But instead of sending **bobSignature** right away to Alice, Bob sends an "adaptor signature" **bobAdaptorSignature**, 
 
 The above formula basically tells us that knowing secret value **t** and one of **adaptorSignature** and **originalSignature** is equivalent to knowing the other signature. Conversely, knowing both **adaptorSignature** and
 **originalSignature** is equivalent to knowing the secret value **t**. This could enable a bunch of interesting use cases:
