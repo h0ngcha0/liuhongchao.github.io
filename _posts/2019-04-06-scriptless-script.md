@@ -173,8 +173,8 @@ sb = sb' + tb = kb + tb + ex
 {% endhighlight %}
 
 Number 3) gives Alice the confidence that if she somehow learns **sb**, she will learn **Tb**'s secret key ***tb*** by substracting **sb'** from **sb**. She then feels
-comfortable to send her coin to a multi-sig address, which encodes the information of **Pa**, **Pb**, **Ra**, **Rb** and **Tb**(?), along with her signature (in reality, Bob
-might disappear, so it's important for Alice to have recourse to that, but that is not interesting for this discussion):
+comfortable to send her coin to a multi-sig address jointly owned by **Pa** and **Pb**, along with her signature (in reality, Bob might disappear, so it's important for Alice
+to have recourse to that, but that is not interesting for this discussion):
 
 {% highlight Haskell %}
 
@@ -193,21 +193,25 @@ signatureJointMultiSig = (s, R, Tb)
 
 {% endhighlight %}
 
-Using **signatureAlice**, Bob can create **signatureJointMultiSig** and use it to take the coin that Alice just paid. As soon as **signatureJointMultiSig** hits the blockchain,
-secret ***tb*** is automatically revealed to Alice with the simple formula of **tb = s - sa - sb'**. The entire process is trustless and atomic.
+Using **signatureAlice**, Bob can create **signatureJointMultiSig** and use it to take the coin from the jointly owned multi-sig address that Alice just paid. As soon as
+**signatureJointMultiSig** hits the blockchain, secret ***tb*** is automatically revealed to Alice with the simple formula of **tb = s - sa - sb'** in a trustless manner.
 
 #### Zero Knowledge Contigent Payment
-One might wonder how useful is it to buy a secret in this way. It turns out that if we can prove this secret is the solution to
+One might wonder how useful is it to buy a secret this way. It turns out that if we can prove this secret is the solution to
 an interesting problem without revealing the secret beforehand (using [zero knowledge proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof)), it might open
 up a lot of applications. This protocol is called [zero knowledge contigent payment](https://en.bitcoin.it/wiki/Zero_Knowledge_Contingent_Payment) and is commonly expressed
-in Bitcoin as hash-locked transactions. However, using adaptor signatures, the resulting transaction is completely indistinguishable from any other transactions,
-providing much greater fungibility and privacy. It also offers a solution for systems like Mimblewimble to achieve the same functionality without requring a
+in Bitcoin as hash-locked transactions. The advantage of using adaptor signatures instead is that the resulting transaction is completely indistinguishable from any other transactions,
+providing much greater fungibility, privacy and efficiency. It also offers a way for systems like Mimblewimble to achieve the similiar functionalities without requring a
 [Script](https://en.bitcoin.it/wiki/Script) like language.
 
 #### Atomic Swap
 
+Alice and Bob can also use adaptor signatures to accomplish [atomic swap](https://www.investopedia.com/terms/a/atomic-swaps.asp).
+
 <br/>
 <br/>
+
+----
 
 So mimblewimble is a special case for scriptless script since it kind of represents a multi-sig.
 If a signature can faithfully record the outcome of executing a protocol, then it could be expressed using
