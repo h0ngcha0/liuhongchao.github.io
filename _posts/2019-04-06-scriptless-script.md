@@ -135,6 +135,7 @@ bobSignature = (sb, R, Tb)
   where
     sb = kb + tb + ex
     e  = H(P||R+Tb||m)
+    P  = Pa + Pb
     R  = Ra + Rb
 {% endhighlight %}
 
@@ -145,6 +146,7 @@ sb' = kb + ex
     = sb - tb
   where
     e = H(P||R+Tb||m)
+    P = Pa + Pb
     R = Ra + Rb
 {% endhighlight %}
 
@@ -156,18 +158,21 @@ If Bob sends **sb'** to Alice, Alice can verify three things:
 sb' = kb + ex
   where
     e = H(P||R+Tb||m)
+    P = Pa + Pb
     R = Ra + Rb
 
 -- 2) if e is replaced with e', then sb' is a valid signature
 sb' = kb + e'x
   where
     e' = H(P||R||m)
+    P = Pa + Pb
     R = Ra + Rb
 
 -- 3) Tb's secret key tb is needed for a valid signature sb
 sb = sb' + tb = kb + tb + ex
   where
     e = H(P||R+Tb||m)
+    P = Pa + Pb
     R = Ra + Rb
 
 {% endhighlight %}
@@ -182,6 +187,7 @@ signatureAlice = (sa, R, Tb)
   where
     sa = ka + exa
     e  = H(P||R+Tb||m)
+    P = Pa + Pb
     R  = Ra + Rb
 
 -- created by Bob to take the coin from the multi-sig address
@@ -189,7 +195,7 @@ signatureJointMultiSig = (s, R, Tb)
   where
     s = sa + sb
       = sa + sb' + tb
-    e = H(P||Rb+Tb||m)
+    R = Ra + Rb
 
 {% endhighlight %}
 
@@ -206,28 +212,94 @@ providing much greater fungibility, privacy and efficiency. It also offers a way
 
 #### Atomic Swap
 
-Alice and Bob can also use adaptor signatures to accomplish [atomic swap](https://www.investopedia.com/terms/a/atomic-swaps.asp).
+Alice and Bob can also use adaptor signatures to accomplish [atomic swap](https://www.investopedia.com/terms/a/atomic-swaps.asp) by executing essentially the same protocol
+in parallel on two chains.
+
+Let's say **ChainA** and **ChainB** use the same elliptic curve (e.g. [secp256k1](https://en.bitcoin.it/wiki/Secp256k1)). Alice and Bob agree to swap Alice's coin on **ChainA**
+with Bob's coin on **ChainB** in a trustless and atomic way. Assuming that Alice and Bob's keypair is **(*xa_A*, Pa_A)** and **(*xb_A*, Pb_A)** on **ChainA** and
+**(*xa_B*, Pa_B)** and **(*xb_B*, Pb_B)** on **ChainB** respectively. First of all, Alice's coin will be paid to a multi-sig address controlled by **Pa_A** and **Pb_A** on **ChainA** while
+Bob's coin will be paid to a multi-sig address controlled by **Pa_B** and **Pb_B** on **ChainB**. The mechanism for getting refund when counterparty disappears is intentionally ignored
+here for brevity.
+
+Next, Alice and Bob exchange the ephemeral keypairs on both chains, to follow the same convention, **(*ka_A*, Ra_A)**, **(*kb_A*, Rb_A)** on **ChainA** and **(*ka_B*, Ra_B)**,
+**(*kb_B*, Rb_B)** on **ChainB**. On top of that, Bob generates an extra ephemeral keypair **(*tb*, Tb)** and share it with Alice on both chains. Bob's signature could eventually
+look something like this:
+
+{% highlight Haskell %}
+bobSignatureChainA = (sb_A, R_A, Tb)
+  where
+    sb_A = kb_A + tb + e_Axb_A
+    e_A  = H(P_A||R_A+Tb||m)
+    P_A  = Pa_A + Pb_A
+    R_A  = Ra_A + Rb_A
+
+bobSignatureChainB = (sb_B, R_B, Tb)
+  where
+    sb_B = kb_B + tb + e_Bxb_B
+    e_B  = H(P_B||R_B+Tb||m)
+    P_B  = Pa_B + Pb_B
+    R_B  = Ra_B + Rb_B
+{% endhighlight %}
+
+However, just like what Bob did before, he sends Alice his adaptor signatures **sb_A' = *kb_A* + e_A*xb_A*** and **sb_B' = *kb_B* + e_B*xb_B*** for her to verify. After Alice feels confident
+that **Tb**'s secret key ***tb*** is the one needed to get **sb_A** and **sb_B** from **sb_A'** and **sb_B'**, she sends her part of the multi-sig signature on ChainA to Bob:
+
+{% highlight Haskell %}
+aliceSignatureChainA = (sa_A, R_A, Tb)
+  where
+    sa_A = ka_A + e_Axa_A
+    e_A  = H(P_A||R_A+Tb||m)
+    P_A  = Pa_A + Pb_A
+    R_A  = Ra_A + Rb_A
+{% endhighlight %}
+
+Bob can produce an aggregated signature **signatureJointMultiSigChainA** by combining **aliceSignatureChainA** and **bobSignatureChainA** to take Alice's coin on ChainA, as shown below:
+
+{% highlight Haskell %}
+signatureJointMultiSigChainA = (s_A, R_A, Tb)
+  where
+    s_A = sa_A + sb_A
+        = sa_A + sb_A' + tb
+    R_A = Ra_A + Rb_A
+{% endhighlight %}
+
+At the same time, knowing **sb_A'**, Alice can calculate the secret value ***tb*** by substracting **sa_A** and **sb_A'** from **s_A**. Since Alice also knows **sb_B'**, she can also use ***tb***
+to calculate a valid joint signature **signatureJointMultiSigChainB** on ChainB to take Bob's coin, accomplishing the process of [atomic swap](https://www.investopedia.com/terms/a/atomic-swaps.asp).
+
+{% highlight Haskell %}
+aliceSignatureChainB = (sa_B, R_B, Tb)
+  where
+    sa_B = ka_B + e_Bxa_B
+    e_B  = H(P_B||R_B+Tb||m)
+    P_B  = Pa_B + Pb_B
+    R_B  = Ra_B + Rb_B
+
+signatureJointMultiSigChainB = (s_B, R_B, Tb)
+  where
+    s_B = sa_B + sb_B
+        = sa_B + sb_B' + tb
+    R_B = Ra_B + Rb_B
+{% endhighlight %}
+
+Again, from the perspective of the blockchain and the rest of the world, only simple signatures are involved in those transactions, greatly improves privay, fungibility and efficiency, 
 
 <br/>
-<br/>
+
+Scriptless script can be used to express other smart contracts as well. For example, [Jonas Nick](https://jonasnick.github.io/) presented
+[a way](https://jonasnick.github.io/blog/2018/07/31/blind-signatures-in-scriptless-scripts/) of encoding blind signatures in scriptless script. Mimblewimble also maintains a list of
+[contracts](https://github.com/mimblewimble/grin/blob/master/doc/contracts.md) that could potentially be implemented using some of the ideas from scriptless script. There are some open
+questions too, notably how to encode timelocks and 3+ multiparties protocols.
+
+Scriptless script can potentially take a class of smart contracts offchain, as long as their effect can be encoded in secret values and embedded in signatures. For those use cases,
+blockchain becomes a mechanism to verify or enforce smart contracts instead of computing them, which is perhaps what a it [should do](https://bitcointalk.org/index.php?topic=1427885.msg14601127#msg14601127).
+As a result, it can be a great win for efficiently, fungibility and privacy.
 
 ----
 
-So mimblewimble is a special case for scriptless script since it kind of represents a multi-sig.
-If a signature can faithfully record the outcome of executing a protocol, then it could be expressed using
-scriptless script.
-
-so in a way mimblewimble's kernel signature proves the ownership, what if the signature can contain other data?
-"scriptless script" is a way to use these kernels and kernel signatures to attach conditions to them without
-modifying the system so that the verifiers need to understand new rules
-
-Open problems
-"That's it, that's the end of my talk. Let's figure out timelocks, scriptless scripts with BLS, and multiparty 3+ party scriptless scripts. And what about standards and interoperability."
-
 Reference:
-https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/
-https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001297.html
-https://github.com/mimblewimble/grin/blob/master/doc/contracts.md
-https://github.com/apoelstra/scriptless-scripts/blob/master/md/atomic-swap.md
-https://bitcoin.stackexchange.com/questions/77234/schnorr-vs-ecdsa
-https://www.youtube.com/watch?v=PDzGP621pEs
+- https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/
+- https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001297.html
+- https://github.com/mimblewimble/grin/blob/master/doc/contracts.md
+- https://github.com/apoelstra/scriptless-scripts/blob/master/md/atomic-swap.md
+- https://bitcoin.stackexchange.com/questions/77234/schnorr-vs-ecdsa
+- https://www.youtube.com/watch?v=PDzGP621pEs
