@@ -40,15 +40,15 @@ there. Even though it can [probably](http://diyhpl.us/wiki/transcripts/scalingbi
 
 ### Schnorr Signatures
 
-In systems like Bitcoin and Ethereum, signature construction and verification is currently done through [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm),
-which was designed as a variant of Schnorr Signature to avoid its parent issues. Even though the patent expired in 2008, shortly before Bitcoin was invented, ECDSA was much more standardized
-at the time as the result of it. From the technical point of view, it doesn't seem to have any other merits for Bitcoin to choose it over Schnorr Signatures.
+The signature scheme used in systems like Bitcoin and Ethereum is called [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm),
+which was designed as a variant of Schnorr Signature to avoid its parent issues. Even though the patent expired in 2008, shortly before Bitcoin was invented, ECDSA was still much more standardized
+at the time. Other than that there doesn't seem to be any techinical merits for Satoshi to choose it over Schnorr Signatures.
 
 One of the biggest advantages of Schnorr Signature over ECDSA is linearity, which basically means that multiple schnorr signatures signed by different private keys for the same message can be verified by
-the sum of all their corresponding public keys. To understand how it works, we need to understand how a digital signature is constructed and verified with both ECDSA and Schnorr Signatures.
+the sum of all their corresponding public keys. To understand how it works, we need to understand how a digital signature is constructed and verified with both Schnorr Signatures and ECDSA.
 
-Let's say we have a keypair **(*x*, P)** where **P = *x*G** (**G** represents the [generetor](https://bitcoin.stackexchange.com/questions/29904/what-exactly-is-generator-g-in-bitcoins-elliptical-curve-algorithm)). To
-sign a message, first of all an ephemeral keypair **(*k*, R)** where **R = *k*G** needs to be generated. Assuming that the message to be signed is **m**, in case of Schnorr, the signature would look something
+Let's say we have a keypair **(*x*, P)** where **P = *x*G** (**G** represents the [generetor](https://bitcoin.stackexchange.com/questions/29904/what-exactly-is-generator-g-in-bitcoins-elliptical-curve-algorithm) on a elliptic curve). To
+sign a message, an ephemeral keypair **(*k*, R)** where **R = *k*G** needs to be generated first. Assuming that the message to be signed is **m**, in case of Schnorr, the signature would look something
 like this:
 
 {% highlight Haskell %}
@@ -69,18 +69,18 @@ sG = kG + exG   -- k and x are private variables
 {% endhighlight %}
 
 Assuming that two parties (Alice and Bob) want to sign the same message together (multi-sig), and their keypairs are **(*xa*, Pa)** and **(*xb*, Pb)** respectively. Alice needs to generate an ephemeral
-keypair **(*ka*, Ra)** and Bob needs to generate his **(*kb*, Rb)** as well. Before signing, they exchange the public key part of their ephemeral keypair **Ra** and **Rb** to each other and construct individual
-signatures:
+keypair **(*ka*, Ra)**, so does Bob with his **(*kb*, Rb)**. Before signing, they exchange the public key part of their ephemeral keypair **Ra** and **Rb** to each other and construct their half of
+the signature:
 
 {% highlight Haskell %}
-signatureAlice = (sa, Ra)
+signatureAlice = (sa, R)
   where
     sa = ka + exa
     e  = H(P||R||m)
     P  = Pa + Pb
     R  = Ra + Rb
     
-signatureBob = (sb, Rb)
+signatureBob = (sb, R)
   where
     sb = kb + exb
     e  = H(P||R||m)
@@ -88,8 +88,7 @@ signatureBob = (sb, Rb)
     R  = Ra + Rb
 {% endhighlight %}
 
-The multi-sig signature **(*s*, R)** would just be the addition of signatureAlice and signatureBob: **(*sa*+*sb*, Ra+Rb)** and it will verify correctly with the addition of the public key **P (P=Pa+Pb)** as shown
-below:
+The multi-sig signature **(*s*, R)** would just be the addition of **signatureAlice** and **signatureBob** which, as shown below, can be correctly verified with the addition of the public key **P (P=Pa+Pb)**:
 
 {% highlight Haskell %}
 sG = saG + sbG
@@ -101,11 +100,11 @@ sG = saG + sbG
      e = H(P||R||m)
 {% endhighlight %}
 
-This property is called linearity, which means that with Schnorr, multi-sig signatures can be aggregated into one single signature and verifiers would have no idea whether this signature is the result of a complex interaction between multiple participants
-or just one user unlocking a single public key, a great win for both privcy and efficiency. Note that in practice multi-sig is constructed in a [more complex way](https://blockstream.com/2019/02/18/en-musig-a-new-multisignature-standard/) due to the
+This property is called linearity, meaning that with Schnorr, multi-sig signatures can be aggregated into one single signature and verifiers would have no way to distinguish it from other signatures,
+which is a great win for both privacy and efficiency. Note that in practice multi-sig is constructed in a [more complex way](https://blockstream.com/2019/02/18/en-musig-a-new-multisignature-standard/) due to the
 possibility of [rogue key attack](https://eprint.iacr.org/2018/417.pdf), but the essence remains the same.
 
-This nice linearity property doesn't hold for ECDSA since with the same keypairs, the formula for signature **(s, R)** looks something like this:
+This nice linearity property doesn't hold for ECDSA since with the same keypairs, the formula for signature **(s, R)** looks something like this instead:
 
 {% highlight Haskell %}
 -- ECDSA signature construction
@@ -120,16 +119,12 @@ skG = R'G + exG   -- k, x are private variables
 sR  = R'G + eP    -- all variables are public
 {% endhighlight %}
 
-If Alice and Bob go through the same process described above to construct a multi-sig signature using ECDSA, the result can no longer be verified by the addition of their public keys. Linearity is broken by the
-multiplication **s*k**.
+If Alice and Bob add their signature together, the result can no longer be verified by the addition of their public keys. Linearity is basically broken by the multiplication **s*k**.
 
-It is also worth noting that a proof exists that as long as the underlying [elliptic curve cryptography](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) works, Schnorr signatures
-are secure, but there wasn't a similiar mathematical proof for ECDSA yet.
-
-The fact that we could reduce some kind of logic (multi-sig) into one single schnorr signature is interesting. It could be considered as a type of scriptless script since it is in line with its design goal:
+With Schnorr Signatures, the fact that we could encode the result of a logic (multi-sig) into one single signature is interesting since it is in line with the design goal of Scriptless Script:
 *embed interesting logic in signatures and keep it indistinguishable from the rest of the world*. A simple multi-sig essentially utilized the ability to perform additions on Schnorr Signatures,
-[Andrew Poelstra](https://github.com/apoelstra) also realized that the subsctraction on it can be leveraged to piggyback a piece of secret information which could enable expressing more complex logic.
-That is the idea behind Adapter Signatures.
+[Andrew Poelstra](https://github.com/apoelstra) also realized that subsctraction on signatures can be leveraged to communicate a piece of secret information which is very helpful
+to express more complex logic. This is the idea behind Adaptor Signatures.
 
 ### Adaptor Signatures
 
@@ -312,8 +307,3 @@ Reference:
 - [Ideas to support smart contracts in Mimblewimble](https://github.com/mimblewimble/grin/blob/master/doc/contracts.md)
 - [Andrew Poelstra's scriptless script repo on Github](https://github.com/apoelstra/scriptless-scripts)
 - [Schnorr vs ECDSA](https://bitcoin.stackexchange.com/questions/77234/schnorr-vs-ecdsa)
-
-
-correct:
-- She then feels comfortable to send her coin to a multi-sig address jointly owned by Pa and Pb, along with her signature
-- also how alice's signature can verify?
