@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Politics
-title: Some thoughts after the Trump victory
+title: Some Thoughts after the Trump Victory
 ---
 
 As many people out there, I have strong and bitter feelings towards Brexit and the

@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Fintech, Blockchain
-title: Grand vision and mundane tasks
+title: Grand Vision and Mundane Tasks
 ---
 
 When Mao lead the revolution, majority of the peasants who played the decisive role were more interested in land redistribution than communism.

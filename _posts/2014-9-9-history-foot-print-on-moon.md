@@ -1,7 +1,7 @@
 ---
 layout: post
 category: History
-title: Footprint on the moon
+title: Footprint on the Moon
 ---
 
 ![Footprint on the moon](http://i0.wp.com/listverse.com/wp-content/uploads/2014/03/1011.jpg)

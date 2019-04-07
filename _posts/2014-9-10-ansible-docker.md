@@ -2,7 +2,7 @@
 layout: post
 tags: Ansible
 category: Software
-title: Provision docker using ansible
+title: Provision Docker using Ansible
 ---
 
 I love [Ansible](http://www.ansible.com/) and
