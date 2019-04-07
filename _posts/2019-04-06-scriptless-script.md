@@ -4,31 +4,39 @@ category: Bitcoin, Cryptocurrency, Cryptography
 title: Scriptless Script
 ---
 
-[Mimblewimble](https://github.com/mimblewimble/grin/blob/master/doc/intro.md) brought a lot of excitement within the crypto industry. It leverages
-[confidential transaction](https://people.xiph.org/~greg/confidential_values.txt) which improves privacy and fungibility by hiding transaction amounts
-using [pedersen commitment](https://www.getmonero.org/resources/moneropedia/pedersen-commitment.html).
-One key realization is that the blinding factor contained in the pedersen commitment can also be used to represent ownership of the coin.
-This turns out to be great for scalability and a further boost to privacy since the blockchain can then be reduced to a very compact form with much less
-information for third party analysis via a mechanism called [cut-through](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#cut-through), which is the key differentiator between Mimblewimble based
-coins and other privacy coins.
+**TL;DR**, Scriptless Script was initially invented to solve the problem of encoding smart contracts in [Mimblewimble](https://www.youtube.com/watch?v=ovCBT1gyk9c) where
+signatures are the only way to express ownership. A key observation is that the aggregation and substraction of the schnorr signatures can be used to capture the semantics
+of a class of offchain protocols, leaving blockchain as an engine for verification as opposed to computation. This not only enables the smart contract capabilities for systems
+like Mimblewimble, but can also be used to improve the efficiency, fungibility and privacy of other blockchains such as Bitcoin.
 
-Unlike many other cryptocurrencies where the ownership of the coin is determined by the successful execution of a
+
+<img src="{{ site.baseurl }}/images/fengqingyang.jpg" alt="fengqingyang" style="width: 360px;"/>
+<span class="image-label">风清扬</span>
+
+### Mimblewimble
+
+Mimblewimble implements [confidential transaction](https://people.xiph.org/~greg/confidential_values.txt) which hides transaction amounts
+using [pedersen commitment](https://www.getmonero.org/resources/moneropedia/pedersen-commitment.html).
+One key realization is that the blinding factor included in the pedersen commitment can also be used to represent ownership of the coin.
+This turns out to be great win for scalability since the blockchain can be reduced to a very compact form via a mechanism called
+[cut-through](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#cut-through). It is also a further boost for privacy since
+third party analysts will end up with much less information to work with.
+
+Specifically, unlike many other cryptocurrencies where the ownership of the coin is determined by the successful execution of a
 [smart contract](https://en.wikipedia.org/wiki/Smart_contract), the claim for a Mimblewimble based coin is solely dependent on if a verifiable signature can be
-provided for the [kernel execess](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#transaction-aggregation),
-which is the public key derived from the sum of outputs' blinding factors minus the sum of inputs' blinding factors (in practice, it is added as an extra zero-valued output
-in a Mimblewimble transaction to ensure that the sum of inputs and outputs's amounts commitment adds up to zero). Signature of a kernel excess is the only way to represent
-ownership in Mimblewimble, therefore no smart contract languages are needed. Even if smart contracts exist in some of the transactions,
-it will be hard for public verifiers to verify them since the cut through mechanism would make many of them disappear.
+provided for its [kernel execess](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#transaction-aggregation),
+which is the public key derived from the sum of outputs' blinding factors minus the sum of inputs' blinding factors (in practice, kernel excess is added as an extra zero-valued output
+in a Mimblewimble transaction to ensure that the sum of inputs and outputs's amounts commitment adds up to zero). Since signature is the only way to authorize the movement
+of a Mimblewimble coin, no smart contract language is needed.
 
 This does feel quite limiting since the ability to write smart contracts significantly increases the usefulness of the blockchain,
 [lightning network](https://en.wikipedia.org/wiki/Lightning_Network) is one great example of that. To solve this problem, [Andrew Poelstra](https://github.com/apoelstra)
-invented scriptless script which embeds smart contracts into digital signatures so that they could not only represent the authorization of simple coin movements but
-also the successful execution of the more complex logic such as multi-sig, atomic swap and even timelocks. As it turns out, this technology is not Mimblewimble
+invented scriptless script which embeds smart contracts into digital signatures so that they not only represent the authorization of simple coin movements but
+also the successful execution of more complex logic such as multi-sig, atomic swap, etc. As it turns out, this technology is not Mimblewimble
 specific and could be used to improve the privacy, efficieny and scalability of other blockchains as well, including Bitcoin.
 
-Before diving more into details, let's talk a little bit about [Schnorr Signatures](https://en.wikipedia.org/wiki/Schnorr_signature) since within this scheme scriptless script
-is much easier to reason about even though it is also [possible](http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/scriptless-ecdsa/)
-to do it in ECDSA too.
+Before diving more into details, let's talk a little bit about [Schnorr Signatures](https://en.wikipedia.org/wiki/Schnorr_signature) since it is easier to reason about scriptless script
+there. Even though it can [probably](http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/scriptless-ecdsa/) be achieved with [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) too.
 
 ### Schnorr Signatures
 
@@ -297,9 +305,15 @@ As a result, it can be a great win for efficiently, fungibility and privacy.
 ----
 
 Reference:
-- https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/
-- https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001297.html
-- https://github.com/mimblewimble/grin/blob/master/doc/contracts.md
-- https://github.com/apoelstra/scriptless-scripts/blob/master/md/atomic-swap.md
-- https://bitcoin.stackexchange.com/questions/77234/schnorr-vs-ecdsa
-- https://www.youtube.com/watch?v=PDzGP621pEs
+- [Mimblewimble and Scriptless Scripts](https://www.youtube.com/watch?v=ovCBT1gyk9c)
+- [Scriptless scripts, adaptor signatures and their applications](https://www.youtube.com/watch?v=PDzGP621pEs)
+- [Flipping the scriptless script on Schnorr](https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/)
+- [Scriptless Scripts with ECDSA](https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001297.html)
+- [Ideas to support smart contracts in Mimblewimble](https://github.com/mimblewimble/grin/blob/master/doc/contracts.md)
+- [Andrew Poelstra's scriptless script repo on Github](https://github.com/apoelstra/scriptless-scripts)
+- [Schnorr vs ECDSA](https://bitcoin.stackexchange.com/questions/77234/schnorr-vs-ecdsa)
+
+
+correct:
+- She then feels comfortable to send her coin to a multi-sig address jointly owned by Pa and Pb, along with her signature
+- also how alice's signature can verify?
