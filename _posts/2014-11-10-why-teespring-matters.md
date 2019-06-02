@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Startups
-title: Why Teespring matters
+title: Why Teespring Matters
 ---
 
 E-commerce is taking over the world. There is no better evidence than

@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Software, scala
-title: Method injection in Scala
+title: Method Injection in Scala
 ---
 
 I remember the horror when I first came across *implicit* in scala, it

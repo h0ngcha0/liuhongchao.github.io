@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Fintec, Blockchain
-title: Two thoughts on Fintech and Blockchain
+title: Two Thoughts on Fintech and Blockchain
 ---
 
 1) As much as people's initial hope of how decentralized internet should be when it was first invented, we see very centralized services over the years for various reasons (convenience, efficiency, human nature, need for trust) at the same time when it flattens the world as humanity has never seen before.
