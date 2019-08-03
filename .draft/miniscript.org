@@ -1,0 +1,29 @@
+** Motivation
+//! # Introduction
+//! ## Bitcoin Script
+//!
+//! In Bitcoin, spending policies are defined and enforced by means of a
+//! stack-based programming language known as Bitcoin Script. While this
+//! language appears to be designed with tractable analysis in mind (e.g.
+//! there are no looping or jumping constructions), in practice this is
+//! extremely difficult. As a result, typical wallet software supports only
+//! a small set of script templates, cannot interoperate with other similar
+//! software, and each wallet contains independently written ad-hoc manually
+//! verified code to handle these templates. Users who require more complex
+//! spending policies, or who want to combine signing infrastructure which
+//! was not explicitly designed to work together, are simply out of luck.
+//!
+//! ## Miniscript
+//!
+//! Miniscript is an alternative to Bitcoin Script which eliminates these
+//! problems. It can be efficiently and simply encoded as Script to ensure
+//! that it works on the Bitcoin blockchain, but its design is very different.
+//! Essentially, a Miniscript is a monotone function (tree of ANDs, ORs and
+//! thresholds) of signature requirements, hash preimage requirements, and
+//! timelocks.
+//!
+//! Miniscript also admits a more human-readable encoding.
+
+** Output Descriptor
+Seems to be some template stuff to query and describe the outputs
+https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
