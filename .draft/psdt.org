@@ -1,0 +1,22 @@
+** The potential security risks discussed in the podcast
+** The coinjoin use case
+** The multisig use case
+sign a multi-sig output together
+
+Q: is PSBT still subject to a small set of possible scripts? whatever the output descriptor
+can describe?
+
+- goal: "allow people to pass around the same transaction to sign and combine their signatures."
+
+- allow air-gapped or hardware wallet to sign without the access to UTXO sets.
+
+- PSBT is a map or multiple maps?
+
+
+references:
+- https://www.supinfo.com/articles/single/9640-partially-signed-bitcoin-transactions
+- https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
+- https://www.mail-archive.com/bitcoin-dev@lists.linuxfoundation.org/msg07168.html
+- https://github.com/bitcoin/bitcoin/blob/master/doc/psbt.md
+
+
