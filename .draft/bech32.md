@@ -1,0 +1,1 @@
+https://bitcoinops.org/en/bech32-sending-support/https://bitcoinops.org/en/bech32-sending-support/

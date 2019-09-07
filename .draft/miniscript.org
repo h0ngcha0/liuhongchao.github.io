@@ -27,3 +27,56 @@
 ** Output Descriptor
 Seems to be some template stuff to query and describe the outputs
 https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+
+** Types of the miniscript
+
+treat it as function?
+
+*** B, Base Expression
+
+A function that takes the elements from the top of the stack, compute
+and return something at the top of the stack. If not satisified, 0
+will always be returned to the top of the stack.
+
+Most expressions are B expressions.
+
+*** V, Verify Expression 
+
+Function that either continue without pushing anything to the top of
+the stack or aborts the execution of the script.
+
+*** K, Key Expression
+
+Like B, but the thing that gets returned is always a public key. Using
+the c: wrapper, it would be turned into a B expression.
+
+*** W, Wrapper expression
+
+Seems to only refer to SWAP or TOALTSTACK/FROMALTSTACk operations.
+
+** Type modifiers
+
+*** z, zero-arg, consumes 0 stack element
+*** o, one-arg, consumes 1 stack element
+*** n, non-zero-args, consumes at least 1 stack element
+how about any number of args?
+*** d, disatisfiable, can not be satisfied, no conditions, including checksig or check hash
+garenteeed to be false
+i think what it means is we can construct something that can make it
+false, without relying on runtime. e.g. condition
+
+Q: why sha256(n) has a d property? isn't the satisification part
+conditionally constructed?
+
+*** u, unit, when satisfied, just put 1 on top of the stack, rather than anything
+why is u important?
+
+
+References
+- https://medium.com/bitbees/not-mini-miniscript-75a4c30c9fea
+error in verification part
+this is wrong: or_c encodes as [left] IFDUP NOTIF [right] ENDIF
+- http://bitcoin.sipa.be/miniscript/  <- very dry content
+
+
+expression syntax, what does it mean?
