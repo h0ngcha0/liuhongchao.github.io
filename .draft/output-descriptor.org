@@ -1,0 +1,5 @@
+# Output descriptor
+
+Reference:
+https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+
