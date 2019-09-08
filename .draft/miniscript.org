@@ -80,3 +80,14 @@ this is wrong: or_c encodes as [left] IFDUP NOTIF [right] ENDIF
 
 
 expression syntax, what does it mean?
+
+** Rust Miniscript Reading
+Look at this [[file:~/Development/blockchain/rust-miniscript/src/miniscript/astelem.rs::pub%20fn%20encode(&self,%20mut%20builder:%20script::Builder)%20->%20script::Builder%20{][Miniscript to Bitcoin Script conversion]] for inspiration
+
+- Miniscript Reference
+this is the [[file:~/Development/blockchain/rust-miniscript/src/miniscript/decode.rs::pub%20enum%20Terminal<Pk:%20MiniscriptKey>%20{][Miniscript Terminal]] code
+
+
+How can pk/pk_h has the property d (disatisfiable?)
+is everything dissatisfiable except for older/after, etc? since we
+sort of can't do anything about it.
