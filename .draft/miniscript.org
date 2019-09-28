@@ -84,6 +84,35 @@ expression syntax, what does it mean?
 ** Rust Miniscript Reading
 Look at this [[file:~/Development/blockchain/rust-miniscript/src/miniscript/astelem.rs::pub%20fn%20encode(&self,%20mut%20builder:%20script::Builder)%20->%20script::Builder%20{][Miniscript to Bitcoin Script conversion]] for inspiration
 
+Look at this [[file:~/Development/blockchain/rust-miniscript/src/policy/compiler.rs::fn%20best_compilations<Pk>(][Policy to Miniscript compilation logic]] for inspiration
+
+Look at this [[file:~/Development/blockchain/rust-miniscript/src/miniscript/mod.rs::impl%20Miniscript<bitcoin::PublicKey>%20{][Parse Bitcoin Script to Miniscript]] for inspiration
+(at least when implementing presentation of the miniscript on nioctib)
+
+Look at the [[file:~/Development/blockchain/rust-miniscript/src/miniscript/types/mod.rs::fn%20type_check<Pk,%20C>(fragment:%20&Terminal<Pk>,%20_child:%20C)%20->%20Result<Self,%20Error<Pk>>][Type Checker]]
+
+- [[file:~/Development/blockchain/rust-miniscript/src/miniscript/types/correctness.rs::///%20Structure%20representing%20the%20type%20properties%20of%20a%20fragment%20which%20are][Good take on correctness property]] 
+i think it is easier to understand than the documentation
+
+```
+consensus and standardness complete: Assuming the resource limits
+listed in the previous section are not violated, for every set of met
+conditions that are permitted by the semantics, a witness can be
+constructed that passes Bitcoin's consensus rules and common
+standardness rules.
+
+consensus sound: It is not possible to construct a witness that is
+consensus valid for a Script unless the spending conditions are
+met. Since standardness rules permit only a subset of consensus-valid
+satisfactions (by definition), this property also implies standardness
+soundness. 
+```
+
+this data structure also reflects the `Correctness properties` section
+of the miniscript documentation really well. `Base` represents basic
+types, `Input` represents z/o/n type modifier, `disatisfiable`
+represents `d` and `unit` represents `u`.
+
 - Miniscript Reference
 this is the [[file:~/Development/blockchain/rust-miniscript/src/miniscript/decode.rs::pub%20enum%20Terminal<Pk:%20MiniscriptKey>%20{][Miniscript Terminal]] code
 
@@ -91,3 +120,52 @@ this is the [[file:~/Development/blockchain/rust-miniscript/src/miniscript/decod
 How can pk/pk_h has the property d (disatisfiable?)
 is everything dissatisfiable except for older/after, etc? since we
 sort of can't do anything about it.
+
+- miniscript correctness requirement should be interpreted in this
+  way
+
+|------------+-------------------------+-----------+--------------------------------------------|
+| and_v(X,Y) | X is V; Y is B, K, or V | same as Y | z=zXzY; o=zXoY or zYoX; n=nX or zXnY; u=uY |
+|------------+-------------------------+-----------+--------------------------------------------|
+
+if z should hold, for `and_v(X, Y)`, then zX and zY should hold at the
+same time.
+
+but then, shouldn't n be `n=nX or zXnY or oXnY` instead?
+
+
+- There are a bunch of resource limitations and miniscript helps to
+  analyze a script's limitation.
+
+to verify if something is secure, also need to make sure the integrity
+of all inputs.
+
+Terminal -> Terminal symbols are the elementary symbols of the language defined by a formal grammar. 
+
+** Miniscript website
+
+*** the purpose of the translation table is clear
+this can be used to translate into bitcoin script
+
+*** what is the purpose of the correctness property? what can we achieve?
+  B,V,K,W and a bunch of type modifiers
+
+  how to translate policy to these things?
+
+*** Resource limitations
+it is the actual consensus or "standardness" limitations.
+reference to standardness https://medium.com/summa-technology/the-bitcoin-non-standard-6103330af98c
+
+miniscript can verify that the satisfying script will potentially not
+hit these limits. (could reach, but might not)
+
+*** Security Properties
+
+** Satisfactions and malleability
+
+in sentences like
+> or_b(X,1) and or_b(1,X) are complete when X is dissatisfiable
+> ("d"). In that case, the condition is equivalent to 1 and is always
+> met, and a satisfaction of the form "nsat(X)" exists. 
+
+what does "complete" mean? potentially can have a valid satisifaction?

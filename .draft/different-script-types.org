@@ -1,0 +1,2 @@
+different script types
+as well as segwit ways of fee calculation

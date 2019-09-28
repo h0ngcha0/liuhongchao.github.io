@@ -1,0 +1,14 @@
+https://medium.com/summa-technology/the-bitcoin-non-standard-6103330af98c
+
+Instead, we discourage abnormal transactions by defining rules for
+“standard” transactions. Standard transactions get accepted by
+default-configured nodes and relayed to other nodes on the
+network. Eventually, a standard transaction will reach a miner and end
+up in a block.
+
+
+Non-standard transactions, in contrast, will not be allowed in the
+mempool of default-configured nodes, unless they’re included in a
+block first.
+
+Interesting.

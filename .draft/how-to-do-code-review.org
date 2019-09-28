@@ -1,0 +1,29 @@
+Source: https://google.github.io/eng-practices/review/reviewer/
+
+Level of strictness should be balanced, improve code health but at the
+same time not discourage future improvement.
+
+1) In general, approve when overall health improves because of the CR,
+   even if it is not perfect. Focus on continuous improvement.
+2) Free to express anything in CR, but might be nice to mark things
+   that are "nice to have". e.g. prefix with "Nit:" (nitpicking)
+3) Sharing knowledge is an important aspect of code review. Prefix
+   with "Nit: " or make it clear that it is not mandatory to fix.
+4) For multiple equally valid options, few things to consider:
+   - author's option
+   - standard principles of software design
+   - consistency with previous approach
+5) When conflicts occur, figure out a way to resolve or escalade, do
+   not let the CR get stuck.
+6) Check for design, functionality, complexity(if over-engineered), tests,
+   naming, comments.
+7) usually do not push cleanup for later as a seperate CR
+7) Comment with courtesy
+8) Navigate CR
+   - first get a broad view
+   - then look at main part, if too big, consider ask for a split
+   - look at the details
+9) Timing for code review, usually after a break. Team velocity vs
+   Individual velocity.
+10) Shorten response time, even though finishing the entire CR might
+    take longer.
