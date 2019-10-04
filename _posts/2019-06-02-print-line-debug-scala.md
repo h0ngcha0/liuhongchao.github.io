@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Programming
-title: Scala utility to make print line debugging easier
+title: A Scala 'debug' Macro
 ---
 
 If you are one of those guys who
