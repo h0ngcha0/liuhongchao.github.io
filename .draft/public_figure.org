@@ -1,0 +1,4 @@
+public figure need to deal with many people, it doesnt scale because
+even if a small fraction disagree, and the disagreed are usually
+louder, u might get overwhelmed, only certain types of jobs like
+politician or something that economics addes up.

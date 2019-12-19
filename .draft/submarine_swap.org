@@ -1,1 +1,20 @@
-write submarine swap
+write submarine swap, loop in, loop out and hyperloop
+
+
+
+
+References:
+https://residency.chaincode.com/presentations/lightning/Submarine_Swaps_Loop.pdf
+https://blog.muun.com/a-closer-look-at-submarine-swaps-in-the-lightning-network/
+https://medium.com/chainrift-research/onboarding-the-masses-submarine-swaps-b615b6d80093
+https://submarineswaps.org/
+https://www.youtube.com/watch?time_continue=1&v=ASkyu0w_8Q8
+https://github.com/chaincodelabs/study-groups/tree/master/bolts-1.1-HTLC-DASH-channel-probing
+https://bitcoinik.com/submarine-swaps-explained/
+
+https://medium.com/suredbits/how-do-submarine-swaps-work-907ed0d91498
+https://github.com/submarineswaps/swaps-service
+https://github.com/submarineswaps/swaps-service/blob/1a1ea4de5af7e7dd82514aeef75a63fedee81431/docs/chain_swap_script.md
+
+separate, lightning 101
+https://medium.com/suredbits/tagged/lightning-101
