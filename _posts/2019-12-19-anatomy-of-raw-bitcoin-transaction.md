@@ -83,7 +83,19 @@ really important. For post-segwit nodes though, it confirms that this is a segwi
 a sequence of witnesses (one for each transaction input) and the locktime.
 
 #### Witnesses
+In segwit transactions, each input would have a sequence of witnesses to help unlock the corresponding output. In this particular transaction, we only have one sequence of witnesses since we only
+have one input.
 
+<span style="background: darkorange; color: white; font-size: 80%">04</span> represents the number of witnesses in the sequence.
+<span style="background: yellow; color: black; font-size: 80%">00</span>, <span style="background: black; color: white; font-size: 80%">483045022...8aa901</span>,
+<span style="background: yellow; color: black; font-size: 80%">483045022...d02d01</span> and <span style="background: black; color: white; font-size: 80%">4752210261...0452ae</span> encodes those
+four witnesses respectively.
+
+It is worth noting that this format is only acceptable for post-segwit nodes. However, when post-segwit nodes processed transaction in this format and relay it to pre-segwit nodes, it will strip away
+the Flag and Witness part. Therefore for pre-segwit nodes, these transactions look like transactions that any one can spend because signatures are in witnesses which are stripped away. That is why
+segwit is a softfork.
+
+----
 
 References:
 - [BIT-141 Segregated Witness (Consensus layer)](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki)
