@@ -66,32 +66,31 @@ For a more in depth explanation please checkout this great [post](https://learnm
 ### Segwit transaction serialization
 
 <img src="{{ site.baseurl }}/images/segwit-bitcoin-transaction-colorized.png" alt="colorized bitcoin transaction" style="width: 90%;"/><br/>
+<span class="image-label">View [this transaction](https://nioctib.tech/#/transaction/f2f398dace996dab12e0cfb02fb0b59de0ef0398be393d90ebc8ab397550370b) at nioctib.tech</span>
 
-#### Version
+For version, transaction inputs, transaction outputs and locktime, they have exactly the same structure as basic transaction serialization. Please use the previous section as a reference and
+the tooltip feature for raw transactions at [nioctib.tech](https://nioctib.tech) if it is not clear.
+
+Instead, let's discuss flag and witnesses that are unique to segwit transactions.
 
 #### Flag
+<span style="background: darkred; color: white; font-size: 80%">0001</span> is unique to segwit transactions. The first byte <span style="background: darkred; color: white; font-size: 80%">00</span>
+is dummy data that looks to the pre-segwit node like empty input from an invalid transaction, which means that the old node will discard it if it is received. For post-segwit nodes, it signals
+that this is potentially a segwit transaction.
 
-#### Transaction Inputs
-
-#### Transaction Outputs
+The second byte <span style="background: darkred; color: white; font-size: 80%">01</span> looks to the pre-segwit node like a transaction with 1 output, but since empty input is not allowed, it's not
+really important. For post-segwit nodes though, it confirms that this is a segwit transaction. It will then expect the following bytes to encode transaction inputs, transaction outputs as well as
+a sequence of witnesses (one for each transaction input) and the locktime.
 
 #### Witnesses
 
-#### Locktime
-
-
-https://bitcoin.stackexchange.com/questions/49097/what-does-a-segregated-witness-transaction-look-like
-
-
-I think the following two picture shows 
-
-
-<- luke jr says it is fairly obvious.. to have flag as 00
 
 References:
 - [BIT-141 Segregated Witness (Consensus layer)](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki)
 - [BIP-144 Segregated Witness (Peer Services)](https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki)
 - [BIP-68 Relative lock-time using consensus-enforced sequence numbers](https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki)
+- [How is SegWit a soft fork](https://bitcoin.stackexchange.com/questions/52152/how-is-segwit-a-soft-fork/52153#52153)
+- [Segregated witness: the next steps](https://bitcoincore.org/en/2016/06/24/segwit-next-steps/)
 
 ----
 
