@@ -23,7 +23,7 @@ In the rest of the post, let's dissect both a pre-segwit transaction and a [segw
 
 Following is the hexadecimal format of a basic transaction displayed in a colorized and structured way, let's break it down one color at a time.
 
-<img src="{{ site.baseurl }}/images/pre-segwit-bitcoin-transaction-colorized.png" alt="colorized bitcoin transaction" style="width: 90%;"/><br/>
+<img src="{{ site.baseurl }}/images/pre-segwit-bitcoin-transaction-colorized.png" alt="colorized bitcoin transaction" style="width: 100%;"/><br/>
 <span class="image-label">View [this transaction](https://nioctib.tech/#/transaction/fca2c14810803155fd47cbbb998338ceefb8a14ea2d7cbc4a6e0089e225ab922) at nioctib.tech</span>
 
 #### Version
@@ -65,7 +65,7 @@ For a more in depth explanation please checkout this great [post](https://learnm
 
 ### Segwit transaction serialization
 
-<img src="{{ site.baseurl }}/images/segwit-bitcoin-transaction-colorized.png" alt="colorized bitcoin transaction" style="width: 90%;"/><br/>
+<img src="{{ site.baseurl }}/images/segwit-bitcoin-transaction-colorized.png" alt="colorized bitcoin transaction" style="width: 100%;"/><br/>
 <span class="image-label">View [this transaction](https://nioctib.tech/#/transaction/f2f398dace996dab12e0cfb02fb0b59de0ef0398be393d90ebc8ab397550370b) at nioctib.tech</span>
 
 For version, transaction inputs, transaction outputs and locktime, they have exactly the same structure as basic transaction serialization. Please use the previous section as a reference and
