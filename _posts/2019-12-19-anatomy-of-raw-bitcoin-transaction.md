@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Fintech, Blockchain, Philosophy, Privacy
-title: Anatomy of Bitcoin Raw Transactions
+title: Anatomy of Bitcoin's Raw Transactions
 ---
 
 Recently I added a feature in [nioctib.tech](https://nioctib.tech) to
