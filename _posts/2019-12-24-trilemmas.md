@@ -10,7 +10,7 @@ title: The Ubiquity of Trilemmas
 One way to express trilemma is that only two of the three favourable options can be chosen at the same time.
 It is often times visualized as a triangle where the available options are represented by vertices and
 choices represented by edges. For example, in the world of international economics, the famous [impossible trinity](https://en.wikipedia.org/wiki/Impossible_trinity)
-states that among three possible policy positions "free capical flow", "fixed exchange rate" and "sovereign monetary policy", a country can only take two
+states that among three possible policy positions: "free capical flow", "fixed exchange rate" and "sovereign monetary policy", a country can only take two
 at the same time, as illustrated below.
 
 
@@ -20,20 +20,34 @@ at the same time, as illustrated below.
 Trilemmas exist across many disiplines and throughout history. 
 In economics, other than the impossible trinity, there is also the [pinker social trilemma](https://en.wikipedia.org/wiki/Trilemma#The_Pinker_social_trilemma)
 which says that a society can not be "free", "fair" and "equal" simultaneously. In business, the [project management trillema](https://en.wikipedia.org/wiki/Project_management_triangle) argues that
-one can only pick two out of "quick", "cheap" and "good" when executing a project. In computing,
+one can only pick two out of "quick", "cheap" and "good" when a project is executed. In computing,
 [CAP thereom](https://en.wikipedia.org/wiki/CAP_theorem) suggests that for a distributed data store, "consistency", "availability" and "partition tolerance"
-can not be achieved at the same time. In religion, [problem of evil](https://en.wikipedia.org/wiki/Problem_of_evil#Epicurus) logically challenged the existence of
-an omnipotent and omnibenevelent god. This kind of ubiquity begs the question: is there anything fundamental about trilemmas?
+can not be achieved at the same time. In religion, [problem of evil](https://en.wikipedia.org/wiki/Problem_of_evil#Epicurus) logically challenges the existence of
+an omnipotent and omnibenevelent god. The ubiquity of these statements begs the question: is there something fundamental about the trilemmas?
 
+3 is a magic number in many cultures. It is a number that offers a sense of balance and completeness but is still brief enough to be memorized.
+3 creates patterns that can be found in many speeches, slogans and concepts. From [Trinity](https://en.wikipedia.org/wiki/Trinity), [Trilogy](https://en.wikipedia.org/wiki/Trilogy),
+and [Trias Politica](https://en.wikipedia.org/wiki/Separation_of_powers) to [Faster, Higher, Stronger](https://en.wikipedia.org/wiki/Olympic_symbols), 
+[Yes We Can](https://en.wikipedia.org/wiki/Barack_Obama_2008_presidential_campaign#Slogan) and Lincoln's [Government of the people, by the people, for the people](https://en.wikipedia.org/wiki/Gettysburg_Address).
+In fact in writing, [rule of three](https://en.wikipedia.org/wiki/Rule_of_three_(writing)) is pretty well researched and documented. When it comes to phrasing the
+domain of a problem, there also seems to be a tendency to come up with three items in order to strike a balance between the level of completeness and the effectiveness
+to convey the message. To some extent, this explains why we only see dilemmas and trilemmas but not "lemmas" with more options.
+
+3 is also a number where things start to get more complicated. 
 
 phrasing a problem into three aspects which are difficult to reconcile?
 
 we have the [energy trillema](https://www.worldenergy.org/publications/entry/world-energy-trilemma-index-2019) and
 
+rule of three
 
 points:
-1. three is the start of something more complex
-2. three is stable, if we can have it then it can be applied universally, we have a missing implicit edge
+1. three feel complete/brevity
+2. three is the start of something more complex (three body problems)
+
+another angle of looking at it
+3. three is stable, if we can have it then it can be applied universally, we have a missing implicit edge
+4. going backward
 
 compromise. hard choices
 complete has to contradict, overlap with each other.
