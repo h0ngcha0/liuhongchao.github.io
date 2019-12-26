@@ -29,30 +29,30 @@ Three is a magic number in many cultures. It is a number that offers a sense of 
 Three creates patterns that can be found in many speeches, slogans and concepts. From [Trinity](https://en.wikipedia.org/wiki/Trinity), [Trilogy](https://en.wikipedia.org/wiki/Trilogy),
 and [Trias Politica](https://en.wikipedia.org/wiki/Separation_of_powers) to [Faster, Higher, Stronger](https://en.wikipedia.org/wiki/Olympic_symbols), 
 [Yes We Can](https://en.wikipedia.org/wiki/Barack_Obama_2008_presidential_campaign#Slogan) and Lincoln's [Government of the people, by the people, for the people](https://en.wikipedia.org/wiki/Gettysburg_Address).
-In fact in writing, [rule of three](https://en.wikipedia.org/wiki/Rule_of_three_(writing)) is pretty well researched and documented. When it comes to phrasing the
+In fact [rule of three](https://en.wikipedia.org/wiki/Rule_of_three_(writing)) is a pretty well researched and documented principle in writing. When it comes to phrasing the
 domain of a problem, there also seems to be a tendency to come up with three items in order to strike a balance between the level of completeness and the effectiveness
-to convey the message. To some extent, this explains why we only see dilemmas and trilemmas but not "lemmas" with more options.
+to convey the message. To some extent, this explains why we only see dilemmas and trilemmas but not so much "lemmas" with more options.
 
 Three is also a number where things start to get more interesting and complicated. In physics, general solution exists for [two-body problem](https://en.wikipedia.org/wiki/Two-body_problem)
 where given the initial positions and velocities of two massive objects, one needs to predict their subsequent motions. By contrast, after an additional object is added into the system, the interactions
 of gravitational forces among the objects become so complicated that the general solution cease to exist. This is called the [three-body problem](https://en.wikipedia.org/wiki/Three-body_problem).
 Likewise, favorable options in many trilemmas are often times not independent of each other. Instead, they exhibit similiar "gravitational pull" towards each other similiar to that of the
-physical objects, which means that it is very difficult to balance all three of them simultaneously in real life. Also, the desire to be perceived as balanced and complete means that overlaps are inevitable,
+physical objects, which means that it is very difficult to reconcile all three of them simultaneously in real life. Also, the desire to be perceived as complete and balanced means that overlapping is inevitable.
 Focusing on two options at the same time will leave very little room for the third option, just like what the "project management trilemma" is illustrated below:
 
 <img src="{{site.baseurl}}/images/project-triangle.svg" alt="project triangle" style="margin-top: 10px; margin-left: 40px; width: 30%;"/><br/>
 <span class="image-label">Wikipedia: [project management triangle](https://en.wikipedia.org/wiki/Project_management_triangle)</span>
 
 Three also means stable. In fact, triangle is the strongest and most rigid shape in the two dimentional world. Another way of looking at trilemmas is that if all three favorable options
-can be satisified at the same time, then for that particular problem we manage to unrealistically find a stable solution which can be applied in all circumstances. What is missing
-from the triangular representation of the trilemma is perhaps the implicit reality, which at certain point in time together with two of the favourable options can be used to construct a stable solution.
+can be satisified at the same time, then for that particular problem we manage to unrealistically find a stable solution that can be applied in all circumstances. What is missing
+from the triangular representation of the trilemma is perhaps the implicit reality, which at certain point in time can probably be used to construct a stable solution together with two of the favourable options.
 Since there exist many real life scenarios and each one of them can evolve over time, we need many solutions that can adapt to them with different set of tradeoffs and compromises.
-Take [CAP thereom](https://en.wikipedia.org/wiki/CAP_theorem) as an example, there doesn't exist a solution to "rule them all" in the world
+Take [CAP thereom](https://en.wikipedia.org/wiki/CAP_theorem) as an example, there doesn't exist a universal solution in the world
 of databases. The reality that Amazon faces is very different compared to an average medium sized internet company, therefore the
 two favourable options that they pick when building their distributed data store might make very little sense to others. 
 
-To summarize, the ubiquity of trilemmas might be caused by the tendency to capture a concept with three overlapping and competing properties which are very difficult to reconcile.
-What is always missing from the triangular representation of the trilemma is the implicit reality without which there will be no way moving forward.
+To summarize, one thing that might contribute to the ubiquity of trilemmas is our tendency to capture a concept with three competing and overlapping properties which are very difficult to reconcile.
+What's always missing from trilemma's triangular representation is the implicit reality, without which there will be no way moving forward.
 
 
 -----
