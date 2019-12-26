@@ -4,18 +4,13 @@ category: Philosophy
 title: The Ubiquity of Trilemmas
 ---
 
-<img src="{{site.baseurl}}/images/Three-body_Problem_Animation_with_COM.gif" alt="three-body problem" style="width: 30%;"/><br/>
-<span class="image-label">Wikipedia: [three-body problem](https://en.wikipedia.org/wiki/Three-body_problem)</span>
-
 One way to express trilemma is that only two of the three favourable options can be chosen at the same time.
 It is often times visualized as a triangle where the available options are represented by vertices and
 choices represented by edges. For example, in the world of international economics, the famous [impossible trinity](https://en.wikipedia.org/wiki/Impossible_trinity)
 states that among three possible policy positions: "free capical flow", "fixed exchange rate" and "sovereign monetary policy", a country can only take two
 at the same time, as illustrated below.
 
-
-<img src="{{ site.baseurl }}/images/impossible_trinity_diagram.svg" alt="impossible trinity" style="width: 40%;"/><br/>
-<span class="image-label">Wikipedia: [impossible trinity](https://en.wikipedia.org/wiki/Impossible_trinity)</span>
+<img src="{{ site.baseurl }}/images/impossible_trinity_diagram.svg" alt="impossible trinity" style="margin-top: 10px; margin-left: auto; margin-right: auto; display: block; width: 60%;"/>
 
 Trilemmas exist across many disiplines and throughout history. 
 In economics, other than the impossible trinity, there is also the [pinker social trilemma](https://en.wikipedia.org/wiki/Trilemma#The_Pinker_social_trilemma)
@@ -40,8 +35,7 @@ Likewise, favorable options in many trilemmas are often times not independent of
 physical objects, which means that it is very difficult to reconcile all three of them simultaneously in real life. Also, the desire to be perceived as complete and balanced means that overlapping is inevitable.
 Focusing on two options at the same time will leave very little room for the third option, just like what the "project management trilemma" is illustrated below:
 
-<img src="{{site.baseurl}}/images/project-triangle.svg" alt="project triangle" style="margin-top: 10px; margin-left: 40px; width: 30%;"/><br/>
-<span class="image-label">Wikipedia: [project management triangle](https://en.wikipedia.org/wiki/Project_management_triangle)</span>
+<img src="{{site.baseurl}}/images/project-triangle.svg" alt="project triangle" style="margin-top: 10px; margin-left: auto; margin-right: auto; display: block; width: 40%;"/>
 
 Three also means stable. In fact, triangle is the strongest and most rigid shape in the two dimentional world. Another way of looking at trilemmas is that if all three favorable options
 can be satisified at the same time, then for that particular problem we manage to unrealistically find a stable solution that can be applied in all circumstances. What is missing
