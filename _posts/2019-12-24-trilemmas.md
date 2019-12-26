@@ -46,60 +46,14 @@ Focusing on two options at the same time will leave very little room for the thi
 Three also means stable. In fact, triangle is the strongest and most rigid shape in the two dimentional world. Another way of looking at trilemmas is that if all three favorable options
 can be satisified at the same time, then for that particular problem we manage to unrealistically find a stable solution which can be applied in all circumstances. What is missing
 from the triangular representation of the trilemma is perhaps the implicit reality, which at certain point in time together with two of the favourable options can be used to construct a stable solution.
-Since many real life scenarios exist and each one of them can evolve over time, we need many solutions that can adapt to the realities with different set of tradeoffs and compromises.
+Since there exist many real life scenarios and each one of them can evolve over time, we need many solutions that can adapt to them with different set of tradeoffs and compromises.
+Take [CAP thereom](https://en.wikipedia.org/wiki/CAP_theorem) as an example, there doesn't exist a solution to "rule them all" in the world
+of databases. The reality that Amazon faces is very different compared to an average medium sized internet company, therefore the
+two favourable options that they pick when building their distributed data store might make very little sense to others. 
 
+To summarize, the ubiquity of trilemmas might be caused by the tendency to capture a concept with three overlapping and competing properties which are very difficult to reconcile.
+What is always missing from the triangular representation of the trilemma is the implicit reality without which there will be no way moving forward.
 
-
-
-
-
-we have the [energy trillema](https://www.worldenergy.org/publications/entry/world-energy-trilemma-index-2019) and
-
-another angle of looking at it
-3. three is stable, if we can have it then it can be applied universally, we have a missing implicit edge
-4. going backward
-
-compromise. hard choices
-complete has to contradict, overlap with each other.
-
-Two dimentional world. Triangles are the most stable shape, very rigid. Hard to achieve triangles, three
-bodies problem is probably related to it.
-
-in three dimentional space, all convex polyhedra are stable
-
-Michael jordan three peat
-
-事不过三
-
-the two things forces the third thing to be impossible, because
-together with the context, it is not a stable system.
-context is not stable.
-
-dilemma is an either/or situation, might be false dilemma (grey area)
-
-Three-body problem is "the problem of taking the initial positions and
-velocities of three point masses and solving for their subsequent
-motion according to Newton's laws of motion and Newton's law of
-universal gravitation". Unlike two-body problem, no general
-closed-form solution exists, as the resulting dynamical system is
-chaotic for most initial conditions, and numerical methods are
-generally required. 
-
-something is at the expense of something else. with the invisible
-context. the fourth one actually make it not stable any more.
-
-Is there always an invisible context? Are those "lemmas" just the tip
-of an iceberg? Without the context, it is very hard to debate it. But
-at the same time, those statement should be applied  in general,
-meaning that a case by case examination is not really that great ....
-are delimmas the conflict introduced by the lack of context and it's
-urge to be applied universally?
-
-Democracy, dictatorship, 
-
-Applying a theory to reality, what should be taken into consideration?
-
-why balance, why Tao is kind of important? balance? chaotic system?
 
 -----
 
