@@ -4,7 +4,7 @@ category: Philosophy
 title: The Ubiquity of Trilemmas
 ---
 
-Trilemmas can be found throughout history and across many disiplines. One way to express it is that only two of the three favourable options can be chosen at the same time.
+Trilemmas can be found across many disiplines throughout history. One way to express it is that only two of the three favourable options can be chosen at the same time.
 It is normally visualized as a triangle where the available options are represented by vertices and
 choices represented by edges. For example, in the world of international economics, the famous [impossible trinity](https://en.wikipedia.org/wiki/Impossible_trinity)
 , as illustrated below, states that among three possible policy positions: "free capical flow", "fixed exchange rate" and "sovereign monetary policy", a country can only take two
