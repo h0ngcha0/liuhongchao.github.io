@@ -10,7 +10,7 @@ choices represented by edges. For example, in the world of international economi
 , as illustrated below, states that among three possible policy positions: "free capical flow", "fixed exchange rate" and "sovereign monetary policy", a country can only take two
 at the same time.
 
-<img src="{{ site.baseurl }}/images/impossible_trinity_diagram.svg" alt="impossible trinity" style="margin-top: 10px; margin-left: auto; margin-right: auto; display: block; width: 60%;"/>
+<img src="{{ site.baseurl }}/images/impossible_trinity_diagram.svg" alt="impossible trinity" style="margin-top: 10px; margin-left: auto; margin-right: auto; display: block; width: 350px;"/>
 
 Trilemmas are everywhere.
 In economics, other than the impossible trinity, [pinker social trilemma](https://en.wikipedia.org/wiki/Trilemma#The_Pinker_social_trilemma)
@@ -33,7 +33,7 @@ of gravitational forces among the objects become so complicated that the general
 Likewise, favorable options in many trilemmas are often times not independent of each other. The desire to be perceived as complete and balanced means that overlapping is inevitable, analogous to
 the "gravitational pull" exhibited by the physical objects. It is very difficult to achieve all three of them simultaneously since the fulfillment of any option is always at the some expense of others.
 
-<img src="{{site.baseurl}}/images/project-triangle.svg" alt="project triangle" style="margin-top: 10px; margin-left: auto; margin-right: auto; display: block; width: 40%;"/>
+<img src="{{site.baseurl}}/images/project-triangle.svg" alt="project triangle" style="margin-top: 10px; margin-left: auto; margin-right: auto; display: block; width: 240px;"/>
 
 Thirdly, three also represents a sense of stableness. In fact, triangle is the strongest and most rigid shape in the 2D world. Another way of looking at trilemmas is that if there exists a solution that satisfies
 all three options simultaneously, it will be a solution that can be applied in any circumstances all the time while always keeping the situation stable. Obviously this is unrealistic since it ignores the fact that
