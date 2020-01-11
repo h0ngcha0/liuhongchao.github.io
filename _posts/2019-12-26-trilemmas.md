@@ -27,7 +27,7 @@ and [Government of the people, by the people, for the people](https://en.wikiped
 In fact [rule of three](https://en.wikipedia.org/wiki/Rule_of_three_(writing)) is a pretty well researched and documented principle in writing, which explains why when
 people attempt to capture and delivery the nuances of a complicated matter, they usually come up with three items to strike the balance between completeness of the subject and effectiveness of the communication.
 
-Secondly, three is also a number where things start to get more sophisticated because internal internal interactions are getting more complicated. In physics, general solution exists for [two-body problem](https://en.wikipedia.org/wiki/Two-body_problem)
+Secondly, three is also a number where things start to get more intricate because the internal interactions are getting more complicated. In physics, general solution exists for [two-body problem](https://en.wikipedia.org/wiki/Two-body_problem)
 where given the initial positions and velocities of two massive objects, the task is to predict their subsequent motions. By contrast, after an additional object is added into the system, the interactions
 of gravitational forces among the objects become so complicated that the general solution cease to exist. This is called the [three-body problem](https://en.wikipedia.org/wiki/Three-body_problem).
 Likewise, favorable options in many trilemmas are often times not independent of each other. The desire to be perceived as complete and balanced means that overlapping is inevitable, analogous to
