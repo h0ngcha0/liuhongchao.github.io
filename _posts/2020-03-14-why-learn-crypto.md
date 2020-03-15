@@ -44,7 +44,7 @@ delegating that to a centralized entity. Since the world at its base
 layer is fundamentally decentralized and governed by law of physics
 and different incentive structures, theoretically this gives
 engineers the power of genisis creation in whatever the "universe" they
-are creating.
+are creating. Governance. 
 
 Crypto also offers a set of unique challenges when it comes to
 software engineering. Deploying software updates in a decentralized
@@ -67,8 +67,24 @@ stake. [MakerDao](https://makerdao.com/), for example, [formally
 verified](https://security.makerdao.com/formal-verification) all the
 core contracts in its MCD system.
 
-There are also a set of difficult technical challenges in the crypto
-space. 
+There are also a set of difficult technical problems in the crypto
+space. One of them is scalability of the blockchain, which is hard to
+achieve without sacrificing security and decentralization (see
+[scalability
+trilemmas](https://bitcoinist.com/breaking-down-the-scalability-trilemma/)).
+[Ethereum](https://ethereum.org/)'s response to that is to leverage
+some clever constructions of [proof of
+stake](https://en.wikipedia.org/wiki/Proof_of_stake) and
+[sharding](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/sharding/),
+while the answer from the Bitcoin ecosystem right now is mostly 2nd
+layer solutions such as [lightning
+network](https://lightning.network/). Since the value proposition of a
+blockchain is security and decentralization, trading too much of these two
+properties off for scalability is generally not desirable. Lots of
+work remains to be done before blockchain can scale to mass adoption.
+
+
+Such as the scalability problem, There is thee scalability trilemmas. 
 
 
 
