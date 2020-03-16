@@ -9,14 +9,22 @@ everything, including Bitcoin. Financial losses naturally come with
 negative emotions and various theories of justification. Is cronavirus
 really the culprit? Or is it just an excuse for something more
 fundamental? Perhaps nobody really knows since it might require a
-certain amount of higher dimensional insights which most of us simply
-do not pocess. Surprisingly, I wasn't that much emotionally affected
-by the price this time like the roller coaster feeling I got from
-2017 to 2018. In retrospect, I think it has to do with the fact that
-over the years my grown appreciation to the crypto space (primarily
-Bitcoin) makes it much more than just a financial investment. (but a window..)
+certain amount of higher dimensional insights which most of us frankly
+do not pocess. Surprisingly, I wasn't that much affected emotionally
+by the price this time like the roller coaster feeling I got from 2017
+to 2018. Perhaps it has to do with the fact that my growing
+appreciation to the crypto space (primarily Bitcoin) over the years
+makes it much more than just a financial investment. As a
+technologist, it not only fascinates me on the technical side, but
+also serves as a forcing function for me to learn a little bit more
+about disciplines such as *politics*, *economics*, *finance* and
+*game theories*, etc. In restrospect, I feel this learning experience
+is very rewarding and a journey well worth taking. In this post, I
+will try to explain why.
 
-Blockchain is facinating from the technical perspective. It was
+#### Technology
+
+Blockchain is fascinating from the technical perspective. It was
 invented to solve the [double spend
 problem](https://en.wikipedia.org/wiki/Double-spending) in a
 decentralized setting without requiring a trusted third party. It
@@ -124,20 +132,12 @@ is
 [MuSig](https://blockstream.com/2019/02/18/en-musig-a-new-multisignature-standard/).
 
 
+#### The need for alternatives
 
-digital signatures gives birth to 
+counter for Big Corp data thing
 
-At a higher level, 
+#### Grand Vision
 
-
-
-is an application of more general encryption called ,
-pushes the idea of confidential transaction a bit further and 
-
-honomorphic encryption
-
-
-
-
+#### Personal Habit
 
 
