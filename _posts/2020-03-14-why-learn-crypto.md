@@ -16,13 +16,13 @@ to 2018. Perhaps it has to do with the fact that my growing
 appreciation to the crypto space (primarily Bitcoin) over the years
 makes it much more than just a financial investment. As a
 technologist, it not only fascinates me on the technical side, but
-also serves as a forcing function for me to learn a little bit more
-about disciplines such as *politics*, *economics*, *finance* and
-*game theories*, etc. In restrospect, I feel this learning experience
-is very rewarding and a journey well worth taking. In this post, I
-will try to explain why.
+also serves as a forcing function for me to learn a bit more about
+other disciplines such as *politics*, *economics*, *finance*,
+*philosophy* and *game theories*, etc. In restrospect, I feel this
+learning experience is very rewarding and a journey well worth
+taking. In this post, I will try to explain why.
 
-#### Technology
+#### Fascinating Technology
 
 Blockchain is fascinating from the technical perspective. It was
 invented to solve the [double spend
@@ -30,18 +30,19 @@ problem](https://en.wikipedia.org/wiki/Double-spending) in a
 decentralized setting without requiring a trusted third party. It
 achieves that with the interplay of two components: First, a
 modification resistent data structure for storing all the
-transactions. Turns out that one efficient implementation is to
-organize transations into sequence of blocks, each of which containing
-a cryptographic hash of the previous one, resulting a chain of
-blocks. Second, a method to reach consensus among a set of networked
-computers of certain topology as to who should have the right to
-append the next block onto the blockchain, called the [consensus
+transactions. It turns out that one efficient implementation is to
+organize transations into sequence of blocks, each of which contains
+a cryptographic hash of the previous one, resulting a chain of blocks,
+hence the name *blockchain*. Second, a method to reach consensus among a
+set of networked computers of certain topology as to who should have
+the right to append the next block onto the blockchain, called a
+[consensus
 algorithm](https://en.wikipedia.org/wiki/Consensus_(computer_science)).
 
 A key contribution of Bitcoin as the first blockchain is that an
-incentive structure is built right into the consensus mechanism
-through the use of [Proof of
-Work](https://en.wikipedia.org/wiki/Proof_of_work) which coordinates
+incentive structure is built right into the consensus algorithm
+through the use of [proof of
+work](https://en.wikipedia.org/wiki/Proof_of_work) which coordinates
 the economic activities in the ecosystem of miners, merchants,
 engineers, exchanges, users, etc, resulting the world's first
 [dencentralized autonomous
@@ -50,32 +51,16 @@ This is a significant milestone in computer engineering since for the
 first time, engineers can program trust and incentives without
 delegating that to a centralized entity. Since the world at its base
 layer is fundamentally decentralized and governed by law of physics
-and different incentive structures, theoretically this gives
-engineers the power of genisis creation in whatever the "universe" they
-are creating. [Governance, talk about goverance]. 
+and different incentive structures, theoretically this gives engineers
+the power of genisis creation in whatever the "universe" they are
+creating. Consensus algorithm is an active area of research in the
+space with a lot of thought provoking exploration and debates, the
+most notably alternative to proof of work is various forms of [proof
+of stake](https://en.wikipedia.org/wiki/Proof_of_stake). At the end of
+the day, they all need to help the blockchain achieve [byzantin
+fault tolerant](https://en.wikipedia.org/wiki/Byzantine_fault).
 
-Crypto also offers a set of unique challenges when it comes to
-software engineering. Deploying software updates in a decentralized
-p2p network is very difficult, especially when consensus over a shared
-state needs to be maintained by different versions of the software at
-the same time (see
-[Forkology](https://www.youtube.com/watch?v=rpeceXY1QBM)). When money
-is quite literally on the line and the cost of introducing and fixing
-bugs could be extremely high, [move fast and break
-things](https://en.wikipedia.org/wiki/Facebook,_Inc.#History) is
-definitely not an option. In fact, the development of systems such as
-Bitcoin should go through the same level of scrutiny and testing as
-aerospace software and its deployment should be analogous to shipping
-hardware. [Formal
-verification](https://en.wikipedia.org/wiki/Formal_verification), a
-technique that hasn't seen much adoption in many software projects due
-to its formidable cost, becomes much more economically feasible in
-crypto space considering the amount of value at
-stake. [MakerDao](https://makerdao.com/), for example, [formally
-verified](https://security.makerdao.com/formal-verification) all the
-core contracts in its MCD system.
-
-There are also a set of difficult technical problems in the crypto
+There many other difficult technical problems in the crypto
 space. One of them is **scalability** of the blockchain, which is hard
 to achieve without sacrificing its security and decentralization
 properties (see [scalability
@@ -131,6 +116,26 @@ that is indistinguishable from a single signature transaction, one example
 is
 [MuSig](https://blockstream.com/2019/02/18/en-musig-a-new-multisignature-standard/).
 
+Crypto also offers a set of unique challenges when it comes to
+software engineering. Deploying software updates in a decentralized
+p2p network is very difficult, especially when consensus over a shared
+state needs to be maintained by different versions of the software at
+the same time (see
+[Forkology](https://www.youtube.com/watch?v=rpeceXY1QBM)). When money
+is quite literally on the line and the cost of introducing and fixing
+bugs could be extremely high, [move fast and break
+things](https://en.wikipedia.org/wiki/Facebook,_Inc.#History) is
+definitely not an option. In fact, the development of systems such as
+Bitcoin should go through the same level of scrutiny and testing as
+aerospace software and its deployment should be analogous to shipping
+hardware. [Formal
+verification](https://en.wikipedia.org/wiki/Formal_verification), a
+technique that hasn't seen much adoption in many software projects due
+to its formidable cost, becomes much more economically feasible in
+crypto space considering the amount of value at
+stake. [MakerDao](https://makerdao.com/), for example, [formally
+verified](https://security.makerdao.com/formal-verification) all the
+core contracts in its MCD system.
 
 #### The need for alternatives
 
