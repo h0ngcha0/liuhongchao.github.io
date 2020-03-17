@@ -60,31 +60,32 @@ of stake](https://en.wikipedia.org/wiki/Proof_of_stake). At the end of
 the day, they all need to help the blockchain achieve [byzantin
 fault tolerant](https://en.wikipedia.org/wiki/Byzantine_fault).
 
-There many other difficult technical problems in the crypto
-space. One of them is **scalability** of the blockchain, which is hard
-to achieve without sacrificing its security and decentralization
-properties (see [scalability
+There many other difficult technical problems in the crypto space. One
+of them blockchain **scalability**, which is hard to achieve without
+also sacrificing its security and decentralization properties (see
+[scalability
 trilemmas](https://bitcoinist.com/breaking-down-the-scalability-trilemma/)).
-[Ethereum](https://ethereum.org/)'s response to that is to leverage
-some clever constructions of [proof of
+[Ethereum](https://ethereum.org/)'s response to that seems to be
+leveraging clever constructions of [proof of
 stake](https://en.wikipedia.org/wiki/Proof_of_stake) and
 [sharding](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/sharding/),
-while the answer from the Bitcoin community right now is mostly 2nd
-layer solutions such as [lightning
+while the answer from the Bitcoin community at the moment is mostly
+2nd layer solutions such as [lightning
 network](https://lightning.network/). Since the value proposition of a
-blockchain is security and decentralization, trading too much of these
-two properties off for scalability is generally not desirable. Still
-lots of work remains to be done before blockchain can scale to mass
-adoption. **Privacy** is another important area of research &
-development in the space. [Satoshi
+blockchain is security and decentralization, trading off too much of
+these two properties is generally not desirable. For blockchain to
+achieve mass adoption, much more research and development as well as
+real life battle testing remains to be done. **Privacy** is
+another important area of research & development in the
+space. [Satoshi
 Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto) famously
-said in the [Bitcoin white paper](https://bitcoin.org/bitcoin.pdf)
+said in the Bitcoin [white paper](https://bitcoin.org/bitcoin.pdf)
 that *The only way to confirm the absence of a transaction is to be
 aware of all transactions*. There is always a tension between making
 everything publicly verifiable and the need for obfuscation.  Bitcoin
 does not have good privacy built into the protocol layer, [many
 technologies](http://hongchao.me/bitcoin-privacy/) have been invented
-to improve that since its inception. Some blockchains try to introduce
+to improve that ever since its inception. Some blockchains try to introduce
 certain privacy features into the protocol
 layer. [Monero](https://www.getmonero.org/), for example, leverages
 [ring signatures](https://en.wikipedia.org/wiki/Ring_signature) to
@@ -96,8 +97,7 @@ proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof) called
 [zk-SNARKs](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof)
 to make transaction completely private. Both of them sacrifices
 scalability to some extent since they make the transactions and thus
-the blockchain significantly larger than
-Bitcoin. [Mimblewimble](https://en.wikipedia.org/wiki/MimbleWimble)
+the blockchain significantly heavier. [Mimblewimble](https://en.wikipedia.org/wiki/MimbleWimble)
 also uses confidential transaction to hide the transaction amount, but
 it also made an observation that the type of the encryption underneath
 confidential transaction, called [homomorphic
@@ -106,14 +106,14 @@ also be used in a clever way (through algebras) to expression
 [ownership](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#ownership)
 of the coin. Through a mechanism called
 [cut-through](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#cut-through),
-mimblewimble blockchain can be made very compact thus
-increases both its privacy and salability at the same time. Extending the
-insights from the MimbleWimble protocol, in general the ability to perform
+mimblewimble blockchain can be made very compact thus increases both
+its privacy and salability at the same time. Extending the insights
+from the MimbleWimble protocol, in general the ability to perform
 algebras with digital signatures (e.g. with [Schnorr
 signatures](https://en.wikipedia.org/wiki/Schnorr_signature)) opens up
-the door for various kinds of smart contracts to be built in such a way
-that is indistinguishable from a single signature transaction, one example
-is
+the door for various kinds of smart contracts to be built in such a
+way that is indistinguishable from a single signature transaction, one
+example is
 [MuSig](https://blockstream.com/2019/02/18/en-musig-a-new-multisignature-standard/).
 
 Crypto also offers a set of unique challenges when it comes to
