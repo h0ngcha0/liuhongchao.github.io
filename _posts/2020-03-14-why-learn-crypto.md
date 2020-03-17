@@ -95,19 +95,31 @@ hide transaction amount. [Zcash](https://en.wikipedia.org/wiki/Zcash)
 leverages a type of [zero-knowledge
 proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof) called
 [zk-SNARKs](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof)
-to make transaction completely private. Both of them sacrifices
+to make *shielded* transaction completely private. Both of them sacrifices
 scalability to some extent since they make the transactions and thus
 the blockchain significantly heavier. [Mimblewimble](https://en.wikipedia.org/wiki/MimbleWimble)
 also uses confidential transaction to hide the transaction amount, but
-it also made an observation that the type of the encryption underneath
+it goes a bit further by leveraging the encryption underneath
 confidential transaction, called [homomorphic
-encryption](https://en.wikipedia.org/wiki/Homomorphic_encryption), can
-also be used in a clever way (through algebras) to expression
+encryption](https://en.wikipedia.org/wiki/Homomorphic_encryption), in a
+clever way (through algebras) to expression
 [ownership](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#ownership)
-of the coin. Through a mechanism called
+of the coin as well. Interestingly, through a mechanism called
 [cut-through](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#cut-through),
-mimblewimble blockchain can be made very compact thus increases both
-its privacy and salability at the same time. Extending the insights
+mimblewimble blockchain can be made very compact thus achieves privacy
+and scalability at the same time. Another approach to improve both
+privacy and scalability is through the use of zero knowledge proofs
+to generate proofs offchain and only perform verification onchain, as what
+[Stackware](https://starkware.co/) is trying to achieve. Since
+[lightning network](https://lightning.network/) can potentially move
+most of the transactions offchain, it also has privacy implications
+even though it is primarily intended as a scalability solution. This
+speaks to the fact that all these properties of a blockchain are
+interconnected, sometimes in a subtle way.
+
+[TODO] Programmability is another contention. two camps, one turing complete,
+etc, etc, one wants to push stuff offline, only verify and use
+cryptographic stuff as much as possible. Extending the insights
 from the MimbleWimble protocol, in general the ability to perform
 algebras with digital signatures (e.g. with [Schnorr
 signatures](https://en.wikipedia.org/wiki/Schnorr_signature)) opens up
