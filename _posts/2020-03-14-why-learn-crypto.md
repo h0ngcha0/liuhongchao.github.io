@@ -22,7 +22,7 @@ other disciplines such as *politics*, *economics*, *finance*,
 learning experience is very rewarding and a journey well worth
 taking. In this post, I will try to explain why.
 
-#### Fascinating Technology
+#### Fascinating Technologies
 
 Blockchain is fascinating from the technical perspective. It was
 invented to solve the [double spend
@@ -30,7 +30,7 @@ problem](https://en.wikipedia.org/wiki/Double-spending) in a
 decentralized setting without requiring a trusted third party. It
 achieves that with the interplay of two components: First, a
 modification resistent data structure for storing all the
-transactions. It turns out that one efficient implementation is to
+transactions. It turns out that an efficient implementation is to
 organize transations into sequence of blocks, each of which contains
 a cryptographic hash of the previous one, resulting a chain of blocks,
 hence the name *blockchain*. Second, a method to reach consensus among a
@@ -48,7 +48,7 @@ engineers, exchanges, users, etc, resulting the world's first
 [dencentralized autonomous
 organization](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization).
 This is a significant milestone in computer engineering since for the
-first time, engineers can program trust and incentives without
+first time, engineers can **program trust and incentives** without
 delegating that to a centralized entity. Since the world at its base
 layer is fundamentally decentralized and governed by law of physics
 and different incentive structures, theoretically this gives engineers
@@ -58,12 +58,12 @@ space with a lot of thought provoking exploration and debates, the
 most notably alternative to proof of work is various forms of [proof
 of stake](https://en.wikipedia.org/wiki/Proof_of_stake). At the end of
 the day, they all need to help the blockchain achieve [byzantin
-fault tolerant](https://en.wikipedia.org/wiki/Byzantine_fault).
+fault tolerance](https://en.wikipedia.org/wiki/Byzantine_fault).
 
 There many other difficult technical problems in the crypto space. One
-of them blockchain **scalability**, which is hard to achieve without
-also sacrificing its security and decentralization properties (see
-[scalability
+of them is blockchain **scalability**, which is hard to achieve
+without also sacrificing its security and decentralization properties
+(see [scalability
 trilemmas](https://bitcoinist.com/breaking-down-the-scalability-trilemma/)).
 [Ethereum](https://ethereum.org/)'s response to that seems to be
 leveraging clever constructions of [proof of
@@ -73,11 +73,12 @@ while the answer from the Bitcoin community at the moment is mostly
 2nd layer solutions such as [lightning
 network](https://lightning.network/). Since the value proposition of a
 blockchain is security and decentralization, trading off too much of
-these two properties is generally not desirable. For blockchain to
-achieve mass adoption, much more research and development as well as
-real life battle testing remains to be done. **Privacy** is
-another important area of research & development in the
-space. [Satoshi
+these two properties is generally not desirable (e.g. [blocksize
+debate](https://en.bitcoin.it/wiki/Block_size_limit_controversy)). For
+blockchain to achieve mass adoption, a lot more research and
+development as well as real life battle testing remains to be
+done. **Privacy** is another important area of research & development
+in the space. [Satoshi
 Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto) famously
 said in the Bitcoin [white paper](https://bitcoin.org/bitcoin.pdf)
 that *The only way to confirm the absence of a transaction is to be
@@ -85,8 +86,8 @@ aware of all transactions*. There is always a tension between making
 everything publicly verifiable and the need for obfuscation.  Bitcoin
 does not have good privacy built into the protocol layer, [many
 technologies](http://hongchao.me/bitcoin-privacy/) have been invented
-to improve that ever since its inception. Some blockchains try to introduce
-certain privacy features into the protocol
+to improve that ever since its inception. Some blockchains try to
+introduce certain privacy features into the protocol
 layer. [Monero](https://www.getmonero.org/), for example, leverages
 [ring signatures](https://en.wikipedia.org/wiki/Ring_signature) to
 obfuscate the transaction graph and [confidential
@@ -95,28 +96,77 @@ hide transaction amount. [Zcash](https://en.wikipedia.org/wiki/Zcash)
 leverages a type of [zero-knowledge
 proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof) called
 [zk-SNARKs](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof)
-to make *shielded* transaction completely private. Both of them sacrifices
-scalability to some extent since they make the transactions and thus
-the blockchain significantly heavier. [Mimblewimble](https://en.wikipedia.org/wiki/MimbleWimble)
+to make *shielded* transaction completely private. Both of them
+sacrifices scalability to some extent since they make the transactions
+and thus the blockchain significantly
+heavier. [Mimblewimble](https://en.wikipedia.org/wiki/MimbleWimble)
 also uses confidential transaction to hide the transaction amount, but
 it goes a bit further by leveraging the encryption underneath
-confidential transaction, called [homomorphic
-encryption](https://en.wikipedia.org/wiki/Homomorphic_encryption), in a
-clever way (through algebras) to expression
+confidential transaction (called [homomorphic
+encryption](https://en.wikipedia.org/wiki/Homomorphic_encryption)) in
+a clever way to expression coin
 [ownership](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#ownership)
-of the coin as well. Interestingly, through a mechanism called
+as well. Interestingly, through a mechanism called
 [cut-through](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#cut-through),
-mimblewimble blockchain can be made very compact thus achieves privacy
-and scalability at the same time. Another approach to improve both
-privacy and scalability is through the use of zero knowledge proofs
-to generate proofs offchain and only perform verification onchain, as what
-[Stackware](https://starkware.co/) is trying to achieve. Since
-[lightning network](https://lightning.network/) can potentially move
-most of the transactions offchain, it also has privacy implications
-even though it is primarily intended as a scalability solution. This
-speaks to the fact that all these properties of a blockchain are
-interconnected, sometimes in a subtle way.
+mimblewimble blockchain can be made very compact thus achieves both
+privacy and scalability at the same time. Another approach to improve
+both privacy and scalability is through the use of zero knowledge
+proofs to generate proofs offchain and only perform verification
+onchain, as what [Stackware](https://starkware.co/) and
+[Coda](https://codaprotocol.com/) aim to achieve. Privacy and
+scalability are so intimately related, another example is [lightning
+network](https://lightning.network/), even thought intended as a
+scalability solution, it also has privacy implications because it can
+potentially move most of the Bitcoin transactions offchain.
 
+**Programmability** is also a point of contention in the crypto
+space. Bitcoin's [scripting](https://en.bitcoin.it/wiki/Script) system
+allows the creation of [smart
+contract](https://en.wikipedia.org/wiki/Smart_contract) and is
+purposefully not turing complete to avoid the [halting
+problem](https://en.wikipedia.org/wiki/Halting_problem). The progress
+made in lightning network development demonstrated how much can be
+achieved despite of this limitation. This design choice is very much
+in line with the philosophy where blockchain is [not for computation
+but for
+verification](https://bitcointalk.org/index.php?topic=1427885.msg14601127#msg14601127).
+What nodes really care about is a proof that certain computation was
+performed, repeating the same computation is just one way to
+achieve it. With this philosophy, many proposals have been made to improve
+the existing Bitcoin scripting system. [Schnorr
+signature](https://en.wikipedia.org/wiki/Schnorr_signature), a
+digital signature scheme that offers the ability to perform algebra
+on signatures, is hopefully soon [coming](https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki)
+to Bitcoin. This paves the way for technologies such as signature
+aggregation,
+[Taproot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html)
+and
+[Graftroot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html)
+which are great enhancements to the privacy and efficiency of the
+scripting system. It also opens up doors for things like [Scriptless
+Script](http://hongchao.me/scriptless-script/), which leverages
+Schnorr signature's algebra capability to capture the semantics of a
+class of offchain protocols and only use the blockchain for
+verification. Zero knowledge proof could also be a promising
+future direction since in theory it can be constructed for
+arbitrary computation offchain and then get verified onchain, one
+demonstration is [Greg Maxwell](https://github.com/gmaxwell)'s
+[ZKCP](https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/).
+On the other hand, Ethereum lead the way to an array of Blockchains
+that offer turning complete scripting capabilities.
+
+
+
+
+of . Proponents of
+this approach argues that the turing incompleteness is a features The progress
+development work made in the lightning network demonstrated how much
+engineers can do with 
+
+
+
+
+lighting network, miniscript, taproot script, etc scriptless script.
 [TODO] Programmability is another contention. two camps, one turing complete,
 etc, etc, one wants to push stuff offline, only verify and use
 cryptographic stuff as much as possible. Extending the insights
@@ -151,10 +201,17 @@ core contracts in its MCD system.
 
 #### The need for alternatives
 
+already the biggest PKI infra deployed
 counter for Big Corp data thing
 
 #### Grand Vision
 
-#### Personal Habit
+finance the unbanked
+liberty 
+crypto punks
+freedom
+
+#### Self sovereignty
+low time preference, saving, invest into the future
 
 
