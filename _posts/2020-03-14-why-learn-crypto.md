@@ -204,11 +204,18 @@ onchain. Recent advancement to [Post-quantum
 cryptography](https://en.wikipedia.org/wiki/Post-quantum_cryptography)
 is also something worth looking into.
 
+This is just a tip of an iceberg. An interesting properties of crypto is
+that it is so multi-disciplinary that even a seemingly pure technical
+change might trigger butterfly effect and result in significant
+consequences, which makes the problem extremely challenging.
+
 ### Grand Vision
 world needs alternative, needs asynmmetric tech, needs a way to say
 no, finance and data and the. needs censorship resistence.
 
 ### Finance
+
+
 
 ### The need for alternatives
 
