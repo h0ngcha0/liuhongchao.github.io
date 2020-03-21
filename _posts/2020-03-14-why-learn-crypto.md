@@ -22,7 +22,7 @@ other disciplines such as *politics*, *economics*, *finance*,
 learning experience is very rewarding and a journey well worth
 taking. In this post, I will try to explain why.
 
-#### Fascinating Technologies
+### Fascinating Technologies
 
 Blockchain is fascinating from the technical perspective. It was
 invented to solve the [double spend
@@ -169,8 +169,6 @@ lot of the developer mindshare and we start to see applications
 especially in the [DeFi](https://www.binance.vision/glossary/defi)
 space start to gain momentum.
 
-**Cryptography**.
-
 Crypto also offers a set of unique challenges when it comes to
 **software engineering**. Deploying software updates in a decentralized
 p2p network is very difficult, especially when consensus over a shared
@@ -192,19 +190,39 @@ stake. [MakerDao](https://makerdao.com/), for example, [formally
 verified](https://security.makerdao.com/formal-verification) all the
 core contracts in its MCD system.
 
-#### The need for alternatives
+Of course, the basic research of **cryptography**, which is one of the
+building blocks of blockchain, has also seen a lot of progress because
+of the emergance of the crypto industry in the past 10 years. More
+types of zero knowledge proofs and their efficient applications are
+being developed, aiming to improve both the privacy and scalability of
+the blockchain system. [Multi-party
+computation](https://en.wikipedia.org/wiki/Secure_multi-party_computation)
+is also an vibrant research area which could be leveraged to design
+secure protocols that encode complex interactions among many
+participants offchain and simplify the corresponding smart contracts
+onchain. Recent advancement to [Post-quantum
+cryptography](https://en.wikipedia.org/wiki/Post-quantum_cryptography)
+is also something worth looking into.
+
+### Grand Vision
+world needs alternative, needs asynmmetric tech, needs a way to say
+no, finance and data and the. needs censorship resistence.
+
+### Finance
+
+### The need for alternatives
 
 already the biggest PKI infra deployed
 counter for Big Corp data thing
 
-#### Grand Vision
+
 
 finance the unbanked
 liberty 
 crypto punks
 freedom
 
-#### Self sovereignty
+### Self sovereignty
 low time preference, saving, invest into the future
 
 
