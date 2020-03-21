@@ -57,12 +57,12 @@ creating. Consensus algorithm is an active area of research in the
 space with a lot of thought provoking exploration and debates, the
 most notably alternative to proof of work is various forms of [proof
 of stake](https://en.wikipedia.org/wiki/Proof_of_stake). At the end of
-the day, they all need to help the blockchain achieve [byzantin
+the day, they are all supposed to help the blockchain achieve [byzantin
 fault tolerance](https://en.wikipedia.org/wiki/Byzantine_fault).
 
 There many other difficult technical problems in the crypto space. One
 of them is blockchain **scalability**, which is hard to achieve
-without also sacrificing its security and decentralization properties
+without also sacrificing its **security** and **decentralization** properties
 (see [scalability
 trilemmas](https://bitcoinist.com/breaking-down-the-scalability-trilemma/)).
 [Ethereum](https://ethereum.org/)'s response to that seems to be
@@ -153,33 +153,26 @@ arbitrary computation offchain and then get verified onchain, one
 demonstration is [Greg Maxwell](https://github.com/gmaxwell)'s
 [ZKCP](https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/).
 On the other hand, Ethereum lead the way to an array of Blockchains
-that offer turning complete scripting capabilities.
+that offer turning complete programming capabilities. The idea is to
+express any sort of programs easily and get them executed on all the nodes in
+the network which make them hard to stop. This expressiveness does come
+with many tradeoffs: A fee model now needs to be developed to measure the
+computational resources that a program consumes and charge it
+accordingly. As a general purpose platform for deploying
+[dApps](https://en.wikipedia.org/wiki/Decentralized_application),
+the blockchain is usually much bigger, affecting its scalability and
+decentralization properties. Turing complete languages can also
+potentially open up much larger attack surface than a more limiting
+language which is relatively easier to reason
+about. Neverthelss, dApps platforms have certainly attracted a
+lot of the developer mindshare and we start to see applications
+especially in the [DeFi](https://www.binance.vision/glossary/defi)
+space start to gain momentum.
 
-
-
-
-of . Proponents of
-this approach argues that the turing incompleteness is a features The progress
-development work made in the lightning network demonstrated how much
-engineers can do with 
-
-
-
-
-lighting network, miniscript, taproot script, etc scriptless script.
-[TODO] Programmability is another contention. two camps, one turing complete,
-etc, etc, one wants to push stuff offline, only verify and use
-cryptographic stuff as much as possible. Extending the insights
-from the MimbleWimble protocol, in general the ability to perform
-algebras with digital signatures (e.g. with [Schnorr
-signatures](https://en.wikipedia.org/wiki/Schnorr_signature)) opens up
-the door for various kinds of smart contracts to be built in such a
-way that is indistinguishable from a single signature transaction, one
-example is
-[MuSig](https://blockstream.com/2019/02/18/en-musig-a-new-multisignature-standard/).
+**Cryptography**.
 
 Crypto also offers a set of unique challenges when it comes to
-software engineering. Deploying software updates in a decentralized
+**software engineering**. Deploying software updates in a decentralized
 p2p network is very difficult, especially when consensus over a shared
 state needs to be maintained by different versions of the software at
 the same time (see
