@@ -22,6 +22,7 @@ other disciplines such as *politics*, *economics*, *finance*,
 learning experience is very rewarding and a journey well worth
 taking. In this post, I will try to explain why.
 
+
 ### Fascinating Technologies
 
 Blockchain is fascinating from the technical perspective. It was
@@ -209,19 +210,97 @@ that it is so multi-disciplinary that even a seemingly pure technical
 change might trigger butterfly effect and result in significant
 consequences, which makes the problem extremely challenging.
 
-### Grand Vision
+### Importance of Alternatives
+
+People have vastly different perspectives when it comes to crypto
+space. For some it is just another vechicle for financial
+speculations. For others, it is an emerging financial infrastructure
+that will ultimately disrupt and replace the dysfunctional status
+quo. Many view it as a promising tool that can help disintermediate
+third parties and improve efficiency of a range of economic
+activities. Others treat it as an asymmetric weapon to protect their
+privacy in the world of massive corporate and government surveillance,
+or even a
+[path](https://www.activism.net/cypherpunk/crypto-anarchy.html)
+towards [anarchism](https://en.wikipedia.org/wiki/Anarchism).
+
+It is fair to assume that for many dynamic and complex issues, there
+is no solution that will always be the most optimal in every scenario
+(aka a "[silver
+bullet](https://en.wikipedia.org/wiki/Silver_bullet)"). This applies
+to things like system designs, business models or even the forms of
+governments. One explanation is that complex issue most likely has a
+structure that's comprised of sub-components interacting with each
+other in a nuanced and subtle way, solving it requires carefully and
+constantly balancing different kind of tradeoffs given that the
+structure might always be evolving. However, at a given point in time
+one solution might seem to monopolize the solution space. One example
+is the business model of most of the internet companies today. By
+owning users' identity and harvesting users' data through massive
+surveillance, those companies are able to somehow monetize on that and
+provide "free" or "freemium" services to those users. This is actually
+a pretty ingenious model that is often time underappreciated since it
+is [incentive
+compatible](https://en.wikipedia.org/wiki/Incentive_compatibility) for
+most of the participants in the system with the current state of
+mainstream technologies. Majority of the people will always value
+convenience and immediate economic benefits over eliminating the
+perceived low probability risk that one day their privacy will be
+breached. Internet companies will always be incentivized to
+accumulate more data. What we end up with are companies that amassed
+so much power that they need to remind themselves "[don't be
+evil](https://en.wikipedia.org/wiki/Don%27t_be_evil)" and most users
+are effectively left with little to no alternatives.
+
+We are living 
+
+The core of what blockchain technologies brings on to the table is
+decentralization.
+
+when the wind blows one way, ... keep diversity
+
+[dd](https://en.wiktionary.org/wiki/%E5%88%86%E4%B9%85%E5%BF%85%E5%90%88%EF%BC%8C%E5%90%88%E4%B9%85%E5%BF%85%E5%88%86)
+
+Our best bet is to allow diversity and alternatives. 
+what anarchism brings onto the table? 
+Anarchism sounds like a crazy idea. 
+There is no arrangement that will always be the most optimal in every
+scenario. This applies to almost everything including system designs,
+business models or even forms of governments. 
+
+decwentralization / centtralition is tradeoffs , it is a way to keep
+flexible and keep going, he jiu bi feng feng jiu bi he.
+
+look at it from grand scheme of things. 
+from the fault tolerate side of things. 
+do not be caught up by the idealogy, it serves as anchor point for us
+not to deviate towards one extreme.
+
+zigzag your way forward. 
+
+cathedral and bizaar (creative work), it is the waterfall and agile
+starfish and spider (organization)
+
+
+One thing that I came to appreciate is that there is no perfect
+arrangement or ideals. but it is ok, no perfect, the best we can do is
+to preverse diversity and keep alternatives open. 
+All of those ideals are hard to 
+Some
+view it as a path towards 
+[Cypherpunks](https://en.wikipedia.org/wiki/Cypherpunk) in the 90s
+have already 
+Different people have different perspectives about crypto space. 
 world needs alternative, needs asynmmetric tech, needs a way to say
 no, finance and data and the. needs censorship resistence.
-
-### Finance
-
-
-
-### The need for alternatives
 
 already the biggest PKI infra deployed
 counter for Big Corp data thing
 
+identity
+individualism
+financial incentives
+dont be evil vs cant be evil
 
 
 finance the unbanked
@@ -229,7 +308,20 @@ liberty
 crypto punks
 freedom
 
-### Self sovereignty
-low time preference, saving, invest into the future
+political pressure
 
+political change always has to adapt to technological change
+so does business change
+
+diversity
+
+Libertarianism and Anarchism
+
+Communism changed europe in a foundamental way.
+
+decnetralization
+
+### Self Sovereignty
+
+low time preference, saving, invest into the future.
 
