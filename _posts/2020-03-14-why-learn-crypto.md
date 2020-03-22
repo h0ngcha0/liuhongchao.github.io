@@ -234,7 +234,7 @@ structure that's comprised of sub-components interacting with each
 other in a nuanced and subtle way, solving it requires carefully and
 constantly balancing different kind of tradeoffs given that the
 structure might always be evolving. However, at a given point in time
-one solution might seem to monopolize the solution space. One example
+one solution might seem to monopolize the solution space. An example
 is the business model of most of the internet companies today. By
 owning users' identity and harvesting users' data through massive
 surveillance, those companies are able to somehow monetize on that and
@@ -247,79 +247,39 @@ mainstream technologies. Majority of the people will always value
 convenience and immediate economic benefits over eliminating the
 perceived low probability risk that one day their privacy will be
 breached. Internet companies will always be incentivized to
-accumulate more data. What we end up with are companies that amassed
-so much power that they need to remind themselves "[don't be
+accumulate more user data. What we end up with are companies that
+have amassed so much power that they need to remind themselves "[don't be
 evil](https://en.wikipedia.org/wiki/Don%27t_be_evil)" and most users
 are effectively left with little to no alternatives.
 
-We are living 
-
-The core of what blockchain technologies brings on to the table is
-decentralization.
-
-when the wind blows one way, ... keep diversity
-
-[dd](https://en.wiktionary.org/wiki/%E5%88%86%E4%B9%85%E5%BF%85%E5%90%88%EF%BC%8C%E5%90%88%E4%B9%85%E5%BF%85%E5%88%86)
-
-Our best bet is to allow diversity and alternatives. 
-what anarchism brings onto the table? 
-Anarchism sounds like a crazy idea. 
-There is no arrangement that will always be the most optimal in every
-scenario. This applies to almost everything including system designs,
-business models or even forms of governments. 
-
-decwentralization / centtralition is tradeoffs , it is a way to keep
-flexible and keep going, he jiu bi feng feng jiu bi he.
-
-look at it from grand scheme of things. 
-from the fault tolerate side of things. 
-do not be caught up by the idealogy, it serves as anchor point for us
-not to deviate towards one extreme.
-
-zigzag your way forward. 
-
-cathedral and bizaar (creative work), it is the waterfall and agile
-starfish and spider (organization)
-
-
-One thing that I came to appreciate is that there is no perfect
-arrangement or ideals. but it is ok, no perfect, the best we can do is
-to preverse diversity and keep alternatives open. 
-All of those ideals are hard to 
-Some
-view it as a path towards 
-[Cypherpunks](https://en.wikipedia.org/wiki/Cypherpunk) in the 90s
-have already 
-Different people have different perspectives about crypto space. 
-world needs alternative, needs asynmmetric tech, needs a way to say
-no, finance and data and the. needs censorship resistence.
-
-already the biggest PKI infra deployed
-counter for Big Corp data thing
-
-identity
-individualism
-financial incentives
-dont be evil vs cant be evil
-
-
-finance the unbanked
-liberty 
-crypto punks
-freedom
-
-political pressure
-
-political change always has to adapt to technological change
-so does business change
-
-diversity
-
-Libertarianism and Anarchism
-
-Communism changed europe in a foundamental way.
-
-decnetralization
+We are living in the world of capitalism where wealth has the
+[tendency](https://en.wikipedia.org/wiki/Capital_in_the_Twenty-First_Century)
+to get more concentrated, organizations and state are getting bigger
+and more powerful often at the expense of the individual rights.  This
+trend is certainly not sustainable, as a Chinese proverb says: "[that
+which is long divided must unify; that which is long unified must
+divide](https://en.wiktionary.org/wiki/%E5%88%86%E4%B9%85%E5%BF%85%E5%90%88%EF%BC%8C%E5%90%88%E4%B9%85%E5%BF%85%E5%88%86)"
+(分久必合，合久必分). The contention between centralization and
+decentralization is the underlying forces behind so much human social
+development and will continue to be so for a long time. At a time when
+centralization is the dorminating theme of the society, what
+blockchain technologies brings on to the table, decentralization of
+trust, could potentially offer valuable counterbalance to that. We as
+a society needs real alternative solutions to fix our privacy issues
+than just empty slogans. We as a society needs to have a serious
+experiement of a financial system that does not follow the school of
+[keynesian
+economics](https://en.wikipedia.org/wiki/Keynesian_economics) which
+offers little to fix the ecnomoic problems we suffer today. We as a
+society needs more [starfish rather than
+spiders](https://en.wikipedia.org/wiki/The_Starfish_and_the_Spider)
+building [bazaars rather than
+cathendrals](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar)
+where it makes sense. For many people, perhaps the idea of anarchism
+is never about actually reaching the state of anarchism but always
+about alternatives and counterbalances since if the road ahead is not
+clear, the best bet is to keep an open mind, maintain diversity and
+zigzag our way forward.
 
 ### Self Sovereignty
 
