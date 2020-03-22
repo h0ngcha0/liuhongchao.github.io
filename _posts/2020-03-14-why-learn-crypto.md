@@ -225,30 +225,30 @@ or even a
 towards [anarchism](https://en.wikipedia.org/wiki/Anarchism).
 
 It is fair to assume that for many dynamic and complex issues, there
-is no solution that will always be the most optimal in every scenario
+is no solution that will always be the most optimal in all scenarios
 (aka a "[silver
 bullet](https://en.wikipedia.org/wiki/Silver_bullet)"). This applies
-to things like system designs, business models or even the forms of
-governments. One explanation is that complex issue most likely has a
-structure that's comprised of sub-components interacting with each
-other in a nuanced and subtle way, solving it requires carefully and
-constantly balancing different kind of tradeoffs given that the
-structure might always be evolving. However, at a given point in time
-one solution might seem to monopolize the solution space. An example
-is the business model of most of the internet companies today. By
-owning users' identity and harvesting users' data through massive
-surveillance, those companies are able to somehow monetize on that and
-provide "free" or "freemium" services to those users. This is actually
-a pretty ingenious model that is often time underappreciated since it
-is [incentive
+to things from system designs, business models to environmental issues
+or even the forms of governments. One explanation is that complex
+issue most likely has a structure that's comprised of sub-components
+interacting with each other in a nuanced and subtle way, solving it
+requires carefully and constantly balancing different kind of
+tradeoffs given that the structure might always be evolving. However,
+at a given point in time one solution might seem to monopolize the
+solution space. An example is the business model of most of the
+internet companies today. By owning users' identity and harvesting
+users' data through massive surveillance, those companies are able to
+somehow monetize on that and provide "free" or "freemium" services to
+their users. This is actually a pretty ingenious model that is often
+time underappreciated since it is [incentive
 compatible](https://en.wikipedia.org/wiki/Incentive_compatibility) for
 most of the participants in the system with the current state of
 mainstream technologies. Majority of the people will always value
 convenience and immediate economic benefits over eliminating the
 perceived low probability risk that one day their privacy will be
-breached. Internet companies will always be incentivized to
-accumulate more user data. What we end up with are companies that
-have amassed so much power that they need to remind themselves "[don't be
+breached. Internet companies will always be incentivized to accumulate
+more user data. What we end up with are companies that have amassed so
+much power that they need to remind themselves "[don't be
 evil](https://en.wikipedia.org/wiki/Don%27t_be_evil)" and most users
 are effectively left with little to no alternatives.
 
@@ -263,14 +263,14 @@ divide](https://en.wiktionary.org/wiki/%E5%88%86%E4%B9%85%E5%BF%85%E5%90%88%EF%B
 decentralization is the underlying forces behind so much human social
 development and will continue to be so for a long time. At a time when
 centralization is the dorminating theme of the society, what
-blockchain technologies brings on to the table, decentralization of
-trust, could potentially offer valuable counterbalance to that. We as
-a society needs real alternative solutions to fix our privacy issues
-than just empty slogans. We as a society needs to have a serious
-experiement of a financial system that does not follow the school of
-[keynesian
+blockchain technologies brings on to the table, the **decentralization of
+trust**, could potentially offer valuable counterbalance to that. We as
+a society needs real incentive compatible alternatives to fix our
+privacy issues than just empty slogans. We as a
+society needs to have serious experiements of financial systems that
+do not follow the school of [keynesian
 economics](https://en.wikipedia.org/wiki/Keynesian_economics) which
-offers little to fix the ecnomoic problems we suffer today. We as a
+offers little to remediate the ecnomoic problems we suffer today. We as a
 society needs more [starfish rather than
 spiders](https://en.wikipedia.org/wiki/The_Starfish_and_the_Spider)
 building [bazaars rather than
@@ -279,7 +279,7 @@ where it makes sense. For many people, perhaps the idea of anarchism
 is never about actually reaching the state of anarchism but always
 about alternatives and counterbalances since if the road ahead is not
 clear, the best bet is to keep an open mind, maintain diversity and
-zigzag our way forward.
+zigzag our way forward knowing that we always alternatives.
 
 ### Self Sovereignty
 
