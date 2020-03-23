@@ -7,21 +7,20 @@ title: Learn You Some Crypto for Good
 In the past few days, the market has crashed hard on basically
 everything, including Bitcoin. Financial losses naturally come with
 negative emotions and various theories of justification. Is cronavirus
-really the culprit? Is it the oil war? Or are they just excuses for something more
-fundamental? Perhaps nobody really knows since it might require a
-certain amount of higher dimensional insights which most of us frankly
-do not pocess. Surprisingly, I wasn't that much affected emotionally
-by the price this time like the roller coaster feeling I got from 2017
-to 2018. Perhaps it has to do with the fact that my growing
-appreciation to the crypto space (primarily Bitcoin) over the years
-makes it much more than just a financial investment. As a
+really the culprit? Is it the oil war? Or are they just excuses for
+something more fundamental? Perhaps nobody really knows since it might
+require a certain amount of higher dimensional insights which most of
+us frankly do not pocess. Surprisingly, I wasn't that much affected
+emotionally by the price this time like the roller coaster feeling I
+got from 2017 to 2018. Perhaps it has to do with the fact that my
+growing appreciation to the crypto space (primarily Bitcoin) over the
+years makes it much more than just a financial investment. As a
 technologist, it not only fascinates me on the technical side, but
 also serves as a forcing function for me to learn a bit more about
-other disciplines such as *politics*, *economics*, *finance*,
-*philosophy* and *game theories*, etc. In restrospect, I feel this
-learning experience is very rewarding and a journey well worth
-taking. In this post, I will try to explain why.
-
+other disciplines such as *politics*, *economics*, *finance* and
+*philosophy*, etc. In restrospect, I feel this learning experience is
+very rewarding and a journey well worth taking. In this post, I will
+try to explain why.
 
 ### Fascinating Technologies
 
@@ -293,64 +292,82 @@ the idea that people should have ownership and control over their own
 bodies, time, properties and responsibilities. It is at the core of
 many political philosophies that underlines
 [individualism](https://en.wikipedia.org/wiki/Individualism). Self
-sovereignty is important since without it there would be no personal
-freedom. However, the forming of societies or any other artificial
-combinations means that an individual needs to surrender part of his
-or her self sovereignty to the collective goal of the group, which in
-many case are beneficial both individually and as a whole. After all,
-humans are by nature incentive driven social animals that try to
-survive as a whole.
+sovereignty is important since it is essential to personal freedom,
+self determination and liberty. On the other hand, the forming of societies or
+any other artificial combinations means that individuals need to
+surrender part of their self sovereignty to the collective goal
+of the group, which in many case are actually beneficial both personally and
+as a whole. After all, humans are by nature incentive driven social
+animals that try to survive as a race. There are many literatures
+about the relationship between individualism and
+[collectivism](https://en.wikipedia.org/wiki/Collectivism), but it is
+fair to say that it's a spectrum rather than binary.
 
-Even though the absolute indivisualism is neither possible nor
-desirable, it is fair to say that it has become much more difficult to
-exercise one's self soverignty as governmants and corporations are making
-great strides to capture it for their own benefits. Nowadays, we need
-trust and permissions to use our own identity, our own data and to
-transact with our own
+Even though the absolute indivisualism is perhaps neither desirable
+nor possible, it has become much more difficult to exercise one's self
+soverignty as governmants and corporations are making great strides to
+capture it for their own benefits. Nowadays, we need trust and
+permissions to use our own identity, our own data and to transact with
+our own
 money. [Consumerism](https://en.wikipedia.org/wiki/Consumerism) and
 the culture of debt also lure people into sacrificing their long term
 freedom for instant gratification, therefore perpetuating the
-[social
+deprivation of self sovereignty and [social
 stratification](https://en.wikipedia.org/wiki/Social_stratification).
 
-As digital bearer asset, Bitcoin offers a technology and a network
-that enables self sovereignty of money. [Andreas
+As digital bearer asset, Bitcoin offers a technology and network that
+enables and encourages self sovereignty of money. [Andreas
 Antonopoulos](https://aantonop.com/) famously coined the term "[not
 your keys, not your
 coins](https://www.youtube.com/watch?v=AcrEEnDLm58)". Holding your own
 private keys is the first step towards self-sovereignty in Bitcoin
 since it cryptographically ensures your property rights to your
-coin. It comes with a lot of responsibilities as well since if the key
-is lost, your coin will be lost forever. [Running a full
-node](https://bitcoin.org/en/full-node) is the next step. It not only
-contributes to the overall consensus of the network, but also gives
-you the ultimate self-sovereignty within the network since you don't
-need to trust any one else when it comes to what happened to your
-coins. Even thought Bitcoin was painted as magical internet money that
-are used by criminals to buy drugs in the darknet, or a punzi scheme
-that will burst at any given time, what really happened in the past 10
-years is that it managed to create a global wealth pool of hundreds of
-billions of dollars that are borderless and censorship resistent,
-which means that dissidents in a rogue state can take a piece of their
-self sovereignty back and be more likely to fight against the tyranny
-knowing that they can take their wealth and move somewhere else by
-just remembering a bunch of English words.
+coin. This of course comes with a lot of responsibilities as well
+since if the key is lost, your coin will be lost forever. [Running a
+full node](https://bitcoin.org/en/full-node) is the next step. It not
+only contributes to the overall consensus of the network, but also
+gives you the ultimate self-sovereignty within the network since you
+don't need to trust any one else when it comes to what happened to
+your coins or ask for permission as to what will happen to your
+coins. Even though Bitcoin and other cryptocurrencies were painted as
+magical internet money that's used by criminals to buy drugs on the
+darknet, or a ponzi scheme that will burst at any point in time, what
+really happened in the past 10 years is that it managed to create a
+global wealth pool of hundreds of billions of dollars that are
+borderless and censorship resistent, which helps dissidents in
+rogue states take a piece of their self sovereignty back and be
+more likely to fight against the corruption and tyranny knowing that
+they can take their wealth and move somewhere else by just remembering
+a bunch of English words.
 
-Bitcoin also encourages a culture that promotes low time preference
-and delayed gratification. As a sound money and store of value, the
-price of bitcoin is commonly expected to rise over time against the
-constantly inflating fiat currencies. When money actually increases
-in value, it encourages saving and re-investment instead of debt and
-immediate spending. 
+Bitcoin also encourages a culture that promotes low [time
+preference](https://en.wikipedia.org/wiki/Time_preference) and
+[delayed
+gratification](https://en.wikipedia.org/wiki/Delayed_gratification). As
+a sound money and store of value, the long term price of bitcoin is
+generally expected to rise over time against the constantly inflating
+fiat currencies despite of the short term volatilities. When money
+actually keeps or increases in value, it encourages saving and
+re-investment instead of debt and immediate spending. This shift in
+mindset might be the key to get us out of the current situation where
+the economy is powered by over-consumption, debt with artificially low
+interest rate and quantitive easing.
+
 
 [Self sovereign
 identity](https://medium.com/metadium/introduction-to-self-sovereign-identity-and-its-10-guiding-principles-97c1ba603872)
  and the [processing of encrypted
  data](https://en.wikipedia.org/wiki/Homomorphic_encryption) also
- attract a lot of research and development. 
+ attract a lot of research and development to combat the encroachment
+ of privacy. I do think a lot more work needs to be done in this area
+ to really change the consumer behavior, not only in terms of
+ technology but also inventive engineering, to really put the
+ sovereignty of identity and personal data back to the users.
 
 <br/>
 
-References:
-
-- [The Path to Self Sovereignty](https://www.coindesk.com/path-self-sovereign-identity)
+**In summary**, learning crypto to a certain degree changes the way
+that I experience and interact with the world. I feel it is an
+experiment that could be leveraged to potentially do good for
+the society by providing a balancing force to a lot of the social
+economical problems that we have right now.
