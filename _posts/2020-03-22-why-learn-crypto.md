@@ -6,11 +6,11 @@ title: Learn You Some Crypto for Good
 
 In the past few days, the market has crashed hard on basically
 everything, including Bitcoin. Financial losses naturally come with
-negative emotions and various theories of justification. Is cronavirus
+negative emotions and various theories of justification. Is coronavirus
 really the culprit? Is it the oil war? Or are they just excuses for
 something more fundamental? Perhaps nobody really knows since it might
 require a certain amount of higher dimensional insights which most of
-us frankly do not pocess. Surprisingly, I wasn't that much affected
+us frankly do not possess. Surprisingly, I wasn't that much affected
 emotionally by the price this time like the roller coaster feeling I
 got from 2017 to 2018. Perhaps it has to do with the fact that my
 growing appreciation to the crypto space (primarily Bitcoin) over the
@@ -18,7 +18,7 @@ years makes it much more than just a financial investment. As a
 technologist, it not only fascinates me on the technical side, but
 also serves as a forcing function for me to learn a bit more about
 other disciplines such as *politics*, *economics*, *finance* and
-*philosophy*, etc. In restrospect, I feel this learning experience is
+*philosophy*, etc. In retrospect, I feel this learning experience is
 very rewarding and a journey well worth taking. In this post, I will
 try to explain why.
 
@@ -31,7 +31,7 @@ decentralized setting without requiring a trusted third party. It
 achieves that with the interplay of two components: First, a
 modification resistent data structure for storing all the
 transactions. It turns out that an efficient implementation is to
-organize transations into sequence of blocks, each of which contains
+organize transactions into a sequence of blocks, each of which contains
 a cryptographic hash of the previous one, resulting a chain of blocks,
 hence the name *blockchain*. Second, a method to reach consensus among a
 set of networked computers of certain topology as to who should have
@@ -52,12 +52,12 @@ first time, engineers can **program trust and incentives** without
 delegating that to a centralized entity. Since the world at its base
 layer is fundamentally decentralized and governed by law of physics
 and different incentive structures, theoretically this gives engineers
-the power of genisis creation in whatever the "universe" they are
+the power of genesis creation in whatever the "universe" they are
 creating. Consensus algorithm is an active area of research in the
 space with a lot of thought provoking exploration and debates, the
-most notably alternative to proof of work is various forms of [proof
+most notable alternative to proof of work is various forms of [proof
 of stake](https://en.wikipedia.org/wiki/Proof_of_stake). At the end of
-the day, they are all supposed to help the blockchain achieve [byzantin
+the day, they are all supposed to help the blockchain achieve [Byzantine
 fault tolerance](https://en.wikipedia.org/wiki/Byzantine_fault).
 
 There many other difficult technical problems in the crypto space. One
@@ -100,11 +100,11 @@ to make *shielded* transaction completely private. Both of them
 sacrifices scalability to some extent since they make the transactions
 and thus the blockchain significantly
 heavier. [Mimblewimble](https://en.wikipedia.org/wiki/MimbleWimble)
-also uses confidential transaction to hide the transaction amount, but
+also uses confidential transactions to hide the transaction amount, but
 it goes a bit further by leveraging the encryption underneath
 confidential transaction (called [homomorphic
 encryption](https://en.wikipedia.org/wiki/Homomorphic_encryption)) in
-a clever way to expression coin
+a clever way to express coin
 [ownership](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#ownership)
 as well. Interestingly, through a mechanism called
 [cut-through](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#cut-through),
@@ -153,7 +153,7 @@ arbitrary computation offchain and then get verified onchain, one
 demonstration is [Greg Maxwell](https://github.com/gmaxwell)'s
 [ZKCP](https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/).
 On the other hand, Ethereum lead the way to an array of Blockchains
-that offer turning complete programming capabilities. The idea is to
+that offer turing complete programming capabilities. The idea is to
 express any sort of programs easily and get them executed on all the nodes in
 the network which make them hard to stop. This expressiveness does come
 with many tradeoffs: A fee model now needs to be developed to measure the
@@ -266,19 +266,19 @@ divide](https://en.wiktionary.org/wiki/%E5%88%86%E4%B9%85%E5%BF%85%E5%90%88%EF%B
 (分久必合，合久必分). The contention between centralization and
 decentralization is the underlying forces behind so much human social
 development and will continue to be so for a long time. At a time when
-centralization is the dorminating theme of the society, what
+centralization is the dominating theme of the society, what
 blockchain technologies brings on to the table, the **decentralization of
 trust**, could potentially offer valuable counterbalance to that. We as
 a society needs real incentive compatible alternatives to fix our
 privacy issues than just empty slogans. We as a
-society needs to have serious experiements of financial systems that
+society needs to have serious experiments of financial systems that
 do not follow the school of [keynesian
 economics](https://en.wikipedia.org/wiki/Keynesian_economics) which
-offers little to remediate the ecnomoic problems we suffer today. We as a
+offers little to remediate the economic problems we suffer today. We as a
 society needs more [starfish rather than
 spiders](https://en.wikipedia.org/wiki/The_Starfish_and_the_Spider)
 building [bazaars rather than
-cathendrals](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar)
+cathedrals](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar)
 where it makes sense. For many people, perhaps the idea of anarchism
 is never about actually reaching the state of anarchism but always
 about alternatives and counterbalances since if the road ahead is not
@@ -303,9 +303,9 @@ about the relationship between individualism and
 [collectivism](https://en.wikipedia.org/wiki/Collectivism), but it is
 fair to say that it's a spectrum rather than binary.
 
-Even though the absolute indivisualism is perhaps neither desirable
+Even though the absolute individualism is perhaps neither desirable
 nor possible, it has become much more difficult to exercise one's self
-soverignty as governmants and corporations are making great strides to
+soverignty as governments and corporations are making great strides to
 capture it for their own benefits. Nowadays, we need trust and
 permissions to use our own identity, our own data and to transact with
 our own
