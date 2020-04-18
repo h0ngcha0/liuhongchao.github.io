@@ -20,9 +20,9 @@ also serves as a forcing function for me to learn a bit more about
 other disciplines such as *politics*, *economics*, *finance* and
 *philosophy*, etc. In retrospect, I feel this learning experience is
 very rewarding and a journey well worth taking. In this post, I will
-try to explain its value proposition from three angles: *Facinating
-Technologies*, *Importance of Alternatives* and *Self Sovereignty*.
-
+try to explain its value proposition from three angles: **Facinating
+Technologies**, **Importance of Alternatives** and **Self
+Sovereignty**.
 
 ### Fascinating Technologies
 
