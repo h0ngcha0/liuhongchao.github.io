@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Bitcoin, Blockchain
-title: Learn You Some Bitcoin for Good
+title: Learn You Some Crypto for Good
 ---
 
 In the past few days, the market has crashed hard on basically
