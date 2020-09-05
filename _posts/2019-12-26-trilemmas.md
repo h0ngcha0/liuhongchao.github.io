@@ -2,6 +2,7 @@
 layout: post
 category: Philosophy
 title: The Ubiquity of Trilemmas
+hide_in_overview: true
 ---
 
 Trilemmas can be found across many disiplines throughout history. One of the definition is that out of three favourable options only two can be chosen at the same time.
