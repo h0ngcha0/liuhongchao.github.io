@@ -32,173 +32,8 @@ other disciplines such as *politics*, *economics*, *finance* and
 *philosophy*, etc. In retrospect, I feel this learning experience is
 very rewarding and a journey well worth taking. In this post, I will
 try to argue about why learning some crypto at this extraordinary
-times is important from three angles: **Facinating Technologies**,
-**Importance of Alternatives** and **Self Sovereignty**.
-
-### Fascinating Technologies
-
-Blockchain is fascinating from the technical perspective. It was
-invented to solve the [double spend
-problem](https://en.wikipedia.org/wiki/Double-spending) in a
-decentralized setting without requiring a trusted third party. It
-achieves that with the interplay of two components: **First**, a
-modification resistent data structure to store all the
-transactions. It turns out that an efficient implementation is to
-organize transactions into a sequence of blocks, each of which contains
-a cryptographic hash of the previous one, resulting a chain of blocks,
-hence the name *blockchain*. **Second**, a method to reach consensus among a
-set of networked computers of certain topology as to who should have
-the right to append the next block onto the blockchain, called a
-[consensus
-algorithm](https://en.wikipedia.org/wiki/Consensus_(computer_science)).
-
-A key contribution of Bitcoin as the first blockchain is that an
-incentive structure is built right into the consensus algorithm
-through the use of [proof of
-work](https://en.wikipedia.org/wiki/Proof_of_work), which coordinates
-the economic activities in the Bitcoin ecosystem of miners, merchants,
-engineers, exchanges, users, etc. The result is the world's first
-[dencentralized autonomous
-organization](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization).
-This is a significant milestone in computer engineering. It is the
-first time engineers can **program trust and incentives** without
-relying on any centralized entity (even for the "money"), which basically
-gives engineers the power of genesis creation in whatever
-"world" they want to create. Consensus algorithm is an active area
-of research in the crypto space, with a lot of thought provoking debates and
-exploration.  The most notable alternative to proof of work to achieve
-[byzantine fault
-tolerance](https://en.wikipedia.org/wiki/Byzantine_fault) is various
-forms of [proof of
-stake](https://en.wikipedia.org/wiki/Proof_of_stake).
-
-There many other difficult technical problems in the crypto space. One
-of them is blockchain **scalability**, which is hard to achieve
-without also sacrificing its **security** and **decentralization** properties
-(see [scalability
-trilemmas](https://bitcoinist.com/breaking-down-the-scalability-trilemma/)).
-[Ethereum](https://ethereum.org/)'s response to that seems to be
-leveraging clever constructions of [proof of
-stake](https://en.wikipedia.org/wiki/Proof_of_stake) and
-[sharding](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/sharding/),
-while the answer from the Bitcoin community at the moment is mostly
-second layer solutions such as [Lightning
-Network](https://lightning.network/). In recent years, solutions based
-on [zero-knowledge
-proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof) such as
-[ZK-Rollups](https://docs.ethhub.io/ethereum-roadmap/layer-2-scaling/zk-rollups/)
-were also proposed as a scalability solution. In general, since the
-value proposition of a
-blockchain is security and decentralization, sacrificing too much of
-these properties is generally not desirable (e.g. [blocksize
-debate](https://en.bitcoin.it/wiki/Block_size_limit_controversy)).
-**Privacy** is another important area of research & development
-in the space. [Satoshi
-Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto) famously
-said in the Bitcoin [white paper](https://bitcoin.org/bitcoin.pdf)
-that *The only way to confirm the absence of a transaction is to be
-aware of all transactions*. There is always a tension between making
-everything publicly verifiable and the need for obfuscation.  Bitcoin
-does not have good privacy built into the protocol layer, [many
-technologies](http://hongchao.me/bitcoin-privacy/) have been invented
-to improve that ever since its inception. Some blockchains try to
-introduce certain privacy features into the protocol
-layer. [Monero](https://www.getmonero.org/), for example, leverages
-[ring signatures](https://en.wikipedia.org/wiki/Ring_signature) to
-obfuscate the transaction graph and [confidential
-transaction](https://people.xiph.org/~greg/confidential_values.txt) to
-hide transaction amount. [Zcash](https://en.wikipedia.org/wiki/Zcash)
-uses [zk-SNARKs](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof)
-to make all of its *shielded* transactions completely private. Both of them
-sacrifice scalability to a certain degree and have more
-cryptographic assumptions than Bitcoin. [Mimblewimble](https://en.wikipedia.org/wiki/MimbleWimble)
-also uses confidential transactions to hide the transaction amount, but
-through an interesting mechanism called
-[cut-through](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#cut-through),
-it keeps the blockchain very compact thus achieves both
-privacy and scalability at the same time (scalability is more nuanced
-because of the transaction kernel). Another approach to improve
-both privacy and scalability is through the use of zero knowledge
-proofs technologies in general. Zcash is one example of this, though
-it focuses primarily on privacy. Projects like
-[Coda](https://codaprotocol.com/) and [zkSync](https://zksync.io/)
-are developed with both privacy and scalability in mind.
-
-**Programmability** is also an area of contention in the crypto
-space. Bitcoin's [scripting](https://en.bitcoin.it/wiki/Script) system
-allows the creation of [smart
-contract](https://en.wikipedia.org/wiki/Smart_contract) and is
-purposefully not turing complete to avoid the [halting
-problem](https://en.wikipedia.org/wiki/Halting_problem). It is still
-fairly powerful, as demonstrated by the development of lightning
-network in the past few years. This design choice is very much
-in line with the philosophy where blockchain is [not for computation
-but for
-verification](https://bitcointalk.org/index.php?topic=1427885.msg14601127#msg14601127).
-What nodes really need to know is a proof that certain computation was
-performed correctly. Re-executing the same computation should not the one way to
-achieve that. Even though Bitcoin script is intentionally kept simple,
-there are still many proposals trying make it better, such as [Schnorr
-signature](https://en.wikipedia.org/wiki/Schnorr_signature),
-[Taproot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html) and
-[Graftroot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html),
-etc. Things like [Miniscript](http://bitcoin.sipa.be/miniscript/) are
-also invented to making writing Bitcoin script a bit easier. 
-On the other hand, Ethereum is the first among many blockchains
-to offer a turing complete programming language. The idea is to enable
-developers to
-easily express and execute any programs across all the nodes in
-the network so that it becomes hard to stop them. This expressiveness does come
-with many tradeoffs: A fee model now needs to be developed for
-computational resources on the platform. The blockchain usually gets a lot bigger as a
-general purpose computing platform, affecting its scalability and
-decentralization properties. A "user friendly" turing complete language
-potentially opens up much larger attack surface and is much easier to
-be abused. Neverthelss, these dApps platforms have certainly attracted a
-lot of the developer mindshare and we start to see applications
-especially in the [DeFi](https://www.binance.vision/glossary/defi)
-space start to gain momentum. Zero knowledge proof could also be a promising
-future direction when it comes to programmability since computation
-can now be done offchain, with a proof of its correctness submitted
-onchain for verification.
-
-Crypto also offers a set of unique challenges when it comes to
-**software engineering**. Deploying software updates in a decentralized
-p2p network is very difficult, especially when consensus over a shared
-state needs to be maintained by different versions of the software at
-the same time (see
-[Forkology](https://www.youtube.com/watch?v=rpeceXY1QBM)). When money
-is quite literally on the line and the cost of introducing and fixing
-bugs could be extremely high, [move fast and break
-things](https://en.wikipedia.org/wiki/Facebook,_Inc.#History) is
-definitely not an option. In fact, the development of systems such as
-Bitcoin should go through the same level of scrutiny and testing as
-aerospace software and its deployment should be analogous to shipping
-hardware. [Formal
-verification](https://en.wikipedia.org/wiki/Formal_verification), a
-technique that hasn't seen much adoption in many software projects due
-to its formidable cost, becomes much more economically feasible in
-crypto space considering the amount of value at
-stake. [MakerDao](https://makerdao.com/), for example, [formally
-verified](https://security.makerdao.com/formal-verification) all the
-core contracts in its MCD system.
-
-Of course, the basic research of **cryptography**, which is one of the
-building blocks of blockchain, has also seen a lot of progress because
-of the crypto industry in the past 10 years in areas such as Zero Knowledge Proofs, [Multi-party
-computation](https://en.wikipedia.org/wiki/Secure_multi-party_computation),
-[Verifiable Delay Functions](https://eprint.iacr.org/2018/601.pdf)
-and [Homomorphic encryption](https://en.wikipedia.org/wiki/Homomorphic_encryption).
-
-This is just a tip of an iceberg. Other difficult challenges include
-the [oracle
-problem](https://medium.com/@DelphiSystems/the-oracle-problem-856ccbdbd14f),
-the design of [governance
-models](https://watsonlaw.nl/en/blockchain-governance-what-is-it-what-types-are-there-and-how-does-it-work-in-practice/)
-and more. Crypto is inherently multi-disciplinary, which means that
-even a seemingly pure technical change might butterfly effect its way
-into causing significant consequences, which makes the problem extra
-interesting and challenging.
+times is important from three angles: **Importance of Alternatives**,
+**Self Sovereignty** and **Facinating Technologies**.
 
 ### Importance of Alternatives
 
@@ -349,6 +184,172 @@ identity](https://medium.com/metadium/introduction-to-self-sovereign-identity-an
  to really change the consumer behavior, not only in terms of
  technology but also inventive engineering, to really put the
  sovereignty of identity and personal data back to the users.
+
+### Fascinating Technologies
+
+Blockchain is fascinating from the technical perspective. It was
+invented to solve the [double spend
+problem](https://en.wikipedia.org/wiki/Double-spending) in a
+decentralized setting without requiring a trusted third party. It
+achieves that with the interplay of two components: **First**, a
+modification resistent data structure to store all the
+transactions. It turns out that an efficient implementation is to
+organize transactions into a sequence of blocks, each of which contains
+a cryptographic hash of the previous one, resulting a chain of blocks,
+hence the name *blockchain*. **Second**, a method to reach consensus among a
+set of networked computers of certain topology as to who should have
+the right to append the next block onto the blockchain, called a
+[consensus
+algorithm](https://en.wikipedia.org/wiki/Consensus_(computer_science)).
+
+A key contribution of Bitcoin as the first blockchain is that an
+incentive structure is built right into the consensus algorithm
+through the use of [proof of
+work](https://en.wikipedia.org/wiki/Proof_of_work), which coordinates
+the economic activities in the Bitcoin ecosystem of miners, merchants,
+engineers, exchanges, users, etc. The result is the world's first
+[dencentralized autonomous
+organization](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization).
+This is a significant milestone in computer engineering. It is the
+first time engineers can **program trust and incentives** without
+relying on any centralized entity (even for the "money"), which basically
+gives engineers the power of genesis creation in whatever
+"world" they want to create. Consensus algorithm is an active area
+of research in the crypto space, with a lot of thought provoking debates and
+exploration.  The most notable alternative to proof of work to achieve
+[byzantine fault
+tolerance](https://en.wikipedia.org/wiki/Byzantine_fault) is various
+forms of [proof of
+stake](https://en.wikipedia.org/wiki/Proof_of_stake).
+
+There many other difficult technical problems in the crypto space. One
+of them is blockchain **scalability**, which is hard to achieve
+without also sacrificing its **security** and **decentralization** properties
+(see [scalability
+trilemmas](https://bitcoinist.com/breaking-down-the-scalability-trilemma/)).
+[Ethereum](https://ethereum.org/)'s response to that seems to be
+leveraging clever constructions of [proof of
+stake](https://en.wikipedia.org/wiki/Proof_of_stake) and
+[sharding](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/sharding/),
+while the answer from the Bitcoin community at the moment is mostly
+second layer solutions such as [Lightning
+Network](https://lightning.network/). In recent years, solutions based
+on [zero-knowledge
+proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof) such as
+[ZK-Rollups](https://docs.ethhub.io/ethereum-roadmap/layer-2-scaling/zk-rollups/)
+were also proposed as a scalability solution. In general, since the
+value proposition of a
+blockchain is security and decentralization, sacrificing too much of
+these properties is generally not desirable (e.g. [blocksize
+debate](https://en.bitcoin.it/wiki/Block_size_limit_controversy)).
+
+**Privacy** is another important area of research & development
+in the space. [Satoshi
+Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto) famously
+said in the Bitcoin [white paper](https://bitcoin.org/bitcoin.pdf)
+that *The only way to confirm the absence of a transaction is to be
+aware of all transactions*. There is always a tension between making
+everything publicly verifiable and the need for obfuscation.  Bitcoin
+does not have good privacy built into the protocol layer, [many
+technologies](http://hongchao.me/bitcoin-privacy/) have been explored
+to improve that ever since its inception. Other blockchains try to
+introduce certain privacy features into the protocol
+layer. [Monero](https://www.getmonero.org/), for example, leverages
+[ring signatures](https://en.wikipedia.org/wiki/Ring_signature) to
+obfuscate the transaction graph and [confidential
+transaction](https://people.xiph.org/~greg/confidential_values.txt) to
+hide transaction amount. [Zcash](https://en.wikipedia.org/wiki/Zcash)
+uses [zk-SNARKs](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof)
+to make all of its *shielded* transactions completely private. Both of them
+sacrifice scalability to a certain degree and have more
+cryptographic assumptions than Bitcoin. [Mimblewimble](https://en.wikipedia.org/wiki/MimbleWimble)
+also uses confidential transactions to hide the transaction amount, but
+through a mechanism called
+[cut-through](https://github.com/mimblewimble/grin/blob/master/doc/intro.md#cut-through),
+it keeps the blockchain very compact thus achieves
+privacy and scalability at the same time (scalability is more nuanced
+due to the ever growing transaction kernel). Zero knowledge proofs is
+another approach that can potentially improve both the privacy and
+scalability. Zcash focuses primarily on privacy, but projects like
+[Coda](https://codaprotocol.com/) and [zkSync](https://zksync.io/)
+are developed with both privacy and scalability in mind.
+
+**Programmability** is also an area of contention in the crypto
+space. Bitcoin's [scripting](https://en.bitcoin.it/wiki/Script) system
+allows the creation of [smart
+contract](https://en.wikipedia.org/wiki/Smart_contract) and is
+purposefully not turing complete to avoid the [halting
+problem](https://en.wikipedia.org/wiki/Halting_problem). It is still
+fairly powerful, as demonstrated by the development of lightning
+network in the past few years. This design choice is very much
+in line with the philosophy where blockchain is [not for computation
+but for
+verification](https://bitcointalk.org/index.php?topic=1427885.msg14601127#msg14601127).
+Even though Bitcoin script is intentionally kept simple,
+there are still many improvements making their way into the language, such as [Schnorr
+signature](https://en.wikipedia.org/wiki/Schnorr_signature),
+[Taproot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html) and
+[Graftroot](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html),
+etc. Things like [Miniscript](http://bitcoin.sipa.be/miniscript/) are
+also invented to making writing Bitcoin script easier. 
+On the other hand, Ethereum is the first among many blockchains
+to offer a turing complete programming language. The idea is to enable
+developers to
+easily express and execute any programs across all the nodes in
+the network to make them "unstoppable". This expressiveness does come
+with many tradeoffs: A fee model now needs to be developed for
+computational resources on the platform. The blockchain usually gets a lot bigger as a
+general purpose computing platform, affecting its scalability and
+decentralization properties. A "user friendly" turing complete language
+potentially opens up much larger attack surface and is much easier to
+be abused. Neverthelss, these dApps platforms have certainly attracted a
+lot of the developer mindshare and we start to see applications
+especially in the [DeFi](https://www.binance.vision/glossary/defi)
+space start to gain momentum. Zero knowledge proof is also a promising
+direction when it comes to programmability since computation can now
+be done offchain, with a proof of its correctness submitted onchain
+for verification. This might point to a future where blockchain
+becomes a zero knowledge proof verification engine and the program can
+be written in any language that generates the proofs.
+
+Crypto also offers a set of unique challenges when it comes to
+**software engineering**. Deploying software updates in a decentralized
+p2p network is very difficult, especially when consensus over a shared
+state needs to be maintained by different versions of the software at
+the same time (see
+[Forkology](https://www.youtube.com/watch?v=rpeceXY1QBM)). When money
+is quite literally on the line and the cost of introducing and fixing
+bugs could be extremely high, [move fast and break
+things](https://en.wikipedia.org/wiki/Facebook,_Inc.#History) is
+definitely not an option. In fact, the development of systems such as
+Bitcoin should go through the same level of scrutiny and testing as
+aerospace software and its deployment should be analogous to shipping
+hardware. [Formal
+verification](https://en.wikipedia.org/wiki/Formal_verification), a
+technique that hasn't seen much adoption in many software projects due
+to its formidable cost, becomes much more economically feasible in
+crypto space considering the amount of value at
+stake. [MakerDao](https://makerdao.com/), for example, [formally
+verified](https://security.makerdao.com/formal-verification) all the
+core contracts in its MCD system.
+
+This is just a tip of an iceberg. We have also seen the basic research
+of **cryptography**, which is one of the building blocks of
+blockchain, made a lot of progress in the past 10 years because of the
+crypto industry, especially in areas such as Zero Knowledge Proofs,
+[Multi-party
+computation](https://en.wikipedia.org/wiki/Secure_multi-party_computation),
+[Verifiable Delay Functions](https://eprint.iacr.org/2018/601.pdf) and
+[Homomorphic
+encryption](https://en.wikipedia.org/wiki/Homomorphic_encryption),
+etc. Other difficult challenges include the [oracle
+problem](https://medium.com/@DelphiSystems/the-oracle-problem-856ccbdbd14f),
+the design of [governance
+models](https://watsonlaw.nl/en/blockchain-governance-what-is-it-what-types-are-there-and-how-does-it-work-in-practice/)
+and more. Crypto is inherently multi-disciplinary, which means that
+even a seemingly pure technical change might butterfly effect its way
+into causing significant consequences, which makes the problem extra
+interesting and challenging.
 
 <br/>
 
