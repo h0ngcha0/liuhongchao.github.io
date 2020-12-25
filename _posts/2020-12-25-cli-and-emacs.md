@@ -79,13 +79,13 @@ which enables infinite extensibility.
 
 Self described as "an extensible, customizable, free/libre text
 editor", [GNU Emacs](https://en.wikipedia.org/wiki/GNU_Emacs)'s
-infinite extensibility is enabled by a turing complete language
-called [Elisp](https://en.wikipedia.org/wiki/Emacs_Lisp), which is
-used to write most of Emacs itself. This is similiar to how for
-example Bash achieves its extensibility through Bash script. Just like
-most of the programs that thrives under the Bash environment are
-inheritantly text focused, most of the popular Emacs programs are text
-focused as well, such as [Magit](https://magit.vc/) and
+infinite extensibility is enabled by a turing complete language called
+[Elisp](https://en.wikipedia.org/wiki/Emacs_Lisp), which also is used
+to write most of Emacs itself. This is similiar to how for example
+Bash achieves its extensibility through Bash script. Just like most of
+the programs that thrives under the Bash environment are inheritantly
+text focused, most of the popular Emacs programs are text focused as
+well, such as [Magit](https://magit.vc/) and
 [Org-mode](https://orgmode.org/). They also tend to integrate very
 well with other Emacs programs, creating synergy similiar to that of
 the CLI programs. For example, you can look at the commit history of a
@@ -123,3 +123,6 @@ programs. In fact, Emacs is more like a two dimensional CLI
 environment that embraces the same Unix philosophy: enable simple,
 elegant programs interacting with each other using an univeral
 interface.
+
+[Reddit
+discussion](https://www.reddit.com/r/emacs/comments/kk1voo/emacs_is_the_two_dimensional_commandline_interface/)
