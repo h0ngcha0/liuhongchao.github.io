@@ -5,15 +5,15 @@ title: Commitments
 ---
 
 When we think about commitments, we think about couples making
-commitment to their relationship, group of talented and enthusiastic
-people committed to [bringing power to the morden
-consumers](https://minnatechnologies.com/about/), or a country
-pledged to [land a man to the moon and return him safely on
-earth](https://www.youtube.com/watch?v=QXqlziZV63k). It is an
-obligation of being dedicated to a cause, activity or entity; a
-process of focusing on something with neccessary resources at the
-expense of oppurtunity cost. It is [what transforms a promise
-into
+commitment to their relationship, a group of talented and enthusiastic
+people determined to [bringing power to the morden
+consumers](https://minnatechnologies.com/about/), or a country pledged
+to [land a man to the
+moon](https://www.youtube.com/watch?v=QXqlziZV63k) and return him
+safely on earth. It is an obligation of being dedicated to a cause, an
+activity or an entity, a process of focusing on something with all
+neccessary resources at the expense of opportunity cost. It is the
+force [that transforms a promise into
 reality](https://www.sparkpeople.com/mypage_public_journal_individual.asp?blog_id=2925515).
 
 I always have this mental image when I think about commitment: a
