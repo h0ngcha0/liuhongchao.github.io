@@ -111,7 +111,7 @@ in Emacs" is probably not a terrible idea due to the synergy many of
 these Emacs programs produce.
 
 However, that doesn't mean that _everything_ should be run in
-Emacs. Emacs is probably the wrong tool for browsing web
+Emacs. Emacs is probably not the right tool for browsing web
 ([EWW](https://www.gnu.org/software/emacs/manual/html_mono/eww.html))
 or listening to music
 ([EMMS](https://en.wikipedia.org/wiki/EMMS_(media_player))), just like
