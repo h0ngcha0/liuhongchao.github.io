@@ -124,5 +124,6 @@ environment that embraces the same Unix philosophy: enable simple,
 elegant programs interacting with each other using an univeral
 interface.
 
-[Reddit
-discussion](https://www.reddit.com/r/emacs/comments/kk1voo/emacs_is_the_two_dimensional_commandline_interface/)
+----
+
+Edit: [Reddit Discussion](https://www.reddit.com/r/emacs/comments/kk1voo/emacs_is_the_two_dimensional_commandline_interface/)
