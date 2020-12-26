@@ -5,7 +5,7 @@ title: Bitcoin Full Node on GCP Kubernetes Cluster
 ---
 
 <img src="{{ site.baseurl }}/images/bitcoin-cloud.png"
-alt="bitcoin cloud" style="width: 400px;"/>
+alt="bitcoin cloud" style="width: 200px;"/>
 
 So finally you decided to exercise your ultimate self sovereignty
 within the Bitcoin network by running a full node, but where?

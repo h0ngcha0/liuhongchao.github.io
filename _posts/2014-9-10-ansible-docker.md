@@ -2,6 +2,7 @@
 layout: post
 tags: Ansible
 category: Software
+hide_in_overview: true
 title: Provision Docker using Ansible
 ---
 

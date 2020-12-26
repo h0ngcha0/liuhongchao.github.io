@@ -1,6 +1,7 @@
 ---
 layout: post
 category: Emacs
+hide_in_overview: true
 title: Little Fun with Emacs Start Buffer
 ---
 
