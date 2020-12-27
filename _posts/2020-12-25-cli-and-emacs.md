@@ -79,7 +79,7 @@ which enables infinite extensibility.
 
 Self described as "an extensible, customizable, free/libre text
 editor", [GNU Emacs](https://en.wikipedia.org/wiki/GNU_Emacs)'s
-infinite extensibility is enabled by a turing complete language called
+infinite extensibility is enabled by a Turing-complete language called
 [Elisp](https://en.wikipedia.org/wiki/Emacs_Lisp), which also is used
 to write most of Emacs itself. This is similiar to how for example
 Bash achieves its extensibility through Bash script. Just like most of
