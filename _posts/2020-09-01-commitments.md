@@ -73,9 +73,12 @@ knowledge proofs (ZKP) systems, which has the potential to really help
 us improve our current privacy situation.
 
 Hash is my favourite cryptographic primitives. From user's
-perspective, it is simple, it is post quantum resistant, it is easy to
-use. To the extent where people just take it for granted. I have a
-strong believe that ZKP will make a great impact in the years to
-come. It is fair to say that crypographic commitment makes the world a
-better place and improve the collective happiness of human beings,
-just like any other commitment we made in our lives.
+perspective, it does one thing and does it very well, it is simple and
+easy to use to the extent where people just take it for granted. I
+have a similiar believe that ZKP will make a great impact in near
+future as well. It is fair to say that crypographic commitment schemes
+have made the world a better place and improved the collective
+happiness of the human beings, just like many other commitments we
+make in our lives.
+
+
