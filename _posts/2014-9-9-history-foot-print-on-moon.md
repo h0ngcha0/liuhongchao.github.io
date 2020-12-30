@@ -4,7 +4,7 @@ category: History
 title: Footprint on the Moon
 ---
 
-![Footprint on the moon](http://i0.wp.com/listverse.com/wp-content/uploads/2014/03/1011.jpg)
+![Footprint on the moon](https://i0.wp.com/listverse.com/wp-content/uploads/2014/03/1011.jpg)
 
 "That's one small step for (a) man, one giant step for mankind."
 
