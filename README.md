@@ -1,3 +1,3 @@
-# HC's learning notes
+# Source for Hongchao's Notes
 
-Powered by [Jekyll](http://jekyllrb.com/) with [Jekyll Now](https://github.com/barryclark/jekyll-now) theme.
+Available @ http://hongchao.me
