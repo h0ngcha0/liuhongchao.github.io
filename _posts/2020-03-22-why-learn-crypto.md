@@ -251,7 +251,7 @@ that *The only way to confirm the absence of a transaction is to be
 aware of all transactions*. There is always a tension between making
 everything publicly verifiable and the need for obfuscation.  Bitcoin
 does not have good privacy built into the protocol layer, [many
-technologies](http://hongchao.me/bitcoin-privacy/) have been explored
+technologies](https://hongchao.me/bitcoin-privacy/) have been explored
 to improve that ever since its inception. Other blockchains try to
 introduce certain privacy features into the protocol
 layer. [Monero](https://www.getmonero.org/), for example, leverages
