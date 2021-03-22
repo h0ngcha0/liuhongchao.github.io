@@ -126,4 +126,6 @@ interface.
 
 ----
 
-Edit: [Reddit Discussion](https://www.reddit.com/r/emacs/comments/kk1voo/emacs_is_the_two_dimensional_commandline_interface/)
+Edit: 
+- [Reddit Discussion](https://www.reddit.com/r/emacs/comments/kk1voo/emacs_is_the_two_dimensional_commandline_interface/)
+- [Hacker News Discussion](https://news.ycombinator.com/item?id=26521186)
