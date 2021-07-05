@@ -54,7 +54,7 @@ scale as well. For example, without the constraints of the rules, the
 game of [Go](https://en.wikipedia.org/wiki/Go_(game)) will not be able
 to librate the mind-blowing creativities from the players. The limited
 form of expression offered by the likes of Tiktok, Twitter and WeChat
-seems to have unleashed the creativity from their users and therefore
+seems to have unleashed the creative energy from their users and therefore
 created more sticky networks. Often times, less is more, constraint is
 liberty. This probably has to do with our **limited mental capacity**
 as human beings. Constraints abstract things away, sometimes at the
@@ -81,7 +81,7 @@ are trying out different ways of working, we are applying different
 constraints and see which one yields the best result. Liberty in the
 context of work usually constrains our ability to perform.
 
-Constraint and liberty are also **multifaceted**. Event at the
+Constraint and liberty are also **multifaceted**. Even at the
 individual level, one freedom might come at the cost of another. The
 constraint of being monitored by the surveillance camera might give
 you the freedom to walk around safely at 2am anywhere in the city. The
