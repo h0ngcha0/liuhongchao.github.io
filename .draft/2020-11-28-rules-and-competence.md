@@ -39,7 +39,6 @@ In management,
 
 Competence has a lot of cost as well.
 
-
 relationship Many rules, principles and 
 
 Rules, by definition, refer to principles with broad application that
@@ -47,3 +46,43 @@ is not intended to be strictly accurate or reliable for every
 situation.
 
 competence has a lot of cost
+
+
+Bill gates. time to pick up something has a cost
+
+Oppurtunity cost
+
+company culture
+
+the free stuff has the biggest cost
+
+
+market economy is to reduce the transaction cost
+
+family vs welfare state, what is the cost implication?
+
+freedom has a cost, decentralization has a cost
+
+it can also cost you freedom
+
+what are you costing? money? freedom? ideals? soul?
+
+Get rid of High level officials due to small scandals has big cost
+However if this becomes a public event, the cost of not getting rid of him is too high
+
+
+privacy has a lot of cost, that is why people always prefer convenience over privacy, because privacy
+is too costly, if technology has reached to a point where the cost of having privacy is not high, e.g.
+https, then it will be adopted.
+
+democracy has a cost, dictatorship has a cost too.
+
+centralization is to reduce cost (then the cost become so huge then it might be broken down)
+
+
+blockchain <- blocks is batching, it is for cost optimization
+
+fair is the most cost effecctive way to manage the company or society
+
+branding is cost, looking at brands doesn't require cost
+
