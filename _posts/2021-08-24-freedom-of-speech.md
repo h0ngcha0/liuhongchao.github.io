@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Philosophy
-title: The Challenges of Freedom of Speech
+title: Some Challenges of Freedom of Speech
 ---
 
 If there exists a superintelligence system that can take in all the
@@ -10,30 +10,30 @@ algorithm (whatever that means), perhaps planned economy would be a
 better mechanism for resource allocation and growth generation than
 market economy. Similiarly, if we were blessed with a
 superintelligence that possesses all the knowledge and truth of the
-world, perhaps all we should do is to shut up and listen, provided
-that our goal is to use whatever means appropriate to
-advance society a whole, rather than protecting the holiness of any
-particular concept, even freedom of speech.
+world, perhaps all we should do is to shut up and listen, if our goal
+is to use whatever means appropriate to advance society a whole rather
+than protecting the holiness of any particular concept, in this case
+freedom of speech.
 
 Unfortunately, this superintelligence doesn't exist, at least not
 yet. History seems to have shown repeatedly that no matter how wise
 and well intended an individual or a group of individuals are, it is
 difficult for mere mortals to be the guardian of information for
-everybody without stagnating the society over a long time. On top of
-that, such power almost always leads to Orwellian like state: Power
-corrupts; absolute power corrupts absolutely.
+everybody without suffocating the society. On top of that, such power
+almost always leads to Orwellian like state: Power corrupts; absolute
+power corrupts absolutely.
 
-From the societal perspective, if the goal of freedom of speech is to
-constantly generate ideas based on new circumstances so that humanity
-can be equipped with more knowledge and societies can evolve from one
-consensus to the next, then it has done a remarkable job so far. It
-encourages the contribution of ideas from individuals with different
-skillsets and perspectives; It provides a market place where ideas can
-be challenged, debated and tested; It also protects the "unorthodox"
-ideas from being suppressed by the powerful status quo consensus. At a
-higher level, it is a dynamic, decentralized, bottom up approach to
-achieve collective goals, analogous to biological evolution or market
-economy in their respective domains.
+From the societal perspective, if the goals of freedom of speech is to
+continuously generate ideas based on new circumstances so that
+humanity can be equipped with more knowledge and societies can evolve
+from one consensus to the next, then it has done a remarkable job so
+far. It encourages the contribution of ideas from individuals with
+different skillsets and perspectives; It provides a market place where
+ideas can be challenged, debated and tested; It also protects the
+"unorthodox" ideas from being suppressed by the powerful status quo
+consensus. At a higher level, it is a dynamic, decentralized, bottom
+up approach to achieve collective goals, analogous to biological
+evolution or market economy in their respective domains.
 
 However, information has some interesting properties. One of them is
 that the cost of verifying it is asymmetrically higher than the cost
