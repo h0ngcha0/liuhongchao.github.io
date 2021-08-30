@@ -27,43 +27,45 @@ From the societal perspective, if the goals of freedom of speech is to
 continuously generate ideas based on new circumstances so that
 humanity can be equipped with more knowledge and societies can evolve
 from one consensus to the next, then it has done a remarkable job so
-far. It encourages the contribution of ideas from individuals with
-different skillsets and perspectives; It provides a market place where
-ideas can be challenged, debated and tested; It also protects the
-"unorthodox" ideas from being suppressed by the powerful status quo
-consensus. At a higher level, it is a dynamic, decentralized, bottom
-up approach to achieve collective goals, analogous to biological
-evolution or market economy in their respective domains.
+far. It encourages the contribution from individuals with different
+skillsets and perspectives; It provides a market place where ideas can
+be challenged, debated and tested; It also protects the "unorthodox"
+ideas from being suppressed by the powerful status quo consensus. At a
+higher level, it is a dynamic, decentralized, bottom up approach to
+achieve collective goals, analogous to biological evolution or market
+economy in their respective domains.
 
 However, information has some interesting properties. One of them is
-that the cost of verifying it is asymmetrically higher than the cost
-of generating it. This might not be very obvious before the age of Web
+that the cost of verification is asymmetrically higher than the cost
+of generation. This might not be very obvious before the age of Web
 2.0, when both information generation and distribution were still
 controlled by mainstream medias. In that era, the flow of information
 within society was still relatively simple due to its largely
-hierachical nature, and the media outlets basically took on the
+hierachical nature. The media outlets basically took on the
 responsibility to verify and filter their contents for their
-audiences. In the past 15 years or so, new technologies such as social
-media platforms have essentially democratized the ability to generate
-and distribute information. Putting aside the benefits this must have
-created, with the explosion of user generated content and the flow of
-information that is orders of magnitude more complex, the overall cost
-of information verification at the societal level must have
-skyrocketed. This puts companies such as Facebook in an extremely
-tough spot. With billions of users from different countries, the sheer
-amount of information they need to moderate as well its complexity is
-astonishing. The question is whether they should play the role of
-truth arbiter. If they should, can they theoretically and practically
-keep up with the continued explosion of information when it has such
-an inherent asymmetric property? If they shouldn't, what is the effect
-of forcing this responsibility to the individuals when most people
-neither have the time nor expertise to sufficiently identify
-misinformation? When freedom of speech is enhanced so much by
-technology, it seems logical that more moderating (i.e. censoring)
-needs to happen somewhere in the information flow to keep the
-verification cost in check and prevent the overall quality of the
-information from decaying. Who should do that? To which extent should
-they do that?  Is this against the very spirit of freedom of speech?
+audiences. However, in the past 15 years or so, new technologies such
+as social media platforms have essentially democratized the ability to
+generate and distribute information. Putting aside the benefits this
+must have created for a moment, with the explosion of user generated
+content and the flow of information that is orders of magnitude more
+complex, the overall cost of information verification at the societal
+level must have skyrocketed. This puts companies such as Facebook in
+an extremely tough spot. With billions of users from different
+countries, the sheer amount of information that needs to be moderated
+as well its complexity is astonishing. 
+
+The question is: should they play the role of truth arbiter? If they
+should, can they theoretically and practically keep up with the
+continued explosion of information when it has such an inherent
+asymmetric property? If they shouldn't, what is the effect of forcing
+this responsibility to the individuals when most people neither have
+the time nor expertise to sufficiently identify misinformation? When
+freedom of speech is enhanced so much by technology, it seems logical
+that more moderating (i.e. censoring) needs to happen somewhere in the
+information flow to keep the verification cost in check and prevent
+the overall quality of the information from decaying. Who should do
+that? To which extent should they do that?  Is this against the very
+spirit of freedom of speech?
 
 Another property of information is that it thrives in big networks and
 therefore creates network effect. If there are many diversified,
@@ -120,7 +122,8 @@ on individualism vs collectivism.
 
 <br/>
 
-Perhaps the question, and the challenge is: How many
+How many
 [flowers](https://en.wikipedia.org/wiki/Hundred_Flowers_Campaign)
 should be let bloom?
+
 
