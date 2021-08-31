@@ -103,22 +103,22 @@ usability battle at least with the current state of the technology.
 
 Another threat to freedom of speech is the extent to which its
 alternative models can succeed, even temporarily. Human societies have
-gone through a few periods where there were explosions of scientific
-and technological breakthroughs. However, other parts of the human
-history is filled with incremental improvements or even
-staganation. Freedom of speech as an idea generation and selection
-mechanism is much more valuable in periods of breakthoughs. Arguments
-can be made that science is staganating in the past 40 years and we
-are just reaping the benefits from the research done by generations
-before that. It is unclear if this is temporary or how long this would
-last. Under this context, societies emphasizing more on freedom of
-speech might not get enough benefits for its cost, but countries that
-actively censor information might be able to reach social consensus
-much more effectively without incuring an unbearable cost of losing
-the battle of innovation. Of course, this dynamic could change in
-different circumstances, perhaps this is one of the hidden forces that
-can influence the rise and falls of the civilizations that focus more
-on individualism vs collectivism.
+gone through times where there were explosions of scientific and
+technological breakthroughs. However, other parts of the human history
+is filled with incremental improvements or even staganation. Freedom
+of speech as an idea generation and selection mechanism is much more
+valuable in periods of breakthoughs. Arguments can be made that
+science has been staganating in the past 40 years and we are just
+reaping the benefits from the research done by the generations before
+that. It is unclear if this is temporary or how long this would
+last. Under this assumption, societies emphasizing more on freedom of
+speech might not get enough benefits for its cost, whereas countries
+that actively censor information might be able to reach social
+consensus much more effectively without incuring an unbearable cost of
+losing the battle of innovation. Of course, this dynamic could change
+in different circumstances, perhaps this is one of the hidden forces
+that can influence the rise and falls of the civilizations that focus
+more on individualism vs collectivism.
 
 <br/>
 
