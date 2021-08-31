@@ -11,14 +11,14 @@ better mechanism for resource allocation and growth generation than
 market economy. Similiarly, if we were blessed with a
 superintelligence that possesses all the knowledge and truth of the
 world, perhaps all we should do is to shut up and listen, if our goal
-is to use whatever means appropriate to advance society a whole rather
-than protecting the holiness of any particular concept, in this case
-freedom of speech.
+is to use whatever means appropriate to advance society as a whole
+rather than protecting the holiness of any particular concept, in this
+case freedom of speech.
 
 Unfortunately, this superintelligence doesn't exist, at least not
 yet. History seems to have shown repeatedly that no matter how wise
 and well intended an individual or a group of individuals are, it is
-difficult for mere mortals to be the guardian of information for
+difficult for mere mortals to be the guardians of information for
 everybody without suffocating the society. On top of that, such power
 almost always leads to Orwellian like state: Power corrupts; absolute
 power corrupts absolutely.
@@ -54,14 +54,14 @@ an extremely tough spot. With billions of users from different
 countries, the sheer amount of information that needs to be moderated
 as well its complexity is astonishing. 
 
-The question is: should they play the role of truth arbiter? If they
-should, can they theoretically and practically keep up with the
+This begs the question: should they play the role of truth arbiter? If
+they should, can they theoretically and practically keep up with the
 continued explosion of information when it has such an inherent
 asymmetric property? If they shouldn't, what is the effect of forcing
 this responsibility to the individuals when most people neither have
 the time nor expertise to sufficiently identify misinformation? When
 freedom of speech is enhanced so much by technology, it seems logical
-that more moderating (i.e. censoring) needs to happen somewhere in the
+that more moderation (i.e. censorship) needs to happen somewhere in the
 information flow to keep the verification cost in check and prevent
 the overall quality of the information from decaying. Who should do
 that? To which extent should they do that?  Is this against the very
@@ -97,7 +97,7 @@ ingenious property that is often underappreciated: it is [incentive
 compatible](https://en.wikipedia.org/wiki/Incentive_compatibility) for
 most of the participants within the system. Majority of the users
 always prefer convenience and immediate economic benefits. A "free"
-product paid by your attention instead of money wins the
+product paid by your attention instead of money is still winning the
 usability battle at least with the current state of the technology.
 
 
@@ -105,7 +105,7 @@ Another threat to freedom of speech is the extent to which its
 alternative models can succeed, even temporarily. Human societies have
 gone through times where there were explosions of scientific and
 technological breakthroughs. However, other parts of the human history
-is filled with incremental improvements or even staganation. Freedom
+is filled with incremental improvements or even staganations. Freedom
 of speech as an idea generation and selection mechanism is much more
 valuable in periods of breakthoughs. Arguments can be made that
 science has been staganating in the past 40 years and we are just
@@ -125,5 +125,3 @@ more on individualism vs collectivism.
 How many
 [flowers](https://en.wikipedia.org/wiki/Hundred_Flowers_Campaign)
 should be let bloom?
-
-
