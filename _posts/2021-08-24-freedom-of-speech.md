@@ -15,13 +15,13 @@ is to use whatever means appropriate to advance society as a whole
 rather than protecting the holiness of any particular concept, in this
 case freedom of speech.
 
-Unfortunately, this superintelligence doesn't exist, at least not
-yet. History seems to have shown repeatedly that no matter how wise
-and well intended an individual or a group of individuals are, it is
-difficult for mere mortals to be the guardians of information for
-everybody without suffocating the society. On top of that, such power
-almost always leads to Orwellian like state: Power corrupts; absolute
-power corrupts absolutely.
+Fortunately and unfortunately, this superintelligence doesn't exist,
+at least not yet. History seems to have shown repeatedly that no
+matter how wise and well intended an individual or a group of
+individuals are, it is difficult for mere mortals to be the guardians
+of information for everybody without suffocating the society. On top
+of that, such power almost always leads to Orwellian like state: Power
+corrupts; absolute power corrupts absolutely.
 
 From the societal perspective, if the goals of freedom of speech is to
 continuously generate ideas based on new circumstances so that
@@ -110,13 +110,13 @@ of speech as an idea generation and selection mechanism is much more
 valuable in periods of breakthoughs. Arguments can be made that
 science has been staganating in the past 40 years and we are just
 reaping the benefits from the research done by the generations before
-that. It is unclear if this is temporary or how long this would
+that. It is unclear if this is temporary and how long this would
 last. Under this assumption, societies emphasizing more on freedom of
 speech might not get enough benefits for its cost, whereas countries
 that actively censor information might be able to reach social
 consensus much more effectively without incuring an unbearable cost of
 losing the battle of innovation. Of course, this dynamic could change
-in different circumstances, perhaps this is one of the hidden forces
+under different circumstances, perhaps this is one of the hidden forces
 that can influence the rise and falls of the civilizations that focus
 more on individualism vs collectivism.
 
