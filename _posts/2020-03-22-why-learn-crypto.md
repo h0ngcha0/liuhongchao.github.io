@@ -6,105 +6,98 @@ title: Learn You Some Crypto for Good
 
 **TL;DR**. We live at a time when states and companies tend to get
 more and more powerful at the expense of individual rights, when
-government and corporate surveillance becomes common place, when
-people always have to choose between privacy and convenience, when
+government and corporate surveillance becomes the status quo, when
+people always have to sacrifice privacy for convenience, when
 Keynesian school of economics seems to be kicking the can down the
 road all the time. Cryptocurrency and its related technologies can
-potentially be a counteracting force to make the world a more
-balanced place.
+potentially offer alternatives that make the world a more balanced
+place.
 
 <img src="{{ site.baseurl }}/images/yinyang.jpg" alt="balanced" style="width: 350px;"/>
 
 In the past few days, the market has crashed hard on basically
 everything, including Bitcoin. Financial losses naturally come with
-negative emotions and various theories of justification. Is coronavirus
-really the culprit? Is it the oil war? Or are they just excuses for
-something more fundamental? Perhaps nobody really knows since it might
-require a certain amount of higher dimensional insights which most of
-us frankly do not possess. Surprisingly, I wasn't that much affected
-emotionally by the price this time like the roller coaster feeling I
-got from 2017 to 2018. Perhaps it has to do with the fact that my
-growing appreciation to the crypto space (primarily Bitcoin) over the
-years makes it much more than just a financial investment. As a
-technologist, it not only fascinates me on the technical side, but
-also serves as a forcing function for me to learn a bit more about
-other disciplines such as *politics*, *economics*, *finance* and
+negative emotions and usually clueless justifications. Is coronavirus
+really the culprit? Is it the oil war? Or are they just distractions
+for something more fundamental? Perhaps most of us will never know
+since we don't pocess the higher dimensional insights required to
+decode it. Surprisingly, I wasn't that much affected emotionally by
+the price this time like the roller coaster feeling I got from 2017
+to 2018. Perhaps it has to do with the fact that my growing
+appreciation to the crypto space (primarily Bitcoin) over the years
+makes it much more than just a financial investment. As someone
+works in the IT space, it not only fascinates me on the technical
+side, but also serves as a forcing function for me to learn a bit more
+about other disciplines such as *politics*, *economics*, *finance* and
 *philosophy*, etc. In retrospect, I feel this learning experience is
 very rewarding and a journey well worth taking. In this post, I will
-try to argue about why learning some crypto at this extraordinary
+try to argue about why learning some crypto during this extraordinary
 times is important from three angles: **Importance of Alternatives**,
 **Self Sovereignty** and **Facinating Technologies**.
 
 ### Importance of Alternatives
 
 People have vastly different perspectives when it comes to crypto
-space. For some it is just another vechicle for financial
+space. For some it is yet another vechicle for financial
 speculations. For others, it is an emerging financial infrastructure
-that will ultimately disrupt and replace the dysfunctional status
-quo. Many view it as a promising tool that can help disintermediate
-third parties and improve efficiency of a range of economic
-activities. Others treat it as an asymmetric weapon to protect their
+that will ultimately disrupt and replace the dysfunctional legacy
+one. Many view it as a promising tool that can help disintermediate
+third parties and improve efficiency for a range of economic
+activities. Others use it as an asymmetric weapon to protect their
 privacy in the world of massive corporate and government surveillance,
 or even a
 [path](https://www.activism.net/cypherpunk/crypto-anarchy.html)
 towards [anarchism](https://en.wikipedia.org/wiki/Anarchism).
 
-It is fair to assume that for many dynamic and complex issues, there
-is no solution that will always be the most optimal in all scenarios
+It is fair to say that for many dynamic and complex issues, no
+solution will be the most optimal one in all scenarios all the time
 (aka a "[silver
-bullet](https://en.wikipedia.org/wiki/Silver_bullet)"). This applies
-to things from system designs, business models to environmental issues
-or even the forms of governments. One explanation is that complex
-issue most likely has a structure that's comprised of sub-components
-interacting with each other in a nuanced and subtle way, solving it
-requires carefully and constantly balancing different kind of
-tradeoffs given that the structure might always be evolving. However,
-at a given point in time one solution might seem to monopolize the
-solution space. An example is the business model of most of the
-internet companies today. By owning users' identity and harvesting
-users' data through massive surveillance, those companies are able to
-somehow monetize on that and provide "free" or "freemium" services to
-their users. This is actually a pretty ingenious model that is often
-time underappreciated since it is [incentive
+bullet](https://en.wikipedia.org/wiki/Silver_bullet)"). This can be
+applied to many things such as system designs, business models,
+environmental issues or even the forms of governments. One mental
+model is that complex issues most likely have structures that're
+comprised of sub-components interacting with each other in nuanced and
+subtle ways. Given that these structures might be constantly evolving
+as well, solving them fundamentally requires constantly responding
+with different compromises and tradeoffs.
+
+However, at a particular point in time it might seem that a single
+solution is dorminating the entire solution space of a problem. One
+example is the business model of most of the internet companies
+today. By owning users' identity and harvesting users' data through
+"free" services, those companies are able to massively profit from
+that. With the current state of mainstream technologies this seems to
+be inevitable since it is [incentive
 compatible](https://en.wikipedia.org/wiki/Incentive_compatibility) for
-most of the participants in the system with the current state of
-mainstream technologies. Majority of the people will always value
-convenience and immediate economic benefits over eliminating the
-perceived low probability risk that one day their privacy will be
-breached. Internet companies will always be incentivized to accumulate
-more user data. What we end up with are companies that have amassed so
-much power that they need to remind themselves "[don't be
+most of the participants in the system. Majority of the users value
+convenience and immediate benefits over the low perceived risk that
+one day their privacy will be breached. Internet companies will always
+be incentivized to accumulate more user data since it could generate
+more profit for them. What we end up with are companies that have
+amassed so much power that they need to remind themselves "[don't be
 evil](https://en.wikipedia.org/wiki/Don%27t_be_evil)" and most users
 are effectively left with little to no alternatives.
 
-We are living in the world of capitalism where wealth has the
+We are living in the world of capitalism where wealth and power has
+the
 [tendency](https://en.wikipedia.org/wiki/Capital_in_the_Twenty-First_Century)
-to get more concentrated, organizations and state are getting bigger
-and more powerful often at the expense of the individual rights.  This
-trend is certainly not sustainable, as a Chinese proverb says: "[that
-which is long divided must unify; that which is long unified must
-divide](https://en.wiktionary.org/wiki/%E5%88%86%E4%B9%85%E5%BF%85%E5%90%88%EF%BC%8C%E5%90%88%E4%B9%85%E5%BF%85%E5%88%86)"
-(分久必合，合久必分). The contention between centralization and
-decentralization is the underlying forces behind so much human social
-development and will continue to be so for a long time. At a time when
-centralization is the dominating theme of the society, what
-blockchain technologies brings on to the table, the **decentralization of
-trust**, could potentially offer valuable counterbalance to that. We as
-a society needs real incentive compatible alternatives to fix our
-privacy issues than just empty slogans. We as a
-society needs to have serious experiments of financial systems that
-do not follow the school of [keynesian
-economics](https://en.wikipedia.org/wiki/Keynesian_economics) which
-offers little to remediate the economic problems we suffer today. We as a
-society needs more [starfish rather than
-spiders](https://en.wikipedia.org/wiki/The_Starfish_and_the_Spider)
-building [bazaars rather than
-cathedrals](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar)
-where it makes sense. For many people, perhaps the idea of anarchism
-is never about actually reaching the state of anarchism but always
-about alternatives and counterbalances since if the road ahead is not
-clear, the best bet is to keep an open mind, maintain diversity and
-zigzag our way forward knowing that we always alternatives.
+to get more and more concentrated, often at the expense of the
+individual rights. This trend is certainly not sustainable. What
+blockchain technologies bring on to the table, the **decentralization
+of trust**, could potentially offer valuable counterbalance to
+that. Cryptocurrencies such as Bitcoin offer alternatives to Fiat
+currencies. [DAOs](https://en.wikipedia.org/wiki/The_DAO_(organization))
+can potentially provide other ways to organize economic
+activities. [DeFi](https://en.wikipedia.org/wiki/Decentralized_finance)
+shows the possibility of building more inclusive and efficient
+alternative financial
+systems. [Web3](https://en.wikipedia.org/wiki/Web3) promises a
+competing ownership and incentive structure that could hopefully fix
+some of the privacy and data concentration issues of the existing
+status quo. For many people, maybe the idea of anarchism is never
+about actually realizing it but always about reminding us that
+there exists alternatives. If we shoot for the star, we might land on
+the moon.
 
 ### Self Sovereignty
 
