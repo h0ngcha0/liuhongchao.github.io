@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Bitcoin, Google Cloud Platform, GCP, Blockchain
-title: Bitcoin Full Node on GCP Kubernetes Cluster
+title: Bitcoin Full Node on GKE
 ---
 
 <img src="{{ site.baseurl }}/images/bitcoin-cloud.png"
