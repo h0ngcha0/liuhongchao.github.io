@@ -8,7 +8,9 @@ title: Alephium Stack on GKE
 operational sharded blockchain that brings scalability, ETH-inspired
 smart contracts and dApps capabilities to Bitcoin's proven core
 technologies while ensuring better performance and improved energy
-efficiency.
+efficiency. Alephium is one of those rare gems in the Crypto
+space that has solid innovations, high code quality and great mindset
+for decentralization.
 
 The project comes with a docker
 [setup](https://github.com/alephium/alephium/tree/master/docker) that
@@ -66,6 +68,4 @@ The code for setting everything up is open sourced in the
 [alephium-stack](https://github.com/h0ngcha0/alephium-stack)
 repo. Checkout the
 [README.md](https://github.com/h0ngcha0/alephium-stack/blob/master/README.md)
-for more details. Alephium is one of those rare gems in the Crypto
-space that has solid innovations, high code quality and great mindset
-for decentralization. Enjoy and Happy hacking! :fire::fire::fire:
+for more details. Happy Hacking! :fire::fire::fire:
