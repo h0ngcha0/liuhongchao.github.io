@@ -8,7 +8,7 @@ title: Alephium Stack on GKE
 operational sharded blockchain that brings scalability, ETH-inspired
 smart contracts and dApps capabilities to Bitcoin's proven core
 technologies while ensuring better performance and improved energy
-efficiency. Alephium is one of those rare gems in the Crypto
+efficiency. Alephium is one of those rare gems in the crypto
 space that has solid innovations, high code quality and great mindset
 for decentralization.
 
@@ -25,10 +25,10 @@ details, please consult the
 [documentation](https://github.com/alephium/alephium/blob/master/docker/README.md).
 
 It might also be a good idea to run the Alephium full stack on K8S
-cluster. Here are some of the benefits that I can think of
+cluster. Here are some of the potential benefits:
 
 - Expose Alephium stack to the public
-- Mining with [rented GPUs](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus) in the cloud
+- Mine with the [rented GPUs](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus) in the cloud
 - Develop against remote Alephium stack locally
 - Run applications that depends on Alephium full node in production
 - Scale different components of the Alephium stack depending on your
@@ -37,8 +37,8 @@ cluster. Here are some of the benefits that I can think of
   Postgres](https://www.google.com/search?client=firefox-b-d&q=cloud+postgres+gcp)
 - Ease of operation if you are already familiar with K8S
 
-I have setup the alephium stack on GKE, and exposed the following
-sites:
+I have setup the Alephium stack on GKE, mined some ALPHs and and
+exposed the following sites:
 
 - [Alephium Explorer](https://alephium.hongchao.me) (<span class="image-label">alephium.hongchao.me</span>)
 - [Alephium Monitoring](https://grafana.hongchao.me/d/S3eJTo3Mk/alephium-overview?orgId=1&refresh=10s) (<span class="image-label">grafana.hongchao.me</span>)
