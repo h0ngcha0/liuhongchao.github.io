@@ -5,13 +5,13 @@ title: Some Challenges of Freedom of Speech
 ---
 
 If there exists a superintelligence system that posesses all the
-knowledge and truth of the world and is able to process it with the
-most "optimal" algorithm depending on different scenarios, perhaps planned
-economy would become a better mechanism for resource allocation and growth
-generation than market economy. In fact, if such a superintelligence
-system happens to have the capacity and intention to advance human
-society as a whole, maybe the most sensible thing for us to do is to
-follow its lead.
+knowledge and truth of the world and is able to always process it with
+the most "optimal" algorithm, no matter what circumstances are,
+perhaps planned economy would become a better mechanism for resource
+allocation and growth generation than market economy. In fact, if such
+a superintelligence system happens to have the capacity and intention
+to advance human society as a whole, maybe the most sensible thing for
+us to do is to follow its lead.
 
 Fortunately and unfortunately, this superintelligence doesn't exist,
 at least not yet. History seems to have shown repeatedly that no
