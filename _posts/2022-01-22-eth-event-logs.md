@@ -30,22 +30,6 @@ function _transfer(address from, address to, uint value) private {
 }
 {% endhighlight %}
 
-There are a few ways to consume the emmited events. After a
-transaction is mined into the blockchain,
-[eth_getTransactionReceipt](https://eth.wiki/json-rpc/API#eth_gettransactionreceipt)
-can be called with the transaction hash to get the [transaction
-receipt](https://eth.wiki/json-rpc/API#eth_getfilterchanges), which
-contains a `logs` field that carries an array of log objects that this
-transaction generated. DApp frontends can also leverage the
-combination of the
-[eth_newFilter](https://eth.wiki/json-rpc/API#eth_newfilter) and
-[eth_getFilterChanges](https://eth.wiki/json-rpc/API#eth_getfilterchanges)
-method to poll the new events of interest. Web3.js abstracts this away
-by providing the
-[subscribe("log")](https://web3js.readthedocs.io/en/v1.2.11/web3-eth-subscribe.html#subscribe-logs)
-method to help real time consumption of the incoming logs using the
-subscription model.
-
 For a more detailed description of the Ethereum logs, including the
 concept of indexes/topics, data and cost, etc, highly recommend Luit
 Hollander's excellent blog post [Understanding event logs on the
@@ -61,11 +45,11 @@ maximum 4 topics/indexes, which is why there are 5 LOG opcodes (LOG0,
 LOG1, ..., LOG4) defined. The
 [Transfer](https://github.com/Uniswap/v2-core/blob/4dd59067c76dea4a0e8e4bfdda41877a6b16dedc/contracts/UniswapV2ERC20.sol#L22)
 event in the above example has three indexes/topics in total: two
-explicit indexes: **from** and **to** and 1 implicit index which is the hash of the event
-signature (see Luit's
+explicit indexes **from** and **to**, and one implicit index which is
+the hash of the event signature (see Luit's
 [post](https://medium.com/mycrypto/understanding-event-logs-on-the-ethereum-blockchain-f4ae7ba50378)),
-in this case **Transfer(address, address, uint)**. As the
-result, the generated opscode is
+in this case **Transfer(address, address, uint)**. As the result, the
+generated opscode is
 [LOG3](https://github.com/ethereum/go-ethereum/blob/b1e72f7ea998ad662166bcf23705ca59cf81e925/core/vm/opcodes.go#L202).
 
 LOG opcode is then interpreted by the [makeLog(size
@@ -173,7 +157,23 @@ func (bc *BlockChain) writeBlockWithState(block *types.Block, receipts []*types.
 }
 {% endhighlight %}
 
-Let's look at the JSON-RPCs that consumes the logs again in more details:
+There are a few ways to consume the emmited events. After a
+transaction is mined into the blockchain,
+[eth_getTransactionReceipt](https://eth.wiki/json-rpc/API#eth_gettransactionreceipt)
+can be called with the transaction hash to get the [transaction
+receipt](https://eth.wiki/json-rpc/API#eth_getfilterchanges), which
+contains a `logs` field that carries an array of log objects that this
+transaction generated. DApp frontends can also leverage the
+combination of the
+[eth_newFilter](https://eth.wiki/json-rpc/API#eth_newfilter) and
+[eth_getFilterChanges](https://eth.wiki/json-rpc/API#eth_getfilterchanges)
+method to poll the new events of interest. Web3.js abstracts this away
+by providing the
+[subscribe("log")](https://web3js.readthedocs.io/en/v1.2.11/web3-eth-subscribe.html#subscribe-logs)
+method to help real time consumption of the incoming logs using the
+subscription model.
+
+Let's look at these JSON-RPCs in more details:
 - [eth_getTransactionReceipt](https://eth.wiki/json-rpc/API#eth_gettransactionreceipt).
   Return the transaction receipt for a transaction id. Since
   transaction receipts are stored per block, this basically
@@ -194,7 +194,7 @@ Let's look at the JSON-RPCs that consumes the logs again in more details:
   so that it doesnt have to iterate through each blocks in the block
   range while searching for the matching logs.
 
-Hope this blog post has shed some light on how logs is implemented
+Hope this blog post has shed some light on how logging is implemented
 Ethereum. The overall design feels pretty elegant and efficient. One
 tradeoff here is how much data should be indexed on-chain v.s
 off-chain. Ethereum decided to have max 4 topics per log, perhaps a
