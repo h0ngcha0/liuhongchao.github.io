@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Etheruem
-title: Deep Dive into the Ethereum Logs
+title: Deep Dive into Ethereum Logs
 ---
 
 Logs in Ethereum are very useful since they are the underlying
