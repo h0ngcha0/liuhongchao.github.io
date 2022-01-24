@@ -6,12 +6,15 @@ title: Deep Dive into the Ethereum Logs
 
 Logs in Ethereum are very useful since they are the underlying
 mechanism for events, which is the recommended way for smart contracts
-to communicate with the outside world.
+to communicate with the outside world. They also provide a
+significantly cheaper way to store data on-chain.
+<br/>
+<br/>
+<img src="{{ site.baseurl }}/images/logs.png" alt="logs" style="width: 360px;"/>
 
-For example, the following code snippet from the
+As an example, the following code snippet from the
 [UniswapV2ERC20.sol](https://github.com/Uniswap/v2-core/blob/4dd59067c76dea4a0e8e4bfdda41877a6b16dedc/contracts/UniswapV2ERC20.sol#L60)
-contract in [UniSwap V2](https://uniswap.org/blog/uniswap-v2) emits
-a
+contract emits a
 [Transfer](https://github.com/Uniswap/v2-core/blob/4dd59067c76dea4a0e8e4bfdda41877a6b16dedc/contracts/UniswapV2ERC20.sol#L22)
 event whenever a
 [transfer](https://github.com/Uniswap/v2-core/blob/4dd59067c76dea4a0e8e4bfdda41877a6b16dedc/contracts/UniswapV2ERC20.sol#L68)
@@ -208,5 +211,5 @@ Reference:
 - [Logging data from smart contracts with events](https://ethereum.org/ig/developers/tutorials/logging-events-smart-contracts/)
 - [Understanding event logs on the Ethereum blockchain](https://medium.com/mycrypto/understanding-event-logs-on-the-ethereum-blockchain-f4ae7ba50378)
 - [How does Ethereum make use of bloom filters?](https://ethereum.stackexchange.com/questions/3418/how-does-ethereum-make-use-of-bloom-filters/3426)
-- [A guide to events and logs in ethereum smart contracts](https://consensys.net/blog/developers/guide-to-events-and-logs-in-ethereum-smart-contracts/~)
+- [A guide to events and logs in ethereum smart contracts](https://consensys.net/blog/developers/guide-to-events-and-logs-in-ethereum-smart-contracts)
 - [The Anatomy of a Transaction Receipt](https://medium.com/remix-ide/the-anatomy-of-a-transaction-receipt-d935aacc9fcd)
