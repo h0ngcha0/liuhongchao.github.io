@@ -10,10 +10,10 @@ to communicate with the outside world.
 
 For example, the following code snippet from the
 [UniswapV2ERC20.sol](https://github.com/Uniswap/v2-core/blob/4dd59067c76dea4a0e8e4bfdda41877a6b16dedc/contracts/UniswapV2ERC20.sol#L60)
-contract from [UniSwap V2](https://uniswap.org/blog/uniswap-v2) emits
+contract in [UniSwap V2](https://uniswap.org/blog/uniswap-v2) emits
 a
 [Transfer](https://github.com/Uniswap/v2-core/blob/4dd59067c76dea4a0e8e4bfdda41877a6b16dedc/contracts/UniswapV2ERC20.sol#L22)
-event whenever the
+event whenever a
 [transfer](https://github.com/Uniswap/v2-core/blob/4dd59067c76dea4a0e8e4bfdda41877a6b16dedc/contracts/UniswapV2ERC20.sol#L68)
 of tokens takes place.
 
@@ -72,7 +72,7 @@ arbitrary data from the stack, uses them to construct a
 [log](https://github.com/ethereum/go-ethereum/blob/master/core/types/log.go#L31)
 object and then adds it to
 [StateDB](https://github.com/ethereum/go-ethereum/blob/master/core/state/statedb.go#L64). **StateDB**
-is the data structure that stores anything within the merkle trie, and
+is an EVM data structure that stores anything within the merkle trie, and
 is the general query interface to retrieve contracts and
 accounts. It's used to store data during transaction execution,
 including logs.
@@ -184,22 +184,21 @@ Let's look at the JSON-RPCs that consumes the logs again in more details:
   contract address as well as topics. This leverages the bloom filter
   both in the block header as well as in the transaction receipt to
   determine which logs should be returned. False positives are
-  filtered again using the search criteria. The logic can be found
-  here. The filter logic can be found
+  filtered again using the search criteria. The filter logic can be found
   [here](https://github.com/ethereum/go-ethereum/blob/master/eth/filters/filter.go#L119). There
   are also some [index
   optimization](https://github.com/ethereum/go-ethereum/blob/master/eth/filters/filter.go#L153)
   so that it doesnt have to iterate through each blocks in the block
   range while searching for the matching logs.
 
-Hope this blog post has shed some light on how exactly logs in
-Ethereum are stored and queried. The overall design feels pretty
-elegant and efficient. One tradeoff here is how much data should be
-indexed on-chain v.s off-chain. Ethereum decided to have max 4 topics
-per log, perhaps a good balance between searchability and storage, but
-one can make an legitimate argument that indexes should be pushed more
-to the application layer since data is more understood there and it is
-easier to make changes afterwards.
+Hope this blog post has shed some light on how logs is implemented
+Ethereum. The overall design feels pretty elegant and efficient. One
+tradeoff here is how much data should be indexed on-chain v.s
+off-chain. Ethereum decided to have max 4 topics per log, perhaps a
+good balance between searchability and storage, but one can make an
+legitimate argument that indexes should be pushed more to the
+application layer since data is more understood there and it is easier
+to make changes afterwards.
 
 <br/>
 
