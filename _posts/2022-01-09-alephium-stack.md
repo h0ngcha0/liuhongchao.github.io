@@ -40,9 +40,9 @@ cluster. Here are some of the potential benefits:
 I have setup the Alephium stack on GKE, mined some ALPHs and and
 exposed the following sites:
 
-- [Alephium Explorer](https://alephium.hongchao.me) (<span class="image-label">alephium.hongchao.me</span>)
-- [Alephium Monitoring](https://grafana.hongchao.me/d/S3eJTo3Mk/alephium-overview?orgId=1&refresh=10s) (<span class="image-label">grafana.hongchao.me</span>)
-- [Alephium API Documenation](https://alephium.hongchao.me/docs) (<span class="image-label">alephium.hongchao.me/docs</span>)
+- [Alephium Explorer](https://alephium.softfork.se) (<span class="image-label">alephium.softfork.se</span>)
+- [Alephium Monitoring](https://grafana.softfork.se/d/S3eJTo3Mk/alephium-overview?orgId=1&refresh=10s) (<span class="image-label">grafana.softfork.se</span>)
+- [Alephium API Documenation](https://alephium.softfork.se/docs) (<span class="image-label">alephium.softfork.se/docs</span>)
 
 It's comforting to be able to monitor the status of your full node wherever
 you are:
