@@ -2,6 +2,7 @@
 layout: post
 category: Bitcoin, Google Cloud Platform, GCP, Blockchain
 title: Alephium Stack on GKE
+hide_in_overview: true
 ---
 
 [Alephium](https://github.com/alephium/alephium) is the first
