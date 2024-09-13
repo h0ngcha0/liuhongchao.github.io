@@ -25,7 +25,7 @@ As we replay the instructions step by step, we can observe the changes for the f
 
 ## Key VM Instructions
 
-The ALPHred VM utilizes a set of carefully designed instructions to efficiently manage its operations. Let's some of the key instructions that form the backbone of its functionality.
+The ALPHred VM utilizes a set of carefully designed instructions to efficiently manage its operations. Let's explore some of the key instructions that form the backbone of its functionality.
 
 ### Load and Store Variables
 
