@@ -2,6 +2,7 @@
 layout: post
 category: Life, Philosophy
 title: An Imperfect Perfection
+hide_in_overview: true
 ---
 
 In a world that often chases perfection -- whether in our work, our
