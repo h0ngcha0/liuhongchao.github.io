@@ -182,10 +182,11 @@ img {
   background: $white;
   border-top: 4px solid $black;
   border-bottom: 1px solid $rule;
+}
 
-  .container {
-    max-width: none;
-  }
+.wrapper-masthead > .container {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .masthead {
@@ -193,7 +194,7 @@ img {
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
-  padding: 22px 0 18px;
+  padding: 22px 48px 18px;
 
   &:before,
   &:after {
@@ -204,7 +205,6 @@ img {
     align-items: flex-start;
     flex-direction: column;
     gap: 14px;
-    padding: 18px 0;
     text-align: left;
   }
 }
@@ -481,6 +481,10 @@ footer {
 
   .wrapper-masthead {
     margin-bottom: 16px;
+  }
+
+  .masthead {
+    padding: 18px 20px;
   }
 
   #main {
