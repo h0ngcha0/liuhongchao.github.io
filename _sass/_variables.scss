@@ -4,21 +4,26 @@
 //
 
 // Colors
-$blue: #4183C4;
-$stovaBlue: #006188;
+$blue: #234f9d;
+$stovaBlue: #2f5d3a;
+$canvas: #e7e9e5;
+$selection: #dce8d8;
+$codeBackground: #f0f2ed;
+$rule: #b7bdb5;
 
 // Grays
-$black: #000;
-$darkerGray: #222;
-$darkGray: #333;
-$gray: #666;
-$lightGray: #eee;
-$white: #fff;
+$black: #1b1f1c;
+$darkerGray: #272c28;
+$darkGray: #3e4540;
+$gray: #68706a;
+$lightGray: #d9ddd7;
+$white: #fbfbf6;
 
 // Font stacks
-$helvetica: Helvetica, Arial, sans-serif;
-$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$georgia: Georgia, serif;
+$mono: ui-monospace, "SFMono-Regular", "Cascadia Code", "Roboto Mono", "DejaVu Sans Mono", Menlo, Consolas, monospace;
+$helvetica: $mono;
+$helveticaNeue: $mono;
+$georgia: $mono;
 
 // Mobile breakpoints
 @mixin mobile {
